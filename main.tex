@@ -1,0 +1,107 @@
+% !TEX TS-program = latexmk
+% !TEX encoding = UTF-8 Unicode
+
+% This is a book in LaTeX 2e. 
+% To compile the file, you need to use the following command line commands in Linux:
+%	pdflatex --shell-escape -synctex=1  -recorder main.tex
+%	bibtex main
+%	makeindex -s notation.gst -o not.gls not.glo  
+%	makeindex main
+% and repeat each of these many times.
+\input{preamble}
+\vrefwarning
+\begin{document}%
+\begin{center}
+\includegraphics[width=\linewidth,angle=-90]{eds.jpg}
+\end{center}
+\input{preface}
+\afterpreface 
+\input{exterior-differential-systems}
+\input{tableaux}
+\input{almost-complex}
+\input{prolongation}
+\input{test}
+\input{characteristic-variety-eds}
+\input{proof-cartan-kaehler-coord}
+\newpage
+\begin{center}
+\includegraphics[width=\linewidth]{Voyage-a-la-lune.jpg}
+\end{center}
+\input{Cauchy-characteristics}
+\input{apply-eds}
+\input{Weingarten}
+\begin{appendices}
+\input{cauchy-kovalevskaya}
+\input{characteristic-variety}
+\input{analytic-convergence}
+\input{moving-frame}
+\input{curvature-of-surfaces}
+\input{Gauss-Bonnet}
+\input{geodesics}
+\end{appendices}
+
+\clearpage
+\pagestyle{empty}
+\NewDocumentCommand\photo{mm}{%
+\begin{minipage}{8cm}\centering\small%
+\includegraphics[width=5cm]{#2}%
+\\ \bigskip {\scshape{#1}} \bigskip \\ \bigskip 
+\end{minipage}}
+\NewDocumentCommand\widephoto{mm}{%
+\begin{minipage}{12cm}\centering\small%
+\includegraphics[width=12cm]{#2}%
+\\ \bigskip {\scshape{#1}} \bigskip \\ \bigskip 
+\end{minipage}}
+\begin{center}
+\begin{tabular}{@{}l@{}l@{}}
+\photo{Augustin Louis Cauchy}{Augustin_Louis_Cauchy.jpg}%
+\SubIndex{Cauchy!Augustin Louis}&
+\photo{Sofia Vasilyevna Kovalevskaya}{Sofya_Vasilyevna_Kovalevskaya_Bust.jpg}%
+\SubIndex{Kovalevskaya!Sofia Vasilyevna}\\
+\photo{\'Elie Cartan}{Elie-Cartan-1904.png}%
+\SubIndex{Cartan!Elie@\'Elie}&
+\photo{Erich K\"ahler}{Erich-Kaehler.jpeg}\SubIndex{Kaehler@K\"ahler!Eric}
+\end{tabular}
+\end{center}
+\clearpage
+\RenewDocumentCommand\photo{mm}{%
+\begin{minipage}{7.5cm}\centering\small%
+\includegraphics[width=4.5cm]{#2}%
+\\ \bigskip {\scshape{#1}} \bigskip \\ \bigskip 
+\end{minipage}}
+\begin{center}
+\begin{tabular}{@{}l@{}l@{}}
+\multicolumn{2}{c}{%
+\widephoto{Shiing-Shen Chern\({}^b\)}{chern.jpg}%
+\SubIndex{Chern!Shiing-Shen}}\\
+\photo{Robert Bryant\({}^a\)}{robert-bryant.jpeg}%
+\SubIndex{Bryant!Robert}&
+\photo{Masatsugu Kuranishi}{Kuranishi_Masatsugu.jpg}\SubIndex{Kuranishi!Masatsugu}
+\end{tabular}
+\end{center}
+\begin{center}
+\begin{tabular}{@{}l@{}}
+\widephoto{Phillip Griffiths\({}^c\)}{phillip-griffiths.jpg}%
+\SubIndex{Griffiths!Phillip}
+\end{tabular}
+\end{center}
+\begingroup\small
+\begin{enumerate}
+\item
+Aronosky, James (photographer). ``Robert Bryant, Mathematics, Rice University.'' (1980) Rice University: \verb!https://hdl.handle.net/1911/90415.!
+This digital version is licensed under a Creative Commons Attribution 3.0 Unported 
+\item
+This file is licensed under the Creative Commons Attribution-Share Alike 4.0 International license. 	
+Attribution: George M. Bergman
+\item
+This file is licensed under the Creative Commons Attribution-Share Alike 4.0 International license. 	
+Attribution: George M. Bergman
+\end{enumerate}
+\endgroup
+\clearpage
+\pagestyle{companion}
+\RenewDocumentCommand\hintsPreamble{}{%
+\epigraph%
+[author={Andr\'e Gide}, source={Les nourritures terrestres}]%
+{It is not enough for me to read that the sand on the seashore is soft. My bare feet must feel it.}}%
+\end{document}

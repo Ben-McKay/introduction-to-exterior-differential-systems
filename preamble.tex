@@ -1,0 +1,513 @@
+\documentclass{willowtreebook}
+\Title{Introduction to Exterior Differential Systems}
+\Author{\texorpdfstring{Benjamin \scotsMc{}Kay}{Benjamin McKay}}
+\BibliographyFile{main}
+\usepackage{morewrites}
+\usepackage{standalone}
+\usepackage{enumitem}
+\usepackage{xspace}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{braket}
+\usepackage{varioref}
+\usepackage{xstring}
+\usepackage{xparse}
+\usepackage{array}
+\usepackage{blkarray}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage[math]{cellspace}
+\usepackage{changepage}
+\usepackage{epigraph-keys}
+\usepackage{tikz}
+\usetikzlibrary{fadings,calc,hobby, arrows.meta,bending,decorations.markings}
+\usepackage{tikz-cd}
+\usepackage{pgfplots}\pgfplotsset{compat=1.16}
+\usepackage[customcolors]{hf-tikz}
+\NewDocumentCommand\textprime{}{\ensuremath{'}}
+\NewDocumentCommand\pderiv{omm}%
+{%
+\IfValueTF{#1}%
+{%%
+\frac{\partial^{#1} #2}{\partial #3^{#1}}%
+}%%
+{%%
+\frac{\partial #2}{\partial #3}%
+}%%
+}%
+\tikzfading[name=fade out, inner color=transparent!0, outer color=transparent!100]
+% We don't need to worry about the pdf page groups, so we ignore these warnings.
+\pdfsuppresswarningpagegroup=1
+\NewDocumentCommand\transpose{m}%
+{%
+	#1^{\!\top}%
+}%
+
+%%% THIS IS MY CURRENT APPROACH TO WRITING TABLEAU.
+% You have to write . to mean \dots.
+\tikzset{free/.style={fill=blue!30,draw=gray!16,thick,rounded corners}}
+\newlength\tableauEntryLength%
+\newlength\nextTableauEntryLength%
+\newcount\tableauColumns%
+\newcount\tableauRows%
+\newcount\soFarColumn%
+\newcount\soFarGrade%
+\newcount\numberOfGradingColumns%
+\newcount\tableauDotPosition%
+\newcommand\tableauEntryPadding{.7em}%
+\NewDocumentCommand\Tablo{md()o}%
+{%
+	\edef\tableauContents{#1}%
+	\StrCount{\tableauContents}{;}[\tableauRowsString]%
+	\global\tableauRows\tableauRowsString\relax%
+	\global\advance\tableauRows by 1\relax%
+	\StrBefore{\tableauContents;}{;}[\firstTableauRow]%
+	\tableauColumns0\relax%
+	\StrCount{\firstTableauRow}{,}[\tableauColumnsString]%
+	\global\tableauColumns\tableauColumnsString\relax%
+	\global\advance\tableauColumns by 1\relax%
+	\StrSubstitute{\tableauContents}{;}{,}[\tableauWithoutSemicolons]%
+	\StrSubstitute{\tableauWithoutSemicolons}%
+		{*}{|[free]|}[\tableauWithoutSemicolons]%
+	\setlength\tableauEntryLength{0pt}%
+	\global\tableauEntryLength=\tableauEntryLength\relax%
+	\let\mymatrixcontent\empty%
+	\let\gradingColumns\empty%
+	\numberOfGradingColumns0\relax%
+	\global\soFarColumn0\relax%
+  	\foreach \c in \tableauWithoutSemicolons{%
+		\StrPosition{\c}{!}[\exclamationPosition]%
+		\StrSubstitute{\c}{!}{}[\cNoExclamation]%
+		\StrPosition{\c}{.}[\theDotPosition]%
+		\tableauDotPosition\theDotPosition\relax%				
+		\StrSubstitute{\cNoExclamation}{.}{}[\cNoExclamation]%
+		\ifnum\tableauDotPosition=0\relax%
+			\expandafter\gappto\expandafter\mymatrixcontent\expandafter{\cNoExclamation }%
+		\else%
+			\expandafter\gappto\expandafter\mymatrixcontent\expandafter{\cNoExclamation }%
+			\gappto\mymatrixcontent{\dots}%
+		\fi%
+		\global\advance\soFarColumn by 1\relax%
+		\ifnum0=\exclamationPosition%
+		\else%
+			\global\advance\numberOfGradingColumns by 1\relax%
+			\edef\soFarColumnText{\the\soFarColumn}%
+			\ifnum\numberOfGradingColumns>1\relax%
+				\expandafter\gappto\expandafter\gradingColumns\expandafter{,}%
+			\fi%
+			\expandafter\gappto\expandafter\gradingColumns\expandafter{\soFarColumnText}%
+		\fi%
+		\ifnum\soFarColumn=\the\tableauColumns%
+			\expandafter\gappto\expandafter\mymatrixcontent\expandafter{ \\ }%
+			\global\soFarColumn0\relax%
+		\else%
+			\expandafter\gappto\expandafter\mymatrixcontent\expandafter{ \& }%	
+		\fi%
+		\StrSubstitute{\cNoExclamation}{|[free]|}{}[\cMathEntry]%
+		\settowidth{\nextTableauEntryLength}{\({\cMathEntry}\)}%
+		\setlength{\tableauEntryLength}%
+			{\maxof%
+				{\tableauEntryLength}%
+				{\nextTableauEntryLength}%
+			}%
+		\global\tableauEntryLength=\tableauEntryLength\relax%
+    }%
+	\addtolength{\tableauEntryLength}{\tableauEntryPadding}%
+	\begin{tikzpicture}[baseline=0]%
+	\matrix (m) [%
+		matrix of math nodes,%
+			nodes={%
+    	    	rectangle,%
+				minimum width=\tableauEntryLength,%
+				minimum height=1.5em,%
+				text depth=0.25ex,%
+				inner sep=0pt, 
+				outer sep=0pt,%
+			},%
+		nodes in empty cells,
+		inner sep=0pt,%
+		left delimiter=(,%
+		right delimiter=),%
+		ampersand replacement=\&]%
+		{%%
+			\mymatrixcontent%
+		};%%
+		\node (a) at (m-\the\tableauRows-1){};
+		\node (b) at (m-\the\tableauRows-\the\tableauColumns){};
+		\node (mbot) at ($(a)!0.5!(b)$) {};
+		\foreach \i in \gradingColumns%
+		{%
+			\draw (m-1-\i.north west) -- (m-\the\tableauRows-\i.south west);
+		}%
+		\IfValueTF{#2}%
+		{%
+			\edef\tableauCharacters{#3}%
+			\let\mymatrixcontent\empty%
+			\soFarColumn0\relax%
+			\soFarGrade0\relax%
+	 		\foreach \c in \tableauCharacters%
+			{%
+				\global\advance\soFarColumn by 1\relax%
+				\StrPosition{\c}{.}[\theDotPosition]%
+				\tableauDotPosition\theDotPosition\relax%				
+				\ifnum\tableauDotPosition=0\relax%
+					\settowidth{\nextTableauEntryLength}{\({\c}\)}%
+					\ifdim\nextTableauEntryLength>1pt%
+						\global\advance\soFarGrade by 1\relax%
+						\expandafter\gappto\expandafter\mymatrixcontent\expandafter{\c }%
+					\fi%
+				\else%
+					\gappto\mymatrixcontent{\dots}%
+				\fi%
+				\ifnum\soFarColumn=\the\tableauColumns%
+					\expandafter\gappto\expandafter\mymatrixcontent\expandafter{ \\ }%
+				\else%
+					\expandafter\gappto\expandafter\mymatrixcontent\expandafter{ \& }%	
+				\fi%
+			}%
+			\edef\tableauCharacterLabels{#2}%
+			\global\let\mylabelmatrixcontent\empty%
+			\soFarColumn0\relax%
+			\soFarGrade0\relax%
+	 		\foreach \c in \tableauCharacterLabels%
+			{%
+				\global\advance\soFarColumn by 1\relax%
+				\StrPosition{\c}{.}[\theDotPosition]%
+				\tableauDotPosition\theDotPosition\relax%				
+				\ifnum\tableauDotPosition=0\relax%
+					\settowidth{\nextTableauEntryLength}{\({\c}\)}%
+					\ifdim\nextTableauEntryLength>1pt%
+						\global\advance\soFarGrade by 1\relax%
+						\edef\colLabel{s_{\c}}%
+						\expandafter\gappto\expandafter\mylabelmatrixcontent\expandafter{\colLabel }%
+					\fi%
+				\else%
+					\gappto\mylabelmatrixcontent{\dots}%
+				\fi%
+				\ifnum\soFarColumn=\the\tableauColumns%
+					\expandafter\gappto\expandafter\mylabelmatrixcontent\expandafter{ \\ }%
+				\else%
+					\expandafter\gappto\expandafter\mylabelmatrixcontent\expandafter{ \& }%	
+				\fi%
+			}%
+		}%
+		{%
+			\IfValueT{#3}%
+			{%
+				\edef\tableauCharacters{#3}%
+				\let\mymatrixcontent\empty%
+				\let\mylabelmatrixcontent\empty%
+				\soFarColumn0\relax%
+				\soFarGrade0\relax%
+		  		\foreach \c in \tableauCharacters%
+		  		{%
+					\global\advance\soFarColumn by 1\relax%
+					\settowidth{\nextTableauEntryLength}{\({\c}\)}%
+					\ifdim\nextTableauEntryLength>1pt%
+						\global\advance\soFarGrade by 1\relax%
+						\edef\colLabel{s_{\the\soFarGrade}}%
+						\expandafter\gappto\expandafter\mylabelmatrixcontent\expandafter{\colLabel }%
+						\expandafter\gappto\expandafter\mymatrixcontent\expandafter{\c }%
+					\fi%
+					\ifnum\soFarColumn=\the\tableauColumns%
+						\expandafter\gappto\expandafter\mylabelmatrixcontent\expandafter{ \\ }%
+						\expandafter\gappto\expandafter\mymatrixcontent\expandafter{ \\ }%
+					\else%
+						\expandafter\gappto\expandafter\mylabelmatrixcontent\expandafter{ \& }%	
+						\expandafter\gappto\expandafter\mymatrixcontent\expandafter{ \& }%	
+					\fi%
+				}%
+			}%
+		}%
+		\IfValueT{#3}%
+		{%
+			\matrix (n) [%
+			below of=mbot,%
+			matrix of math nodes,%
+				nodes={%
+   		     		rectangle,%
+					minimum width=\tableauEntryLength,%
+					minimum height=1.5em,%
+					text depth=0.25ex,%
+					inner sep=0pt, 
+					outer sep=0pt,%
+					},%
+			nodes in empty cells,
+			inner sep=0pt,%
+			ampersand replacement=\&]%
+			{%%
+				\mylabelmatrixcontent%
+				\mymatrixcontent%
+			};%%
+		}%
+	\end{tikzpicture}%
+}%
+
+%%% THIS IS MY OLD APPROACH TO WRITING TABLEAU:
+\NewDocumentEnvironment{gradedTableau}{m}%%
+{%%
+\arrayrulecolor{black}%
+\rulecolor{black}%
+\def\arraystretch{1.2}%
+\left(\begin{array}{#1}%
+}%%
+{%%
+\end{array}\right)%
+\arrayrulecolor{gray!30}%
+\rulecolor{gray!30}%
+}%%
+
+\NewDocumentCommand\+{}{\\ \hline}
+\let\emptyGrade=\hline
+
+\NewDocumentEnvironment{gradedIndependents}{}%%
+{%%
+\begin{gradedTableau}{c}
+}%%
+{%%
+\end{gradedTableau}
+}%%
+
+\NewDocumentEnvironment{tableau}{}%%
+{%%
+\left( \ \begin{matrix}
+}%%
+{%%
+\end{matrix} \ \right)
+}%%
+\NewDocumentCommand\freeDeriv{m}%
+{%
+	\settowidth{\tableauEntryLength}{\({#1}\)}%
+	\addtolength{\tableauEntryLength}{\tableauEntryPadding}%
+	\begin{tikzpicture}[baseline=-.5em]%
+	\matrix (m) [%
+		matrix of math nodes,%
+			nodes={%
+    	    	rectangle,%
+				minimum width=\tableauEntryLength,%
+				minimum height=1.5em,%
+				text depth=0.25ex,%
+				inner sep=0pt, 
+				outer sep=0pt,%
+			},%
+		inner sep=0pt]%
+		{|[free]|#1\\};%
+	\end{tikzpicture}%
+}%
+
+
+%% Commands
+\newcommand*{\pr}[1]{\ensuremath{\left(#1\right)}}
+\newcommand*{\of}[1]{\ensuremath{\!\pr{#1}}}
+\NewDocumentCommand\bbX{mo}{\ensuremath{\IfValueTF{#2}{\mathbb{#1}^{#2}}{\mathbb{#1}}}}
+\NewDocumentCommand\MakeBB{m}%
+{%
+	\expandafter\def\csname #1\endcsname{\bbX{#1}}%
+}%
+\def\lst{C,E,R,Z}
+\makeatletter
+\@for\i:=\lst\do{\expandafter\MakeBB \i}
+\makeatother
+\newcommand*{\GL}[1]{\ensuremath{\operatorname{GL}\of{#1}}}
+\newcommand*{\SU}[1]{\ensuremath{\operatorname{SU}_{#1}}}
+\newcommand*{\LieDer}{\ensuremath{\EuScript L}}
+\newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+                     \hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+                     =}
+\newcommand*{\p}[1]{\ensuremath{\partial_{#1}}}
+
+
+\makeatletter
+\DeclareFontFamily{OMX}{MnSymbolE}{}
+\DeclareSymbolFont{MnLargeSymbols}{OMX}{MnSymbolE}{m}{n}
+\SetSymbolFont{MnLargeSymbols}{bold}{OMX}{MnSymbolE}{b}{n}
+\DeclareFontShape{OMX}{MnSymbolE}{m}{n}{
+<-6>  MnSymbolE5
+<6-7>  MnSymbolE6
+<7-8>  MnSymbolE7
+<8-9>  MnSymbolE8
+<9-10> MnSymbolE9
+<10-12> MnSymbolE10
+<12->   MnSymbolE12
+}{}
+\DeclareFontShape{OMX}{MnSymbolE}{b}{n}{
+<-6>  MnSymbolE-Bold5
+<6-7>  MnSymbolE-Bold6
+<7-8>  MnSymbolE-Bold7
+<8-9>  MnSymbolE-Bold8
+<9-10> MnSymbolE-Bold9
+<10-12> MnSymbolE-Bold10
+<12->   MnSymbolE-Bold12
+}{}
+\DeclareMathDelimiter{\ulcorner}{\mathopen}{MnLargeSymbols}{'036}{MnLargeSymbols}{'036}
+\DeclareMathDelimiter{\urcorner}{\mathclose}{MnLargeSymbols}{'043}{MnLargeSymbols}{'043}
+\makeatother
+
+\newcommand*{\frameBundle}[1]{\ensuremath{\left\ulcorner\!#1\right.}}
+\newcommand*{\frameBundleE}[1]{\ensuremath{\left\ulcorner\!\mathbb{E}^{#1}\right.}}
+\newcommand*{\adaptedFrameBundle}[2]{\ensuremath{\left\ulcorner\!#2_{#1}\right.}}
+\newcommand*{\op}[1]{\ensuremath{\operatorname{open} \subset #1}}
+\NewDocumentCommand\LieG{}{\ensuremath{\mathfrak{g}}}
+\NewDocumentCommand\LieSL{e_o}{\ensuremath{\mathfrak{sl}_{#1}\IfValueTF{#2}{#2}}}
+\NewDocumentCommand\LieSU{e_o}{\ensuremath{\mathfrak{su}_{#1}\IfValueTF{#2}{#2}}}
+\NewDocumentCommand\LieSO{m}{\ensuremath{\mathfrak{so}_{#1}}}
+\NewDocumentCommand\Romanbar{m}{%
+\relax\ifmmode%
+\IfStrEqCase{#1}{
+{1}{I}%
+{2}{I\kern-2.5pt I}%
+{3}{I\kern-2.5pt I\kern-2.5pt I}%
+{4}{I\kern-1pt V}%
+{5}{V}%
+{6}{V\kern-2.6pt I}%
+{7}{V\kern-2.6pt I\kern-2.5pt I}%
+{8}{V\kern-2.6pt I\kern-2.5pt I\kern-2.5pt I}%
+{9}{I\kern-2.5pt X}%
+{10}{X}%
+{11}{X\kern-2.8pt I}%
+}%
+\else%
+\IfStrEqCase{#1}{
+{1}{I}%
+{2}{I\kern-0.57pt I}%
+{3}{I\kern-0.57pt I\kern-0.57pt I}%
+{4}{I\kern-1pt V}%
+{5}{V}%
+{6}{V\kern-.49pt I}%
+{7}{V\kern-.49pt I\kern-0.57pt I}%
+{8}{V\kern-.49pt I\kern-0.57pt I\kern-0.57pt I}%
+{9}{I\kern-0.66pt X}%
+{10}{X}%
+{11}{X\kern-1pt I}%
+}%
+\fi%
+}
+\newcommand{\shapeOp}{\ensuremath{\Romanbar{2}}}
+\newcommand{\thirdFundForm}{\ensuremath{\Romanbar{3}}}
+\newcommand*{\II}{\ensuremath{\mathcal{I}}}
+\newcommand*{\JJ}{\ensuremath{\mathcal{J}}}
+\newcommand{\spn}[1]{\ensuremath{\left<#1\right>}}
+\NewDocumentCommand\prl{mO{1}}{\ensuremath{#1^{(#2)}}}
+\NewDocumentCommand\prob{mm}%
+{%
+\begin{problem}{#1}#2\end{problem}%
+}%
+
+% Hooking a vector into a differential form:
+\newcommand{\hook}{\ensuremath{\mathbin{ \hbox{\vrule height1.4pt
+        width4pt depth-1pt \vrule height4pt width0.4pt depth-1pt}}}}
+
+\NewDocumentCommand\Lm{smm}{\IfBooleanTF{#1}{\ensuremath{\Lambda^{#2}\left(#3\right)}}{\ensuremath{\Lambda^{#2}#3}}}
+\NewDocumentCommand\Lmtop{sm}{\IfBooleanTF{#1}{\ensuremath{\Lambda^{\operatorname{top}}\left(#2\right)}}{\ensuremath{\Lambda^{\operatorname{top}}#2}}}
+\NewDocumentCommand\Gr{mm}{\ensuremath{\operatorname{Gr}_{#1}\!#2}}
+\NewDocumentCommand\nForms{mm}{\ensuremath{\Omega^{#1}_{#2}}}
+
+% Characteristic variety: \CV^n, \CV_k, \CV^n_k, \CV(E), \CV^n(E)
+\NewDocumentCommand\CV{e^e_d()}{%
+    \IfNoValueTF{#1}{\IfNoValueTF{#2}{\Xi}{\Xi_{#2}}}%
+    {\IfNoValueTF{#2}{\Xi^{#1}}{\Xi^{#1}_{#2}}}%
+    \IfValueTF{#3}{\!\left(#3\right)}{}%
+}%
+
+% Projective space: \Proj^n, \Proj_k, \Proj^n_k, \Proj(V), \Proj^n(k)
+\NewDocumentCommand\Proj{e^e_d()}{%
+    \IfNoValueTF{#1}{\IfNoValueTF{#2}{\mathbb{P}}{\mathbb{P}_{\!#2}}}%
+    {\IfNoValueTF{#2}{\mathbb{P}^{#1}}{\mathbb{P}^{#1}_{\!#2}}}%
+    \IfValueTF{#3}{#3}{}%
+}%
+
+\NewDocumentCommand\mapsfrom{}{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+
+\DeclareMathOperator{\codim}{codim}
+% little o
+\NewDocumentCommand\littleo{m}{\ensuremath{o\of{#1}}}
+\NewDocumentCommand\opsymbol{om}%
+{%%
+\IfValueTF{#1}{\sigma_{#1}\of{#2}}{\sigma_{#2}}%
+}%%
+\NewDocumentCommand\charvariety{om}%
+{%%
+\ensuremath{%%%
+\IfValueTF{#1}{\Xi_{#1,#2}}{\Xi_{#2}}%
+}%%%
+}%%
+\NewDocumentCommand\complexcharvariety{om}%
+{%%
+\ensuremath{\charvariety[#1]{#2}^{\mathbb{C}}}
+}%%
+\newcommand*{\Sym}[2]{\ensuremath{\operatorname{Sym}^{#1}\of{#2}}}
+\DeclareMathOperator{\Kernel}{ker}
+
+\NewDocumentCommand\pf{}{\omega}
+\NewDocumentCommand\pc{}{\gamma}
+\NewDocumentCommand\qf{}{\otomega}
+\NewDocumentCommand\qc{}{\otgamma}
+\NewDocumentCommand\ot{m}%
+{%
+#1'%
+%\mathsf{#1}%
+}%
+\NewDocumentCommand\otalpha{}{\alpha'}
+\NewDocumentCommand\otgamma{}{\gamma'}
+\NewDocumentCommand\otpi{}{\pi'}
+\NewDocumentCommand\otrho{}{\rho'}
+\NewDocumentCommand\otomega{}{\omega'}
+\NewDocumentCommand\Gp{mm}{\ensuremath{\textrm{#1}\of{#2}}}
+\NewDocumentCommand\Orth{m}{\Gp{O}{#1}}
+\NewDocumentCommand\SO{m}{\Gp{SO}{#1}}
+\NewDocumentCommand{\norm}{moo}%
+{%%
+\IfValueTF{#2}%
+{%
+\IfValueTF{#3}%%%
+{%%%
+\left|#1\right|_{L^{#2}\of{#3}}
+}%%%
+{%%%
+\left|#1\right|_{L^{#2}}
+}%%%
+}%
+{%
+\left|#1\right|
+}%
+}%%
+\DeclareMathOperator{\indx}{index}
+% Inner product 
+\newcommand*{\ip}[2]{\ensuremath{\left<#1,#2\right>}}
+\newcommand*{\geodesicVectorField}{\ensuremath{w}}
+% length
+\NewDocumentCommand\length{sm}%
+{%
+\IfBooleanTF{#1}%
+{\ensuremath{\operatorname{length}\of{#2}}}%
+{\ensuremath{\operatorname{length}#2}}
+}%
+\newcommand*{\id}{\ensuremath{\operatorname{id}}}
+
+% Lie bracket
+\NewDocumentCommand\lb{smm}{\IfBooleanTF{#1}{\left[{#2},{#3}\right]}{[{#2}{#3}]}}
+
+% L^2 inner product
+\NewDocumentCommand\LtwoIP{omm}%
+{%
+	\ensuremath{\left<#2,#3\right>_{L^2\IfValueT{#1}{\left(#1\right)}}}%
+}%
+
+\NewDocumentCommand\linearIn{m}{\text{linear in } #1}
+
+\newcommand{\anyMatrix}{\vcenter{\hbox{\rule{.5ex}{.5ex}}}}
+
+\newcommand\scalemath[2]{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}}
+\NewDocumentCommand\LessOrGreaterGraded{mm}%
+{%
+	\scalemath{.5}{#1}#2%
+}%
+\NewDocumentCommand\legr{m}%
+{%
+	\LessOrGreaterGraded{\le}{#1}%
+}%
+\NewDocumentCommand\ggr{m}%
+{%
+	\LessOrGreaterGraded{>}{#1}%
+}%

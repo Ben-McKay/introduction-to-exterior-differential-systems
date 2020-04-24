@@ -1,0 +1,18 @@
+\documentclass[tikz]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+\begin{document}
+ \begin{tikzpicture}[scale=.3]
+ \begin{axis}[
+major x tick style = transparent,
+major y tick style = transparent,
+x axis line style={transparent},
+y axis line style={transparent},
+xtick=\empty,
+ytick=\empty,
+zmin=0,zmax=1,
+ domain=-.15:.15, view={0}{90}]
+\addplot3[black!40,draw=black!40, quiver={u={1}, v={-1}, scale arrows=0.04, every arrow/.append style={line width=2.5pt*\pgfplotspointmetatransformed/1000}}, -stealth,samples=6, ] {0};
+\end{axis}
+ \end{tikzpicture}
+\end{document}

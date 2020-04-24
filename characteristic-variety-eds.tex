@@ -1,0 +1,403 @@
+\chapter{The characteristic variety}
+\chapterSummary{We give a geometric description of the characteristics of the associated partial differential equations of exterior differential systems.}
+\section{Linearization}\label{section:linearization}\SubIndex{linearization}
+The reader unfamiliar with linearization of partial differential equations, or characteristics, might look at appendix~\ref{chapter:characteristics}.
+Take an exterior differential system \(\II\) on a manifold \(M\), and an integral manifold \(X\).
+Suppose that the flow of a vector field \(v\) on \(M\) moves \(X\) through a family of integral manifolds.
+So the tangent spaces of \(X\) are carried by the flow of \(v\) through integral elements of \(\II\).
+Equivalently, the flow pulls back each form in \(\II\) to vanish on \(X\).
+So \(0=\left.\LieDer_v \vartheta\right|_X\) for any \(\vartheta \in \II\).
+\prob{vector.fields}{Prove that all vector fields \(v\) tangent to \(X\) satisfy this equation.}
+
+More generally, suppose that \(E \subset T_m M\) is an integral element of \(\II\).
+If a vector field \(v\) on \(M\) carries \(E\) through a family of integral elements, then \(0=\left.\LieDer_v \vartheta\right|_E\) for each \(\vartheta \in \II\).
+\prob{linearize.coords}{Compute \(\left.\LieDer_v \vartheta\right|_E\) in coordinates.}
+\begin{answer}{linearize.coords}
+Take local coordinates \(x^1,x^2,\dots,x^p, y^1,y^2,\dots,y^q\), where \(E\) is the graph of \(dy=0\). 
+If \(\vartheta = c_{IA} dx^I\wedge dy^A\), we will see that
+\[
+\left.\LieDer_v \vartheta\right|_E = 
+\pderiv{v^a}{x^j} c_{Ia} dx^{Ij} + v^a \pderiv{c_I}{y^a} dx^I .
+\]
+Let \((-1)^I\) mean \((-1)^m\) if \(I\) consists of \(m\) indices.
+Write
+\[
+v = v^j \pderiv{}{x^j} + v^b \pderiv{}{y^b}.
+\]
+Note that
+\[
+v \hook c_I dx^I = (-1)^J v^i c_{JiK} dx^{JK}.
+\]
+Commuting with exterior derivative,
+\begin{align*}
+\LieDer_v dx^i &= \pderiv{v^i}{x^j} dx^j + \pderiv{v^i}{y^b} dy^b, \\
+\LieDer_v dy^a &= \pderiv{v^a}{x^j} dx^j + \pderiv{v^a}{y^b} dy^b.
+\end{align*}
+By the Leibnitz rule,
+\begin{align*}
+\LieDer_v \vartheta
+&=
+v^i \pderiv{c_{IA}}{x^i} dx^I \wedge dy^A 
++
+v^a \pderiv{c_{IA}}{y^a} dx^I \wedge dy^A 
+\\
+&\qquad
++ c_{JiKA} dx^J \wedge \pr{\pderiv{v^i}{x^j} dx^j + \pderiv{v^i}{y^b} dy^b}  \wedge dx^K \wedge dy^A
+\\
+&\qquad
++ c_{IBaC} dx^I \wedge dy^B \wedge \pr{\pderiv{v^a}{x^j} dx^j + \pderiv{v^a}{y^b} dy^b}  \wedge dy^C.
+\end{align*}
+On \(E\), \(dy=0\) so
+\begin{align*}
+\left.\LieDer_v \vartheta\right|_E
+&=
+v^i \pderiv{c_I}{x^i} dx^I
++
+v^a \pderiv{c_I}{y^a} dx^I
+\\
+&\qquad
++ c_{JiK} dx^J \wedge \pderiv{v^i}{x^j} dx^j  \wedge dx^K
+\\
+&\qquad
++ c_{Ia} dx^I \wedge \pderiv{v^a}{x^j} dx^j.
+\end{align*}
+This is not quite the same as
+\begin{align*}
+\left.v\hook d\vartheta\right|_E
+&=
+v^i\pderiv{c_I}{x^i}dx^I
++
+v^a\pderiv{c_I}{y^a}dx^I
+\\
+&\qquad+(-1)^{jI}v^{\ell}\pderiv{c_{I\ell k}}{x^j}dx^{jIK}.
+\end{align*}
+Write the tangent part of \(v\) as
+\[
+v' = v^i \pderiv{}{x^i}.
+\]
+Let \(A\) be the linear map \(A \colon E \to E\) given by
+\[
+A^i_j = \pderiv{v^i}{x^j}
+\]
+and apply this by derivation to forms on \(E\) as
+\[
+(A\xi)(v_1,\dots,v_k)=\xi(Av_1,v_2,\dots,v_k)-\xi(v_1,Av_2,v_3,\dots,nv_k)+\dots.
+\]
+Then
+\[
+\left.\LieDer_v \vartheta\right|_E
+=
+\left.v' \hook d\vartheta\right|_E 
++
+v^a \pderiv{c_I}{y^a} dx^I
++ \left.A\vartheta\right|_E
++ c_{Ia} dx^I \wedge \pderiv{v^a}{x^j} dx^j.
+\]
+Since \(0=\left.\vartheta\right|_E=\left.d\vartheta\right|_E\), we find
+\[
+\left.\LieDer_v \vartheta\right|_E
+=
+v^a \pderiv{c_I}{y^a} dx^I
++ c_{Ia} dx^I \wedge \pderiv{v^a}{x^j} dx^j.
+\]%
+\end{answer}
+Take any submanifold \(X\).
+Suppose that a differential form \(\vartheta\) vanishes on the linear subspace \(E\defeq T_m X\).
+Writing \(X\) as the graph of some functions, the expression \(\left.\vartheta\right|_X\), as a nonlinear first order differential operator on those functions, has linearization  \(\vartheta \mapsto \left.\LieDer_v \vartheta\right|_E\).
+That linearization is applied to sections \(v\) of the normal bundle \(\left.TM\right|_X/TX\).
+\begin{problem}{proof.Cartan.Kaehler:choice.of.X}
+In coordinates, prove that the linearized operator at the origin of our coordinates depends only on the integral element \(E=T_m X\), not on the choice of submanifold \(X\).
+\end{problem}
+\begin{answer}{proof.Cartan.Kaehler:choice.of.X}
+Take local coordinates \(x^1,x^2,\dots,x^p, y^1,y^2,\dots,y^q\), where \(E\) is the graph of \(dy=0\). 
+Write \(\vartheta = c_{IA} dx^I\wedge dy^A\).
+Write \(X\) as the graph \(y=y(x)\), so
+\[
+\left.\vartheta\right|_X = \sum c_{IA}(x,y) dx^I \wedge 
+\pderiv{y^{a_1}}{x^{j_1}} dx^{j_1} \wedge \dots \wedge \pderiv{y^{a_{\ell}}}{x^{j_{\ell}}} dx^{j_{\ell}}.
+\]
+so
+\[
+\left.\LieDer_v \vartheta\right|_E
+=
+v^a \pderiv{c_I}{y^a} dx^I
++ c_{Ia} dx^I \wedge \pderiv{v^a}{x^j} dx^j.
+\]%
+depends only on knowledge of the point \(m\) where we compute coefficients of \(\vartheta\) and of \(E=T_m X\), so that we drop \(dy\) terms.
+\end{answer}
+Linearize any exterior differential system about any integral element by linearizing its differential forms, i.e. by linearizing the differential equations given by asking that those forms vanish on submanifolds.
+The linearization at a \(p\)-dimensional integral element depends only on \(\II^p_m\): the set of all values \(\vartheta_m\) of forms in \(\II^p\).
+\begin{problem}{proof.Cartan.Kaehler:drop.P}
+If \(P\defeq \spn{E^{\perp}} \subset \Lm{*}{T_m^*M}\), identify the linearized exterior differential system with \(\pr{\II_m + P^2}/P^2 \subset P/P^2 = E^{\perp} \otimes \Lm{*}{E}^*\).
+\end{problem}
+\begin{answer}{proof.Cartan.Kaehler:drop.P}
+In coordinates, the linearization of an exterior differential system \(\II\) about an integral element \(E \subset T_m M\) does not involve any \(dy \wedge dy\) terms but depends on the terms with no \(dy\) and with one \(dy\) explicitly.
+But \(P=\spn{E^{\perp}}=\spn{dy^a}\).
+\end{answer}
+In a tableau, \(P\) is generated by the polars, so the linearization is precisely the same tableau, modulo the nonlinearity.
+So the linearization about an involutive integral element is involutive.
+On the other hand, the linearization at a noninvolutive integral element may or may not be involutive.
+\prob{linearize}{Compute the linearization of \(u_{xx}=u_{yy} + u_{zz} + u_x^2\) around \(u=0\) by setting up this equation as an exterior differential system.}
+\prob{linearize.vanishing}{For a section \(v\) of the normal bundle of \(X\) which vanishes at a point \(m\), compute the linearization \(\left.\LieDer_v \vartheta\right|_E\).}
+\begin{answer}{linearize.vanishing}
+\[
+\left.\LieDer_v \vartheta\right|_E = c_{Ia} dx^I \wedge \pderiv{v^a}{x^j} dx^j
+\]
+\end{answer}
+
+\section{The characteristic variety}
+An integral element is \emph{noncharacteristic}\define{characteristic} if it is a hyperplane in precisely one integral element.
+An integral manifold is \emph{noncharacteristic} (or \emph{characteristic}) if all of its tangent spaces are.
+A characteristic hypersurface in an integral manifold could perhaps lie in more than one integral manifold, a potential nontangential intersection of integral manifolds, or, gluing along such an intersection, create a ``crease'' along an integral manifold.
+So we imagine that integral manifolds are more flexible along characteristic hypersurfaces, although there is no theorem to prove that.
+\prob{char.var:wave}{Find the characteristics of the wave equation as an exterior differential system. 
+Show creasing of solutions along characteristics, and not along noncharacteristic curves.}
+\begin{lemma}\label{lemma:char.var}
+Take an integral manifold \(X\) of an exterior differential system \(\II\), a point \(x \in X\), and let \(E\defeq T_x X\).
+The characteristic variety\define{characteristic!variety}\define{variety!characteristic} 
+\(
+\CV_x \subset \Proj(E^*)
+\)
+of the linearization is the set of characteristic hyperplanes in \(E\).
+\end{lemma}
+\begin{proof}
+We compute the symbol by replacing derivatives \(\pderiv{v^a}{x^i}\) by expressions \(v^a\xi_i\):
+\[
+\opsymbol[]{\xi}v = \left.\xi \wedge (v \hook \vartheta)\right|_E.
+\]
+The linearization of \(\II\) is just the sum of the linearizations of any forms \(\vartheta \in \II\) spanning \(\II_m\):
+\[
+\opsymbol{} \colon \xi \in E^*, v \in T_m M/E \mapsto \II_m^{p*} \otimes \Lm{p}{E}^*.
+\]
+So \(\CV_x\) is the set of \(\xi \in E^*\) for which there is some section \(v\) of the normal bundle of \(X\) with \(v(x)\ne 0\) and 
+\[
+\xi \wedge (v \hook \vartheta)|_E=0
+\]
+for every \(\vartheta \in \II^p_m\).
+This says precisely that the vector \(v\) can be added to the hyperplane \(E\cap (0=\xi) \subset E\) to make an integral element enlarging the hyperplane.
+\end{proof}
+This lemma allows us to define the characteristic variety of any integral element, even if not tangent to any integral manifold: the \emph{characteristic variety} of an integral element \(E\) is the set of characteristic hyperplanes in \(E\), denoted \(\CV_E\subset \Proj(E^*)\).
+\prob{proof.Cartan.Kaehler}{For an involutive integral element, prove that the following are equivalent:
+\begin{enumerate}
+\item
+the integral element contains a noncharacteristic hyperplane,
+\item
+every regular hyperplane is noncharacteristic,
+\item
+the final character is zero.
+\end{enumerate}}
+\begin{answer}{proof.Cartan.Kaehler}
+Suppose \(E\subset E_+\) is a noncharacteristic hyperplane.
+By uniqueness of extension \(E_+\), the polar equations of \(E\) cut out precisely \(E_+\) inside \(T_m M\), i.e. the dimension of polar equations of \(E\) is the dimension of \(T_m M/E_+\).
+The polar equations of any regular hyperplane in \(E_+\) are satisfied on \(E_+\), so have same rank.
+So the regular integral elements are also noncharacteristic.
+If \(p\defeq\dim E_+\), the rank of polar equations of \(E\) is \(s_0+s_1+\dots+s_{p-1}\), while the dimension of \(T_m M/E_+\) is \(s_0+\dots+s_p\).
+So \(s_p=0\) on \(E_+\) just when every regular hyperplane in \(E_+\) is noncharacteristic.
+\end{answer}
+\prob{include.eds}{More equations, fewer characteristics: if \(\JJ \subset \II\), prove that \(\CV_{\II}\subset \CV_{\JJ}\).}%
+\begin{answer}{include.eds}%
+Any hyperplane \(E_- \subset E\) is \(\II\)-characteristic just when it lies in some other \(\II\)-integral element \(E'\) of same dimension as \(E\). But then \(E'\) is also a \(\JJ\)-integral element, so \(E_-\) is \(\JJ\)-characteristic: \(\CV^{\II}_E\subset \CV^{\JJ}_E\).%
+\end{answer}
+\prob{proof.CK:Frob.char.var}{What is the characteristic variety of a Frobenius\SubIndex{Frobenius theorem}\SubIndex{theorem!Frobenius} exterior differential system?}
+\begin{answer}{proof.CK:Frob.char.var}At each point, there is a unique maximal integral element, so every hyperplane in it lies in that unique maximal integral element: \(\CV_E\) is empty.
+\end{answer}
+
+\section{Determined systems}
+A \(p\)-dimensional integral element \(E\subset T_{m_0} M\) of an exterior differential system \(\II\) is \emph{determined}\define{determined!integral element} if \(E\) contains a noncharacteristic hyperplane and \(\II^p_m\) has constant dimension \(s_0+s_1+\dots+s_{p-1}\) for \(m\) near \(m_0\).
+Note that then \(s_p=0\).
+\begin{theorem}\label{theorem:CKbaby}
+Take an analytic exterior differential system.
+Every noncharacteristic analytic integral manifold \(X\), whose every tangent space is a hyperplane in a determined integral element, is a hypersurface in an analytic integral manifold.
+Any two analytic integral manifolds containing \(X\) as a hypersurface share a set, open in both, containing \(X\).
+\end{theorem}
+\begin{proof}
+As above, the symbol matrix \(\opsymbol[]{\xi}\) at each \(p\)-dimensional integral element \(E\) is a linear map in
+\[
+T_m M/E \to \II^{p*}_m \otimes \Lm{p}{E^*},
+\]
+square at each determined integral element \(E\).
+The dimension of \(\II^p_m\) cannot drop below \(s_0+s_1+\dots+s_p\), because it generates that many polar equations at \(E\), and hence near \(E\).
+Pick out that number of linearly independent \(p\)-forms from \(\II\): they span \(\II^p\) at every point nearby.
+The determined exterior differential system they generate has the same \(p\)-dimensional integral manifolds, polar equations, and symbol.
+\end{proof}
+\prob{char.var:pseudo.hol}{Prove that every real immersed curve in an almost complex manifold lies in an immersed holomorphic disk.}
+\prob{proof.test:char.var}{Prove that if \(E\subset E_+\) is characteristic, and \(E_+\) has dimension \(p\) then \(s_p>0\).}
+\begin{answer}{proof.test:char.var}
+The choices of \(p\)-dimensional integral element arise from the semipositive grade coefficients: \(k\) coefficients of each polar in grade \(k\), so \(ks_k\) in that grade in all.
+So if \(s_p=0\) then there is a unique \(p\)-dimensional integral element containing \(E\).
+If \(E_+\) is involutive, then the semipositive grade coefficients \(p^{\alpha}_i\) are arbitrary.
+In an adapted tableau, \(E\) is determined by \(p^{\alpha}_i\) for \(i<p\), which are all of the coefficients just when \(s_p=0\).
+\end{answer}
+To compute the characteristic variety from a tableau:
+\begin{enumerate}
+\item
+Drop the nonlinearity.
+\item
+Turn each polar \(\pi^{\alpha}\) into a formal expression \(v^{\alpha}\xi\) where \(\xi=\xi_i\omega^i\).
+\item
+Expand out the tableau, and collect up terms in each \(\omega^I\).
+\item
+Write out these terms as linear expressions in the variables \(v^{\alpha}\), and reorganize those linear expressions in a matrix: the symbol matrix \(\opsymbol[]{\xi}v=0\).
+\item
+The determinants of the minors of the symbol matrix are the equations of \(\CV\).
+\end{enumerate}
+This works because the equations of the characteristic variety include \(0=\theta^a(v)\xi\), which forces \(0=\theta^a(v)\) for any nonzero \(\xi\), so that the nonzero components of \(v\) are \(v^{\alpha}=\pi^{\alpha}(v)\).
+Compute \(\xi\wedge(v\hook\vartheta)\) by plugging in \(v\) to each polar \(\pi^{\alpha}\), yielding \(v^{\alpha}\), and wedge in a factor of \(\xi\).
+\begin{example}
+For the tableau of triply orthogonal webs
+\[
+\begin{gradedTableau}{|c|cc}
+\freeDeriv{\pi^3} & 0 & 0\\
+0 & \freeDeriv{\pi^2} & 0 \\
+0 & 0 & \freeDeriv{\pi^1} 
+\end{gradedTableau}\wedge
+\begin{gradedIndependents}
+\emptyGrade
+\omega^{12}\+
+\omega^{13}\\ 
+\omega^{23}
+\end{gradedIndependents}
+\]
+we find
+\begin{align*}
+\begin{pmatrix}
+v^3 & 0 & 0 \\
+0 & v^2 & 0 \\
+0 & 0 & v^1
+\end{pmatrix}\xi\wedge
+\begin{pmatrix}
+\omega^{12}\\
+\omega^{13}\\ 
+\omega^{23}
+\end{pmatrix}
+&=
+\begin{pmatrix}
+v^3 & 0 & 0 \\
+0 & v^2 & 0 \\
+0 & 0 & v^1
+\end{pmatrix}
+\begin{pmatrix}
+\xi_3\\
+-\xi_2\\ 
+\xi_1
+\end{pmatrix}
+\omega^{123},\\
+&=\begin{pmatrix}
+0 & 0 & \xi_3 \\
+0 & -\xi_2 & 0 \\
+\xi_1 & 0 & 0
+\end{pmatrix}
+\begin{pmatrix}
+v^1\\
+v^2\\
+v^3
+\end{pmatrix}\omega^{123},
+\\
+&=\opsymbol[]{\xi}v\omega^{123}.
+\end{align*}
+So \(\det\opsymbol[]{\xi}=\xi_1\xi_2\xi_3\): the characteristic variety \(\CV\) is the triple of lines \((\xi_1=0)\), \((\xi_2=0)\) and \((\xi_3=0)\).
+Any \(3\)-dimensional integral element coframed by \(\omega^1,\omega^2,\omega^3\) has characteristic hyperplanes \(0=\xi_1\omega^1+\xi_2\omega^2+\xi_3\omega^3\) for any one of the three coefficients vanishing, i.e. containing any one of the three axes.
+\end{example}
+\begin{example}
+In proving Lie's third theorem,\SubIndex{Lie's third theorem}\SubIndex{theorem!Lie's third} we had tableau
+\[
+\begin{pmatrix}
+\freeDeriv{\pi^1_1} & \freeDeriv{\pi^1_2} & \dots & \freeDeriv{\pi^1_p} \\
+\freeDeriv{\pi^2_1} & \freeDeriv{\pi^2_2} & \dots & \freeDeriv{\pi^2_p} \\
+\vdots & \vdots & \dots & \vdots \\
+\freeDeriv{\pi^p_1} & \freeDeriv{\pi^p_2} & \dots & \freeDeriv{\pi^p_p}
+\end{pmatrix}
+\wedge
+\begin{pmatrix}
+\omega^1 \\
+\omega^2 \\
+\vdots\\
+\omega^p
+\end{pmatrix},
+\]
+i.e. \(0=\freeDeriv{\pi^i_j} \wedge \omega^j\).
+We plug in \(\freeDeriv{\pi^i_j} = v^{\alpha}\xi\), to get
+\[
+0=\frac{1}{2} (v^i_j \xi_k-v^i_k \xi_j)\omega^{kj}.
+\]
+Our linear expressions are \(v^i_j \xi_k - v^i_k \xi_j\).
+One particular solution \(v\) to these equations is \(v^i_j\defeq \xi_j\) for all \(i\).
+So every hyperplane in every \(p\)-dimensional integral element is characteristic.
+\end{example}
+\prob{proof.Cartan.Kaehler:nabla.char}{Find the characteristic variety of \(\nabla \times u = u - f\).}
+\begin{answer}{proof.Cartan.Kaehler:nabla.char}
+In terms of the tableau we gave previously in solving problem~\vref{problem:proof.test:nabla}, the complex points in the projective plane satisfying the equations of the minors are
+\[
+[0,1,0], [i,1,0], [-i,1,0], [i,0,1], [-i,0,1], [1,1,\sqrt{2}i], [1,1,-\sqrt{2}i].
+\]
+The real ones for the characteristic variety as defined above, i.e. just \([0,1,0]\) corresponding to the hyperplane \(0=dx^2\).
+\end{answer}
+
+\section{Example: triply orthogonal webs, noncharacteristic data}
+\begin{theorem}
+Take an embedded analytic surface \(S \subset \E[3]\) and pick an orthonormal basis \(e_1,e_2,e_3\) of \(\E[3]\) at each point \(x \in S\), analytic in \(x\), so that none of \(e_1,e_2,e_3\) is tangent to \(S\).
+Then there is a triply orthogonal web on a neighborhood of \(S\) in \(\E[3]\) consisting of three foliations whose leaves are perpendicular to \(e_1,e_2,e_3\) respectively at each point of \(S\).
+Any two such webs agree near \(S\).
+\end{theorem}
+The reader familiar with Riemannian geometry may recognize that this proof works identically replacing \(\E[3]\) by any analytic Riemannian \(3\)-manifold.
+Any symmetry of \(S\) and \(e_1,e_2,e_3\) on \(S\) is shared by the triply orthogonal web, by uniqueness.
+\begin{proof}
+Recall that each integral element is uniquely determined by its equation
+\[
+\gamma=
+\begin{pmatrix}
+0 & p_{12} & p_{13} \\
+p_{21} & 0 & p_{23} \\
+p_{31} & p_{32} & 0 
+\end{pmatrix}
+\omega,
+\]
+where the numbers \(p_{ij}\) can be arbitrarily chosen.
+For example, if we take all of these \(p_{ij}\) in the first two columns to be zero, we find that the plane \((\omega_3=0)\) lies in all of those integral elements, so lies in the characteristic variety of all of those integral elements.
+More generally, two such sets of equations \(\gamma=p \omega\), \(\gamma=(p+q)\omega\) agree on a plane just when their difference vanishes on a plane, i.e. just when \(q=0\) on some plane, i.e. just when \(q\) has rank \(1\):
+\[
+q=
+\begin{pmatrix}
+0 & q_{12} & q_{13} \\
+q_{21} & 0 & q_{23} \\
+q_{31} & q_{32} & 0 
+\end{pmatrix}.
+\]
+\prob{rank.1}{Linear algebra: prove that \(q\) has rank \(1\) just when either \(q=0\) or \(q\) vanishes on a plane which contains one of the coordinate axes.}
+\begin{answer}{rank.1}%
+Suppose that \(q\) has rank \(1\):
+\[
+q=
+\begin{pmatrix}
+0 & q_{12} & q_{13} \\
+q_{21} & 0 & q_{23} \\
+q_{31} & q_{32} & 0 
+\end{pmatrix}.
+\]
+Every row is a multiple of any nonzero row, and the same for every column.
+At least one entry must nonzero; permute indices to get \(q_{12}\ne 0\).
+The zero in \(q_{11}\) ensures that column \(1\) is zero, and the zero in \(q_{22}\) ensures that row \(2\) is zero.
+By the same reasoning, if in addition \(q_{13}\ne 0\), then the zero in \(q_{33}\) ensures that row \(3\) is zero:
+\[
+q=
+\begin{pmatrix}
+0 & q_{12} & q_{13} \\
+0 & 0 & 0 \\
+0 & 0 & 0 
+\end{pmatrix}
+\]
+So \(q=0\) precisely on the plane \(0=q_{12}y+q_{13}z\), containing the \(x\)-axis.
+On the other hand, if \(q_{13}=0\),
+\[
+q=
+\begin{pmatrix}
+0 & q_{12} & 0 \\
+0 & 0 & 0 \\
+0 & q_{32} & 0 
+\end{pmatrix}.
+\]
+So \(q=0\) precisely on \(y=0\).
+Similarly if we permute indices.
+\end{answer}
+So the characteristic variety consists of the hyperplanes \(0=\xi_1\omega_1+\xi_2\omega_3+\xi_3\omega_3\) which contain one of the coordinate axes, i.e. where \(\xi_1=0\) or \(\xi_2=0\) or \(\xi_3=0\), i.e. hyperplanes in which one of \(e_1,e_2,e_3\) are tangent to the initial data surface \(S\).
+\end{proof}

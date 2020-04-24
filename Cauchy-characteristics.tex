@@ -1,0 +1,723 @@
+\chapter{Cauchy characteristics}\label{chapter:Cauchy.characteristics}%
+\chapterSummary{Often an exterior differential system can be written in a smaller number of variables than we would at first expect.}
+\section{Redefinition of exterior differential system}
+A \emph{symmetry vector field}\define{symmetry vector field} of an exterior differential system is a vector field whose flow preserves the system.
+It might seem natural to define a symmetry vector field as one whose flow permutes integral manifolds, but we have no test for this.
+The flow of a vector field might not be defined globally, while all of the forms in an exterior differential system are defined globally.
+Moreover, we want to test whether a vector field is a symmetry by local computation.
+So we consider a different concept of exterior differential system, in which the forms need only be defined locally.
+
+An \emph{exterior differential system}\define{exterior differential system} \(\II\) on a manifold \(M\) is an ideal \(\II_U\subset\nForms{*}{U}\) of differential forms on each open set \(U\subseteq M\) so that 
+\begin{enumerate}
+\item\label{def:EDS.2} \(d\)-closed: the exterior derivative takes \(\II_U \to \II_U\) and
+\item restricts:
+if \(U\subseteq V\subseteq M\) are open sets, then restricting forms takes \(\II_V \to \II_U\), and
+\item glues:
+if \(U=\bigcup_a U_a\), then a differential form belongs to \(\II_U\) just when its restriction to each \(U_a\) belongs to \(\II_{U_a}\), and
+\item graded: \(\II_U=\II_U^1\oplus\II_U^2\oplus\dots\oplus\II_U^{\dim M}\), \(\II_U^k\defeq \II_U \cap \nForms{k}{U}\).
+\end{enumerate}
+All of our theorems so far hold, with the same proofs, for this definition of exterior differential system.
+\prob{Cauchy.chars:old.more.general}{Give an example of an exterior differential system \(\JJ\) in the sense of the old definition which is \emph{not} the ideal \(\II_M\) of an exterior differential system \(\II\) in the sense of the new definition.}
+\begin{answer}{Cauchy.chars:old.more.general}
+Pick a noncompact manifold \(M\) of positive dimension, and a discrete infinite set \(D\subset M\).
+Let \(\JJ^0\) be the set of functions \(f\colon M \to \R{}\) so that \(f\) vanishes at all but finitely many points of \(D\).
+Let \(\JJ^k=\nForms{k}{M}\) for \(k\ge1\).
+\end{answer}
+Take any collection of differential forms defined on various open subsets of a manifold.
+Without changing the submanifolds on which they vanish, we can add forms to our collection until we obtain an exterior differential system.
+
+\section{Convergence}
+Differential forms \emph{converge}\define{convergence!of differential forms} when their component functions do in local coordinates, as analytic functions p.~\pageref{section:convergence}.
+\begin{theorem}\label{theorem:f.t.uniform}
+Every exterior differential system is closed under convergence.
+\end{theorem}
+\begin{proof}
+Take a convergent sequence \(\vartheta_i\to\vartheta\), with \(\vartheta_i\in\II\).
+Take coordinates with origin at some chosen point.
+A differential form
+\(
+\vartheta=f_I dx^I
+\)
+is a vector valued map, valued in \(\Lm{*}{\R[n]}\).
+Germs of forms from \(\II\) constitute a submodule of the germs of forms.
+By theorem~\vref{theorem:germ.convergence}, the germ of \(\vartheta\) is among those germs.
+So \(\vartheta\in\II_U\) for some open set \(U\) around the chosen point.
+\end{proof}
+\prob{cauchy.char:divergy}{Give an example of an exterior differential system, according to our old definition, not closed under convergence.}
+\begin{answer}{cauchy.char:divergy}On \(M\defeq\R{}\), let \(\II^0\) be the analytic functions vanishing at all but finitely many integers, and \(\II^1\defeq\nForms{1}{M}\).
+Recall the infinite product expansion
+\[
+\frac{\sin \pi x}{\pi x}=\prod_{k=1}^{\infty}\pr{1-\frac{x^2}{k^2}},
+\]
+convergent in the complex plane \cite{Ahlfors:1978} p. 197, \cite{Whittaker/Watson:1996} p. 239 \(12\!\cdot\!\!14\).
+So
+\[
+f_n(x)\defeq\prod_{k=n+1}^{\infty}\pr{1-\frac{x^2}{k^2}}\to 1
+\]
+as analytic functions, but \(f_n(x)=0\) for \(x\) integer, except at \(x=-n,-n+1,\dots,-1,0,1,\dots,n-1,n\).
+\end{answer}
+
+\section{Symmetries}
+\prob{Cauchy.chars:exp}{Prove that, for any vector field \(v\) and differential form \(\vartheta\) defined near some point, the point lies in an open set in which
+\[
+e^{tv*}\vartheta=\sum \frac{t^k}{k!} \LieDer_v^k \vartheta.
+\]}
+\begin{answer}{Cauchy.chars:exp}
+Where \(v\ne0\), straighten out, i.e. take coordinates in which \(v=\p{x^1}\). 
+Where \(v=0\), add a small multiple of a nonzero vector field and take a limit.
+For a more detailed proof: recall that for any function \(f\),
+\[
+\pderiv{}{t}e^{tv*}f=e^{tv*}\LieDer_v f.
+\]
+Apply induction, to get
+\[
+\pderiv[k]{}{t}e^{tv*}f=e^{tv*}\LieDer^k_v f.
+\]
+Taylor expand in \(t\) in any coordinates, so the result holds for any function \(f\).
+Taking exterior derivative, the result holds for \(df\).
+If the result holds for two differential forms, then it holds for their wedge product: expand.
+Any differential forms are locally obtained by repeated wedging and exterior differentiating on functions.
+\end{answer}
+\prob{Cauchy.chars:symmetry}{For any exterior differential system \(\II\) and vector field \(v\), prove that the following are equivalent:
+\begin{enumerate}
+\item
+\(v\) is a symmetry of \(\II\),
+\item
+\(\LieDer_v \II_U \subseteq \II_U\) for all open sets \(U\),
+\item
+\(\LieDer_v \II_U \subseteq \II_U\) for some open sets \(U\) forming a basis for the topology of \(M\).
+\end{enumerate}}
+\begin{answer}{Cauchy.chars:symmetry}
+If \(v\) is a symmetry then
+\[
+\LieDer_v \vartheta = \left.\frac{d}{dt}\right|_{t=0} e^{tv*}\vartheta
+\]
+so \(\LieDer_v \II\subseteq\II\).
+
+If \(\LieDer_v \II\subseteq\II\), then in problem~\vref{problem:Cauchy.chars:exp}, each term lies in the ideal.
+By closure under convergence (theorem~\vref{theorem:f.t.uniform}), \(v\) is a symmetry.
+\end{answer}
+\prob{symmetries.Frobenius}{What are the symmetry vector fields of a Frobenius\SubIndex{Frobenius theorem} system?}%
+\begin{answer}{symmetries.Frobenius}%
+For simplicity, let us just consider the system \(\II\) on the plane \(M=\R[2]_{x,y}\) generated by \(dy\).
+A vector field \(v=a(x,y) \partial_x+b(x,y)\partial_y\) is a symmetry vector field just when \(\LieDer_v dy = f \, dy\) for some function \(f\).
+\begin{align*}
+\LieDer_v dy 
+&= 
+d\LieDer_v y,
+\\
+&=
+db,
+\\
+&=
+b_x \, dx + b_y \, dy,
+\end{align*}
+we see that \(b(x,y)\) depends only on \(y\), i.e. \(v=a(x,y)\partial_x+b(y)\partial_y\).
+Geometrically, \(v\) flows points with equal \(y\)-value to points with equal \(y\)-value, i.e. its \(y\)-component depends only on \(y\).
+\end{answer}
+\prob{symmetries.Lie}{Prove that the symmetry vector fields of any exterior differential system form a Lie algebra.}
+\prob{symmetry.messed}{Give an example of a smooth exterior differential system \(\II\) and a complete\SubIndex{complete!vector field}\SubIndex{vector field!complete} analytic vector field \(v\), so that \(\LieDer_v \II \subseteq\II\) but the flow of \(v\) does \emph{not} preserve \(\II\), \emph{nor} permute integral manifolds.}%
+\begin{answer}{symmetry.messed}%
+Take any nonzero compactly supported function \(f\) on any manifold \(M\). 
+(We could even take \(M=\R\).)
+Take any nonzero complete vector field \(v\), with the support of \(f\) contained in the interior of the support of \(v\), so that the flow of \(v\) takes some point in the support of \(f\) outside of the support of \(f\).
+(We could even take \(v=\partial_x\).)
+Generate \(\II\) with \(f,\LieDer_v f,\dots\).
+Each of these functions is supported in the support of \(f\), so under the flow of \(v\) is taken out of \(\II\).%
+\end{answer}
+\prob{symmetry.messed.3}{Give an example of an analytic exterior differential system \(\II\) with no nonzero smooth symmetry vector field, so that the smooth exterior differential system it generates has a nonzero smooth symmetry vector field.}%
+\begin{answer}{symmetry.messed.3}%
+On \(M=\R\), for each open set \(U\subseteq M\), let \(\II_U\) be generated by all analytic functions vanishing at the points \(x=1,1/2,1/3,\dots\) which lie in \(U\).
+So if \(0\in U\), then \(\II_U=0\).
+A vector field \(v\) vanishing at those points, and at the origin, and having compact support, is a symmetry of the smooth exterior differential system.
+Any analytic symmetry of \(\II\) has to vanish at all of those points, so vanishes to all orders at the origin, so vanishes.
+\end{answer}
+\prob{Cauchy.chars:symmetry.of.elements}{Give an example of a complete\SubIndex{complete!vector field}\SubIndex{vector field!complete} vector field whose flow preserves the integral elements of an exterior differential system, but does not preserve the exterior differential system.}
+\prob{Cauchy.chars:finite.type.smooth}{For a smooth exterior differential system \(\II\), prove
+\begin{enumerate}
+\item if \(\II\) is locally finitely generated, \(v\) is a nowhere vanishing vector field, and \(\LieDer_v \II\subseteq\II\), then \(v\) is a symmetry.
+\item if \(\II\) is closed under uniform convergence on compact sets with all derivatives, and \(v\) is a symmetry, then \(\LieDer_v \II\subseteq\II\).
+\end{enumerate}}
+\begin{answer}{Cauchy.chars:finite.type.smooth}
+Pick local generators \(\vartheta_i\).
+Write \(\LieDer_v\vartheta_i\) in those generators: \(\LieDer_v\vartheta_i=a^j_i\vartheta_i\).
+Pick an embedded smooth hypersurface \(H\) on which \(v\ne0\).
+Make a function \(g=I\) on \(H\) and extend \(g\) off of \(H\) as a local solution of \(\LieDer_v g = -ga\).
+By straightening out, such a function \(g\) exists, at least near each point of \(H\).
+Check that \(\LieDer_v (g\vartheta)=0\), so \(g\vartheta\) is a \(v\)-invariant collection of local generators of \(\II\).
+
+For a symmetry \(v\),
+\[
+\LieDer_v \vartheta=\left.\frac{d}{dt}\right|_{t=0} e^{-tv*}\vartheta.
+\]
+\end{answer}
+
+\section{Finite type}
+An exterior differential system has \emph{finite type}\define{finite type} if every point of \(M\) lies in an open set \(U\subseteq M\) on which there are finitely many forms \(\vartheta_j \in \II_U\) so that, for any point \(m \in U\), and form \(\vartheta\) from \(\II\) defined near \(m\), there are forms \(\phi_j\) defined near \(m\), so that \(\vartheta=\sum \phi_j \wedge \vartheta_j\) near \(m\).
+\begin{example}
+Any exterior differential system generated by finitely many globally defined differential forms has finite type; this includes all of our examples.
+\end{example}
+\begin{problem}{cauchy:infinite.example}
+Give an example of an infinite type exterior differential system.
+Is your example in involution?
+\end{problem}
+\begin{answer}{cauchy:infinite.example}
+Take any manifold \(M\) of positive dimension and a foliation defined in some open set.
+Take an open set \(W\) so that the foliation is defined on the closure of \(W\), and a point \(m_0\) on the boundary of \(W\) near which the boundary of \(W\) is an analytic hypersurface of \(M\).
+For any open set \(U\subseteq M\), define \(\II_U\) to be 
+\begin{enumerate}
+\item
+the forms pulling back to zero on each leaf of the foliation, if \(U\) intersects \(W\), and
+\item \(\II_U\defeq\nForms{*}{U}\) otherwise.
+\end{enumerate}
+Every point of \(W\) lies in a unique integral manifold: its leaf.
+
+Every open set \(U\subseteq M\) containing \(m_0\) intersects \(W\), so \(\II_U\) consists of the forms vanishing on the leaves.
+The foliation extends beyond \(W\).
+If the leaf through \(m_0\) is tangent to the boundary of \(W\) near \(m_0\), then it is an integral manifold near \(m_0\).
+Otherwise there is no integral manifold through \(m_0\), although there is an integral manifold with boundary.
+At every point outside the closure of \(W\), there are no integral manifolds of dimension \(p\).
+So the union of the integral manifolds might be neither open nor closed.
+
+The space of integral elements is a manifold with boundary near \(m_0\), so the system is \emph{not} involutive, as the definition of involution requires the integral elements to form a manifold without boundary.
+\end{answer}
+\begin{problem}{Cauchy.char:ft}
+Prove that, in the definition of finite type, we can always assume that these \(\phi_j\) are functions, i.e. \(0\)-forms.
+\end{problem}
+\prob{Cauchy.char:dom.ft}{Prove compatibility (lemma~\vref{lemma:domino}) for finite type exterior differential systems. 
+Give an infinite type counterexample.}
+\prob{Cauchy.chars:involutive.infinite.type}{Give an example of an infinite type involutive exterior differential system.}%
+\begin{answer}{Cauchy.chars:involutive.infinite.type}
+Let \(M\defeq\R[3]_{x,u,v}\), \(W\subset M\) an open subset not equal to \(M\).
+For any open set \(U\subseteq M\), define \(\II_U\) to be 
+\begin{enumerate}
+\item
+generated by \(du\wedge dx,dv\wedge dx\) if \(U\) intersects \(W\),
+\item  
+generated by \(du\wedge dx,dv\wedge dx,du \wedge dv\) otherwise.
+\end{enumerate}
+For any point on the boundary of \(W\), and open set \(U\) containing that point, we don't have \(du \wedge dv\) in \(\II_U\), so for an open set \(U'\subset U\) not intersecting \(W\), \(du \wedge dv\in\II_{U'}\) is not generated by any generators of \(\II_U\).
+The \(1\)-dimensional integral elements \(du=u'\,dx\),\(dv=v'\,dx\) are involutive.
+\end{answer}
+\prob{Cauchy.chars:finite.ty}{Prove that, for any finite type exterior differential system, a vector field \(v\) is a symmetry just when every point lies in an open set \(U\) on which a finite set of forms \(\vartheta_i\) generate \(\II_U\) with \(\LieDer_v \vartheta_i\in\II_U\).}
+
+
+\optionalSection{Pointwise linear independence}%
+An exterior differential system \(\II\) is \emph{bundled}\define{bundled} if it is generated by forms in certain degrees, and in these degrees is locally spanned by pointwise linearly independent forms.
+\begin{example}
+Any exterior differential system generated by finitely many globally defined differential forms, all of the same degree, everywhere linearly independent, is bundled; this includes all of our examples. 
+\end{example}
+\prob{bundled.finite}{Prove that every bundled exterior differential system is of finite type.}
+\prob{bundled.not.too}{Give an example of an unbundled finite type exterior differential system \(\II\) on a manifold \(M\).}%
+\begin{answer}{bundled.not.too}%
+\(x \, dx\)
+\end{answer}
+\prob{Cauchy.chars:bundle.flow}{Solve problem~\vref{problem:Cauchy.chars:symmetry} for bundled smooth systems.}
+\begin{answer}{Cauchy.chars:bundle.flow}
+The problem is local: we can assume that \(\II\) is globally generated by pointwise linearly independent differential forms \(\vartheta_i\).
+The flow of \(v\) acts on the differential form bundle, as linear transformations of its fibers.
+We need to prove that the flow of \(v\) preserves the vector subbundles.
+Take a pointwise basis \(\vartheta^i,\vartheta^I\) of the differential forms. Write \(\LieDer_v \vartheta=a\vartheta\), for a block matrix
+\[
+a=
+\begin{pmatrix}
+a^i_j & 0 \\
+a^i_J & a^I_J
+\end{pmatrix}.
+\]
+Then
+\[
+e^{tv*}\vartheta=g\vartheta,
+\]
+for a unique smooth function \(g(x,t)\) for \((x,t\) in some open subset of \(M\times\R\):
+\begin{align*}
+\pderiv{}{t}\vartheta
+&=
+\pderiv{}{t}e^{tv*}\vartheta,
+\\
+&=
+\LieDer_v e^{tv*}\vartheta,
+\\
+&=
+e^{tv*}\LieDer_v\vartheta,
+\\
+&=
+e^{tv*}(a\vartheta),
+\\
+&=
+(e^{tv*}a)g\vartheta,
+\end{align*}
+so that
+\[
+g^{-1}\pderiv{g}{t}=e^{tv*}a,
+\]
+has derivative lying in a block matrix of the prescribed form.
+Since \(g(0)=I\) is also such a block matrix, \(g(t)\) is such a block matrix for all \(t\).
+\end{answer}
+\prob{Cauchy.chars:involutive.not.bundled}{Give an example of an unbundled finite type involutive exterior differential system.}%
+\begin{answer}{Cauchy.chars:involutive.not.bundled}
+\(du\wedge dx, dv\wedge dx,u\,du\wedge dv\) on \(\R[4]_{x,y,u,v}\)
+\end{answer}
+\prob{bundled.criterion}{We assume familiarity with vector bundles\SubIndex{vector bundle} \cite{Chern:1989}.
+Prove that an exterior differential system \(\II\) is bundled just when there are vector subbundles \(I^p \subseteq \Lm{p}{T^*M}\) for various values of \(p=p_1,p_2,\dots,p_{\ell}\) and \(M\) is covered by open sets \(U_a\subseteq M\) on which
+\begin{enumerate}
+\item \(\II_{U_a}^p\) is the collection of differential forms from \(I^p\) on \(U_a\), \(p=p_1,p_2,\dots,p_k\) and
+\item \(\II_{U_a}\) is generated by these sections.
+\end{enumerate}}
+
+\section{Cauchy characteristics}
+\begin{example}
+The exterior differential system generated by \(dy-p \, dx\) on \(M\defeq \R[4]_{x,y,p,q}\) doesn't make use of the variable \(q\).
+We can build a quotient manifold \(\bar{M}\defeq \R[3]_{x,y,p}\), map \((x,y,p,q) \in M \mapsto (x,y,p) \in \bar{M}\). 
+Maximal integral manifolds in \(M\) are locally the preimages of maximal integral manifolds of \(dy-p\, dx\) on \(\bar{M}\).
+Our aim in this section is to find ``unused variables'', and quotient them out.
+\end{example}
+A vector field \(v\) is \emph{Cauchy characteristic}\define{Cauchy!characteristic} for an exterior differential system \(\II\) if \(v \hook \II \subseteq \II\). 
+\prob{Cauchy.Lie}{Prove that the Cauchy characteristic vector fields of an exterior differential system form a Lie subalgebra of the vector fields.}%
+\begin{answer}{Cauchy.Lie}%
+Apply the Cartan formula \(\LieDer_v \vartheta = d(v \hook \vartheta) + v \hook d\vartheta\) to a Cauchy characteristic vector field \(v\), so see that \(v\) is a symmetry vector field.
+If \(v\) and \(w\) are Cauchy characteristic vector fields, then 
+\begin{align*}
+[v,w] \hook \vartheta
+&=
+\LieDer_v \LieDer_w \vartheta 
+- 
+\LieDer_w \LieDer_v \vartheta 
+,
+\\
+&=
+\LieDer_v (d(w \hook \vartheta)+w \hook d\vartheta)
+-
+\dots
+\end{align*}
+we expand out \(\LieDer = d \hook + \hook d\).%
+\end{answer}
+Denote by \(\II_m\) the set of values \(\vartheta_m\in \Lm{*}{T_m M}^*\) of forms \(\vartheta \in \II_U\) for some open set \(U\) with \(m \in U\).
+A \emph{Cauchy characteristic vector}\define{Cauchy!characteristic vector}\define{characteristic vector!Cauchy} of an exterior differential system \(\II\) is a vector \(v\in T_m M\) so that \(v \hook \II_m \subseteq \II_m\). 
+The \emph{rank} of Cauchy characteristic vectors at each point is their dimension as a vector space.
+\prob{Cauchy.char:const.dim}{We assume familiarity with vector bundles\SubIndex{vector bundle} \cite{Chern:1989}.
+Prove that Cauchy characteristic vectors have constant rank just when they form a vector subbundle of the tangent bundle \(TM\).}
+\begin{answer}{Cauchy.char:const.dim}
+Fix a point \(m\). 
+Take a set of forms \(\vartheta^a\in \II_U\) on some open set \(U\) containing \(m\), giving a basis of \(\II_m\). 
+In particular, the forms are linearly independent at \(m\), so span a vector subbundle of the differential form bundle near \(m\).
+Pick additional forms \(\vartheta^{\mu}\) so that \(\vartheta^a,\vartheta^{\mu}\) is a basis of the exterior algebra at \(m\).
+These forms remain linearly independent nearby, so form a basis of the differential forms near \(m\).
+Every tangent vector \(v\) has \(v \hook \vartheta^a = \lambda^a_b(v)\vartheta^b + \lambda^a_{\mu}(v)\vartheta^{\mu}\), for unique \(\lambda^a_b,\lambda^a_{\mu}\in T^*_m M\), hence linearly independent.
+The Cauchy characteristic subspace at \(m\) is exactly the kernel of the various \(\lambda^a_{\mu}\).
+For nearby points, the same linearly independent forms have a kernel of the same rank, containing the Cauchy characteristics.
+By constancy of dimension of Cauchy characteristics, this kernel is still the space of Cauchy characteristics.
+\end{answer}
+\prob{Cauchy.chars:locality}{Prove: if the Cauchy characteristic vectors have constant rank then a vector field is a Cauchy characteristic vector field if and only if its value at each point is a Cauchy characteristic vector.}
+\begin{answer}{Cauchy.chars:locality}
+Suppose constant rank.
+As in problem~\vref{problem:Cauchy.char:const.dim}, the equation of Cauchy characteristic vectors becomes a kernel of a constant rank vector bundle map, and so the local sections of that vector bundle are the local sections in the kernel of that map.
+The vector bundle map is the map quotienting \(v \hook \vartheta^a\) by \(\vartheta^b\), so the kernel lies inside the set of Cauchy characteristic vector fields.
+But each Cauchy characteristic vector field lies in the kernel.
+\end{answer}
+\prob{Cauchy.char:invol}{Give an example of an involutive exterior differential system, on a connnected manifold, whose Cauchy characteristic vectors do not have constant rank.}
+\begin{answer}{Cauchy.char:invol}
+\(dx\wedge du,dx\wedge dv,y \, dy\wedge du\wedge dv\) has involutive integral plane \(\spn{\p{x},\p{y}}\).
+\end{answer}
+The \emph{retracting space}\define{retracting space} of an exterior differential system \(\II\) is the collection of \(1\)-forms vanishing on its Cauchy characteristic vectors.
+A \emph{Cauchy characteristic}\define{Cauchy characteristic}\define{characteristic!Cauchy} is an integral submanifold of the retracting space.
+The \emph{pullback}\define{pullback!exterior differential system}\define{exterior differential system!pullback} \(\pi^*\bar\II\) by a map \(\pi \colon M \to \bar{M}\) of an exterior differential system \(\bar\II\) is the exterior differential system generated by pullbacks \(\pi^*\bar\vartheta\) of differential forms \(\bar\vartheta\) from \(\bar\II\).
+\prob{Cauchy.char:pull.back.int.mflds}{If \(\II=\pi^*\bar\II\) is the pullback by a submersion \(\pi\), prove that a submanifold of \(M\) is the \(\pi\)-preimage of an \(\bar\II\)-integral manifold just when it is an \(\II\)-integral manifold and contains any of fiber of \(\pi\) it touches.}
+\prob{cauchy.char:pull.chars}{How do characters behave when we pull back?}
+Clearly the pullback of a finite type system is finite type.
+The \emph{pushforward}\define{exterior differential system!pushforward}\define{pushforward!exterior differential system} \(\pi_*\II\) by a map \(\pi \colon M \to \bar{M}\) of an exterior differential system \(\II\) is the exterior differential system consisting of the forms \(\bar\vartheta\) on \(\bar{M}\) whose pullback \(\pi^*\bar\vartheta\) lies in \(\II\).
+\prob{Cauchy.push}{Prove that \(\bar\II\subseteq\pi_*\pi^*\bar\II\).}
+\prob{Cauchy.char:up.down}{Prove that \(\pi^*\pi_*\II\subseteq\II\).}
+\prob{Cauchy.submersion}{Prove that the vectors on which \(\pi_*=0\) are Cauchy characteristic vectors for \(\II\defeq\pi^*\bar\II\), and that \(\pi^*\nForms{1}{\bar{M}}\) lies in the retracting space of \(\II\).}%
+\begin{answer}{Cauchy.submersion}%
+Note that \(\pi_* v=0\) just when \(v \hook \pi^*\vartheta=0\) for any \(\vartheta\in \nForms{*}{\bar{M}}\), so  \(v\) is a Cauchy characteristic of \(\II\).%
+\end{answer}
+\begin{problem}{cauchy.char:chars.push}
+Prove that, if an exterior differential system has characters \(s_i\) at an integral element transverse to the fibers of a map, and its push forward by that map has \(s'_i\), then the restriction to each preimage of each integral manifold has characters \(s_i-s'_i\).
+\end{problem}
+\begin{answer}{cauchy.char:chars.push}
+Consider a push forward.
+Take a generic tableau for the push forward, and pull it back.
+Add forms to it as needed, and make their rows generic as well.
+So we treat it, locally, as a part of the tableau for the original system.
+Take an integral manifold for the push forward.
+Restrict the original system to the preimage of the integral manifold. 
+The rows in the tableau that were pulled back are now zero.
+But the polars of the other rows are still linearly independent.
+\end{answer}
+\begin{problem}{Cauchy.char:retrac}
+Suppose that \(\II\) is an exterior differential system on a manifold \(M\), and that the retracting space of \(\II\) has constant rank.
+Prove: 
+\begin{enumerate}
+\item
+The retracting space generates a Frobenius\SubIndex{Frobenius theorem}\SubIndex{theorem!Frobenius} exterior differential system lying inside \(\II\) and
+\item
+every point of \(M\) lies in an open set \(U\) so that the retracting space of \(\II_U\) is the pullback \(\pi^*\nForms{1}{\bar{U}}\) of a surjective submersion \(\pi \colon U \to \bar{U}\) to some manifold \(\bar{U}\).
+\end{enumerate}
+\end{problem}
+\begin{answer}{Cauchy.char:retrac}
+By problem~\vref{problem:v.b.rank}, the space of Cauchy characteristics is a vector subbundle of the tangent bundle.
+Above we saw that Cauchy characteristics are bracket closed.
+Problem~\vref{problem:Frobenius} shows that the retracting space is therefore Frobenius,\SubIndex{Frobenius theorem}\SubIndex{theorem!Frobenius} so \(\pi\) exists locally.
+\end{answer}
+\prob{Cauchy.char:bad.reduction}{Give an example of a finite type exterior differential system on a manifold \(M\), and a submersion \(\pi \colon M \to \bar{M}\) with Cauchy characteristic fibers, so that \(\II\ne\pi^*\pi_*\II\).}
+\begin{theorem}\label{theorem:quotient}
+Suppose that \(\II\) is a finite type exterior differential system on a manifold \(M\), and that \(\pi \colon M \to \bar{M}\) is a submersion with Cauchy characteristic fibers.
+Suppose that for any two components of any fiber of \(\pi\), there is a diffeomorphism of \(M\) preserving \(\II\) and \(\pi\) and interchanging these components.
+Then \(\II=\pi^*\pi_*\II\) and \(\pi_*\II\) has finite type.
+\end{theorem}
+\begin{proof}
+Let \(\bar\II\defeq\pi_*\II\).
+We know that \(\pi^*\pi_*\II\subseteq\II\), i.e. that \(\pi^*\bar\II\subseteq\II\).
+
+If we can cover \(M\) in open sets so that every element of \(\II\) defined on one of those sets lies in \(\pi^*\bar\II\), we glue.
+So we need only prove that, for any arbitrary point, elements of \(\II\) defined near that point lie in \(\pi^*\bar\II\), i.e. are multiples of pullbacks from \(\bar\II\).
+
+Take an open set \(U\subseteq M\).
+Take a Cauchy characteristic vector field \(v\) defined and nonzero near some point of \(U\).
+Shrink \(U\) if needed to  arrange that \(v\) is defined in \(U\) and, 
+by finite type, that the forms in \(\II\) near any point of \(U\) are generated by finitely many forms \(\vartheta^i\).
+But \(\II_U\) is \(\LieDer_v\)-closed, so, after perhaps shrinking \(U\) again,
+\[
+\LieDer_v \vartheta^i = f^i_j \vartheta^i,
+\]
+for some functions \(f^i_j\) on \(U\); denote this equation \(\LieDer_v \vartheta=f\vartheta\).
+Pick a hypersurface \(H \subset M\) through \(m_0\) transverse to \(v\).
+After perhaps shrinking \(U\), we can define functions \(g=(g^i_j)\) by \(g=I\) along \(H\) and 
+\[
+\LieDer_v g = -gf.
+\]
+If \(\bar\vartheta\defeq g\vartheta\in\II_U\),
+\(
+\LieDer_v \bar\vartheta=0,
+\)
+and \(\vartheta=g^{-1}\bar\vartheta\) so \(\II_U\) is generated by \(v\)-invariant forms.
+
+Similarly, for any finite set of commuting and nonvanishing vector fields \(v_1,\dots,v_k\), after perhaps shrinking \(U\), we can generate \(\II_U\) by forms invariant under all of these.
+In particular, after perhaps shrinking \(U\), we can pick these vector fields to give a basis of local sections of the kernel of \(\pi'\), i.e. of the vertical vector fields.
+Generators become invariant generators.
+
+Take coordinates \(x^i,y^a\) on \(M\) so that these \(x\) coordinates are pulled back from \(\bar{M}\).
+Taking as \(v\) the various \(\p{y^a}\), we have seen that \(\II_U\) is generated by invariant differential forms, i.e. forms which, expanded out as \(\vartheta = f_{IA} dx^I \wedge dy^A\), have \(f_{IA} = f_{IA}(x)\).
+We need to arrange that there are no \(dy^a\) terms in our generators.
+Since \(\vartheta \in \II_U\), we know that \(v \hook \vartheta \in \II_U\) for each \(v=\p{y^a}\), and similarly if we wedge several \(\p{y^a}\) vector fields in, so \(f_{IA}(x) dx^I \in \II_U\), for each \(dy^A\), so we can replace \(\vartheta\) by the various \(f_{IA}(x) dx^I\).
+
+So \(\II\) is locally generated by pulled back differential forms.
+Since Cauchy characteristic vector fields are symmetries, these pullback forms continue to generate on open sets invariant under Cauchy characteristics.
+\end{proof}
+\begin{problem}{Cauchy:disconnected}
+Finish the proof.
+\end{problem}
+\begin{answer}{Cauchy:disconnected}
+For any diffeomorphism \(\phi\) preserving \(\II\) and \(\pi\), the generators for \(U_a\) give generators for \(\phi(U_a)\), so we can extend to \(\pi^{-1}\bar{U}_a\).
+\end{answer}
+\begin{problem}{Cauchy:counter}
+Does theorem~\vref{theorem:quotient} generalize to infinite type?
+\end{problem}
+\prob{Cauchy.chars:other.way}{Prove that, for any surjective submersion \(\pi \colon M \to \bar{M}\) and exterior differential system \(\bar\II\) on \(\bar{M}\), \(\bar\II=\pi_*\pi^*\bar\II\).}
+\begin{answer}{Cauchy.chars:other.way}
+Let \(\II\defeq\pi^*\bar\II\) and \(\bar\JJ\defeq\pi_*\II\).
+Easily \(\bar\II\subseteq\bar\JJ\).
+Take some \(\bar\vartheta\in\bar\JJ\), a differential form on \(\bar{M}\).
+On \(M\), \(\bar\vartheta=\phi_i\wedge\bar\vartheta^i\) for some forms \(\phi_i\) and some forms \(\bar\vartheta_i\) from \(\bar\II\).
+
+Suppose that \(\pi\) is a surjective submersion.
+Take coordinates \(x^i\) on some open subset of \(\bar{M}\).
+Pullback and extend to coordinates \(x^i,y^a\) on some open subset of \(M\).
+So
+\[
+\bar\vartheta=f_I(x)dx^I=\phi_i\wedge\bar\vartheta^i=g_{JA}(x,y)dx^J\wedge dy^A\wedge f^i_I(x)dx^I.
+\]
+Average over \(y\): all coefficients are functions of \(x\) only.
+Drop any terms with \(dy\) in them, as they must cancel out.
+\end{answer}
+\prob{Cauchy.chars:bundl.CC}{Under the hypotheses of theorem~\vref{theorem:quotient}, prove that \(\II\) is bundled just when \(\pi_*\II\) is.}
+\prob{Cauchy.chars:bundl.up.down}{Under the hypotheses of problem~\vref{problem:Cauchy.chars:other.way}, prove that \(\bar\II\) is bundled just when \(\pi^*\bar\II\) is.}
+\prob{Cauchy.chars:wrong}{Give an example of an exterior differential system which is pulled back via a map with connected Cauchy characteristic fibers, but not locally spanned by pointwise linearly independent forms.}
+\begin{answer}{Cauchy.chars:wrong}
+For example, on \(M=\R[4]_{x,y,z,w}\), the exterior differential system \(\II\) generated by \(dy-z^2 \, dx\) is generated by pullbacks of forms in the exterior differential system \(\bar\II\) generated by \(dy-z^2 \, dx\) on \(\bar{M}=\R[3]_{x,y,z}\).
+But \(\II^2\) consists of the \(2\)-forms \(z \, f(x,y,z) \, dz \wedge dx\), all of which vanish at \(z=0\).
+\end{answer}
+\prob{Cauchy.char:old.smooth}{A exterior differential system is \emph{local} if it is closed under locally finite sums.
+Prove a variant of theorem~\vref{theorem:quotient}, for smooth local exterior differential systems, using either the old or the new definition of exterior differential system.
+Give an analytic counterexample, for the old definition.}
+To find Cauchy characteristics: in some local coframing, write out a set of differential forms which span an exterior differential system.
+Any \(1\)-forms of the coframing which do not appear in the spanning set of the system are dual to Cauchy characteristic vector fields.
+
+\section{Example: surface invariants}
+Return to the study of surface invariants on page~\vpageref{section:surface.invariants}.
+Note that \(\II\) has a Cauchy characteristic: the vector fields \(v\) on which \(\gamma_{12} \ne 0\) but 
+\[
+0=\omega_1=\omega_2=\omega_3=\gamma_{3i}-a_{ij}\omega_j=Da_{ij}.
+\]
+We can quotient locally by this Cauchy characteristic, so that each integral manifold \(X\) coframed by \(\omega_1,\omega_2,\gamma_{12}\) projects to a surface \(S\) in the quotient space of \(M=\frameBundleE{3} \times V\) by the orthogonal group of the plane.
+We can in addition quotient by a reflection \(e_3\mapsto -e_3, A\mapsto -A\).
+The quotient space \(\bar{M}\) is the set of all choices of point \(x \in \E[3]\), plane \(P\) through \(x\), and symmetric quadratic form \(A\) valued in the normal line to \(P\) at \(x\).
+
+\section{Example: isometric immersion, Cauchy characteristics}
+Recall the isometric immersion notation: 
+\begin{itemize}
+\item
+\(S\) is a surface with Riemannian metric, with Gauss curvature \(K\),
+\item
+\(\frameBundle{S},\frameBundleE{3}\) are the orthonormal frame bundles,
+\item
+Identify \(\R[3]_{a,b,c}\) with the set of \(2 \times 2\) symmetric matrices
+\[
+A=
+\begin{pmatrix}
+a&b\\
+b&c
+\end{pmatrix}.
+\]
+\item
+\(M_0'\subset \frameBundle{S} \times \frameBundleE{3} \times \R[3]_{a,b,c}\) is the subset on which \(A\ne 0\) and \(K=\det A\).
+\item
+\(\omega_1,\omega_2\) are the soldering forms on \(S\), and \(\alpha\) is the connection form,
+\item
+\(\qf_1,\qf_2,\qf_3\) are the soldering forms on \(\frameBundleE{3}\), and \(\qc_{12},\qc_{23},\qc_{31}\) are the connection forms; we let \(\otalpha\defeq\qc_{12}\).
+\end{itemize}
+We let
+\[
+\begin{pmatrix}
+Da \\
+Db \\
+Dc
+\end{pmatrix}
+\defeq 
+\begin{pmatrix}
+da + 2b\alpha + a_1 \pf_1 + a_2 \pf_2, \\
+db + (a-c)\alpha + b_1 \pf_1 + b_2 \pf_2, \\
+dc + 2b \alpha  + c_1 \pf_1 + c_2 \pf_2,
+\end{pmatrix}
+\]
+with \(a_1,a_2,b_1,b_2,c_1,c_2\) any functions chosen so that
+\begin{align*}
+a_2 &= b_1, \\
+b_2 &= c_1, \\
+0 &= 2bb_1-ac_1-ca_1-K_1, \\
+0 &= 2bb_2-ac_2-ca_2-K_2.
+\end{align*}
+This ensures that \(c \, Da + a \, Dc = 2b \, Db\).
+The ideal for isometric immersions on \(M'_0\) is generated by the \(1\)-forms
+\[
+\begin{pmatrix}
+\qc_{13} \\
+\qc_{23} \\
+\otalpha-\alpha
+\end{pmatrix}
+-
+\begin{pmatrix}
+a & b \\
+b & c \\
+0 & 0 
+\end{pmatrix}
+\begin{pmatrix}
+\pf_1 \\
+\pf_2
+\end{pmatrix},
+\]
+which have exterior derivatives
+\[
+-
+\begin{tableau}
+Da & Db & 0 \\
+Db & Dc & 0 \\
+0 & 0 & 0 
+\end{tableau}
+\wedge 
+\begin{pmatrix}
+  \pf_1 \\
+  \pf_2 \\
+  \alpha
+\end{pmatrix}
+\mod{\theta_1,\dots,\theta_6}.
+\]
+
+How do we spot Cauchy characteristics?
+On \(M_0'\), the \(1\)-forms
+\[
+\omega_1,\omega_2,\qf_1-\pf_1,\qf_2-\pf_1,\qf_3,\otalpha-\alpha,\qc_{13}-(a\omega_1+b\omega_2),\qc_{23}-(b\omega_1+c\omega_2),
+Da,Db,Dc,\alpha
+\]
+form a basis, except for the one relation \(c \, Da + a \, Dc = 2b \, Db\).
+When we write out the tableau in our basis, we don't use the last basis element: \(\alpha\).
+So in this basis, \(\alpha\) is dual to a Cauchy characteristic vector field \(v\), i.e. \(v\) hooks to zero in every \(1\)-form appearing in the tableau, and so hooks the exterior differential system into itself.
+
+We can do a little better.
+Let \(G\) be the group of all orthogonal \(3 \times 3\) matrices \(g\) preserving the vertical axis:
+\[
+g=
+\begin{pmatrix}
+h & 0 \\
+0 & (-1)^k
+\end{pmatrix},
+\]
+with \(k=0\) or \(1\), \(h\) an orthogonal \(2 \times 2\) matrix.
+Recall that \(r_g^*\qf=g^{-1}\qf\) and \(r_g^*\qc=g^{-1}\qc g\).
+Extend the \(G\)-action to \(M_0'\):
+\[
+r_g(x,e,\ot{x},\ot{e},A)
+=
+(x,eh,\ot{x},\ot{e}g,(-1)^kh^{-1}Ah).
+\]
+Problem~\vref{problem:moving.frame:structure.group.action} shows that this action preserves \(M_0'\) and the exterior differential system.
+Check that
+\[
+v=\left.\frac{d}{dt}\right|_{t=0} r_{g(t)},
+\]
+where
+\[
+g(t)
+=
+\begin{pmatrix}
+\cos t& -\sin t\\
+\sin t& \cos t
+\end{pmatrix}.
+\]
+
+The quotient space \(\bar{M}'_0\) of \(M'_0\) by the \(G\)-action is the space of choices of linear isometry \(F \colon T_x S \to T_{\ot{x}} \E[3]\) together with a quadratic form \(q\ne 0\) on \(T_x S\) so that \(K=\det q\).
+By problem~\vref{problem:Cauchy:disconnected}, \(\II'\) on \(M'_0\) is pulled back from a unique exterior differential system \(\bar\II'\) on \(\bar{M}'_0\).
+But, unlike \(M'_0\), the manifold \(\bar{M}'_0\) does not have a canonical choice of coframing.
+We would struggle to write out the quotient exterior differential system \(\bar\II'\).
+Except for \(\alpha\), the other \(1\)-forms in our tableau vanish on the Cauchy characteristics, so define a tableau for the quotient exterior differential system:
+\[
+\begin{pmatrix}
+\theta_4 \\
+\theta_5 \\
+\theta_6
+\end{pmatrix}
+=
+\begin{pmatrix}
+\qc_1 \\
+\qc_2 \\
+\otalpha-\alpha
+\end{pmatrix}
+-
+\begin{pmatrix}
+a & b \\
+b & c \\
+0 & 0 
+\end{pmatrix}
+\begin{pmatrix}
+\pf_1 \\
+\pf_2
+\end{pmatrix},
+\]
+\[
+d
+\begin{pmatrix}
+\theta_4 \\
+\theta_5 \\
+\theta_6
+\end{pmatrix}
+=
+-\Tablo{*Da,Db;*Db,Dc}[2,0]
+\wedge 
+\begin{pmatrix}
+  \pf_1 \\
+  \pf_2
+\end{pmatrix}
+\mod{\theta_1,\dots,\theta_6}.
+\]
+
+\section{Example: isometric immersion, noncharacteristic data}
+The \emph{asymptotic curves}\define{asymptotic curve} of a surface are those on which the shape operator vanishes.
+\prob{Cauchy.char:char.var}{Show that the characteristic curves of the isometric immersion problem on any integral surface are the asymptotic curves.}
+\begin{answer}{Cauchy.char:char.var}
+The characteristic variety for the isometric immersion problem emerges from plugging \(Da=v^a\xi\), \(Db=v^b\xi\) and \(Dc=v^c\xi\) into the tableau, but with \(a \, Dc + c \, Da = 2b \, Db\), so \(a \, v^c + c \, v^a = 2b \, v^b\), giving
+\begin{align*}
+0
+&=
+\begin{pmatrix}
+v^a & v^b \\
+v^b & v^c
+\end{pmatrix}
+\begin{pmatrix}
+\xi\wedge\omega_1 \\
+\xi\wedge\omega_2
+\end{pmatrix},
+\\
+&=
+\begin{pmatrix}
+v^a(-\xi_2) + v^b\xi_1 \\
+v^b(-\xi_2)+v^c\xi_1 
+\end{pmatrix}
+\omega_{12},
+\\
+&=
+\begin{pmatrix}
+-v^a\xi_2 + v^b\xi_1 \\
+-v^b\xi_2 + \frac{1}{a}(2bv^b-cv^a)\xi_1
+\end{pmatrix}
+\omega_{12},
+\\
+&=
+\begin{pmatrix}
+-\xi_2 & \xi_1 \\
+-\frac{c}{a}\xi_1 & -\xi_2+\frac{2b}{a}\xi_1
+\end{pmatrix}
+\begin{pmatrix}
+v^a\\
+v^b
+\end{pmatrix}
+\omega_{12}.
+\end{align*}
+After we drop the Cauchy characteristics, the characteristic variety is the determinant of this matrix, i.e.
+\[
+0 = -c\xi_1^2 + 2b\xi_1 \xi_2 -a\xi_2^2.
+\]
+Recall that the characteristic variety consists of the lines
+\[
+0 = \sum_i \xi_i \omega_i=0,
+\] 
+satisfying these equations.
+A vector \(v=v_1 e_1+v_2 e_2\) lies in such a characteristic line just when \(0 = \xi_1 v_1 + \xi_2 v_2\), so then, up to scaling 
+\[
+\pr{\xi_1,\xi_2}=\pr{v_2,-v_1}.
+\]
+Plug this in to see that the characteristics are the curves whose velocities satisfy
+\[
+0 = av_1^2 + 2bv_1 v_2 + cv_2^2.
+\]
+\end{answer}
+Since we have assumed that \(a,b,c\) do not all simultaneously vanish, the shape operator is nowhere zero, so not every curve is asymptotic.
+
+A \emph{ribbon}\define{ribbon} is a choice of curve \(\ot{C}\), its \emph{spine}, and a \emph{ruling line}\define{ruling line} \(\ell\) at each point of \(\ot{C}\), perpendicular to the tangent line to \(\ot{C}\), and analytically varying along the spine.
+A ribbon is \emph{nondegenerate}\define{ribbon!nondegenerate}\define{nondegenerate ribbon} if the ruling line is nowhere perpendicular to the curvature vector of the spine.
+A nondegenerate ribbon has a unit tangent vector along its spine, and a curvature vector, and their cross product, so imposes a basis, orienting the perpendicular space to every ruling line.
+\begin{marginfigure}
+\input{ribbon}
+\end{marginfigure}
+Take a surface \(S\) with analytic Riemannian metric and an embedded connected analytic curve \(C\) in \(S\) with an orientation of \(S\) defined along \(C\).
+Take a nondegenerate ribbon \ in \(\E[3]\) and an analytic isometry \(\iota \colon C \to \ot{C}\).
+Use the isometry to identify an orientation of \(C\) with one of \(\ot{C}\).
+Use the orientation defined along \(C\) to extend \(\iota_*\) to a linear isometry of each tangent plane to the perpendicular to each ruling line.
+\begin{theorem}
+The isometry of curve to spine extends to a locally unique analytic isometric immersion normal to the ruling lines of its ribbon.
+\end{theorem}
+\begin{example}
+Draw an infinitely long curve on the peel\SubIndex{peel}\SubIndex{orange} of an orange, accumulating only toward two points, so embedded in the sphere with those points deleted.
+Slice the peel close that curve, and lay out the peel tangent to an infinitely long ribbon: an isometric immersion.
+\end{example}
+\begin{example}
+Take a M\"obius strip \(S\) and a closed curve \(C\) so that \(S\) is not orientable in any neighborhood of \(C\).
+Take a nondegenerate ribbon whose spine has the same length as \(C\).
+An isometry of curve to spine exists, but cannot extend to an isometric immersion.
+It can't even extend to an isometry of tangent spaces of the surface to perpendicular planes to the ruling line, as the ruling lines are oriented.
+\end{example}
+\begin{proof}
+Take \(\ot{e}_1\) to be the unit tangent to \(\ot{C}\) and \(\ot{e}_3\) to be the unit tangent vector to the ruling lines.
+Locally extend \(\ot{e}_1, \ot{e}_3\) into an orthonormal basis \(\ot{e}_1, \ot{e}_2, \ot{e}_3\), giving an immersed curve in \(\frameBundleE{3}\), on which \(\qc_{31} = a\qf_1\) and \(\qc_{32}=b\qf_1\) for some functions \(a,b\).
+The ruling lines are nowhere perpendicular to the curvature vector, i.e. \(\ot{e}_3\) is nowhere perpendicular, i.e. \(a\ne 0\).
+Clearly we must then let
+\[
+c\defeq\frac{b^2-K}{a}
+\]
+at every point.
+Since \(a\ne 0\), this curve in \(M'\) is not characteristic:
+\[
+a\pf_1^2+2b\pf_1\pf_2+c\pf_2^2 = a\pf_1^2 \ne 0.
+\]
+\end{proof}
+An isometric immersion arises as in this theorem precisely when it has nonzero shape operator everywhere.

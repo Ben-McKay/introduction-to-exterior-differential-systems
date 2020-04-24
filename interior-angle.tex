@@ -1,0 +1,34 @@
+\documentclass[tikz]{standalone}
+\usetikzlibrary{%
+backgrounds,
+fadings,%
+}
+
+\tikzfading[name=fade out,
+inner color=transparent!0,
+outer color=transparent!100]
+
+
+\begin{document}
+\begin{tikzpicture}
+\begin{scope}
+\begin{scope}
+\clip (-1.75,-1.5) -- 
+(0,-1,1) -- (0,1,-1) -- (-1.75,1.5) 
+-- cycle; 
+\fill [gray,path fading=fade out
+] (-1.75,-1.25) rectangle (3,1.25);
+\end{scope}
+\fill[white] (0,1) circle (1cm);
+\fill[white] (0,-1) circle (1cm);
+\draw[gray,-latex] ({cos(150)},{sin(150)}) arc (150:210:1);
+%\fill[gray!20,draw=gray!10] (0,-1,-1) -- (0,-1,1) -- (0,1,1) -- (0,1,-1) -- cycle;
+%\draw[gray!50,-latex] (0,0,0) -- (1,0,0);
+%\draw[gray!50,-latex] (0,0,0) -- (0,1,0);
+%\draw[gray!50,-latex] (0,0,0) -- (0,0,1);
+\end{scope}
+\end{tikzpicture}
+\end{document}
+
+
+

@@ -1,0 +1,1865 @@
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:trivial.integral.manifolds}.}
+%
+\begin{enumerate}
+\item All submanifolds.
+\item Any discrete set of points.
+\item Take a \(0\)-dimensional submanifold of the image.
+Its preimage is a submanifold.
+Take any submanifold of that submanifold.
+\item If \(dx^1 \wedge dx^2 \ne 0\), these are locally \(y_i=\pderiv{S}{x_i}\); in general the integral surfaces are the Lagrangian surfaces.
+\item If \(dx\ne 0\) these are \(y=y(x)\), \(z=dy/dx\); in general they are Legendre curves.
+\end{enumerate}
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:trivial.integral.elements}.}
+%
+\begin{enumerate}
+\item All linear subspaces of all tangent spaces.
+\item The zero subspaces of all tangent spaces.
+\item The linear subspaces tangent to the fibers.
+\item If \(dx^1 \wedge dx^2 \ne 0\), these are \(dy_i=a_{ij} dx_j\) with \(a_{ij}=a_{ji}\); in general they are zero subspaces, lines, or Lagrangian planes.
+\item If \(dx\ne 0\) these are \(dy = z \, dx\), \(dz = a \, dx\) for any real number\(a\).
+\end{enumerate}
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:proof.Cartan.Kaehler:nonchar}.}
+\(M=\R\), \(\II=(x \, dx)\), \(X=\set{0}\)
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Grassmann.bundle.charts}.}
+%
+Take any local coordinates on \(M\), say \(x^i,u^a\), near a point \(m_0\).
+Every \(p\)-plane \(E \subset T_m M\), with \(m\) near \(m_0\), and with \(dx^1\wedge \dots \wedge dx^p \ne 0\) on \(E\), is the set of tangent vectors on which \(du^a = q^a_i \, dx^i\), for uniquely determined numbers \(q^a_i\).
+As a short hand, write this as \(du=q \, dx\).
+The functions \(x^i,u^a,q^a_i\) on \(\Gr{p}{M}\) are local coordinates.
+The map \((m,E)\in\Gr{p}{M} \mapsto m\in M\) is \((x,u,q)\mapsto (x,u)\), a submersion.
+We leave the change of coordinates to the reader.%
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:eds:change.rank}.}
+If \(\theta=du-q^2 \, dx\) then \(d\theta = - 2q \, dq \wedge dx\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:v.b.rank}.}
+Suppose that, to each point \(x\in M\) of a manifold \(M\), we have an associated \(p \times q\) matrix \(\phi(x)\), with entries analytic functions on \(M\).
+Let \(K\) be the set of pairs \((x,v)\) so that \(x \in M\) and \(v\) is a vector in the kernel of \(\phi(x)\).
+If \(\phi(x)\) has rank independent of \(x\), let us prove that \(K\) is an embedded submanifold of \(M \times \R[q]\).
+Let's also prove that, for any map \(w\colon M \to \R[p]\), the following are equivalent:
+\begin{enumerate}
+\item At every point \(x \in M\), there is a vector \(v\) so that \(\phi(v)=w(x)\).
+\item Near every point \(x \in M\), there is an analytic vector valued function \(v\) on an open subset of \(M\), so that \(\phi(v(x))=w(x)\); if \(\phi\) is 1-1 at every point \(x \in M\), then \(v\) is unique.
+\end{enumerate}
+We can change \(\phi\) by multiplying by arbitrary invertible matrices of analytic functions.
+Since \(\phi\) has constant rank, for any chosen point of \(M\), we can permute rows and columns to get the upper left corner to be invertible at that point, and hence near that point, of the same rank as \(\phi\):
+\[
+\phi=
+\begin{pmatrix}
+A&B\\
+C&D
+\end{pmatrix},
+\]
+with \(A\) invertible.
+Multiply by
+\[
+\begin{pmatrix}
+A^{-1}&0\\
+0&I
+\end{pmatrix},
+\]
+to get \(A=I\).
+Having rank exactly that of the upper left corner is precisely \(D=CB\).
+Multiply:
+\[
+\begin{pmatrix}
+I&0\\
+-C&I
+\end{pmatrix}
+\phi
+\begin{pmatrix}
+I&-B\\
+0&I
+\end{pmatrix}=
+\begin{pmatrix}
+I&0\\
+0&I
+\end{pmatrix}.
+\]
+The reader familiar with vector bundles \SubIndex{vector bundle} \cite{Chern:1989} may generalize.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Cartans.lemma}.}
+We prove it in each tangent space separately.
+Real analyticity then follows from the uniqueness of solutions of the linear equations by problem~\vref{problem:v.b.rank}.
+So we prove it for constant coefficient \(1\)-forms in \(\R[p]\).
+Choose  basis in \(\R[p]\) so that in coordinates
+\[
+x_1, x_2, \dots, x_k, y_1, y_2, \dots, y_{p-k}
+\]
+our \(1\)-forms are \(\xi_i = dx_i\).
+Write \(\alpha_i = \sum a_{ij} dx_j + \sum b_{i\ell} dy_{\ell}\), say.
+The equation \(0=\alpha_1 \wedge \xi_1 + \alpha_2 \wedge \xi_2 + \dots + \alpha_k \wedge \xi_k\) is precisely
+\begin{align*}
+0 &=
+\sum_j a_{ij} dx_j \wedge dx_i +
+\sum_{\ell} b_{i\ell} dy_{\ell} \wedge dx_i,
+\\
+&=
+\frac{1}{2}\sum_j \pr{a_{ij}-a_{ji}} dx_j \wedge dx_i +
+\sum_{\ell} b_{i\ell} dy_{\ell} \wedge dx_i,
+\end{align*}
+Plugging in the unit vectors pointing along various coordinate axes, we find \(a_{ij}=a_{ji}\) and \(b_{i{\ell}}=0\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Frobenius:zero.shape}.}
+This is already clear geometrically: the shape operator is the curvature of geodesics.
+Let \(M\defeq\frameBundleE{3}\) be the frame bundle of \(\E[3]\).
+The frame bundle \(\frameBundle{S}\) of any surface \(S\) in \(\E[3]\) satisfies \(\omega_3=0\) and
+\[
+\begin{pmatrix}
+\gamma_{13} \\
+\gamma_{23}
+\end{pmatrix}
+=
+\begin{pmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{pmatrix}
+\begin{pmatrix}
+\omega_1 \\
+\omega_2
+\end{pmatrix}
+\]
+for some smooth functions \(a_{11}, a_{12}=a_{21}, a_{22}\).
+To have vanishing shape operator, \(0=a_{11}=a_{12}=a_{22}\), so
+\(0=\omega_3=\gamma_{13}=\gamma_{23}\).
+
+Consider on \(M\) the exterior differential system with equations \(\vartheta_0 = \omega_3, \vartheta_1=\gamma_{13}, \vartheta_2=\gamma_{23}\).
+The frame bundle \(\frameBundle{S}\) of any surface with vanishing shape operator is a \(3\)-dimensional integral manifold.
+To be precise, each component of \(\frameBundle{S}\) is an integral manifold, since \(S\) might have more than one orientation, so \(\frameBundle{S}\) might have more than one component.
+Check that the exterior differential system is Frobenius, so there is a unique integral manifold through each point of \(M\).
+But we already have an example of such an integral manifold, so that must be the only one.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Frobenius:sphere.unique}.}
+Again take \(M=\frameBundleE{3}\) with the exterior differential system
+\begin{align*}
+\omega_3, \gamma_{13} - c_0 \omega_1, \gamma_{23} - c_0 \omega_2,
+\end{align*}
+Again the system is Frobenius, so there is only one \(3\)-dimensional integral manifold through each point.
+Rotate and translate a sphere of suitable radius to see one such integral manifold through each point of \(M\), the frame bundle of that sphere.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Frobenius:cylinder}.}
+Problem~\vref{problem:Frobenius:sphere.unique} handles the case of one principal curvature, so assume that there are two principal curvatures.
+After picking a frame on a surface \(S\) so that \(e_1\) and \(e_2\) are in the principal directions, we find \(0=\omega_3=\gamma_{13}-k_1 \omega_1=\gamma_{23}-k_2 \omega_2\), for constants \(k_1, k_2\).
+Differentiate all three equations to find that \(0=\pr{k_1-k_2}\gamma_{12} \wedge \omega_2=\pr{k_1-k_2} \gamma_{12} \wedge \omega_1\), forcing \(\gamma_{12}=0\) by Cartan's lemma.
+Differentiating the equation \(\gamma_{12}=0\), we find \(0=k_1 k_2 \omega_1 \wedge \omega_2\) so that either \(k_1=0\) or \(k_2=0\).
+We can assume that \(k_1=0\), i.e. \(\gamma_{13}=0\).
+But then
+\begin{align*}
+de_1
+&=
+\pr{e_1 \cdot de_1} e_1 +
+\pr{e_2 \cdot de_1} e_2 +
+\pr{e_3 \cdot de_1} e_3,
+\\
+&=
+\gamma_{11} e_1 +
+\gamma_{21} e_2 +
+\gamma_{31} e_3,
+\\
+&=
+0.
+\end{align*}
+Therefore \(e_1\) is constant as we travel along the surface.
+So the surface is a collection of straight lines, in this \(e_1\) direction, all placed perpendicular to a curve in the \(e_2, e_3\)-plane.
+On that curve, \(\omega_1=0\), and \(d \omega_2=0\) so we can write locally \(\omega_2=ds\) for some function \(s\).
+Then we find
+\begin{align*}
+de_2
+&=
+\pr{e_1 \cdot de_2} e_1 +
+\pr{e_2 \cdot de_2} e_2 +
+\pr{e_3 \cdot de_2} e_3,
+\\
+&=
+\gamma_{12} e_1 +
+\gamma_{22} e_2 +
+\gamma_{32} e_3,
+\\
+&=
+-k_2 ds e_3.
+\end{align*}
+and
+\begin{align*}
+de_3
+&=
+\pr{e_1 \cdot de_3} e_1 +
+\pr{e_2 \cdot de_3} e_2 +
+\pr{e_3 \cdot de_3} e_3,
+\\
+&=
+\gamma_{13} e_1 +
+\gamma_{23} e_2 +
+\gamma_{33} e_3,
+\\
+&=
+k_2 ds e_2.
+\end{align*}
+Check that the vectors \(E_2 = k_2 \cos(s) e_2 + k_2 \sin(s) e_3\), \(E_3 = -k_2 \sin(s) e_2 + k_2 \cos(s) e_3\) are constant.
+Rotate so that \(E_1=e_1, E_2, E_3\) are the standard basis vectors of \(\E[3]\), to see that the surface \(S\) is a right circular cylinder of radius \(1/\left|k_2\right|\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:tableaux:polar}.}
+The polar equations of \(E_j\) are given by setting \(\omega^i=0\) for \(i>j\), and plugging in, with \(\pi^{\alpha}=0\) on \(E_j\), so all terms with 2 or more \(\pi\) vanish, i.e. the polars in grades \(0,1,2,\dots,j\).
+Hence the characters of \(E_p\) are the numbers of polars in each grade.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:tableaux:nabla}.}
+Take \(\R[15]\) with coordinates \(x^i,u^i,u^i_j\) for \(i,j=1,2,3\).
+Note that our differential equations, spelled out as algebraic equations
+\begin{align*}
+u^3_2-u^2_3 &= f^1 - u^1, \\
+u^1_3-u^3_1 &= f^2 - u^2, \\
+u^2_1-u^1_2 &= f^3 - u^3,
+\end{align*}
+cut out a submanifold \(M\subset\R[15]\) of dimension \(12\).
+Take \(\omega^i\defeq dx^i\), \(\theta^i\defeq du^i-u^i_j \, dx^j\), and \(\pi^i_j\defeq du^i_j\).
+It will help to denote \(\pderiv{f^i}{x^j}\) by \(f^i_j\).
+The equations of \(M\) force \(3\) linear relations among the \(\pi^i_j\):
+\[
+du^3_2-du^2_3 = \left(f^1_i-u^1_i\right)dx^i,
+\]
+modulo \(\theta^1,\theta^2,\theta^3\), and so on, i.e.
+\begin{align*}
+\pi^2_3 &= \pi^3_2 - \left(f^1_i-u^1_i\right)\omega^i,\\
+\pi^1_3 &= \pi^3_1 + \left(f^2_i-u^2_i\right)\omega^i,\\
+\pi^1_2 &= \pi^2_1 - \left(f^3_i-u^3_i\right)\omega^i.
+\end{align*}
+Our tableau: modulo \(\theta^1,\theta^2,\theta^3\),
+\begin{align*}
+d
+\begin{pmatrix}
+\theta^1\\
+\theta^2\\
+\theta^3
+\end{pmatrix}
+&=
+-
+\begin{pmatrix}
+\freeDeriv{\pi^1_1} & \pi^1_2 & \pi^1_3 \\
+\freeDeriv{\pi^2_1} & \freeDeriv{\pi^2_2} & \pi^2_3 \\
+\freeDeriv{\pi^3_1} & \freeDeriv{\pi^3_2} & \freeDeriv{\pi^3_3}
+\end{pmatrix}
+\wedge
+\begin{pmatrix}
+\omega^1\\
+\omega^2\\
+\omega^3
+\end{pmatrix}
+\\
+&=
+-
+\begin{pmatrix}
+\freeDeriv{\pi^1_1} & \pi^2_1 & \pi^3_1 \\
+\freeDeriv{\pi^2_1} & \freeDeriv{\pi^2_2} & \pi^3_2 \\
+\freeDeriv{\pi^3_1} & \freeDeriv{\pi^3_2} & \freeDeriv{\pi^3_3}
+\end{pmatrix}
+\wedge
+\begin{pmatrix}
+\omega^1\\
+\omega^2\\
+\omega^3
+\end{pmatrix}+
+\begin{pmatrix}
+\tau^1\\
+\tau^2\\
+0
+\end{pmatrix}
+\end{align*}
+where the torsion is
+\[
+\begin{pmatrix}
+\tau^1\\
+\tau^2
+\end{pmatrix}
+=
+\begin{pmatrix}
+f^3_1-u^3_1\\
+0
+\end{pmatrix}
+\omega^{12}
++
+\begin{pmatrix}
+u^2_1-f^2_1\\
+f^1_1-u^1_1
+\end{pmatrix}
+\omega^{13}
++
+\begin{pmatrix}
+u^2_2-f^2_2+u^3_3-f^3_3\\
+f^1_2-u^1_2
+\end{pmatrix}
+\omega^{23}
+\]
+We can try to absorb torsion, for example by using
+\[
+\begin{pmatrix}
+\otpi^1_1\\
+\otpi^2_1\\
+\otpi^2_2
+\end{pmatrix}
+\defeq
+\begin{pmatrix}
+\pi^1_1\\
+\pi^2_1\\
+\pi^2_2
+\end{pmatrix}
++
+\begin{pmatrix}
+0&0&u^2_1-f^2_1\\
+u^3_1-f^3_1&0&0\\
+0&0&f^1_2-u^1_2
+\end{pmatrix}
+\begin{pmatrix}
+\omega^1\\
+\omega^2\\
+\omega^3
+\end{pmatrix},
+\]
+which we denote as \(\pi\) instead of \(\otpi\) to simplify notation.
+Our tableau: modulo \(\theta^1,\theta^2,\theta^3\),
+\[
+d
+\begin{pmatrix}
+\theta^1\\
+\theta^2\\
+\theta^3
+\end{pmatrix}
+=
+-
+\begin{pmatrix}
+\freeDeriv{\pi^1_1} & \pi^2_1 & \pi^3_1 \\
+\freeDeriv{\pi^2_1} & \freeDeriv{\pi^2_2} & \pi^3_2 \\
+\freeDeriv{\pi^3_1} & \freeDeriv{\pi^3_2} & \freeDeriv{\pi^3_3}
+\end{pmatrix}
+\wedge
+\begin{pmatrix}
+\omega^1\\
+\omega^2\\
+\omega^3
+\end{pmatrix}
++
+\begin{pmatrix}
+u^i_i-f^i_i\\
+0\\
+0
+\end{pmatrix}
+\omega^{23}.
+\]
+The torsion is \(u^i_i-f^i_i\) (Einstein notation: implicitly summed over \(i\)).
+Take the submanifold \(M'\subset M\) cut out by the equation \(u^i_i=f^i_i\).
+For simplicity, denote this submanifold as \(M\) henceforth.
+On \(M\),
+\[
+0=d(u^i_i-f^i_i)=\pi^i_i-f^i_{ij}\omega^j.
+\]
+Our tableau: modulo \(\theta^1,\theta^2,\theta^3\),
+\[
+d
+\begin{pmatrix}
+\theta^1\\
+\theta^2\\
+\theta^3
+\end{pmatrix}
+=
+-
+\begin{pmatrix}
+\freeDeriv{\pi^1_1} & \pi^2_1 & \pi^3_1 \\
+\freeDeriv{\pi^2_1} & \freeDeriv{\pi^2_2} & \pi^3_2 \\
+\freeDeriv{\pi^3_1} & \freeDeriv{\pi^3_2} & -\pi^1_1-\pi^2_2+f^i_{ij}\omega^j
+\end{pmatrix}
+\wedge
+\begin{pmatrix}
+\omega^1\\
+\omega^2\\
+\omega^3
+\end{pmatrix}.
+\]
+Let
+\[
+\begin{pmatrix}
+\otpi^3_1\\
+\otpi^3_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+\pi^3_1\\
+\pi^3_2
+\end{pmatrix}
+-
+\begin{pmatrix}
+f^i_{i1} \\
+f^i_{i2}
+\end{pmatrix}
+\omega^3,
+\]
+and once again just write these as \(\pi\) instead of \(\otpi\).
+Our tableau: modulo \(\theta^1,\theta^2,\theta^3\),
+\[
+d
+\begin{pmatrix}
+\theta^1\\
+\theta^2\\
+\theta^3
+\end{pmatrix}
+=
+-%
+\Tablo{%
+*\pi^1_1,\pi^2_1,\pi^3_1;%
+*\pi^2_1,*\pi^2_2,\pi^3_2;%
+*\pi^3_1,*\pi^3_2,-\pi^1_1-\pi^2_2}[3,2,0]
+\wedge
+\begin{pmatrix}
+\omega^1\\
+\omega^2\\
+\omega^3
+\end{pmatrix}.
+\]
+Integral elements \(\pi^i_j=p^i_{jk}\omega^k\).
+We highlight certain coefficients, to be discussed in chapter~\ref{chapter:test}:
+\begin{adjustwidth}{3.5cm}{3.5cm}
+\begin{align*}
+\freeDeriv{p^1_{12}}&=p^2_{11}\tag{1}\\
+\freeDeriv{p^1_{13}}&=p^3_{11}\tag{2}\\
+\freeDeriv{p^2_{13}}&=\freeDeriv{p^3_{12}}\tag{3}\\
+\freeDeriv{p^2_{12}}&=p^2_{21}\tag{4}\\
+\freeDeriv{p^2_{13}}&=p^3_{21}\tag{5}\\
+\freeDeriv{p^3_{12}}&=p^3_{21}\tag{6}\\
+\freeDeriv{p^3_{13}}&=-p^1_{11}-p^2_{21}\tag{7}\\
+\freeDeriv{p^3_{23}}&=-\freeDeriv{p^1_{12}}-p^2_{22}.\tag{8}
+\end{align*}
+\end{adjustwidth}
+These coefficients are solved for in terms of others, except for the 3rd and 8th equations.
+But we use the 6th equation to fix up the 3rd, and the 1st equation to fix up the 8th, to solve for highlighted coefficients in terms of others.
+Hence the space of integral elements at each point of the \(11\)-dimensional manifold \(M'\) has dimension given by counting the other coefficients: \(7\) dimensions of integral element at each point.
+Involution, with the general solution depending on \(2\) functions of \(2\) variables.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:tableaux:compute.quad}.}
+\(q^i_{jk} = c^i_{m\ell}(g^m_kg^{\ell}_j-g^m_jg^{\ell}_k)\)
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:tableaux:generic.surface}.}
+Choose the third fundamental form so that the Gauss curvature and the squared mean curvature have linearly independent differentials.
+Replace the surface by an open subset on which the Gauss curvature and the squared mean curvature are global coordinates invariant under rigid motion of the surface.
+Pick the eigenvalues so that the mean curvature is not zero; the surface is not symmetric under reflection in the tangent plane.
+So rigid motions fix every point of the surface, and also fix a normal direction, so are trivial.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:almost.complex:SU.left}.}
+Consider left action of \(\SU{3}\) on itself: \(L_h z=hz\).
+The identity function \(g(z)=z\) behaves like \((L_h^*g)(z)=g(L_hz)=g(hz)=hz=hg(z)\), so \(L_h^*g=hg\).
+Thus for any constant matrix \(h\in\SU{3}\),
+\begin{align*}
+L_h^*\omega
+&=L_h^*(g^{-1}dg),
+\\
+&=(L_h^*g)^{-1}dL_h^*g,
+\\
+&=
+(hg)^{-1}d(hg),
+\\
+&=
+g^{-1}h^{-1}h \, dg,
+\\
+&=
+g^{-1}\,dg,
+\\
+&=\omega.
+\end{align*}
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:almost.complex:dSU}.}
+Differentiating \(\omega=g^{-1}\,dg\), i.e. \(dg=g\omega\),
+\begin{align*}
+0&=
+dg\wedge\omega+g\,d\omega,
+\\
+&=
+g\omega\wedge\omega+g\,d\omega,
+\end{align*}
+we find
+\[
+d\omega=-\omega\wedge\omega.
+\]
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:eds:polar.diff}.}
+Take a \(\vartheta\)-integral element
+\[
+E_0=\spn{e_1,e_2,\dots,e_p}.
+\]
+Move it:
+\[
+E_t=\spn{e_1+tw_1+O(t)^2,\dots,e_p+tw_p+O(t)^2}.
+\]
+Every motion through \(p\)-dimensional subspaces has this form locally.
+Expand:
+\[
+\left.\vartheta\right|_{E_t}=t\sum_i \vartheta(e_1,\dots,e_{i-1},w_i,e_{i+1},\dots,e_p)+O(t)^2.
+\]
+The differentials, i.e. linear terms, are sums of polar equations.
+Set all but one \(w_i\) to zero: every polar equation is a differential.
+In coordinates, \(E_0=(du=0)\), \(E_t=(du=q(t) \, dx)\), let \(w_i(t)\defeq q^a_i(t)\p{u^a}\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:test:test.thm}.}
+If an integral is not ordinary, we can find integral elements nearby with characters ``borrowed'' downward, so larger \(s_0\), or the same \(s_0\) but larger \(s_1\), or some such.
+As \(p+s_0+\dots+s_p=\dim M\), borrowing raises one character and lowers some later character, decreasing the dimension
+\[
+\dim M + s_1 + 2s_2 + \dots + ps_p,
+\]
+of the submanifold containing all nearby integral elements.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:eds:lower.dim}.}
+Generic linear subspaces are regular, so ordinary, so involutive.
+The polar equations along a generic integral element are the same.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:linearize.coords}.}
+Take local coordinates \(x^1,x^2,\dots,x^p, y^1,y^2,\dots,y^q\), where \(E\) is the graph of \(dy=0\).
+If \(\vartheta = c_{IA} dx^I\wedge dy^A\), we will see that
+\[
+\left.\LieDer_v \vartheta\right|_E =
+\pderiv{v^a}{x^j} c_{Ia} dx^{Ij} + v^a \pderiv{c_I}{y^a} dx^I .
+\]
+Let \((-1)^I\) mean \((-1)^m\) if \(I\) consists of \(m\) indices.
+Write
+\[
+v = v^j \pderiv{}{x^j} + v^b \pderiv{}{y^b}.
+\]
+Note that
+\[
+v \hook c_I dx^I = (-1)^J v^i c_{JiK} dx^{JK}.
+\]
+Commuting with exterior derivative,
+\begin{align*}
+\LieDer_v dx^i &= \pderiv{v^i}{x^j} dx^j + \pderiv{v^i}{y^b} dy^b, \\
+\LieDer_v dy^a &= \pderiv{v^a}{x^j} dx^j + \pderiv{v^a}{y^b} dy^b.
+\end{align*}
+By the Leibnitz rule,
+\begin{align*}
+\LieDer_v \vartheta
+&=
+v^i \pderiv{c_{IA}}{x^i} dx^I \wedge dy^A
++
+v^a \pderiv{c_{IA}}{y^a} dx^I \wedge dy^A
+\\
+&\qquad
++ c_{JiKA} dx^J \wedge \pr{\pderiv{v^i}{x^j} dx^j + \pderiv{v^i}{y^b} dy^b}  \wedge dx^K \wedge dy^A
+\\
+&\qquad
++ c_{IBaC} dx^I \wedge dy^B \wedge \pr{\pderiv{v^a}{x^j} dx^j + \pderiv{v^a}{y^b} dy^b}  \wedge dy^C.
+\end{align*}
+On \(E\), \(dy=0\) so
+\begin{align*}
+\left.\LieDer_v \vartheta\right|_E
+&=
+v^i \pderiv{c_I}{x^i} dx^I
++
+v^a \pderiv{c_I}{y^a} dx^I
+\\
+&\qquad
++ c_{JiK} dx^J \wedge \pderiv{v^i}{x^j} dx^j  \wedge dx^K
+\\
+&\qquad
++ c_{Ia} dx^I \wedge \pderiv{v^a}{x^j} dx^j.
+\end{align*}
+This is not quite the same as
+\begin{align*}
+\left.v\hook d\vartheta\right|_E
+&=
+v^i\pderiv{c_I}{x^i}dx^I
++
+v^a\pderiv{c_I}{y^a}dx^I
+\\
+&\qquad+(-1)^{jI}v^{\ell}\pderiv{c_{I\ell k}}{x^j}dx^{jIK}.
+\end{align*}
+Write the tangent part of \(v\) as
+\[
+v' = v^i \pderiv{}{x^i}.
+\]
+Let \(A\) be the linear map \(A \colon E \to E\) given by
+\[
+A^i_j = \pderiv{v^i}{x^j}
+\]
+and apply this by derivation to forms on \(E\) as
+\[
+(A\xi)(v_1,\dots,v_k)=\xi(Av_1,v_2,\dots,v_k)-\xi(v_1,Av_2,v_3,\dots,nv_k)+\dots.
+\]
+Then
+\[
+\left.\LieDer_v \vartheta\right|_E
+=
+\left.v' \hook d\vartheta\right|_E
++
+v^a \pderiv{c_I}{y^a} dx^I
++ \left.A\vartheta\right|_E
++ c_{Ia} dx^I \wedge \pderiv{v^a}{x^j} dx^j.
+\]
+Since \(0=\left.\vartheta\right|_E=\left.d\vartheta\right|_E\), we find
+\[
+\left.\LieDer_v \vartheta\right|_E
+=
+v^a \pderiv{c_I}{y^a} dx^I
++ c_{Ia} dx^I \wedge \pderiv{v^a}{x^j} dx^j.
+\]%
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:proof.Cartan.Kaehler:choice.of.X}.}
+Take local coordinates \(x^1,x^2,\dots,x^p, y^1,y^2,\dots,y^q\), where \(E\) is the graph of \(dy=0\).
+Write \(\vartheta = c_{IA} dx^I\wedge dy^A\).
+Write \(X\) as the graph \(y=y(x)\), so
+\[
+\left.\vartheta\right|_X = \sum c_{IA}(x,y) dx^I \wedge
+\pderiv{y^{a_1}}{x^{j_1}} dx^{j_1} \wedge \dots \wedge \pderiv{y^{a_{\ell}}}{x^{j_{\ell}}} dx^{j_{\ell}}.
+\]
+so
+\[
+\left.\LieDer_v \vartheta\right|_E
+=
+v^a \pderiv{c_I}{y^a} dx^I
++ c_{Ia} dx^I \wedge \pderiv{v^a}{x^j} dx^j.
+\]%
+depends only on knowledge of the point \(m\) where we compute coefficients of \(\vartheta\) and of \(E=T_m X\), so that we drop \(dy\) terms.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:proof.Cartan.Kaehler:drop.P}.}
+In coordinates, the linearization of an exterior differential system \(\II\) about an integral element \(E \subset T_m M\) does not involve any \(dy \wedge dy\) terms but depends on the terms with no \(dy\) and with one \(dy\) explicitly.
+But \(P=\spn{E^{\perp}}=\spn{dy^a}\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:linearize.vanishing}.}
+\[
+\left.\LieDer_v \vartheta\right|_E = c_{Ia} dx^I \wedge \pderiv{v^a}{x^j} dx^j
+\]
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:proof.Cartan.Kaehler}.}
+Suppose \(E\subset E_+\) is a noncharacteristic hyperplane.
+By uniqueness of extension \(E_+\), the polar equations of \(E\) cut out precisely \(E_+\) inside \(T_m M\), i.e. the dimension of polar equations of \(E\) is the dimension of \(T_m M/E_+\).
+The polar equations of any regular hyperplane in \(E_+\) are satisfied on \(E_+\), so have same rank.
+So the regular integral elements are also noncharacteristic.
+If \(p\defeq\dim E_+\), the rank of polar equations of \(E\) is \(s_0+s_1+\dots+s_{p-1}\), while the dimension of \(T_m M/E_+\) is \(s_0+\dots+s_p\).
+So \(s_p=0\) on \(E_+\) just when every regular hyperplane in \(E_+\) is noncharacteristic.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:include.eds}.}
+%
+Any hyperplane \(E_- \subset E\) is \(\II\)-characteristic just when it lies in some other \(\II\)-integral element \(E'\) of same dimension as \(E\). But then \(E'\) is also a \(\JJ\)-integral element, so \(E_-\) is \(\JJ\)-characteristic: \(\CV^{\II}_E\subset \CV^{\JJ}_E\).%
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:proof.CK:Frob.char.var}.}
+At each point, there is a unique maximal integral element, so every hyperplane in it lies in that unique maximal integral element: \(\CV_E\) is empty.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:proof.test:char.var}.}
+The choices of \(p\)-dimensional integral element arise from the semipositive grade coefficients: \(k\) coefficients of each polar in grade \(k\), so \(ks_k\) in that grade in all.
+So if \(s_p=0\) then there is a unique \(p\)-dimensional integral element containing \(E\).
+If \(E_+\) is involutive, then the semipositive grade coefficients \(p^{\alpha}_i\) are arbitrary.
+In an adapted tableau, \(E\) is determined by \(p^{\alpha}_i\) for \(i<p\), which are all of the coefficients just when \(s_p=0\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:proof.Cartan.Kaehler:nabla.char}.}
+In terms of the tableau we gave previously in solving problem~\vref{problem:proof.test:nabla}, the complex points in the projective plane satisfying the equations of the minors are
+\[
+[0,1,0], [i,1,0], [-i,1,0], [i,0,1], [-i,0,1], [1,1,\sqrt{2}i], [1,1,-\sqrt{2}i].
+\]
+The real ones for the characteristic variety as defined above, i.e. just \([0,1,0]\) corresponding to the hyperplane \(0=dx^2\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:rank.1}.}
+%
+Suppose that \(q\) has rank \(1\):
+\[
+q=
+\begin{pmatrix}
+0 & q_{12} & q_{13} \\
+q_{21} & 0 & q_{23} \\
+q_{31} & q_{32} & 0
+\end{pmatrix}.
+\]
+Every row is a multiple of any nonzero row, and the same for every column.
+At least one entry must nonzero; permute indices to get \(q_{12}\ne 0\).
+The zero in \(q_{11}\) ensures that column \(1\) is zero, and the zero in \(q_{22}\) ensures that row \(2\) is zero.
+By the same reasoning, if in addition \(q_{13}\ne 0\), then the zero in \(q_{33}\) ensures that row \(3\) is zero:
+\[
+q=
+\begin{pmatrix}
+0 & q_{12} & q_{13} \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}
+\]
+So \(q=0\) precisely on the plane \(0=q_{12}y+q_{13}z\), containing the \(x\)-axis.
+On the other hand, if \(q_{13}=0\),
+\[
+q=
+\begin{pmatrix}
+0 & q_{12} & 0 \\
+0 & 0 & 0 \\
+0 & q_{32} & 0
+\end{pmatrix}.
+\]
+So \(q=0\) precisely on \(y=0\).
+Similarly if we permute indices.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:proof.test:nabla}.}
+The exterior differential system lies on an \(11\)-dimensional manifold \(M\) with tableau modulo \(\theta^1,\theta^2,\theta^3\)
+\[
+d
+\begin{pmatrix}
+\theta^1\\
+\theta^2\\
+\theta^3
+\end{pmatrix}
+=
+-
+\begin{pmatrix}
+\freeDeriv{\pi^1_1} & \pi^2_1 & \pi^3_1 \\
+\freeDeriv{\pi^2_1} & \freeDeriv{\pi^2_2} & \pi^3_2 \\
+\freeDeriv{\pi^3_1} & \freeDeriv{\pi^3_2} & -\pi^1_1-\pi^2_2
+\end{pmatrix}
+\wedge
+\begin{pmatrix}
+\omega^1\\
+\omega^2\\
+\omega^3
+\end{pmatrix}.
+\]
+Denote our manifold as \(M^{11}\) to indicate that it is \(11\)-dimensional.
+Take the flag \(M^8_0\subset M^9_1\subset M^{10}_2 \subset M^{11}\) given by
+\begin{align*}
+M^8_0&\defeq (0=x_1=x_2=x_3),\\
+M^9_1&\defeq (0=x_2=x_3),\\
+M^{10}_2&\defeq (0=x_3).
+\end{align*}
+We have \(\omega^i\defeq dx^i\), \(\theta^i=du^i-u^i_j dx^j\), and \(\pi^i_j=du^i_j\) modulo \(\theta^a,\omega^i\).
+
+Pick a submanifold \(R_2^8\subset M_2^{10}\) of codimension \(s_2=2\) given by equations
+\begin{align*}
+u^2_2&=u^2_2(x^1,x^2),\\
+u^3_2&=u^3_2(x^1,x^2),
+\end{align*}
+a submanifold \(R_1^4 \subset R^8_2\cap M^9_1\) of codimension \(s_1=3\) given by equations
+\begin{align*}
+u^1_1&=u^1_1(x^1),\\
+u^2_1&=u^2_1(x^1),\\
+u^3_1&=u^3_1(x^1),
+\end{align*}
+and a point \(R^0_0 \subset R_1^4\cap M^8_0\) of codimension \(s_0=3\) given by equations
+\begin{align*}
+u^1&=c^1,\\
+u^2&=c^2,\\
+u^3&=c^3,
+\end{align*}
+for functions \(u^i_j\) and constants \(c^1,c^2,c^3\).
+Since there are no free derivatives to restrain in the final column of the tableau, there is no further restraining manifold.
+
+So \(R^0_0\) is a point.
+On \(R^4_1\), the equations \(0=\theta^1=\theta^2=\theta^3\) become ordinary differential equations for functions \(u^1,u^2,u^3\) of \(x^1\), which have a unique solution through the point \(R^0_0\).
+Check that on \(R^4_1\), all of the tableau vanishes, so we don't have to solve any other equations than \(0=\theta^1=\theta^2=\theta^3\) to produce an integral curve.
+
+One \(R^8_2\), the tableau expands out to give derivatives in \(x^2\):
+\begin{align*}
+\pderiv{u^1_1}{x^2}&=\pderiv{u^2_1}{x^1}+u^3_1-f^3_1,\\
+\pderiv{u^2_1}{x^2}&=\pderiv{u^3_2}{x^1},\\
+\pderiv{u^3_1}{x^2}&=\pderiv{u^3_2}{x^1}.
+\end{align*}
+The last two have right hand sides expressed in terms of the restraining manifold data:
+\begin{align*}
+u^2_1(x^1,x^2)&=u^2_1(x^1)+\int \pderiv{u^3_2}{x^1} dx^2,\\
+u^3_1(x^1,x^2)&=u^3_1(x^1)+\int \pderiv{u^3_2}{x^1} dx^2.
+\end{align*}
+With these solved for, the first equation then solves:
+\[
+u^1_1(x^1,x^2)=\int \left(\pderiv{u^2_1}{x^1}+u^3_1-f^3_1\right)dx^2.
+\]
+It is not clear that the graph of these functions is an integral surface.
+
+Finally, we expand out the tableau to find equations for derivatives in \(x^3\):
+\begin{align*}
+\pderiv{u^1_1}{x^3}&=\pderiv{u^3_1}{x^1},\\
+\pderiv{u^2_1}{x^3}&=\pderiv{u^3_2}{x^1},\\
+\pderiv{u^2_2}{x^3}&=\pderiv{u^3_2}{x^2}+u^1_2-f^1_2,\\
+\pderiv{u^2_1}{x^3}&=-\pderiv{u^1_1}{x^1}-\pderiv{u^2_2}{x^1}-\pderiv{f^i_i}{x^1},\\
+\pderiv{u^3_2}{x^3}&=-\pderiv{u^1_1}{x^2}-\pderiv{u^2_2}{x^2}+\pderiv{f^i_i}{x^2}.
+\end{align*}
+Any \(3\)-dimensional integral manifold will arise by solving this determined system, with initial data from the integral surface.
+The proof of the  Cartan--K\"ahler theorem shows that this procedure always constructs a \(3\)-dimensional integral manifold, which is not obvious.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:proof.ck:use.tab}.}
+Picture a tableau for the \(p\)-forms in \(\II^p\) near \(E_+\), with \(\omega^p=\alpha\).
+Each row represents a \(p\)-form, so each tableau entry is wedged with \(p-1\) of the \(1\)-forms \(\omega^i\), so all but one of the \(\omega^i\).
+There are two grades:
+\begin{enumerate}
+\item
+grade \(p-1\) if wedged with \(\omega^{1\dots p-1}\); these generate \(\II_p\), and
+\item
+grade \(p\) otherwise; these generate \(\II_{p-1}\).
+\end{enumerate}
+By corollary~\vref{corollary:same.int.elts}, these have the same integral manifolds as \(\II\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:eds:trivial.a}.}
+For \(k\le p\), if \(\II^k=0\) then \(\II^{k-1}\wedge\Omega^1\subseteq \II^k\), so \(0=\II^{k-1}\wedge\Omega^1\) and so \(0=\II^{k-1}\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:eds:trivial.c}.}
+If \(\alpha\) is identically zero, then \(\II^{p-1}\wedge \Omega^1=0\) so \(\II^{p-1}=0\).
+So assume that \(\alpha\) is not identically zero.
+Write \(X\) locally as \(X=(0=f)\) for some function \(f\) with \(df\ne 0\).
+If \(\alpha=0\) at every point of \(X\), replace \(\alpha\) by \(\alpha/f\), and repeat until \(\alpha\ne 0\) at some point of \(X\).
+Replace \(X_+\) by the open subset of \(X_+\) containing a point of \(X\) at which \(\alpha\ne 0\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:proof.CK:use.Cartan.fam}.}
+Since \(e_i\) form a basis, \([e_i,e_j]=c_{ij}^k e_k\) for some functions \(c^k_{ij}\).
+Write \(e,e_{\hat\imath}, e_{\hat\imath\hat\jmath}\) to denote
+\[
+e_1,\dots,e_p, \quad e_1,\dots,\hat{e}_i,\dots,e_p, \quad e_1,\dots,\hat{e}_i,\dots,\hat{e}_j,\dots,e_p.
+\]
+By lemma~\vref{lemma:Cartan.family},
+\[
+d\phi(e)
+=
+(-1)^{i+1}e_i\pr{\phi(e_{\hat\imath})}\\
++
+\sum_{i < j} \phi([e_i,e_j],e_{\hat\imath\hat\jmath}).
+\]
+Plug in \(d\phi=h\phi\wedge\omega^p\) and \(\phi(e_{\hat\imath})=(-1)^{p-i}\phi\wedge\omega^i(e)\) and similarly that
+\begin{align*}
+&\phi(e_k,e_{\hat\imath\hat\jmath})\\
+&=(-1)^{p+i+j}
+\left(
+\delta_{j=k}
+\phi\wedge\omega^i
+-
+\delta_{i=k}
+\phi\wedge\omega^j
+\right)(e)
+\end{align*}
+to get
+\[
+e_p f = - \sum_{i < p} e_i( h^i f) + Hf,
+\]
+where
+\[
+H\defeq(-1)^{p+1}h
++
+\sum_{i<j}(c^j_{ij}h^i-c^i_{ij}h^j).
+\]
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Cauchy.chars:old.more.general}.}
+Pick a noncompact manifold \(M\) of positive dimension, and a discrete infinite set \(D\subset M\).
+Let \(\JJ^0\) be the set of functions \(f\colon M \to \R{}\) so that \(f\) vanishes at all but finitely many points of \(D\).
+Let \(\JJ^k=\nForms{k}{M}\) for \(k\ge1\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:cauchy.char:divergy}.}
+On \(M\defeq\R{}\), let \(\II^0\) be the analytic functions vanishing at all but finitely many integers, and \(\II^1\defeq\nForms{1}{M}\).
+Recall the infinite product expansion
+\[
+\frac{\sin \pi x}{\pi x}=\prod_{k=1}^{\infty}\pr{1-\frac{x^2}{k^2}},
+\]
+convergent in the complex plane \cite{Ahlfors:1978} p. 197, \cite{Whittaker/Watson:1996} p. 239 \(12\!\cdot\!\!14\).
+So
+\[
+f_n(x)\defeq\prod_{k=n+1}^{\infty}\pr{1-\frac{x^2}{k^2}}\to 1
+\]
+as analytic functions, but \(f_n(x)=0\) for \(x\) integer, except at \(x=-n,-n+1,\dots,-1,0,1,\dots,n-1,n\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Cauchy.chars:exp}.}
+Where \(v\ne0\), straighten out, i.e. take coordinates in which \(v=\p{x^1}\).
+Where \(v=0\), add a small multiple of a nonzero vector field and take a limit.
+For a more detailed proof: recall that for any function \(f\),
+\[
+\pderiv{}{t}e^{tv*}f=e^{tv*}\LieDer_v f.
+\]
+Apply induction, to get
+\[
+\pderiv[k]{}{t}e^{tv*}f=e^{tv*}\LieDer^k_v f.
+\]
+Taylor expand in \(t\) in any coordinates, so the result holds for any function \(f\).
+Taking exterior derivative, the result holds for \(df\).
+If the result holds for two differential forms, then it holds for their wedge product: expand.
+Any differential forms are locally obtained by repeated wedging and exterior differentiating on functions.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Cauchy.chars:symmetry}.}
+If \(v\) is a symmetry then
+\[
+\LieDer_v \vartheta = \left.\frac{d}{dt}\right|_{t=0} e^{tv*}\vartheta
+\]
+so \(\LieDer_v \II\subseteq\II\).
+
+If \(\LieDer_v \II\subseteq\II\), then in problem~\vref{problem:Cauchy.chars:exp}, each term lies in the ideal.
+By closure under convergence (theorem~\vref{theorem:f.t.uniform}), \(v\) is a symmetry.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:symmetries.Frobenius}.}
+%
+For simplicity, let us just consider the system \(\II\) on the plane \(M=\R[2]_{x,y}\) generated by \(dy\).
+A vector field \(v=a(x,y) \partial_x+b(x,y)\partial_y\) is a symmetry vector field just when \(\LieDer_v dy = f \, dy\) for some function \(f\).
+\begin{align*}
+\LieDer_v dy
+&=
+d\LieDer_v y,
+\\
+&=
+db,
+\\
+&=
+b_x \, dx + b_y \, dy,
+\end{align*}
+we see that \(b(x,y)\) depends only on \(y\), i.e. \(v=a(x,y)\partial_x+b(y)\partial_y\).
+Geometrically, \(v\) flows points with equal \(y\)-value to points with equal \(y\)-value, i.e. its \(y\)-component depends only on \(y\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:symmetry.messed}.}
+%
+Take any nonzero compactly supported function \(f\) on any manifold \(M\).
+(We could even take \(M=\R\).)
+Take any nonzero complete vector field \(v\), with the support of \(f\) contained in the interior of the support of \(v\), so that the flow of \(v\) takes some point in the support of \(f\) outside of the support of \(f\).
+(We could even take \(v=\partial_x\).)
+Generate \(\II\) with \(f,\LieDer_v f,\dots\).
+Each of these functions is supported in the support of \(f\), so under the flow of \(v\) is taken out of \(\II\).%
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:symmetry.messed.3}.}
+%
+On \(M=\R\), for each open set \(U\subseteq M\), let \(\II_U\) be generated by all analytic functions vanishing at the points \(x=1,1/2,1/3,\dots\) which lie in \(U\).
+So if \(0\in U\), then \(\II_U=0\).
+A vector field \(v\) vanishing at those points, and at the origin, and having compact support, is a symmetry of the smooth exterior differential system.
+Any analytic symmetry of \(\II\) has to vanish at all of those points, so vanishes to all orders at the origin, so vanishes.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Cauchy.chars:finite.type.smooth}.}
+Pick local generators \(\vartheta_i\).
+Write \(\LieDer_v\vartheta_i\) in those generators: \(\LieDer_v\vartheta_i=a^j_i\vartheta_i\).
+Pick an embedded smooth hypersurface \(H\) on which \(v\ne0\).
+Make a function \(g=I\) on \(H\) and extend \(g\) off of \(H\) as a local solution of \(\LieDer_v g = -ga\).
+By straightening out, such a function \(g\) exists, at least near each point of \(H\).
+Check that \(\LieDer_v (g\vartheta)=0\), so \(g\vartheta\) is a \(v\)-invariant collection of local generators of \(\II\).
+
+For a symmetry \(v\),
+\[
+\LieDer_v \vartheta=\left.\frac{d}{dt}\right|_{t=0} e^{-tv*}\vartheta.
+\]
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:cauchy:infinite.example}.}
+Take any manifold \(M\) of positive dimension and a foliation defined in some open set.
+Take an open set \(W\) so that the foliation is defined on the closure of \(W\), and a point \(m_0\) on the boundary of \(W\) near which the boundary of \(W\) is an analytic hypersurface of \(M\).
+For any open set \(U\subseteq M\), define \(\II_U\) to be
+\begin{enumerate}
+\item
+the forms pulling back to zero on each leaf of the foliation, if \(U\) intersects \(W\), and
+\item \(\II_U\defeq\nForms{*}{U}\) otherwise.
+\end{enumerate}
+Every point of \(W\) lies in a unique integral manifold: its leaf.
+
+Every open set \(U\subseteq M\) containing \(m_0\) intersects \(W\), so \(\II_U\) consists of the forms vanishing on the leaves.
+The foliation extends beyond \(W\).
+If the leaf through \(m_0\) is tangent to the boundary of \(W\) near \(m_0\), then it is an integral manifold near \(m_0\).
+Otherwise there is no integral manifold through \(m_0\), although there is an integral manifold with boundary.
+At every point outside the closure of \(W\), there are no integral manifolds of dimension \(p\).
+So the union of the integral manifolds might be neither open nor closed.
+
+The space of integral elements is a manifold with boundary near \(m_0\), so the system is \emph{not} involutive, as the definition of involution requires the integral elements to form a manifold without boundary.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Cauchy.chars:involutive.infinite.type}.}
+Let \(M\defeq\R[3]_{x,u,v}\), \(W\subset M\) an open subset not equal to \(M\).
+For any open set \(U\subseteq M\), define \(\II_U\) to be
+\begin{enumerate}
+\item
+generated by \(du\wedge dx,dv\wedge dx\) if \(U\) intersects \(W\),
+\item
+generated by \(du\wedge dx,dv\wedge dx,du \wedge dv\) otherwise.
+\end{enumerate}
+For any point on the boundary of \(W\), and open set \(U\) containing that point, we don't have \(du \wedge dv\) in \(\II_U\), so for an open set \(U'\subset U\) not intersecting \(W\), \(du \wedge dv\in\II_{U'}\) is not generated by any generators of \(\II_U\).
+The \(1\)-dimensional integral elements \(du=u'\,dx\),\(dv=v'\,dx\) are involutive.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:bundled.not.too}.}
+%
+\(x \, dx\)
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Cauchy.chars:bundle.flow}.}
+The problem is local: we can assume that \(\II\) is globally generated by pointwise linearly independent differential forms \(\vartheta_i\).
+The flow of \(v\) acts on the differential form bundle, as linear transformations of its fibers.
+We need to prove that the flow of \(v\) preserves the vector subbundles.
+Take a pointwise basis \(\vartheta^i,\vartheta^I\) of the differential forms. Write \(\LieDer_v \vartheta=a\vartheta\), for a block matrix
+\[
+a=
+\begin{pmatrix}
+a^i_j & 0 \\
+a^i_J & a^I_J
+\end{pmatrix}.
+\]
+Then
+\[
+e^{tv*}\vartheta=g\vartheta,
+\]
+for a unique smooth function \(g(x,t)\) for \((x,t\) in some open subset of \(M\times\R\):
+\begin{align*}
+\pderiv{}{t}\vartheta
+&=
+\pderiv{}{t}e^{tv*}\vartheta,
+\\
+&=
+\LieDer_v e^{tv*}\vartheta,
+\\
+&=
+e^{tv*}\LieDer_v\vartheta,
+\\
+&=
+e^{tv*}(a\vartheta),
+\\
+&=
+(e^{tv*}a)g\vartheta,
+\end{align*}
+so that
+\[
+g^{-1}\pderiv{g}{t}=e^{tv*}a,
+\]
+has derivative lying in a block matrix of the prescribed form.
+Since \(g(0)=I\) is also such a block matrix, \(g(t)\) is such a block matrix for all \(t\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Cauchy.chars:involutive.not.bundled}.}
+\(du\wedge dx, dv\wedge dx,u\,du\wedge dv\) on \(\R[4]_{x,y,u,v}\)
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Cauchy.Lie}.}
+%
+Apply the Cartan formula \(\LieDer_v \vartheta = d(v \hook \vartheta) + v \hook d\vartheta\) to a Cauchy characteristic vector field \(v\), so see that \(v\) is a symmetry vector field.
+If \(v\) and \(w\) are Cauchy characteristic vector fields, then
+\begin{align*}
+[v,w] \hook \vartheta
+&=
+\LieDer_v \LieDer_w \vartheta
+-
+\LieDer_w \LieDer_v \vartheta
+,
+\\
+&=
+\LieDer_v (d(w \hook \vartheta)+w \hook d\vartheta)
+-
+\dots
+\end{align*}
+we expand out \(\LieDer = d \hook + \hook d\).%
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Cauchy.char:const.dim}.}
+Fix a point \(m\).
+Take a set of forms \(\vartheta^a\in \II_U\) on some open set \(U\) containing \(m\), giving a basis of \(\II_m\).
+In particular, the forms are linearly independent at \(m\), so span a vector subbundle of the differential form bundle near \(m\).
+Pick additional forms \(\vartheta^{\mu}\) so that \(\vartheta^a,\vartheta^{\mu}\) is a basis of the exterior algebra at \(m\).
+These forms remain linearly independent nearby, so form a basis of the differential forms near \(m\).
+Every tangent vector \(v\) has \(v \hook \vartheta^a = \lambda^a_b(v)\vartheta^b + \lambda^a_{\mu}(v)\vartheta^{\mu}\), for unique \(\lambda^a_b,\lambda^a_{\mu}\in T^*_m M\), hence linearly independent.
+The Cauchy characteristic subspace at \(m\) is exactly the kernel of the various \(\lambda^a_{\mu}\).
+For nearby points, the same linearly independent forms have a kernel of the same rank, containing the Cauchy characteristics.
+By constancy of dimension of Cauchy characteristics, this kernel is still the space of Cauchy characteristics.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Cauchy.chars:locality}.}
+Suppose constant rank.
+As in problem~\vref{problem:Cauchy.char:const.dim}, the equation of Cauchy characteristic vectors becomes a kernel of a constant rank vector bundle map, and so the local sections of that vector bundle are the local sections in the kernel of that map.
+The vector bundle map is the map quotienting \(v \hook \vartheta^a\) by \(\vartheta^b\), so the kernel lies inside the set of Cauchy characteristic vector fields.
+But each Cauchy characteristic vector field lies in the kernel.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Cauchy.char:invol}.}
+\(dx\wedge du,dx\wedge dv,y \, dy\wedge du\wedge dv\) has involutive integral plane \(\spn{\p{x},\p{y}}\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Cauchy.submersion}.}
+%
+Note that \(\pi_* v=0\) just when \(v \hook \pi^*\vartheta=0\) for any \(\vartheta\in \nForms{*}{\bar{M}}\), so  \(v\) is a Cauchy characteristic of \(\II\).%
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:cauchy.char:chars.push}.}
+Consider a push forward.
+Take a generic tableau for the push forward, and pull it back.
+Add forms to it as needed, and make their rows generic as well.
+So we treat it, locally, as a part of the tableau for the original system.
+Take an integral manifold for the push forward.
+Restrict the original system to the preimage of the integral manifold.
+The rows in the tableau that were pulled back are now zero.
+But the polars of the other rows are still linearly independent.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Cauchy.char:retrac}.}
+By problem~\vref{problem:v.b.rank}, the space of Cauchy characteristics is a vector subbundle of the tangent bundle.
+Above we saw that Cauchy characteristics are bracket closed.
+Problem~\vref{problem:Frobenius} shows that the retracting space is therefore Frobenius,\SubIndex{Frobenius theorem}\SubIndex{theorem!Frobenius} so \(\pi\) exists locally.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Cauchy:disconnected}.}
+For any diffeomorphism \(\phi\) preserving \(\II\) and \(\pi\), the generators for \(U_a\) give generators for \(\phi(U_a)\), so we can extend to \(\pi^{-1}\bar{U}_a\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Cauchy.chars:other.way}.}
+Let \(\II\defeq\pi^*\bar\II\) and \(\bar\JJ\defeq\pi_*\II\).
+Easily \(\bar\II\subseteq\bar\JJ\).
+Take some \(\bar\vartheta\in\bar\JJ\), a differential form on \(\bar{M}\).
+On \(M\), \(\bar\vartheta=\phi_i\wedge\bar\vartheta^i\) for some forms \(\phi_i\) and some forms \(\bar\vartheta_i\) from \(\bar\II\).
+
+Suppose that \(\pi\) is a surjective submersion.
+Take coordinates \(x^i\) on some open subset of \(\bar{M}\).
+Pullback and extend to coordinates \(x^i,y^a\) on some open subset of \(M\).
+So
+\[
+\bar\vartheta=f_I(x)dx^I=\phi_i\wedge\bar\vartheta^i=g_{JA}(x,y)dx^J\wedge dy^A\wedge f^i_I(x)dx^I.
+\]
+Average over \(y\): all coefficients are functions of \(x\) only.
+Drop any terms with \(dy\) in them, as they must cancel out.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Cauchy.chars:wrong}.}
+For example, on \(M=\R[4]_{x,y,z,w}\), the exterior differential system \(\II\) generated by \(dy-z^2 \, dx\) is generated by pullbacks of forms in the exterior differential system \(\bar\II\) generated by \(dy-z^2 \, dx\) on \(\bar{M}=\R[3]_{x,y,z}\).
+But \(\II^2\) consists of the \(2\)-forms \(z \, f(x,y,z) \, dz \wedge dx\), all of which vanish at \(z=0\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Cauchy.char:char.var}.}
+The characteristic variety for the isometric immersion problem emerges from plugging \(Da=v^a\xi\), \(Db=v^b\xi\) and \(Dc=v^c\xi\) into the tableau, but with \(a \, Dc + c \, Da = 2b \, Db\), so \(a \, v^c + c \, v^a = 2b \, v^b\), giving
+\begin{align*}
+0
+&=
+\begin{pmatrix}
+v^a & v^b \\
+v^b & v^c
+\end{pmatrix}
+\begin{pmatrix}
+\xi\wedge\omega_1 \\
+\xi\wedge\omega_2
+\end{pmatrix},
+\\
+&=
+\begin{pmatrix}
+v^a(-\xi_2) + v^b\xi_1 \\
+v^b(-\xi_2)+v^c\xi_1
+\end{pmatrix}
+\omega_{12},
+\\
+&=
+\begin{pmatrix}
+-v^a\xi_2 + v^b\xi_1 \\
+-v^b\xi_2 + \frac{1}{a}(2bv^b-cv^a)\xi_1
+\end{pmatrix}
+\omega_{12},
+\\
+&=
+\begin{pmatrix}
+-\xi_2 & \xi_1 \\
+-\frac{c}{a}\xi_1 & -\xi_2+\frac{2b}{a}\xi_1
+\end{pmatrix}
+\begin{pmatrix}
+v^a\\
+v^b
+\end{pmatrix}
+\omega_{12}.
+\end{align*}
+After we drop the Cauchy characteristics, the characteristic variety is the determinant of this matrix, i.e.
+\[
+0 = -c\xi_1^2 + 2b\xi_1 \xi_2 -a\xi_2^2.
+\]
+Recall that the characteristic variety consists of the lines
+\[
+0 = \sum_i \xi_i \omega_i=0,
+\]
+satisfying these equations.
+A vector \(v=v_1 e_1+v_2 e_2\) lies in such a characteristic line just when \(0 = \xi_1 v_1 + \xi_2 v_2\), so then, up to scaling
+\[
+\pr{\xi_1,\xi_2}=\pr{v_2,-v_1}.
+\]
+Plug this in to see that the characteristics are the curves whose velocities satisfy
+\[
+0 = av_1^2 + 2bv_1 v_2 + cv_2^2.
+\]
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:apply.eds:omegas}.}
+\begin{align*}
+\otomega_1
+&=
+\ot{e}_1 \cdot d\ot{x},
+\\
+&=
+e^{-u} \pr{\phi'(x) e_1} \cdot d\phi(x),
+\\
+&=
+e^{-u} \pr{\phi'(x) e_1} \cdot \phi'(x) \, dx,
+\\
+&=
+e^{-u} e_1 \cdot dx,
+\\
+&=
+e^{-u} \omega_1,
+\end{align*}
+and similarly \(\otomega_2=e^{-u} \omega_2\).
+So \(\otomega=e^{-u}\omega\).
+Differentiate to get
+\[
+d\otomega = i\otalpha\wedge\otomega=d(e^{-u}\omega),
+\]
+which we expand out to find
+\[
+(du+i(\otalpha-\alpha)\wedge\otomega=0.
+\]
+By the complex linear form of Cartan's lemma (which the reader can state and prove), we get the result.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Weingarten:HsK}.}
+If the eigenvalues of the shape operator at a point are \(\lambda_1, \lambda_2\), then
+\[
+H=\frac{1}{2}\pr{\lambda_1+\lambda_2}, K=\lambda_1\lambda_2,
+\]
+so
+\[
+0 \le \pr{\lambda_1-\lambda_2}^2=4\pr{H^2-K}.
+\]
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Weingarten:ift}.}
+\begin{align*}
+\pderiv{f}{a_{22}}
+&=
+f_H\pderiv{H}{a_{22}}+f_K\pderiv{K}{a_{22}},
+\\
+&=
+\frac{f_H}{2}+f_Ka_{11},
+\\
+&=
+\frac{f_H}{2}-e_3\cdot \frac{de_1}{dt} f_K,
+\\
+&\ne0.
+\end{align*}
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:cauchy-kov:u.con}.}
+\cite{Serre:2006}, p. 68.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:cauchy-kov:u.pwr.an}.}
+\cite{Serre:2006}, p. 69.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:characteristic.variety:CR}.}
+\[
+P(x,y,\p{x},\p{y})
+=
+\begin{pmatrix}
+\p{x}&-\p{y}\\
+\p{y}&\p{x}
+\end{pmatrix}
+\]
+so turning derivatives \(\p{x},\p{y}\) into Greek variables \(\xi,\eta\):
+\[
+P(x,y,\xi,\eta)
+=
+\begin{pmatrix}
+\xi&-\eta\\
+\eta&\xi
+\end{pmatrix}.
+\]
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:char.var:Maxwell}.}
+If we write each antisymmetric matrix
+\[
+\begin{pmatrix}
+0 & z & -y \\
+-z & 0 & x \\
+y & -x & 0
+\end{pmatrix}
+\]
+as \([x,y,z]\), Maxwell's equations become
+\begin{align*}
+\p{t}E&=[\p{x},\p{y},\p{z}]H,\\
+\p{t}H&=-[\p{x},\p{y},\p{z}]E.
+\end{align*}
+As an operator
+\[
+P\begin{bmatrix}E\\H\end{bmatrix}
+=
+\begin{pmatrix}
+\p{t}I & -[\p{x},\p{y},\p{z}]\\
+[\p{x},\p{y},\p{z}] & \p{t}I
+\end{pmatrix}
+\]
+so if we write \(1\)-forms as \(\xi\,dx+\eta\,dy+\zeta\,dz+\tau\,dt\),
+the symbol matrix is
+\[
+\opsymbol{P}
+=
+\begin{pmatrix}
+\tau I & -[\xi,\eta,\zeta]\\
+[\xi,\eta,\zeta] & \tau I
+\end{pmatrix}
+\]
+a square matrix with determinant
+\[
+\left(\tau^2 - \xi^2 - \eta^2 - \zeta^2\right)^2 \tau^2.
+\]
+The characteristic variety consists of the hyperplanes tangent to the light cone and the hyperplane \(\tau=0\) tangent to space at constant time.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:moving.frame:derive.S.F}.}
+Since \(e\) is orthogonal, its transpose is \(\transpose{e}=e^{-1}\), i.e. \(\transpose{e}e=I\), i.e. \(e_i \cdot e_j=1\) if \(i=j\), \(0\) otherwise.
+Differentiate: \(\transpose{\dot{e}} e + \transpose{e} \dot{e}=0\), i.e. \(\transpose{e}\dot{e}=-\transpose{\dot{e}}e=-\transpose{(\transpose{e}\dot{e})}\), i.e. \(\transpose{e}\dot{e}\) is antisymmetric, with entries \(e_i \cdot \dot{e}_j\).
+Since \(\dot{e}_1=ke_2\),
+\[
+\transpose{e}\dot{e}=
+\begin{pmatrix}
+0 & ? & ? \\
+k & ? & ? \\
+0 & ? & ?
+\end{pmatrix}.
+\]
+By antisymmetry,
+\[
+\transpose{e}\dot{e}=
+\begin{pmatrix}
+0 & -k & 0 \\
+k & 0 & -t \\
+0 & t & 0
+\end{pmatrix}
+\]
+for some \(t\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:moving.frame:helix}.}
+For any constants \(\alpha,\beta,\gamma\), let
+\[
+\begin{pmatrix}
+x_1\\
+x_2\\
+x_3
+\end{pmatrix}
+\defeq
+\begin{pmatrix}
+\alpha \cos \beta s \\
+\alpha \sin \beta s\\
+\gamma s
+\end{pmatrix}.
+\]
+so
+\[
+\begin{pmatrix}
+\dot{x}_1\\
+\dot{x}_2\\
+\dot{x}_3
+\end{pmatrix}
+=
+\begin{pmatrix}
+-\alpha\beta \sin \beta s \\
+\alpha \beta \cos \beta s\\
+\gamma
+\end{pmatrix},
+\]
+\[
+\norm{\dot{x}}^2=\alpha^2\beta^2+\gamma^2.
+\]
+So we need this to equal \(1\).
+Clearly \(\alpha=0\) or \(\beta=0\) is a line, and \(\gamma=0\) is a circle.
+We ignore those cases and so the equation \(\alpha^2\beta^2+\gamma^2=1\) can be solved for any of these three constants in terms of the other two.
+We can reflect in the \(x_1x_2\) plane to arrange that \(\alpha,\beta>0\) and in the \(x_3\) axis to arrange that \(\gamma>0\).
+We get
+\[
+e_1
+=
+\begin{pmatrix}
+-\alpha\beta \sin \beta s \\
+\alpha \beta \cos \beta s\\
+\gamma
+\end{pmatrix}
+\]
+so
+\[
+\dot{e}_1=ke_2=
+\begin{pmatrix}
+-\alpha\beta^2 \cos \beta s \\
+-\alpha \beta^2 \sin \beta s\\
+0
+\end{pmatrix},
+\]
+so
+\[
+k=\alpha\beta^2
+\]
+and
+\[
+e_2=
+-
+\begin{pmatrix}
+\cos \beta s \\
+\sin \beta s\\
+0
+\end{pmatrix}.
+\]
+Differentiate
+\[
+\dot{e}_2
+=
+\begin{pmatrix}
+\beta\sin \beta s \\
+-\beta\cos \beta s\\
+0
+\end{pmatrix}
+\]
+so
+\[
+te_3=\dot{e}_2+ke_1=te_3
+=
+\begin{pmatrix}
+\beta\gamma^2\sin \beta s\\
+-\beta\gamma^2\cos \beta s\\
+\alpha\beta^2\gamma
+\end{pmatrix}.
+\]
+Finally,
+\[
+t=\pm\beta\gamma,
+\]
+and
+\[
+e_3=
+\pm
+\begin{pmatrix}
+\gamma\sin \beta s\\
+-\gamma\cos \beta s\\
+\alpha\beta
+\end{pmatrix}.
+\]
+So if we set
+\begin{align*}
+\beta\defeq\sqrt{k^2+t^2},\\
+\alpha\defeq\frac{k}{\beta^2},\\
+\gamma\defeq\pm\frac{t}{\beta},
+\end{align*}
+we get a helix with prescribed constant values of \(k,t\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:moving.frame:Bertrand}.}
+If \(\ot{e}_2=e_2\), then \(e_1,e_3\) and \(\ot{e}_1,\ot{e}_3\) are orthonormal bases of the same plane \(e_2^{\perp}\).
+Choose the sign of \(e_3\) to get
+\[
+\ot{e}_1+i\ot{e}_3=e^{i\theta}(e_1+ie_3)
+\]
+for some angle \(\theta\).
+Differentiate to get
+\[
+d\ot{e}_1+i \, d\ot{e}_3=\dot\theta e^{i\theta}(e_1+ie_3)+e^{i\theta}(\dot{e}_1+i\dot{e}_3).
+\]
+Expand to get
+\[
+(\ot{k}-i\ot{t})e_2=\dot\theta e^{i\theta}(e_1+ie_3)+e^{i\theta}(k-it)e_2
+\]
+Differentiate \(e_2=\ot{e}_2\) to get \(-\ot{k}\ot{e}_1+\ot{t}\ot{e}_3=-ke_1+te_3\).
+Hence
+\[
+\ot{k}+i\ot{t}=e^{-i\theta}(k+it).
+\]
+So \(\dot\theta=0\), a constant rotation.
+
+On the other hand, we can now pick any constant \(\theta\), and define:
+\begin{align*}
+\ot{e}_1+i\ot{e}_3\defeq e^{i\theta}(e_1+ie_3), \\
+\ot{e}_2\defeq e_2,\\
+\ot{k}+i\ot{t}\defeq e^{-i\theta}(k+it),\\
+\ot{x}=\int \ot{e}_1 \, ds
+\end{align*}
+and check that the Serret--Frenet equations are satisfied, so these yield the Serret--Frenet frame of a curve.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:moving.frame:derive.structure.equations}.}
+The proof requires some unwinding of notation: the expression \(\omega_i=e_i \cdot dx\) means that \(\omega_i = \sum_j e_{ji} dx_j\), which allows us to unwind the following formal steps:
+\begin{align*}
+d\omega_i &= d\pr{e_i \cdot dx},\\
+&= de_i \wedge dx, \\
+&= \sum_j \pr{e_j \cdot de_i} \wedge \pr{e_j \cdot dx}, \\
+&= \sum_j \gamma_{ji} \wedge \omega_j.
+\end{align*}
+Similarly, the expression \(\gamma_{ij}=e_i \cdot de_j\) means that \(\gamma_{ij} = \sum_k e_{ki} de_{kj}\), so:
+\begin{align*}
+d\gamma_{ij} &= d\pr{e_i \cdot de_j}, \\
+&= de_i \wedge de_j, \\
+&= \sum_k \pr{e_k \cdot de_i} \wedge \pr{e_k \cdot de_j}, \\
+&= \sum_k \gamma_{ki} \wedge \gamma_{kj}.
+\end{align*}
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:moving.frame:structure.group.action}.}
+Here are two proofs:
+\begin{enumerate}
+\item
+If we think of \(x\) and \(e\) as functions on \(\frameBundleE{3}\), then \(r_g^* x = x\), \(r_g^* e = eg\).
+Hence \(r_g^* dx=dx\) and \(r_g^* de = (de)g\).
+So \(r_g^* \omega = r_g^* (\transpose{e}\, dx)= \transpose{(eg)} dx = \transpose{g} \transpose{e} dx = \transpose{g} \omega\) and \(r_g^*\gamma = r_g^* (\transpose{e} de) = \transpose{(eg)} d(eg)=\transpose{g} \transpose{e} de \, g=\transpose{g} \gamma g\).
+\item
+The action is \(r_g(x,e)=(x,eg)\), where \((eg)_i = \sum_j g_{ji} e_j\).
+Hence
+\[
+r_g'(x,e)(\dot{x},\dot{e})=(\dot{x},\sum_j g_{ji} \dot{e}_j).
+\]
+\begin{align*}
+(r_g^* \omega)_{(x,e)}(\dot{x},\dot{e})
+&=
+\omega_{r_g(x,e)}r_g'(x,e)(\dot{x},\dot{e}),
+\\
+&=
+\omega_{(x,eg)}(\dot{x},\sum_j g_{ji} \dot{e}_j),
+\\
+&=
+(eg) \cdot \dot{x},
+\\
+&= \sum_j g_{ji} e_j \cdot \dot{x},
+\\
+&=
+\sum_j g_{ji} \omega_{(x,e)}(\dot{x},\dot{e}).
+\end{align*}
+\end{enumerate}
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:moving.frame:compact}.}
+Take any point \(p_0 \in \E[3]\).
+At a point \(x_0\) where the surface acheives maximal distance from some point \(p_0\in\E[3]\), differentiate distance to see that \(T_{x_0} S\)  is perpendicular to the ray from \(p_0\) to \(x_0\).
+Translate \(x_0\) to the origin, and rescale and rotate to get \(p_0\) a unit vector above the origin.
+Apply our local picture of surfaces to see that \(S\) being inside the unit sphere around \(p_0\) forces \(S\) to be locally the graph of a function with critical zero at the origin, and eigenvalues of the second derivative both at least \(1\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:moving.frame:findom12}.}
+Note that \(\rho\) rotates the point \(\ot{x}\) of our plane around on a circle perpendicular to \(e_1, e_3\) and tangent to \(e_2\), with radius \(r\), so that
+\[
+\frac{d \rho}{d \theta} \ot{x} = r e_2.
+\]
+Therefore
+\begin{align*}
+\omega_1
+&=
+e_1 \cdot dx,
+\\
+&=
+e_1 \cdot d\pr{\rho \ot{x}},
+\\
+&=
+e_1 \cdot \rho \, d\ot{x} + e_1 \cdot \frac{d\rho}{d\theta} \, \ot{x} \, d\theta,
+\\
+&=
+e_1 \cdot \rho \, \ot{e}_1 ds +  e_1 \cdot r e_2 \, d\theta,
+\\
+&=
+e_1 \cdot e_1 ds
+\\
+&=ds.
+\end{align*}
+Similarly, \(\omega_3 = 0\) and
+\begin{align*}
+\omega_2
+&=
+e_2 \cdot dx,
+\\
+&=
+e_2 \cdot d\pr{\rho \ot{x}},
+\\
+&=
+e_2 \cdot \rho \, d\ot{x} + e_2 \cdot \frac{d\rho}{d\theta} \, \ot{x} \, d\theta,
+\\
+&=
+e_2 \cdot \rho \, \ot{e}_1 + e_2 \cdot r e_2 \, d\theta,
+\\
+&=
+r \, d\theta.
+\end{align*}
+Note that
+\begin{align*}
+d\ot{e}_1&=\dot\phi\,\ot{e}_3 ds,\\
+d\ot{e}_2&=0,\\
+d\ot{e}_3&=-\dot\phi\,\ot{e}_1 ds,
+\end{align*}
+and
+\[
+d\rho=\rho
+\begin{pmatrix}
+0 & -1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}d\theta.
+\]
+Compute
+\begin{align*}
+de_1
+&=
+d(\rho \ot{e}_1),
+\\
+&=
+d\rho \, \ot{e}_1 + \rho \, d\ot{e}_1,
+\\
+&=
+\rho
+\begin{pmatrix}
+0 & -1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}
+\ot{e}_1 d\theta
++
+\rho \dot{\phi} \ot{e}_3 ds,
+\\
+&=
+\rho
+\begin{pmatrix}
+0 & -1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}
+\begin{pmatrix}
+\cos\phi\\
+0\\
+\sin\phi
+\end{pmatrix}
+d\theta
++
+\dot{\phi} e_3 ds,
+\\
+&=
+\rho
+\begin{pmatrix}
+0\\
+\cos\phi\\
+0
+\end{pmatrix}
+d\theta
++
+\dot{\phi} e_3 ds,
+\\
+&=
+\cos\phi e_2d\theta
++
+\dot{\phi} e_3 ds.
+\end{align*}
+and similarly
+\begin{align*}
+de_2
+&=
+d(\rho \ot{e}_2),
+\\
+&=
+d\rho \, \ot{e}_2,
+\\
+&=
+\rho
+\begin{pmatrix}
+0 & -1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}
+\ot{e}_2 d\theta
+\\
+&=
+-
+\rho
+\begin{pmatrix}
+1 \\
+0 \\
+0
+\end{pmatrix}
+d\theta
+\\
+&=
+-\begin{pmatrix}
+\cos\theta\\
+\sin\theta\\
+0
+\end{pmatrix}
+d\theta.
+\end{align*}
+Finally,
+\begin{align*}
+de_3
+&=
+d(\rho \ot{e}_3),
+\\
+&=
+d\rho \, \ot{e}_3 + \rho \, d\ot{e}_3,
+\\
+&=
+\rho
+\begin{pmatrix}
+0 & -1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}
+\ot{e}_3 d\theta
+-
+\rho \dot{\phi} \ot{e}_1 ds,
+\\
+&=
+\rho
+\begin{pmatrix}
+0 & -1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}
+\begin{pmatrix}
+-\sin\phi\\
+0\\
+\cos\phi
+\end{pmatrix}
+d\theta
+-
+\dot{\phi} e_1 ds,
+\\
+&=
+\rho
+\begin{pmatrix}
+0\\
+-\sin\phi\\
+0
+\end{pmatrix}
+d\theta
+-
+\dot{\phi} e_1 ds,
+\\
+&=
+-\sin\phi \, e_2d\theta
+-\dot{\phi} e_1 ds.
+\end{align*}
+Therefore
+\begin{align*}
+\gamma_{12}&=-\gamma_{21},\\
+&=-e_2\cdot de_1,\\
+&=-e_2\cdot(\cos\phi \, e_2 d\theta+\dot\phi e_3 ds),\\
+&=-\cos\phi \, d\theta.
+\end{align*}
+\begin{align*}
+\gamma_{13}&=e_1 \cdot de_3,\\
+&=-\dot\phi \, ds,\\
+\end{align*}
+\begin{align*}
+\gamma_{23}&=e_2\cdot de_3,\\
+&=-\sin\phi \, d\theta.
+\end{align*}
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:moving.frame:integral}.}
+If \(\sin\phi=0\) everywhere, the curve is a horizontal line and the surface of revolution an annulus.
+Suppose that \(\sin\phi\) is not everywhere zero; pick an interval on which \(\sin\phi\ne 0\), and let \(\varepsilon\) be the sign of \(\sin\phi\).
+Differentiate to find that the function
+\[
+\beta\defeq\varepsilon r \sqrt{1-\dot{r}^2}+H_0 r^2
+\]
+is constant along solutions, say equal to \(\beta_0\).
+Solve for \(\dot{r}\):
+\[
+\dot{r}^2 = 1-\frac{\beta_0-H_0r^2}{r^2}.
+\]
+Substitute \(u=r^2\):
+\[
+\dot{u}=2\sqrt{H_0u^2+u-\beta_0}.
+\]
+Integrate:
+\[
+\int\frac{du}{2\sqrt{H_0u^2+u-\beta_0}}=s.
+\]
+This integral can be solved in elementary functions giving \(s=s(r)\); for example, if \(H_0>0\),
+\begin{align*}
+s&=
+\frac{
+(4\beta_0H_0+1)
+\log
+\pr{
+2\sqrt{H_0}
+{
+\sqrt{
+H_0u^2+u-\beta_0
+}
++2H_0u+1
+}
+}
+}{16H_0^{3/2}},
+\\
+&=
+\frac{
+(4\beta_0H_0+1)
+\log
+\pr{
+2\sqrt{H_0}
+{
+\sqrt{
+H_0r^4+r^2-\beta_0
+}
++2H_0r^2+1
+}
+}
+}{16H_0^{3/2}},
+\end{align*}
+The surfaces of revolution of constant positive mean curvature are obtained by solving implicitly for \(r=r(s)\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:moving.frame:Hopfy}.}
+Taking real and imaginary parts \(q=q_1+iq_2\):
+\[
+\begin{pmatrix}
+a_{11} & a_{12} \\
+a_{12} & a_{22}
+\end{pmatrix}
+=
+\begin{pmatrix}
+H+q_1 & -q_2 \\
+-q_2 & H-q_1
+\end{pmatrix}.
+\]
+So \(H=(a_{11}+a_{22})/2\) is the mean curvature, and
+\[
+q=\frac{a_{11}-a_{22}-2i\, a_{12}}{2}.
+\]
+Note that \(|q|^2=q\bar{q}=H^2-K\), so \(q=0\) precisely at umbilic points.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:moving.frame:diff.Hopf}.}
+In our complex notation, we are identifying the matrix
+\[
+\begin{pmatrix}
+0 & -1 & 0 \\
+1 &  0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}
+\]
+with the complex number \(i\).
+The fibers of \(\frameBundle{S} \to S\) have the form
+\[
+(x(t),e(t))=(x_0,e_0e^{it}).
+\]
+So if we write out \(\gamma=\transpose{e}de\) in our complex notation,
+on each fiber,
+\[
+\gamma=i \, dt,
+\]
+so \(\alpha=\gamma_{12}=-dt\).
+We are given that
+\[
+f(x(t),e(t))=f(x_0,e_0e^{it})=e^{ikt}f(x_0,e_0),
+\]
+so on the fiber
+\[
+\frac{df}{dt}=ikf,
+\]
+i.e.
+\[
+df+ikf\alpha=0.
+\]
+So in complex notation, \(df+ikf\alpha\) vanishes on vertical vectors for \(\frameBundle{S} \to S\), i.e. is a multiple of \(\omega,\bar\omega\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:moving.frame:Hopf.1}.}
+\begin{align*}
+Dq&=a_{111}-3a_{122}+i(a_{222}-3a_{112}),\\
+\bar{D}q&=2(H_1-iH_2).
+\end{align*}
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:moving.frame:not.umb}.}
+%
+\begin{align*}
+0
+&=
+\begin{pmatrix}
+d(\gamma_{13}-k_1\omega_1)\\
+d(\gamma_{23}-k_2\omega_2)
+\end{pmatrix}
+\\
+&=
+\begin{pmatrix}
+-\gamma_{12}\wedge\gamma_{23}-dk_1\wedge\omega_1+k_1\gamma_{12}\wedge\omega_2\\
+-\gamma_{21}\wedge\gamma_{13}-dk_2\wedge\omega_2+k_2\gamma_{21}\wedge\omega_1
+\end{pmatrix}
+\\
+&=
+\begin{pmatrix}
+-\gamma_{12}\wedge k_2\omega_2-dk_1\wedge\omega_1+k_1\gamma_{12}\wedge\omega_2\\
+\gamma_{12}\wedge k_1\omega_1-dk_2\wedge\omega_2-k_2\gamma_{12}\wedge\omega_1
+\end{pmatrix}
+\\
+&=
+-%
+\begin{pmatrix}
+dk_1\wedge\omega_1+(k_2-k_1)\gamma_{12}\wedge\omega_2\\
+(k_2-k_1)\gamma_{12}\wedge\omega_1+dk_2\wedge\omega_2
+\end{pmatrix}
+\end{align*}
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:moving.frame:distinct.lambda}.}
+Arrange \(e_1,e_2\) to diagonalize the shape operator, so
+\begin{align*}
+\gamma_{13}&=k_1\omega_1,\\
+\gamma_{23}&=k_2\omega_2,
+\end{align*}
+with \(k_1\) constant.
+Differentiate to find that \(\gamma_{12}\) is a multiple of \(\omega_2\).
+So then along the flow of \(e_1\), \(\gamma_{12}=0\) and \(\gamma_{23}=0\) i.e. \(e_2\) is constant, so \(e_1,e_3\) rotate in the plane, with \(\gamma_{13}=k_1\), so at a constant rate, i.e. on a circle.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:G.B:euler.char}.}
+The sphere has Gauss map the identity, so degree \(1\), so \(\chi=2\).
+Another way to see this: \(K=1\) on the unit sphere, and area is \(4 \pi\).
+The torus has a nowhere zero vector field \(X\), being a surface of revolution, so \(\chi=0\).
+The disk has the Morse function \(f(x,y)=x^2+y^2\), so \(\chi=1\).
+Smooth off corners of less than a right angle, by deforming to locally look like a square, and then clip off to get a quarter circle: \(\chi\) doesn't change.
+Similarly for more than right angle.
+Take two surfaces \(S,T\), and deform until they each contain a perfect half sphere.
+Cut holes along the equators, glue tubes to connect, a surface \(S\# T\), and get a sum formula from the Gauss--Bonnet integral \(\chi_{S\# T}=\chi_S+\chi_T-2\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:moving.frame:torsion.relation}.}
+\begin{align*}
+e_3 \frac{d}{ds}\left(\cos \theta \ot{e}_2 + \sin\theta \ot{e}_3\right)
+&=
+e_3 \left(-\dot\theta\sin \theta \ot{e}_2
++\cos\theta \dot{\ot{e}}_2
++\dot\theta\cos\theta \ot{e}_3
++ \sin\theta\dot{\ot{e}}_3
+\right),
+\\
+&=
+e_3 \left(-\dot\theta\sin \theta \ot{e}_2
++\cos\theta (-ke_1+t\ot{e}_3)
++ \dot\theta\cos\theta \ot{e}_3
+- t \sin\theta\ot{e}_2
+\right),
+\\
+&=
+e_3 \left(-\dot\theta\sin \theta \ot{e}_2
++t\cos\theta \ot{e}_3
++ \dot\theta\cos\theta \ot{e}_3
+- t \sin\theta\ot{e}_2
+\right),
+\\
+&=
+\dot\theta\sin^2 \theta
+t\cos^2\theta
+\dot\theta\cos^2\theta
++ t \sin^2\theta,
+\\
+&=
+\dot\theta+t.
+\end{align*}
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:moving.frame:lines.on.surface}.}
+We get \(\dot{e}_1=0\) along such a curve, at that point, so \(0=\gamma_{21}=\gamma_{31}\), so \(a_{11}=0\).
+Since this occurs in all directions, \(a=0\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:geodesics:behaviour.of.radial}.}
+The fact that \(\exp'_{x_0}=I\) means that at the origin,
+\[
+\omega_1^2 + \omega_2^2 = dx^2 + dy^2,
+\]
+in rectangular coordinates, i.e. near the origin
+\[
+\omega_1^2 + \omega_2^2 - dr^2 - r^2 \, d\theta^2
+\]
+is smooth.
+Expand out, and plug in
+\[
+r \, d\theta= \cos \theta  \, dy - \sin \theta \, dx
+\]
+to see that
+\begin{align*}
+\omega_1^2 + \omega_2^2
+&=
+dr^2 + r^2 \, d\theta^2 + \pr{\pr{\frac{h}{r}}^2-1} \, r^2 d\theta^2,
+\\
+&=dx^2 + dy^2 +  \pr{\pr{\frac{h}{r}}^2-1} \pr{\cos \theta  \, dy - \sin \theta \, dx}.
+\end{align*}
+In particular,
+\[
+\frac{h}{r} \to 1
+\]
+as \(r \to 0\).
+Hence \(h \to 0\) as  \(r \to 0\) and
+\[
+\partial_r h \to \lim_{r \to 0} \frac{h}{r} = 1.
+\]
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:geodesics:triangle}.}
+Gauss--Bonnet
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:geodesics:prescribed.K}.}
+The differential equation forces \(h=r-Kr^3/3!+O(r)^4\), and inductively forces \(\p{r}^k\p{\theta}^{\ell} h=O(r)^{\ell}\).
+Note that
+\begin{align*}
+\p{x}&=\cos\theta\p{r}-\frac{\sin\theta}{r}\p{\theta},\\
+\p{y}&=\sin\theta\p{r}+\frac{\cos\theta}{r}\p{\theta}.
+\end{align*}
+So \(h^2-r^2\) is a smooth function of \(x,y\) at the origin.
+\begin{align*}
+dr^2+h^2d\theta^2
+&=
+dr^2+r^2d\theta^2+(h^2-r^2)d\theta^2,
+\\
+&=
+dr^2+r^2d\theta^2+\frac{(h^2-r^2)(-x\,dy+y\,dx)}{r^2},
+\\
+&=
+dx^2+dy^2-\frac{K(x^2+y^2)+O(r)^3}{3}(-x\,dy+y\,dx)
+\end{align*}
+is smooth at the origin.

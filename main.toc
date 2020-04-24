@@ -1,0 +1,138 @@
+\contentsline {chapter}{\chapternumberline {1}Exterior differential systems}{1}{chapter.1}%
+\contentsline {section}{Background material from differential geometry}{1}{section*.2}%
+\contentsline {section}{Differential equations encoded in differential forms}{1}{section*.3}%
+\contentsline {section}{Exterior differential systems}{1}{section*.4}%
+\contentsline {section}{Integral elements}{2}{section*.5}%
+\contentsline {section}{Integral elements as points of the Grassmann bundle}{3}{section*.6}%
+\contentsline {section}{The Cartan--K\"ahler theorem}{3}{section*.7}%
+\contentsline {section}{Example: Lagrangian submanifolds}{4}{section*.8}%
+\contentsline {section}{The last character}{5}{section*.9}%
+\contentsline {section}{Example: harmonic functions}{5}{section*.10}%
+\contentsline {section}{Background material from differential geometry}{6}{section*.11}%
+\contentsline {section}{The Frobenius theorem}{6}{section*.12}%
+\contentsline {section}{Example: surfaces with constant shape operator}{7}{section*.13}%
+\contentsline {section}{Background material from differential geometry}{8}{section*.14}%
+\contentsline {section}{Example: triply orthogonal webs}{8}{section*.15}%
+\contentsline {section}{Generality of integral manifolds}{9}{section*.16}%
+\contentsline {section}{What could go wrong?}{10}{section*.17}%
+\contentsline {section}{Generalizations}{11}{section*.18}%
+\contentsline {chapter}{\chapternumberline {2}Tableaux}{13}{chapter.2}%
+\contentsline {section}{Example}{13}{section*.19}%
+\contentsline {section}{Definition}{13}{section*.20}%
+\contentsline {section}{Torsion}{16}{section*.21}%
+\contentsline {section}{Borrowing}{17}{section*.22}%
+\contentsline {section}{Integral elements}{20}{section*.23}%
+\contentsline {section}{Example: Lie's third theorem}{21}{section*.24}%
+\contentsline {section}{Example: surface invariants}{22}{section*.25}%
+\contentsline {chapter}{\chapternumberline {3}Example: almost complex structures}{25}{chapter.3}%
+\contentsline {section}{Example: the Cauchy--Riemann equations}{25}{section*.26}%
+\contentsline {section}{Example: almost complex structures}{26}{section*.27}%
+\contentsline {section}{Almost complex submanifolds}{30}{section*.28}%
+\contentsline {chapter}{\chapternumberline {4}Prolongation}{33}{chapter.4}%
+\contentsline {section}{Notation}{33}{section*.29}%
+\contentsline {section}{Example: isometric immersion, involution fails}{33}{section*.30}%
+\contentsline {section}{What to do?}{35}{section*.31}%
+\contentsline {section}{Prolongation}{35}{section*.32}%
+\contentsline {section}{Example: isometric immersion, prolonging}{36}{section*.33}%
+\contentsline {chapter}{\chapternumberline {5}Cartan's test}{39}{chapter.5}%
+\contentsline {section}{Generic points and generic submanifolds}{39}{section*.34}%
+\contentsline {section}{Cartan's strategy}{39}{section*.35}%
+\contentsline {section}{Cartan's test}{39}{section*.36}%
+\contentsline {section}{Differentiating on the Grassmann bundle}{40}{section*.37}%
+\contentsline {section}{Extending integral elements}{40}{section*.38}%
+\contentsline {section}{View from a tableau}{41}{section*.39}%
+\contentsline {section}{Differential equations}{42}{section*.40}%
+\contentsline {section}{Compatibility and involutivity}{43}{section*.41}%
+\contentsline {section}{Generality of integral manifolds}{44}{section*.42}%
+\contentsline {section}{Deformation}{44}{section*.43}%
+\contentsline {section}{Prolongation}{45}{section*.44}%
+\contentsline {chapter}{\chapternumberline {6}The characteristic variety}{47}{chapter.6}%
+\contentsline {section}{Linearization}{47}{section*.45}%
+\contentsline {section}{The characteristic variety}{48}{section*.46}%
+\contentsline {section}{Determined systems}{49}{section*.47}%
+\contentsline {section}{Example: triply orthogonal webs, noncharacteristic data}{51}{section*.48}%
+\contentsline {chapter}{\chapternumberline {7}Proof of the Cartan--K\"ahler theorem}{53}{chapter.7}%
+\contentsline {section}{Cartan's strategy \Romanbar {2}}{53}{section*.49}%
+\contentsline {section}{Chapter summary}{54}{section*.50}%
+\contentsline {section}{Extending an integral manifold}{55}{section*.51}%
+\contentsline {section}{Background material from differential geometry}{56}{section*.52}%
+\contentsline {section}{Compatibility}{56}{section*.53}%
+\contentsline {chapter}{\chapternumberline {8}Cauchy characteristics}{59}{chapter.8}%
+\contentsline {section}{Redefinition of exterior differential system}{59}{section*.54}%
+\contentsline {section}{Convergence}{60}{section*.55}%
+\contentsline {section}{Symmetries}{60}{section*.56}%
+\contentsline {section}{Finite type}{61}{section*.57}%
+\contentsline {section}{Pointwise linear independence}{61}{section*.58}%
+\contentsline {section}{Cauchy characteristics}{62}{section*.59}%
+\contentsline {section}{Example: surface invariants}{65}{section*.60}%
+\contentsline {section}{Example: isometric immersion, Cauchy characteristics}{65}{section*.61}%
+\contentsline {section}{Example: isometric immersion, noncharacteristic data}{67}{section*.62}%
+\contentsline {chapter}{\chapternumberline {9}Example: conformal maps of surfaces}{69}{chapter.9}%
+\contentsline {section}{Conformal maps}{69}{section*.63}%
+\contentsline {section}{The graph of a conformal map as an integral manifold}{70}{section*.64}%
+\contentsline {section}{Characteristics}{71}{section*.65}%
+\contentsline {chapter}{\chapternumberline {10}Example: Weingarten surfaces}{73}{chapter.10}%
+\contentsline {section}{Weingarten surfaces}{73}{section*.66}%
+\contentsline {section}{Weingarten surfaces as integral manifolds}{73}{section*.67}%
+\contentsline {section}{Cauchy characteristics}{75}{section*.68}%
+\contentsline {section}{Characteristic variety}{75}{section*.69}%
+\contentsline {section}{Initial data}{75}{section*.70}%
+\contentsline {appendix}{\chapternumberline {A}The Cauchy--Kovalevskaya theorem}{77}{chapter.A}%
+\contentsline {section}{Formal Taylor series}{77}{section*.71}%
+\contentsline {section}{Complexification}{78}{section*.72}%
+\contentsline {section}{Solving for Taylor series using a differential equation}{78}{section*.73}%
+\contentsline {section}{The method of majorants}{80}{section*.74}%
+\contentsline {section}{Smooth counterexamples}{85}{section*.75}%
+\contentsline {appendix}{\chapternumberline {B}Symbol and characteristic variety}{87}{chapter.B}%
+\contentsline {section}{The problem}{87}{section*.76}%
+\contentsline {section}{The symbol of a linear operator}{87}{section*.77}%
+\contentsline {section}{Background material from projective geometry}{89}{section*.78}%
+\contentsline {section}{The characteristic variety}{89}{section*.79}%
+\contentsline {section}{Linearization}{91}{section*.80}%
+\contentsline {section}{Initial value problems}{92}{section*.81}%
+\contentsline {section}{Higher order differential equations}{93}{section*.82}%
+\contentsline {appendix}{\chapternumberline {C}Analytic convergence}{95}{chapter.C}%
+\contentsline {section}{Convergence}{95}{section*.83}%
+\contentsline {section}{Commutative algebra}{95}{section*.84}%
+\contentsline {section}{Germs}{96}{section*.85}%
+\contentsline {appendix}{\chapternumberline {D}The moving frame}{99}{chapter.D}%
+\contentsline {section}{Notation}{99}{section*.86}%
+\contentsline {section}{Orthonormal frames}{99}{section*.87}%
+\contentsline {section}{Frames on curves}{100}{section*.88}%
+\contentsline {section}{Frames on surfaces}{101}{section*.89}%
+\contentsline {section}{The frame bundle}{101}{section*.90}%
+\contentsline {section}{Adapted frames for a curve}{101}{section*.91}%
+\contentsline {section}{Adapted frames for a surface}{104}{section*.92}%
+\contentsline {section}{The soldering forms}{105}{section*.93}%
+\contentsline {section}{The connection forms}{105}{section*.94}%
+\contentsline {section}{Curves and forms}{106}{section*.95}%
+\contentsline {section}{Surfaces and forms}{107}{section*.96}%
+\contentsline {section}{The shape operator}{108}{section*.97}%
+\contentsline {section}{Higher fundamental forms}{110}{section*.98}%
+\contentsline {section}{Local picture of a surface}{110}{section*.99}%
+\contentsline {appendix}{\chapternumberline {E}Curvature of surfaces}{111}{chapter.E}%
+\contentsline {section}{Example: surfaces of revolution}{111}{section*.100}%
+\contentsline {section}{Orientations}{113}{section*.101}%
+\contentsline {section}{Recovering a surface from its inner products and shape operator}{114}{section*.102}%
+\contentsline {section}{Parallel surfaces}{114}{section*.103}%
+\contentsline {section}{Constant mean curvature surfaces}{116}{section*.104}%
+\contentsline {section}{Away from umbilics}{117}{section*.105}%
+\contentsline {appendix}{\chapternumberline {F}The Gauss--Bonnet theorem}{121}{chapter.F}%
+\contentsline {section}{The Gauss map}{121}{section*.106}%
+\contentsline {section}{The Gauss--Bonnet theorem}{122}{section*.107}%
+\contentsline {section}{Degree}{123}{section*.108}%
+\contentsline {section}{The Gauss map}{124}{section*.109}%
+\contentsline {section}{Gauss--Bonnet with corners}{125}{section*.110}%
+\contentsline {appendix}{\chapternumberline {G}Geodesics on surfaces}{129}{chapter.G}%
+\contentsline {section}{Length and curvature of curves}{129}{section*.111}%
+\contentsline {section}{Geodesic flow}{131}{section*.112}%
+\contentsline {section}{First order deformation}{133}{section*.113}%
+\contentsline {section}{Smooth homotopies and variation of length}{133}{section*.114}%
+\contentsline {section}{The exponential map}{135}{section*.115}%
+\contentsline {section}{Geodesic polar coordinates}{136}{section*.116}%
+\contentsline {section}{Geodesics are locally minimal}{138}{section*.117}%
+\contentsline {section}{Theorema Egregium}{140}{section*.118}%
+\contentsline {section}{Abstract surfaces}{140}{section*.119}%
+\contentsline {chapter}{Hints}{147}{chapter*.120}%
+\contentsline {chapter}{Bibliography}{173}{chapter*.137}%
+\contentsline {chapter}{\indexname }{177}{section*.138}%

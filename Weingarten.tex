@@ -1,0 +1,267 @@
+\chapter{Example: Weingarten surfaces}\label{chapter:Weingarten}
+\section{Weingarten surfaces}
+A \emph{Weingarten surface}\define{Weingarten surface}\define{surface!Weingarten} is an oriented surface \(S\) in \(\E[3]\) whose Gauss and mean curvature satisfy some relation, i.e.
+\[
+(H,K) \colon S \to W,
+\]
+for some curve \(W\) in the plane.
+For example, we could ask that \(K=1\) or \(H=0\).
+The ``generic'' surface has no such relation, as we saw~\vpageref{section:surface.invariants}.
+Every surface of revolution has such a relation: the Gauss and mean curvature are invariant under the revolution, so have values determined along any one meridian.
+\section{Weingarten surfaces as integral manifolds}
+\prob{Weingarten:HsK}{Prove that, on any surface in \(\E[3]\), \(H^2\ge K\) with equality just at umbilic points.}
+\begin{answer}{Weingarten:HsK}
+If the eigenvalues of the shape operator at a point are \(\lambda_1, \lambda_2\), then
+\[
+H=\frac{1}{2}\pr{\lambda_1+\lambda_2}, K=\lambda_1\lambda_2,
+\]
+so
+\[
+0 \le \pr{\lambda_1-\lambda_2}^2=4\pr{H^2-K}.
+\]
+\end{answer}
+If a surface consists entirely of umbilic points, it is a plane or sphere.
+So suppose that \(W\) is a curve in the plane, lying in the open set of points \((x,y) \in \R[2]\) so that \(x^2>y\), and \(S\) is a Weingarten surface associated to \(W\).
+On its frame bundle \(\frameBundle{S}\) in \(\frameBundleE{3}\), we have
+\begin{align*}
+\omega_3 &= 0, \\
+\begin{pmatrix}
+\gamma_{13}\\
+\gamma_{23}
+\end{pmatrix}
+&= 
+\begin{pmatrix}
+a_{11}&a_{12}\\
+a_{12}&a_{22}
+\end{pmatrix}
+\begin{pmatrix}
+\omega_1\\
+\omega_2
+\end{pmatrix},
+\\
+0 &= a_{12} - a_{21}, \\
+K &= a_{11} a_{22} - a_{12}^2, \\
+H &= \frac{a_{11}+a_{22}}{2}, \\
+(H,K) &\in W.
+\end{align*}
+
+Let \(\hat{W}\) be the set of symmetric matrices
+\[
+a=
+\begin{pmatrix}
+a_{11}&a_{12}\\
+a_{12}&a_{22}
+\end{pmatrix}
+\]
+so that 
+\[
+\pr{\frac{\operatorname{tr} a}{2},\det a} \in W.
+\]
+Then \(X\defeq\frameBundle{S}\) is a \(3\)-dimensional integral manifold in \(M\defeq\frameBundleE{3} \times \hat{W}\) of
+\[
+\begin{pmatrix}
+\theta_0 \\
+\theta_1 \\
+\theta_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+\omega_3 \\
+\gamma_{13} - \pr{a_{11} \omega_1 + a_{12} \omega_2} \\
+\gamma_{23} - \pr{a_{21} \omega_1 + a_{22} \omega_2}
+\end{pmatrix}
+\]
+on which \(\omega_1, \omega_2, \omega_{12}\) are linearly independent.
+Calculate the tableau:
+\[
+d
+\begin{pmatrix}
+\theta_0 \\
+\theta_1 \\
+\theta_2
+\end{pmatrix}
+=
+-
+\begin{tableau}
+0 & 0 & 0 \\
+\freeDeriv{\pi_1} & \pi_2 & 0 \\
+\freeDeriv{\pi_2} & \pi_3 & 0
+\end{tableau}
+\wedge
+\begin{pmatrix}
+\omega_1 \\
+\omega_2 \\
+\gamma_{12}
+\end{pmatrix}
+\]
+where
+\[
+\begin{pmatrix}
+\pi_1 \\
+\pi_2 \\
+\pi_3
+\end{pmatrix}
+=
+d
+\begin{pmatrix}
+a_{11} \\
+a_{12} \\
+a_{22}
+\end{pmatrix}
++
+\begin{pmatrix}
+0 & 2 & 0 \\
+-1 & 0 & 1 \\
+0 & -2 & 0 
+\end{pmatrix}
+\begin{pmatrix}
+a_{11} \\
+a_{12} \\
+a_{22}
+\end{pmatrix}
+\omega_{12}.
+\]
+Locally, we can write \(W\) as the set of solutions of an equation \(f(x,y)=0\) in the plane with \(df\ne 0\).
+So on \(S\),
+\[
+0=f\of{\frac{\operatorname{tr} a}{2},\det a}.
+\]
+Let 
+\[
+f_H \defeq \pderiv{f}{H}, f_K \defeq \pderiv{f}{K}.
+\]
+Compute out that this gives
+\[
+0 = 
+\pr{\frac{da_{11} + da_{22}}{2}} f_H
++
+\pr{a_{22} da_{11} + a_{11} da_{22} - 2 a_{12} da_{12} } f_K.
+\]
+In terms of \(\pi_1, \pi_2, \pi_3\) this relation is
+\[
+0=
+\pr{\frac{\pi_1 + \pi_3}{2}} f_H
++
+\pr{a_{22} \pi_1 + a_{11} \pi_3 - 2 a_{12} \pi_2 } f_K
+\]
+This equation has coefficients of \(\pi_1, \pi_2, \pi_3\) given by
+\[
+a_{11} f_K  + f_H,
+a_{22} f_K  + f_H, 
+a_{12} f_K.
+\]
+\begin{problem}{Weingarten:relation}
+Prove that all of these vanish, i.e. there is no addition linear relation among \(\pi_1, \pi_2, \pi_3\), precisely when \(a_{11}=a_{22}\) and \(a_{12}=0\), i.e. an umbilic point. 
+\end{problem}
+Since our curve \(W\) lies inside \(H^2 > K\) (``away from umbilic points''), our exterior differential system has characters \(s_1=2, s_2=0, s_3=0\) so involution.
+
+\section{Cauchy characteristics}
+The Cauchy characteristics are the rotations of frame tangent to the surface.
+The \(6\)-dimensional quotient manifold \(\bar{M}\) is the set of choices of point in \(\E[3]\), plane through that point, unit normal vector to that plane, and symmetric bilinear form on that plane, with half trace and determinant lying in \(W\).
+On \(\bar{M}\), the exterior differential system is determined.
+Each Weingarten surface \(S\) gives an integral surface of that exterior differential system, mapping each point of \(S\) to its tangent plane and shape operator on that tangent plane.
+
+\section{Characteristic variety}
+The symbol matrix is
+\[
+\begin{pmatrix}
+-\xi_2 & \xi_1 \\
+\frac{f_H}{2} \xi_1 +
+f_K\pr{a_{22} \xi_1 - a_{12} \xi_2}
+&
+\frac{f_H}{2} \xi_2
++
+f_K\pr{a_{11} \xi_2 - a_{12} \xi_1}
+\end{pmatrix}
+\]
+which has determinant
+\[
+-f_K
+\pr{
+a_{11} \xi_2^2 -2 a_{12} \xi_1 \xi_2 + a_{22} \xi_1^2
+}
+- 
+\frac{f_H}{2}
+\pr{\xi_1^2+\xi_2^2}.
+\]
+Recall that the characteristic variety consists of the hyperplanes 
+\[
+0 = \sum_i \xi_i \omega_i=0,
+\] 
+satisfying these equations.
+A vector \(v=v_1 e_1+v_2 e_2\) lies in such a characteristic hyperplane just when \(0 = \xi_1 v_1 + \xi_2 v_2\), so then, up to scaling 
+\[
+\pr{\xi_1,\xi_2}=\pr{v_2,-v_1}.
+\]
+Plug this in to see that the characteristics are 
+\[
+0 = f_K\pr{a_{11} v_1^2 + 2a_{12} v_1 v_2 + a_{22} v_2^2} + \frac{f_H}{2}\pr{v_1^2+v_2^2}.
+\]
+i.e. in classical notation,
+\[
+0 = f_K \shapeOp + \frac{f_H}{2} I.
+\]
+So the characteristics are the curves on \(S\) with velocity \(v\) satisfying this quadratic equation.
+Since we have assumed that our surface contains no umbilic points and that \(df\ne 0\), not every curve is characteristic.
+
+\section{Initial data}
+Take a ribbon along a curve \(C\) in \(\E[3]\).
+At each point of that curve, draw the perpendicular plane to the ruling line of the ribbon.
+On that plane, take a symmetric bilinear form \(\shapeOp\) with two distinct eigenvalues, analytically varying along \(C\).
+Let \(H\defeq \operatorname{tr} \shapeOp/2\), \(K\defeq \det \shapeOp\).
+The form \(\shapeOp\) is \emph{nondegenerate} if, on every tangent line to \(C\), the homogeneous cubic form
+\[
+dH \, \shapeOp + \frac{dK}{2} I
+\]
+is not zero, where \(I\) is the Euclidean inner product.
+
+Consider what a noncharacteristic curve looks like in the \(6\)-dimensional manifold \(M=\frameBundleE{3} \times \hat{W}\).
+Such a curve consists of a ribbon \(x(t),e_3(t)\), together with the additional data of \(e_1,e_2\) and the values \(a_{ij}\).
+The curve \(x,e,a\) is an integral curve of the exterior differential system, i.e. \(\omega_3=0\) and \(\gamma_{i3}=a_{ij}\omega_j\).
+The equation \(\omega_3=0\) is just the requirement that \(e_3 \perp \dot{x}\), i.e. a ribbon.
+Since we can rotate the frame \(e_1,e_2\), we can ask that \(e_1\) be tangent to the curve \(x(t)\).
+So then \(\gamma_{i3}=a_{ij}\omega_j\) just when
+\begin{align*}
+\shapeOp(e_1,e_1)&=-e_3\cdot \frac{de_1}{dt},\\
+\shapeOp(e_1,e_2)&=-e_3\cdot \frac{de_2}{dt}.
+\end{align*}
+So the shape operator is partly determined by the ribbon.
+Noncharacteristicity is precisely that 
+\[
+e_3\cdot \frac{de_1}{dt} f_K \ne \frac{f_H}{2}.
+\]
+\prob{Weingarten:ift}{Prove that the Weingarten equation \(f=0\) locally recovers the coefficient \(a_{22}\), hence the entire shape operator, from the data of the ribbon.}
+\begin{answer}{Weingarten:ift}
+\begin{align*}
+\pderiv{f}{a_{22}}
+&=
+f_H\pderiv{H}{a_{22}}+f_K\pderiv{K}{a_{22}},
+\\
+&=
+\frac{f_H}{2}+f_Ka_{11},
+\\
+&=
+\frac{f_H}{2}-e_3\cdot \frac{de_1}{dt} f_K,
+\\
+&\ne0.
+\end{align*}
+\end{answer}
+
+Parameterize a curve \(C\) by arc length as \(x(s)\), and let \(e_1\defeq \dot{x}\).
+Take a ribbon on that curve and write the direction of the ruling line as \(e_3\).
+Let \(e_2\) be the vector so that \(e_1,e_2,e_3\) is a positively oriented orthonormal frame along \(C\).
+A form \(\shapeOp\) is \emph{compatible} with the ribbon if \(\shapeOp(e_1,e_1)=-e_3\cdot \dot{e}_1\) and \(\shapeOp(e_1,e_2)=-e_3 \cdot \dot{e}_2\).
+Compatibility is independent of the choice of arc length parameterization and of rotation of \(e_1,e_2\).
+Define \(H\) and \(K\), the trace and determinant of \(\shapeOp\).
+Define an immersed curve \(W\): the image of the \(s\mapsto(H(s),K(s))\). 
+
+\begin{theorem}
+Take an  analytic ribbon along a connected curve \(C\) in \(\E[3]\), and a symmetric bilinear form \(\shapeOp\), defined in the perpendicular plane of the ruling line of the ribbon at one point of \(C\), nondegenerate and compatible with the ribbon.
+Then \(\shapeOp\) extends uniquely locally to be defined along an open subset of \(C\), analytically varying, nondegenerate and compatible with the ribbon.
+If \(\shapeOp\) extends to all of \(C\), then there is an analytic Weingarten surface \(S\) in \(\E[3]\) containing \(C\) whose shape operator is \(\shapeOp\) at each point of \(C\) and whose Gauss and mean curvature lie in the image of \(C\) in the plane under the map \((H,K)\).
+Any two such surfaces agree near \(C\).
+\end{theorem}
+
+\begin{problem}{apply.eds:minimal.geod}
+Which analytic curves in \(\E[3]\) are geodesics on minimal surfaces?
+\end{problem}

@@ -1,0 +1,343 @@
+\chapter{The Gauss--Bonnet theorem}\label{chapter:Gauss.Bonnet}%
+\chapterSummary{We prove that the integral of Gauss curvature over a compact oriented surface in \(3\)-dimensional Euclidean space is a diffeomorphism invariant.}
+
+
+\section{The Gauss map}
+Consider first a surface \(S\) in \(\E[3]\).
+On its frame bundle we have \(\omega_1, \omega_2\) and \(\gamma_{12}\), so that
+\begin{align*}
+ d\omega_1 &= - \gamma_{12} \wedge \omega_2, \\
+ d\omega_2 &= \gamma_{12} \wedge \omega_1, \\
+ d\gamma_{12} &= K \omega_1 \wedge \omega_2.
+\end{align*}
+where \(K\) is the Gauss curvature of the surface.
+We can find a geometric description of Gauss curvature.
+Take the unit vector \(e_3\), which is uniquely determined at each point of \(S\) up to sign, being normal to \(S\).
+Differentiate this vector, and write its derivative in the frame itself:
+\begin{align*}
+ de_3 &= \pr{e_1 \cdot de_3} e_1 + \pr{e_2 \cdot de_3}e_2 + \pr{e_3 \cdot de_3} e_3, \\
+      &= \gamma_{13} e_1 + \gamma_{23} e_2 + \gamma_{33} e_3, \\
+      \intertext{but \(\gamma_{33}=0\) because \(\gamma\) is antisymmetric,}
+      &= \pr{a_{11} \omega_1 + a_{12} \omega_2}e_1+\pr{a_{12} \omega_1 + a_{22} \omega_2}e_2.
+\end{align*}
+So if we move in the \(e_1\) direction, the unit vector \(e_3\) moves by \(a_{11}e_1+a_{12}e_2\), while if we move in \(e_2\) direction, the unit vector \(e_3\) moves by \(a_{12}e_1+a_{22}e_2\).
+The unit square \(e_1 \wedge e_2\) in the tangent plane \(T_x S\) maps by \(e_3'=de_3\) to the parallelogram
+\[
+ e_{3*} (e_1 \wedge e_2) = \pr{a_{11} a_{22} - a_{12}^2} e_1 \wedge e_2.
+\]
+But the Gauss curvature is \(K = a_{11} a_{22} - a_{12}^2\).
+Therefore the Gauss curvature is the area stretch factor of the Gauss map \(e_3\).
+While \(e_3\) is only defined on the frame bundle of \(S\), nonetheless it is defined locally on \(S\) up to sign; the sign doesn't alter the value of the area stretch factor.
+Gauss curvature also doesn't depend on orientation.
+
+\section{The Gauss--Bonnet theorem}\label{section:Gauss.Bonnet.moving.frame}
+Take a vector field \(X\) on an oriented surface \(S\).
+Away from the zeroes of \(X\), the unit vector field 
+\[
+e_1\defeq\frac{X}{\norm{X}}
+\]
+is defined.
+Extend it to an oriented orthonormal basis \(e_1, e_2\).
+This choice of orthonormal frame gives a section of \(\frameBundle{S} \to S\) over the points where \(X \ne 0\).
+
+Take a point \(x_0 \in S\)  at which \(X\) has an isolated zero.
+In any positively oriented chart near \(x_0\), draw a circle \(C_0\) around \(x_0\), so that \(x_0\) is the only zero of \(X\) inside the circle.
+The \emph{index}\define{index!of vector field} of \(X\) at \(x_0\) is the number of times that the frame \(e_1, e_2\) turns around the origin, as measured in some choice of orthonormal frame \(e_1', e_2'\) defined near \(x_0\).
+Write
+\[
+\begin{pmatrix}
+e_1 \\
+e_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+\cos \theta & -\sin \theta \\
+\sin \theta & \cos \theta
+\end{pmatrix}
+\begin{pmatrix}
+e_1' \\
+e_2'
+\end{pmatrix}
+\]
+near \(C_0\).
+The angle \(\theta\) varies by a multiple of \(2\pi\), say \(2 \pi n_0\), around \(C_0\), and the index of \(X\) at \(x_0\) is \(n_0\).
+Clearly the index doesn't change if we continuously vary \(X\) while the surface \(S\) moves continuously in space \(\E[3]\). 
+The sum of indices is the \emph{Euler characteristic}\define{Euler characteristic} \(\chi_X\).
+\begin{problem}{moving.frame:index}
+Prove that the vector field 
+\[
+X= a x \pderiv{}{x} + b y \pderiv{}{y}
+\]
+on the plane has index \(1\) if \(a,b > 0\) or \(a,b < 0\) and index \(-1\) if \(a\) and \(b\) have opposite signs.
+\end{problem}
+\begin{problem}{moving.frame:change.of.gauge}
+Calculate out that
+\[
+\alpha=e_2 \cdot de_1 = e_2' \cdot de_1' - d \theta=\alpha'-d\theta.
+\]
+\end{problem}
+The \emph{Euler characteristic}\define{Euler characteristic} of a compact oriented surface \(S\) is 
+\[
+\chi_S\defeq\frac{1}{2 \pi} \int_S K \, dA.
+\]
+\begin{theorem}\define{theorem!Gauss--Bonnet}\define{Gauss--Bonnet theorem}
+Suppose that \(X\) is a vector field on a compact oriented surface \(S\) with only isolated zeroes. Then \(\chi_X=\chi_S\).
+\end{theorem}
+\begin{proof}
+Take a set \(D_k\) diffeomorphic to a closed disk in some chart around each zero \(x_k\) of \(X\) and let \(C_k=\partial D_k\).
+The framing \(e_1, e_2\) lifts 
+\[
+S'\defeq S - \bigcup_k D_k
+\]
+to a compact surface with boundary in \(\frameBundle{S}\).
+Integrate:
+\begin{align*}
+\int_{S'} K \, dA
+&= \int_{S'} d \alpha,
+\\
+&= \int_{\partial S'} \alpha,
+\\
+&= -\sum_k \int_{C_k} \alpha, \\
+&= -\sum_k \int_{C_k} e_1 \cdot de_2, \\
+&= -\sum_k \int_{C_k} e_1' \cdot de_2' + \sum_k \int_{C_k} d \theta,
+\\
+&= -\sum_k \int_{C_k} K \, dA + \sum_k 2 \pi \indx_{x_k} X,
+\end{align*}
+so that
+\[
+\int_S K \, dA = 2 \pi \sum_k \indx_{x_k} X.
+\]
+\end{proof}
+
+\section{Degree}
+Suppose that \(f \colon P \to Q\) is a continuously differentiable map between two oriented manifolds of equal dimension, perhaps with corners.  
+The \emph{sign}\define{sign!of map between manifolds of equal dimension}
+of \(f\) at a regular point \(p \in P\) is \(1\) if \(f\) is orientation preserving near \(p\), and \(-1\) is \(f\) is orientation reversing near \(p\).
+Suppose that \(q_0 \in Q\) is a regular value and that there are only finitely points \(p \in P\) mapped to \(q_0\) by \(f\).
+The \emph{degree}\define{degree} of \(f\) above \(q_0\) is the sum of signs at these points \(p\):
+\[
+\deg_{q_0} f = \sum_{f(p)=q_0} \left(\text{sign of \(f\) at \(p\)}\right).
+\]
+The following two theorems are proven in \cite{McKay:2018}.
+\begin{theorem}
+Consider a proper continuously differentiable map \(f \colon P \to Q\) between oriented manifolds (perhaps with corners). 
+Suppose that \(Q\) is connected. 
+The degree of \(f\) is the same at all regular values.
+\end{theorem}
+\begin{theorem}
+Suppose that \(f \colon P \to Q\) is a proper continuously differentiable map 
+between two oriented manifolds (perhaps with corners) of the same dimension, say \(n\), and that \(Q\) is connected. 
+For any \(n\)-form \(\omega\) on \(Q\), which vanishes outside some compact set,
+\[
+\int_P f^* \omega = \deg f \, \int_Q \omega.
+\]
+\end{theorem}
+
+\section{The Gauss map}
+For any oriented surface \(S\) in \(\E[3]\), the \emph{Gauss map}\define{Gauss map} \(e_3\) taking each point \(x \in S\) its unit normal vector, a point of the unit sphere, has degree
+\[
+\deg e_3 = \frac{\int K \, dA}{4 \pi}=\frac{\chi_S}{2}.
+\]
+\begin{theorem}
+On any compact oriented surface \(S\) in \(\E[3]\) with Gauss map \(e_3 \colon S \to \mathbb{S}^2\), \(2 \deg e_3 = \chi_X\), for any vector field \(X\) on \(S\) with only isolated zeroes.
+\end{theorem}
+\begin{theorem}\label{theorem:exists.decent.vf}
+Every compact oriented surface \(S\), twice continuously differentiable, has a continuously differentiable vector field \(X\) with only finitely many zeroes, each of index \(1\) or \(-1\).
+\end{theorem}
+\begin{proof}
+The Gauss map is onto: take any unit vector \(n\), and look at the points \(x \in S\) on which the linear function \(f(x) \defeq \ip{n}{x}\) has its maximum value.
+By Sard's theorem,\SubIndex{Sard's theorem}\SubIndex{theorem!Sard} almost every point \(n\) in the unit sphere is a regular value of the Gauss map.
+For such a value of \(n\), the differential of the Gauss map has full rank.
+Its differential has determinant given by the Gauss curvature, so the Gauss curvature is nonzero at every point \(x \in S\) for which \(\nu(x)=n\).
+The function \(f\) restricted to \(S\) has critical points at the points \(x\) where \(n\) is perpendicular to \(T_x S\).
+Again by Sard's theorem,\SubIndex{Sard's theorem}\SubIndex{theorem!Sard} we can arrange that these points are regular values of the Gauss map, i.e. have nonzero Gauss curvature.
+In any orthonormal framing \(e_1, e_2, e_3\), the differential of \(f\) is
+\[
+e_i \hook df = e_i \hook \pr{n \cdot x} = n \cdot e_i,
+\]
+for \(i=1,2\).
+The second derivative matrix of \(f\) at a critical point is
+\begin{align*}
+f''\of{e_i,e_j}
+&=
+e_i \hook d\pr{n \cdot e_j},
+\\
+&=
+e_i \hook n \cdot de_j,
+\\
+&=
+e_i \hook \pr{\pm e_3} \cdot de_j,
+\\
+&=
+\pm e_i \hook \gamma_{3j},
+\\
+&=
+\mp a_{ji}.
+\end{align*}
+So the function \(f\) has \(f''\) a rank \(2\) quadratic form on each tangent space where \(f\) is critical.
+In particular, if we write \(df = f_1 \omega_1 + f_2 \omega_2\), then the vector field 
+\[
+X=\nabla f = f_1 e_1 + f_2 e_2
+\]
+has only finitely many zeroes.
+Since we can vary our surface continuously without changing indices, we can see that the index doesn't change as we vary \(S\) and \(f\) so that \(f\) remains critical at some point \(x_0\) with \(f''\) nondegenerate at \(x_0\).
+In particular, we can arrange that \(S\) is flat near \(x_0\) with \(f\) a quadratic function instead, without changing the index.
+But we saw above that the index of \(X=\nabla f\) at \(x_0\) is then \(1\) if \(\det f''\of{x_0} > 0\) and \(-1\) if \(\det f''\of{x_0} < 0\).
+\end{proof}
+
+\section{Gauss--Bonnet with corners}
+\begin{marginfigure}
+\input{interior-angle}
+\end{marginfigure}
+The \emph{interior angle}\define{interior!angle}\define{angle!interior} at a corner of an oriented surface \(S\) in \(\E[3]\) with corners is the angle as seen from inside the surface moving in the counterclockwise direction in any positively oriented chart. 
+The \emph{Euler characteristic} of \(S\) is
+\[
+\chi_S\defeq 
+\frac{\int_S K \, dA}{2\pi}
++ \frac{\int_{\partial S} \kappa}{2\pi} 
++ \sum \frac{\pi-\beta_i}{2\pi}.
+\]
+where \(\kappa\) is the geodesic curvature of the boundary of \(S\) and the \(\beta_i\) are the interior angles of the corners.
+
+If a vector field \(X\) on a surface \(S\) is nowhere zero along an oriented piecewise continuously differentiable curve \(C\) in \(S\), the \emph{degree}\define{degree} of \(X\) along \(C\) is the degree of the map
+\[
+c \in C \mapsto \pr{\cos \theta, \sin \theta} \in \mathbb{S}^1
+\]
+where \(\theta=\theta(c)\) is the angle between \(X\) and the unit positively oriented tangent vector to \(C\) at each point \(c \in C\).
+The \emph{Euler characteristic} of \(X\) is
+\[
+\chi_X\defeq \sum_{x \in S} \operatorname{index}_x X 
++ \operatorname{degree}_{\partial S} X.
+\]
+\begin{theorem}[Gauss--Bonnet]\define{Gauss--Bonnet theorem}\define{theorem!Gauss--Bonnet}
+Suppose that \(S\) is a compact oriented surface with boundary and corners in \(\E[3]\).
+Suppose that \(X\) is a vector field on \(S\) with finitely many zeroes, none on the boundary or corners.
+Then \(\chi_X=\chi_S\).
+\end{theorem}
+\begin{proof}
+The zeroes \(x_i\) of \(X\) lie in the interior of \(S\).
+Around each zero \(x_i\) take a subset \(D_i \subset S\) diffeomorphic to a closed disk.
+Make these \(D_i\) small enough that they are disjoint from one another.
+Let 
+\[
+S' \defeq S-\bigcup D_i.
+\]
+Let 
+\[
+e_1 \defeq \frac{X}{\norm{X}},
+\]
+and let \(e_2\) be the rotation of \(e_1\) by a right angle in the positively oriented direction.
+
+Lift \(S'\) to a surface in \(\frameBundle{S}\) by taking \(x \in S' \mapsto \pr{x,e_1(x),e_2(x)} \in \frameBundle{S}\).
+In each disk \(D_i\) we can pick coordinates, and take an orthonormal framing \(e_1', e_2'\) along the coordinate directions (or take any orthonormal framing you prefer).
+Write
+\[
+\begin{pmatrix}
+e_1 \\
+e_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+\cos \theta & -\sin \theta \\
+\sin \theta & \cos \theta
+\end{pmatrix}
+\begin{pmatrix}
+e_1' \\
+e_2'
+\end{pmatrix}
+\]
+near each \(C_i\).
+As before, \(\alpha'=\alpha-d\theta\).
+
+Along the boundary of \(S\), at each point we have a choice of orthonormal frame \(e_1', e_2'\) with \(e_1'\) tangent to the boundary. 
+At corners this determines two orthonormal frames.
+Construct a piecewise continuously differentiable curve \(C\) in \(\frameBundle{S}\) as follows.
+First, lift up each boundary curve of \(S\) to a curve in \(\frameBundle{S}\) by taking each point \(x\) to \(\pr{x,e_1'(x),e_2'(x)}\).
+This goes right up to boundary, where we end up with one of our two choices.
+However, we now have neighbouring boundary edges lifted up into curves in the frame bundle which don't meet.
+We take the end of one, and join to the beginning of the next one, by drawing a curve \(\pr{x,e_1'(t), e_2'(t)}\) in the frame bundle, rotating the frame so that \(e_1'(t)\) goes continuously from one choice to the other through a positively oriented rotation, fixing the point \(x\) along this curve. 
+So \(C\) is a curve in \(\frameBundle{S}\) over \(\partial S\).
+As above, \(\alpha' = \alpha - d\theta\),
+relating the connection form \(\alpha'\) of the frame bundle restricted to the curve \(C\) to the connection form along \(e_1, e_2\).
+
+Integrate:
+\begin{align*}
+\int_{S'} K \, dA 
+&=
+\int_{S'} d\alpha,
+\\
+&=
+\int_{\partial S'} \alpha,
+\\
+&=
+-\sum_i \int_{C_i} \alpha
++\int_{\partial S} \alpha,
+\\
+&=
+-\sum_i \int_{C_i} \alpha' + \sum_i \int_{C_i} d\theta
++\int_C \alpha' - \int_C d\theta,
+\\
+&=
+-\sum_i \int_{D_i} K \, dA + \sum_i \int_{C_i} d\theta
++\int_C \alpha' - \int_C d\theta.
+\end{align*}
+Away from the corners of \(\partial S\), the integral \(\int_C \alpha'\) is the integral of the geodesic curvature of \(\partial S\).
+At the corners, it is integrating exactly \(d\theta\), since \(\alpha'=\alpha-d\theta\).
+So these integrals add up to give total angles rotated.
+Summing up:
+\[
+\int_S K \, dA
+=
+2 \pi \sum_i \operatorname{index}_{x_i} X
+ + \int_{\partial S} \kappa - 2 \pi \operatorname{degree}_{\partial S} X 
+ + \sum \pr{\pi-\beta_i}.
+\]
+\end{proof}
+\begin{problem}{moving.frame:constant.angle}
+Suppose that a surface \(S\) has two collections of geodesics, each collection being the level sets of some functions \(u\) and \(v\) with \(du \ne 0\) and \(dv \ne 0\).
+Suppose that the angle between these geodesics is constant and nonzero.
+Prove that the Gauss curvature of \(S\) is zero.
+\end{problem}
+A \emph{Morse function}\define{Morse function} \(f\) on a surface \(S\) is a function whose finitely many critical points are local minima, local maxima, or saddle points, with definite Hessian in local coordinates, and with differential nonzero at every boundary point.
+The gradient \(X=\nabla f\) of a Morse function is a vector field \(X\) with only finitely many zeroes, each of index \(1\) (maxima or minima) or \(-1\) (saddle points).
+The \emph{Euler characteristic} of \(f\) is
+\[
+\chi_f\defeq
+\#{\text{minima of }f}
+-\#{\text{saddle points of }f}
++\#{\text{maxima of }f} 
++ \operatorname{degree}_{\partial S} df.
+\]
+\begin{corollary}
+For any Morse function \(f\) on any compact oriented surface \(S\) with boundary and corners in \(\E[3]\), \(\chi_f=\chi_S\).
+\end{corollary}
+\begin{theorem}\label{theorem:exists.decent.vf.corner}
+Every compact oriented surface \(S\), twice continuously differentiable, has a twice continuously differentiable Morse function.
+\end{theorem}
+\begin{proof}
+By Sard's theorem,\SubIndex{Sard's theorem}\SubIndex{theorem!Sard} the generic point \(n\) of the unit sphere is a regular value of the Gauss map.
+For such a value of \(n\), the differential of the Gauss map has full rank.
+Its differential has determinant given by the Gauss curvature, so the Gauss curvature is nonzero at every point \(x \in S\) for which \(\nu(x)=n\).
+Again by Sard's theorem, we can arrange that these points are regular values of the Gauss map, i.e. have nonzero Gauss curvature.
+Let \(f(x) \defeq \ip{n}{x}\).
+As in the proof of theorem~\vref{theorem:exists.decent.vf}, the vector field 
+\[
+X=\nabla f = f_1 e_1 + f_2 e_2
+\]
+has only finitely many zeroes and winding number \(\pm 1\) at each.
+Note that we don't actually need to ensure that \(n\) occurs in the image of the Gauss map.
+
+Since there are only finitely many corners, by slightly changing the value of \(n\), we can ensure that \(n\) is not perpendicular to \(T_x S\) at any corner \(x\), i.e. that \(df \ne 0\) at any corner, so \(X\ne 0\) at the corners.
+Along the boundary, the Gauss map of \(S\) maps the \(1\)-dimensional boundary to the \(2\)-dimensional sphere, so the generic value of \(n\) does not occur in the image of this map, again by Sard's theorem, i.e. we can ensure that \(n\) is not perpendicular to \(T_x S\) at any boundary point \(x\), i.e. that \(df \ne 0\) at any boundary point, so \(X\ne 0\) at every point of the boundary.
+\end{proof}
+\prob{G.B:euler.char}{Find the Euler characteristics of some surfaces.}
+\begin{answer}{G.B:euler.char}
+The sphere has Gauss map the identity, so degree \(1\), so \(\chi=2\).
+Another way to see this: \(K=1\) on the unit sphere, and area is \(4 \pi\).
+The torus has a nowhere zero vector field \(X\), being a surface of revolution, so \(\chi=0\).
+The disk has the Morse function \(f(x,y)=x^2+y^2\), so \(\chi=1\).
+Smooth off corners of less than a right angle, by deforming to locally look like a square, and then clip off to get a quarter circle: \(\chi\) doesn't change.
+Similarly for more than right angle.
+Take two surfaces \(S,T\), and deform until they each contain a perfect half sphere.
+Cut holes along the equators, glue tubes to connect, a surface \(S\# T\), and get a sum formula from the Gauss--Bonnet integral \(\chi_{S\# T}=\chi_S+\chi_T-2\).
+\end{answer}

@@ -1,0 +1,307 @@
+\chapter{%
+\texorpdfstring{Proof of the Cartan--K\"ahler theorem}%
+{Proof of the Cartan--Kaehler theorem}%
+}%
+\label{chapter:proof}%
+\optionalSection{\texorpdfstring{Cartan's strategy \Romanbar{2}}{Cartan's strategy II}}%
+Pick a hypersurface, a hypersurface in the hypersurface, and so on, a flag of submanifolds, stopping at codimension \(p\).
+Imagine that the generic \(p\)-dimensional integral manifold locally intersects each submanifold of our flag transversally: intersecting the smallest in a point, the next smallest in an integral curve, the next smallest in an integral surface, and so on.
+
+Construct an integral manifold by Cartan's strategy: draw a point inside the smallest submanifold of the flag, an integral curve through that point inside the next smallest, an integral surface through that curve inside the next smallest, and so on.
+Trouble: there might be many integral curves, passing through that point, lying on that flag submanifold.
+Inside the flag submanifold, pick a smaller submanifold, a \emph{restraining manifold},\SubIndex{restraining manifold}\SubIndex{manifold!restraining} cutting down dimensions so that our point lies on a unique integral curve in the restraining manifold.
+We choose nested restraining manifolds, one in each flag submanifold, starting from the largest and going down in dimension.
+Starting from the smallest and going up in dimension, pick a point in the smallest restraining manifold, sweep out an integral curve through it in the next restraining manifold, and so on.
+We will see that each restraining manifold is locally the choice of \(s_k\) functions of \(k\) variables.
+
+Fix a flag. 
+Construct integral manifolds by varying the restraining manifolds inside the submanifolds of that fixed flag.
+We will see that different selections of restraining manifolds give rise to a different integral manifold in the final stage.
+In this sense, integral manifolds depend on \(s_0\) constants, \(s_1\) functions of one variable, and so on.
+\begin{example}
+We wrote out differential equations~\vpageref{page:pdes}. 
+The flag:
+\[
+M_i=(0=x^{i+1}=\dots=x^p)
+\]
+the variables over which to solve differential equations.
+The restraining manifolds are the initial data:
+\[
+R_p=(u^p=u^p(x^1,\dots,x^p))
+\]
+and, for \(i=p-1,p-2,\dots,2,1,0\),
+\[
+R_i=R_{i+1}\cap M_i \cap (u^i=u^i(x^1,\dots,x^i,0,\dots,0)).
+\]
+\end{example}
+\prob{proof.test:nabla}{For the equation \(\nabla \times u=f-u\) from problem~\vref{problem:tableaux:nabla}, write flag and restraining manifolds in coordinates, and the associated differential equations.}
+\begin{answer}{proof.test:nabla}
+The exterior differential system lies on an \(11\)-dimensional manifold \(M\) with tableau modulo \(\theta^1,\theta^2,\theta^3\)
+\[
+d
+\begin{pmatrix}
+\theta^1\\
+\theta^2\\
+\theta^3
+\end{pmatrix}
+=
+-
+\begin{pmatrix}
+\freeDeriv{\pi^1_1} & \pi^2_1 & \pi^3_1 \\
+\freeDeriv{\pi^2_1} & \freeDeriv{\pi^2_2} & \pi^3_2 \\
+\freeDeriv{\pi^3_1} & \freeDeriv{\pi^3_2} & -\pi^1_1-\pi^2_2
+\end{pmatrix}
+\wedge
+\begin{pmatrix}
+\omega^1\\
+\omega^2\\
+\omega^3
+\end{pmatrix}.
+\]
+Denote our manifold as \(M^{11}\) to indicate that it is \(11\)-dimensional.
+Take the flag \(M^8_0\subset M^9_1\subset M^{10}_2 \subset M^{11}\) given by
+\begin{align*}
+M^8_0&\defeq (0=x_1=x_2=x_3),\\
+M^9_1&\defeq (0=x_2=x_3),\\
+M^{10}_2&\defeq (0=x_3).
+\end{align*}
+We have \(\omega^i\defeq dx^i\), \(\theta^i=du^i-u^i_j dx^j\), and \(\pi^i_j=du^i_j\) modulo \(\theta^a,\omega^i\).
+
+Pick a submanifold \(R_2^8\subset M_2^{10}\) of codimension \(s_2=2\) given by equations
+\begin{align*}
+u^2_2&=u^2_2(x^1,x^2),\\
+u^3_2&=u^3_2(x^1,x^2),
+\end{align*}
+a submanifold \(R_1^4 \subset R^8_2\cap M^9_1\) of codimension \(s_1=3\) given by equations
+\begin{align*}
+u^1_1&=u^1_1(x^1),\\
+u^2_1&=u^2_1(x^1),\\
+u^3_1&=u^3_1(x^1),
+\end{align*}
+and a point \(R^0_0 \subset R_1^4\cap M^8_0\) of codimension \(s_0=3\) given by equations
+\begin{align*}
+u^1&=c^1,\\
+u^2&=c^2,\\
+u^3&=c^3,
+\end{align*}
+for functions \(u^i_j\) and constants \(c^1,c^2,c^3\).
+Since there are no free derivatives to restrain in the final column of the tableau, there is no further restraining manifold.
+
+So \(R^0_0\) is a point.
+On \(R^4_1\), the equations \(0=\theta^1=\theta^2=\theta^3\) become ordinary differential equations for functions \(u^1,u^2,u^3\) of \(x^1\), which have a unique solution through the point \(R^0_0\).
+Check that on \(R^4_1\), all of the tableau vanishes, so we don't have to solve any other equations than \(0=\theta^1=\theta^2=\theta^3\) to produce an integral curve.
+
+One \(R^8_2\), the tableau expands out to give derivatives in \(x^2\):
+\begin{align*}
+\pderiv{u^1_1}{x^2}&=\pderiv{u^2_1}{x^1}+u^3_1-f^3_1,\\
+\pderiv{u^2_1}{x^2}&=\pderiv{u^3_2}{x^1},\\
+\pderiv{u^3_1}{x^2}&=\pderiv{u^3_2}{x^1}.
+\end{align*}
+The last two have right hand sides expressed in terms of the restraining manifold data:
+\begin{align*}
+u^2_1(x^1,x^2)&=u^2_1(x^1)+\int \pderiv{u^3_2}{x^1} dx^2,\\
+u^3_1(x^1,x^2)&=u^3_1(x^1)+\int \pderiv{u^3_2}{x^1} dx^2.
+\end{align*}
+With these solved for, the first equation then solves:
+\[
+u^1_1(x^1,x^2)=\int \left(\pderiv{u^2_1}{x^1}+u^3_1-f^3_1\right)dx^2.
+\]
+It is not clear that the graph of these functions is an integral surface.
+
+Finally, we expand out the tableau to find equations for derivatives in \(x^3\):
+\begin{align*}
+\pderiv{u^1_1}{x^3}&=\pderiv{u^3_1}{x^1},\\
+\pderiv{u^2_1}{x^3}&=\pderiv{u^3_2}{x^1},\\
+\pderiv{u^2_2}{x^3}&=\pderiv{u^3_2}{x^2}+u^1_2-f^1_2,\\
+\pderiv{u^2_1}{x^3}&=-\pderiv{u^1_1}{x^1}-\pderiv{u^2_2}{x^1}-\pderiv{f^i_i}{x^1},\\
+\pderiv{u^3_2}{x^3}&=-\pderiv{u^1_1}{x^2}-\pderiv{u^2_2}{x^2}+\pderiv{f^i_i}{x^2}.
+\end{align*}
+Any \(3\)-dimensional integral manifold will arise by solving this determined system, with initial data from the integral surface.
+The proof of the  Cartan--K\"ahler theorem shows that this procedure always constructs a \(3\)-dimensional integral manifold, which is not obvious.
+\end{answer}
+
+
+\section{Chapter summary}
+\begin{theorem}%
+[Cartan--K\"ahler \Romanbar{1}]%
+\define{Cartan--K\"ahler theorem}%
+\define{theorem!Cartan--K\"ahler}%
+\label{theorem:CK.I}
+Take an analytic exterior differential system and a noncharacteristic analytic integral manifold \(X\) with locally maximal rank polar equations in every tangent space.
+Then \(X\) is a hypersurface in an analytic integral manifold, \emph{locally unique}\define{locally unique} in that any two analytic integral manifolds in which \(X\) is a hypersurface both contain a subset, open in both and containing \(X\).
+\end{theorem}
+A submanifold \(R\) of \(M\) \emph{restrains}\SubIndex{restraining manifold}\SubIndex{manifold!restraining} an integral manifold \(X\) of an exterior differential system if the exterior differential system pulls back to \(R\) to make \(X\) noncharacteristic, with each tangent space of \(X\) having locally maximal rank polar equations.
+\begin{corollary}\label{corollary:CK.II}
+If an analytic manifold restrains an analytic integral manifold of an analytic exterior differential system, then the integral manifold is a hypersurface in a locally unique analytic integral submanifold of the restraining manifold.
+\end{corollary}
+\begin{theorem}%
+[Cartan--K\"ahler \Romanbar{2}]%
+\define{Cartan--K\"ahler theorem}%
+\define{theorem!Cartan--K\"ahler}%
+\label{theorem:CK.II}
+Take an analytic exterior differential system \(\II\) on a manifold \(M\) and an analytic integral manifold \(X\) with locally maximal rank polar equations.
+Take an analytic submanifold \(R\) containing \(X\) so that, for each \(x \in X\), 
+\begin{enumerate}
+\item
+all nonzero polar equations of \(T_x X\) pull back to nonzero linear functions on \(T_x R\) and
+\item
+the vectors in \(T_x R\) on which those polar equations vanish form a subspace containing \(T_x X\) as a hyperplane.
+\end{enumerate}
+Then \(R\) restrains \(X\), corollary~\ref{corollary:CK.II} applies.
+\end{theorem}
+\begin{proof}
+When we pull back to \(R\), the polar equations of integral elements  near \(T_x X\) also pull back without losing rank.
+So polar equations on \(T_x X\) are locally maximal among all nearby integral elements tangent to \(R\).
+At each \(x\in X\), \(T_x X\) is a hyperplane in a unique integral element in \(T_x R\): the vanishing locus of the polar equations.
+So \(X\) is noncharacteristic in \(R\); apply theorem~\vref{theorem:CK.I}.
+\end{proof}
+\begin{corollary}\label{corollary:local.CK}
+If the tangent spaces of an analytic integral manifold of an analytic exterior differential system have locally maximal rank polar equations, then the following are equivalent:
+\begin{enumerate}
+\item that rank is less than the codimension of the integral manifold,
+\item the integral manifold is covered in open sets, each of which is a hypersurface in an analytic integral manifold.
+\end{enumerate}
+\end{corollary}
+\begin{proof}
+In one tangent space \(T_x M\), pick covectors, linearly independent modulo the polar equations of \(T_x X\), so that the subspace on which they and the polar equations vanish is a hyperplane containing \(T_x X\).
+That hyperplane can be any one that contains \(T_x X\) and satisfies the polar equations of \(T_x X\), so in particular we can make \(T_x X\) noncharacteristic in it.
+Pick any submanifold \(R\) normal to those covectors.
+\end{proof}
+
+\section{Extending an integral manifold}
+Proof of theorem~\vref{theorem:CK.I}.
+\begin{proof}
+If our theorem holds locally, then by uniqueness it holds globally.
+Let \(p\defeq1+\dim X\).
+We can assume that \(\II\) is generated in dimensions \(p-1,p,p+1\) only, with \(\II^{p+1}=\nForms{p+1}{}\).
+At each \(x\in X\), there is a unique \(p\)-dimensional integral element \(E_+ \subset T_x M\) containing \(E\defeq T_x X\).
+By the solution of problem~\vref{problem:proof.Cartan.Kaehler}, the rank of polar equations is locally maximal near \(E\), and \(s_p=0\) on \(E_+\).
+So the rank of polar equations on \(E_+\) is locally maximal.
+
+Pick a maximal collection of \(p\)-forms from \(\II^p\) with linearly independent polar equations at \(E\); let \(\II_p\) be the exterior differential system they generate.
+The polar equations of \(\II_p\) at \(E\) are the same as those of \(\II\).
+So the \(\II_p\)-integral elements containing \(E\) are the \(\II\)-integral elements containing \(E\).
+So \(E\) lies in a unique integral element of \(\II_p\), which is \(E_+\).
+By theorem~\vref{theorem:CKbaby}, \(X\) is a hypersurface in some \(\II_p\)-integral manifold \(X_+\).
+We need to see that \(\II=0\) on \(X_+\).
+
+We can assume \(X\) and \(X_+\) connected.
+Pick a maximal collection of \((p-1)\)-forms from \(\II^{p-1}\) with linearly independent polar equations on some regular hyperplane in \(E\); let \(\II_{p-1}\) be the exterior differential system they generate.
+Take a \(1\)-form \(\alpha\) so that \(E=E_+\cap(\alpha=0)\).
+Let \(\II'\subset\II\) be the exterior differential system generated by \(\II_p\) and \(\II_{p-1}\wedge\alpha\).
+On \(X_+\), \(\II_p=0\) so \(\II'=\II_{p-1}\wedge\alpha\) has integral hypersurface \(X\); we will see in lemma~\vref{lemma:domino} that \(\II'=0\) on \(X_+\).
+We need to see that \(\II=0\) on \(X_+\).
+It suffices to see that every \(\II'\)-integral element \(F_+\) near \(E_+\) is \(\II\)-integral.
+\prob{proof.ck:use.tab}{Use a tableau to prove this.}
+\begin{answer}{proof.ck:use.tab}
+Picture a tableau for the \(p\)-forms in \(\II^p\) near \(E_+\), with \(\omega^p=\alpha\).
+Each row represents a \(p\)-form, so each tableau entry is wedged with \(p-1\) of the \(1\)-forms \(\omega^i\), so all but one of the \(\omega^i\). 
+There are two grades: 
+\begin{enumerate}
+\item
+grade \(p-1\) if wedged with \(\omega^{1\dots p-1}\); these generate \(\II_p\), and 
+\item 
+grade \(p\) otherwise; these generate \(\II_{p-1}\).
+\end{enumerate}
+By corollary~\vref{corollary:same.int.elts}, these have the same integral manifolds as \(\II\).
+\end{answer}
+A proof without tableau: \(F\defeq F_+\cap(\alpha=0)\) is \(\II_{p-1}\)-integral, so \(\II\)-integral by corollary~\vref{corollary:same.int.elts}.
+If \(F_+\) is close to \(E_+\) then \(F\) is close to \(E\), so noncharacteristic for \(\II\) and \(\II_p\), so a hyperplane in a unique \(\II\)-integral element, which is therefore \(\II_p\)-integral.
+But \(F\) sits in a unique \(\II_p\)-integral element: \(F_+\), so \(F_+\) is \(\II\)-integral.
+\end{proof}
+
+\section{Background material from differential geometry}
+\begin{lemma}\label{lemma:Cartan.family}
+For any \((p+1)\)-form \(\vartheta\) and vector fields \(v_0,\dots,v_p\),
+\begin{align*}
+d\vartheta(v_0,\dots,v_p)
+&=
+(-1)^i v_i (\vartheta(v_0,\dots,\hat{v}_i,\dots,v_p))
+\\
+& \qquad +
+\sum_{i < j} (-1)^{i+j} \vartheta([v_i,v_j],v_0,\dots,\hat{v}_i,\dots,\hat{v}_j,\dots,v_p).
+\end{align*}
+\end{lemma}
+\prob{Cartan.family}{Prove lemma~\ref{lemma:Cartan.family}.}
+
+\section{Compatibility}
+Cartan's strategy picks out a determined subset of differential equations,
+sweeping an integral curve into a surface, and so on.
+Why is the surface integral?
+In other words, why are the differential equations sweeping out the surface compatible with those which swept out the curve?
+\begin{lemma}\label{lemma:domino}
+Take a finitely generated analytic exterior differential system \(\II\) with \(\II^p=\II^{p-1}\wedge\alpha\), on a \(p\)-dimensional manifold \(X_+\) with an analytic integral hypersurface \(X\).
+Then \(\II=0\).
+\end{lemma}
+\begin{proof}
+\prob{eds:trivial.a}{Why does it suffice to prove that \(\II^{p-1}=0\)?}
+\begin{answer}{eds:trivial.a}
+For \(k\le p\), if \(\II^k=0\) then \(\II^{k-1}\wedge\Omega^1\subseteq \II^k\), so \(0=\II^{k-1}\wedge\Omega^1\) and so \(0=\II^{k-1}\).
+\end{answer}
+\prob{eds:trivial.c}{Why does it suffice to assume that \(\alpha\ne 0\) everywhere on \(M\)?}
+\begin{answer}{eds:trivial.c}
+If \(\alpha\) is identically zero, then \(\II^{p-1}\wedge \Omega^1=0\) so \(\II^{p-1}=0\).
+So assume that \(\alpha\) is not identically zero.
+Write \(X\) locally as \(X=(0=f)\) for some function \(f\) with \(df\ne 0\).
+If \(\alpha=0\) at every point of \(X\), replace \(\alpha\) by \(\alpha/f\), and repeat until \(\alpha\ne 0\) at some point of \(X\).
+Replace \(X_+\) by the open subset of \(X_+\) containing a point of \(X\) at which \(\alpha\ne 0\).
+\end{answer}
+We can assume that \(X_+\) is connected.
+Denote \(\alpha\) as \(\omega^p\).
+Perhaps replacing \(X_+\) by an open subset, choose analytic \(1\)-forms \(\omega^1,\dots,\omega^{p-1}\) on \(X_+\) which coframe \(X\) so that \(\omega^1,\dots,\omega^p\) coframe \(X_+\).
+Pick differential forms \(\phi^a\in\II^{p-1}\) generating \(\II\).
+In particular, \(d\phi^a,\phi^a\wedge\omega^i\in\II^p=\II^{p-1}\wedge\omega^p\).
+Let \(\phi\) be the column vector with entries \(\phi^a\):
+\begin{align*}
+d\phi &= h \phi\wedge\omega^p,\\
+\phi\wedge\omega^i&=h^i \phi\wedge\omega^p, i=2,\dots,p-1
+\end{align*}
+for matrices \(h,h^i\) whose entries are analytic functions.
+
+Denote the vector fields dual to \(\omega^1,\dots,\omega^p\) by \(e_1,\dots,e_p\).
+Because \(\omega^1,\dots,\omega^{p-1}\) coframe \(X\), \(e_p\) is not tangent to \(X\).
+Write \(e_{\hat\imath}\) to denote 
+\[
+e_1,\dots,\hat{e}_i,\dots,e_p.
+\]
+\prob{proof.CK:use.Cartan.fam}{Use lemma~\vref{lemma:Cartan.family} to find a determined linear system satisfied by \(f\defeq\phi(e_{\hat{p}})\).}
+\begin{answer}{proof.CK:use.Cartan.fam}
+Since \(e_i\) form a basis, \([e_i,e_j]=c_{ij}^k e_k\) for some functions \(c^k_{ij}\).
+Write \(e,e_{\hat\imath}, e_{\hat\imath\hat\jmath}\) to denote 
+\[
+e_1,\dots,e_p, \quad e_1,\dots,\hat{e}_i,\dots,e_p, \quad e_1,\dots,\hat{e}_i,\dots,\hat{e}_j,\dots,e_p.
+\]
+By lemma~\vref{lemma:Cartan.family},
+\[
+d\phi(e)
+=
+(-1)^{i+1}e_i\pr{\phi(e_{\hat\imath})}\\
++
+\sum_{i < j} \phi([e_i,e_j],e_{\hat\imath\hat\jmath}).
+\]
+Plug in \(d\phi=h\phi\wedge\omega^p\) and \(\phi(e_{\hat\imath})=(-1)^{p-i}\phi\wedge\omega^i(e)\) and similarly that
+\begin{align*}
+&\phi(e_k,e_{\hat\imath\hat\jmath})\\
+&=(-1)^{p+i+j}
+\left(
+\delta_{j=k}
+\phi\wedge\omega^i
+-
+\delta_{i=k}
+\phi\wedge\omega^j
+\right)(e)
+\end{align*}
+to get
+\[
+e_p f = - \sum_{i < p} e_i( h^i f) + Hf,
+\]
+where
+\[
+H\defeq(-1)^{p+1}h 
++
+\sum_{i<j}(c^j_{ij}h^i-c^i_{ij}h^j).
+\]
+\end{answer}
+By the Cauchy--Kovalevskaya theorem (theorem~\vref{theorem:Cauchy.Kovalevksaya}), there is a unique solution \(f\) near \(X\) with given values on the noncharacteristic hypersurface \(X\); these values are \(f=0\), so the solution is \(f=0\).
+So \(\phi\wedge\omega^p=0\), so \(\phi\wedge \omega^i=0\) for all \(i\), so \(\II^{p-1}=0\).
+\end{proof}

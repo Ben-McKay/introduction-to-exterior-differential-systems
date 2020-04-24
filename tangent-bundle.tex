@@ -1,0 +1,139 @@
+\chapter{Tangent and cotangent spaces and bundles}
+\section{Cotangent spaces}
+The \emph{cotangent space}\define{cotangent!space} \(T^*_x M\)%
+\Notation{T*mM}{T^*_x M}{cotangent space of a manifold \(M\) at point \(x\)}
+of a manifold \(M\) at a point \(x \in M\) is the dual space of the tangent space \(T_x  M\).
+In other words, \(T^*_x M\) is the set of all linear maps \(\xi \colon T_x M \to \R{}\).
+In any chart, each element of \(T^*_x M\) is a \(1\)-form \(\sum a_i \, dx_i\) at a point \(x\).
+The coefficients \(a_i\) are constant numbers, because the cotangent vector is defined only at a single point \(x \in M\).
+Every \(1\)-form \(\omega = \sum f_i dx_i\) determines a cotangent vector \(\omega_x\) at each point \(x\):
+\[
+v \mapsto \sum f_i(x) v_i.
+\]
+\begin{example}
+The \(1\)-forms \(dx,dy\) span the cotangent spaces of \(M\defeq\R{2}\) at every point, so each cotangent space is a \(2\)-dimensional vector space consisting of cotangent vectors like \(dx\), \(2 \, dx - dy\), \(7 \, dx + 4 \, dy\).
+The function \(f(x,y)=x^2y+y^3\) has differential \(df=2xy \, dx + (x^2+3y^2)\, dy\).
+The differential at \((x,y)=(4,-5)\) is 
+\[
+\left.df\right|_{(x,y)=(4,-5)}=2(4)(-5) \, dx + ((4^2+3(-5)^2) \, dy = -40 \, dx + 91 \, dy,
+\] 
+having constant coefficients since we made a particular choice of point \((x,y)=(4,-5)\).
+\end{example}
+If \(f \colon P \to Q\) is a continuously differentiable map, and if \(q=f(p)\), we can define a linear map \(f^* \colon T^*_q Q \to T^*_p P\) by \((f^* \eta)(v) = \eta(f'(p)v)\) for any vector \(v \in T_p P\).
+In charts, if we write \(\eta=\sum a_i dy_i\) and \(f\) is \(y=f(x)\) then 
+\[
+f^* \eta = \sum_{ij} a_i \pd{y_i}{x_j} dx_j.
+\]
+\begin{example}
+Let \(f \colon \R{2} \to \R{2}\) be the map \(f(x,y)=(u,v)=(x^2-y^2,2xy)\).
+Then we know that \(f^* du = d(x^2-y^2)=2x \, dx - 2y \, dy\), and \(f^*dv = 2y \, dx + 2x \, dy\).
+So the map \(f^*\) on cotangent spaces is just this map, but applied with any chosen constant values for \(x,y\).
+For example, at any point \((x,y)=(x_0,y_0)\), if we let \((u_0,v_0)=f(x_0,y_0)\), we have
+\[
+\left.f^*\right|_{(x_0,y_0)} \colon T_{(u_0,v_0)}^* \R{2} \to T_{(x_0,y_0)}^* \R{2},
+\]
+given by
+\begin{align*}
+\left.f^*\right|_{(x_0,y_0)} du &= 2x_0 \, dx - 2y_0 \, dy, \\
+\left.f^*\right|_{(x_0,y_0)} dv &= 2y_0 \, dx + 2x_0 \, dy.
+\end{align*}
+Note that we don't write \(dx_0\) here: first, because \(x_0\) is a constant chosen numerical value for the variable \(x\), so \(dx_0=0\). 
+Second, because \(f^*\) is mapping to the \(2\)-dimensional vector space \(T^*_{(x_0,y_0)}\R{2}\) spanned by the basis \(dx,dy\).
+Each element of \(T^*_{(x_0,y_0)}\R{2}\) is a unique constant coefficient linear combination of \(dx, dy\).
+In particular, at \((x_0,y_0)=(0,0)\), we find \((u_0,v_0)=(0,0)\), and  \(\left.f^*\right|_{(x_0,y_0)}=0\).
+On the other hand, at \((x_0,y_0)=(3,4)\), we find 
+\[
+(u_0,v_0)=(3^2-4^2,2 \cdot 3 \cdot 4)=(-7,24),
+\]
+and
+\begin{align*}
+\left.f^*\right|_{(x_0,y_0)} du &= 6 \, dx - 8 \, dy, \\
+\left.f^*\right|_{(x_0,y_0)} dv &= 8 \, dx + 6 \, dy.
+\end{align*}
+Of course, this is just the same the usual pullback of \(1\)-forms, but we are noticing that we can compute pullback at each point.
+\end{example}
+
+
+
+\section{Hyperplanes}
+A \emph{hyperplane} in a vector space \(V\) is a linear subspace \(W \subset V\) so that \(V/W\) is \(1\)-dimensional.
+Every line \(\ell\) through the origin in \(V^*\) is perpendicular to a hyperplane \(W=\ell^{\perp}\) and conversely.
+To write down a hyperplane \(W\), it is more convenient to write down a nonzero element of the perpendicular line  \(\ell \subset V^*\).
+Recall that the set of lines in a vector space is the \emph{projective space}\SubIndex{real!projective space} on that vector space.
+So the set of hyperplanes in \(V\) is identified with the projective space on \(V^*\).
+A \emph{cotangent line}\define{cotangent!line} \(\ell \subset T^*_x M\) is a line in \(T^*_x M\).
+\begin{example}
+At any point of the plane, the multiples of \(3 \, dx + 4 \, dy\) form a cotangent line, and the associated hyperplane is the line of tangent vectors \((u,v)\) so that \(3u+4u=0\).
+\end{example}
+\begin{example}
+At a point \((x,y,z) \in \R{3}\), the multiples of \(3 \, dx + 4 \, dy -2 \, dz\) form a cotangent line.
+The associated hyperplane is the collection of tangent vectors \((u,v,w)\) so that \(3u+4v-2w=0\).
+In other words, this hyperplane is the plane spanned by \((2,0,3)\), \((0,1,2)\).
+Since the cotangent line has dimension \(1\), while the hyperplane has dimension \(2\), it is more convenient to write down the cotangent line, or just the equation \(0=3 \, dx + 4 \, dy -2 \, dz\).
+\end{example}
+The \emph{projectivised cotangent space}\define{projectivised cotangent space} at a point \(x \in M\) in a manifold \(M\) (perhaps with corners), denoted \(\ProjCot[x]{M}\)\Notation{PTx*M}{\ProjCot[x]{M}}{projectivised cotangent space}, is the set of all choices of cotangent line \(\ell\) at a point \(x \in M\).
+
+
+\optionalSection{The tangent bundle}\label{section:instrinsic:tangent.bundle}%
+Suppose that \(M \subset \R{n}\) is a \(p\)-dimensional \(C^k\) submanifold, some \(k \ge 2\).
+Let \(TM\)%
+\Notation{TM}{TM}{tangent bundle of submanifold \(M\)}
+be the set of all pairs \(\pr{x,v}\) where \(x \in M\) and \(v \in T_x M\) and call \(TM\) the \emph{tangent bundle}.%
+\define{tangent!bundle}
+Clearly \(TM \subset \R{2n}\).
+We usually picture elements of \(TM\) as tangent vectors \(v\), and informally say \(v \in TM\), but it is useful to keep track of the point \(x\) where the tangent vector lives as well, so our formal and precise definition makes use of pairs \(\pr{x,v}\).
+Let \(\pi \colon \pr{x,v} \in TM \to x \in M\).
+So for any open set \(U_M \subset M\), the set \(p^{-1}U_M\) is the set of pairs \(\pr{x,v}\) with \(x \in U_M\) and \(v \in T_x M\).
+Take a local parameterisation \(f \colon U_{\R{p}} \to U_M\), so \(U_{\R{p}} \subset \R{p}\) and \(U_M \subset M\) are open sets.
+Define a local parameterisation for \(TM\): \(F \colon U_{\R{p}} \times \R{p} \to p^{-1}U_M\) by \(F(x,y)=\pr{f(x),f'(x)y}\).
+\begin{problem}{instrinsic:transition.map}
+If we have two local parameterisations \(f_0, f_1\) for \(M\), and we let \(t=f_1^{-1} \circ f_0\), prove that the associated local parameterisations \(F_0, F_1\) for \(TM\) have associated map \(T=F_1^{-1} \circ F_0\) given by \(T(x,y)=\pr{t(x),t'(x)y}\).
+Use this to prove that \(F_0, F_1\) are charts, making \(TM\) into a \(C^{k-1}\) manifold.
+\end{problem}
+So \(TM\) is a manifold of dimension \(\dim TM = 2 \dim M\), and the \emph{projection map}%
+\define{projection}
+\(\pi \colon TM \to M\) is continuously differentiable.
+Similar definitions hold for manifolds with corners, and we can then also look at the tangent bundle of the boundary, etc.
+\begin{problem}{instrinsic:sphere.tangent.bundle}
+Suppose that \(M\) is the unit sphere in \(\R{n}\).
+Find a bijection between the points of \(TM\) and the lines (not necessarily through the origin) of \(\R{n}\).
+\end{problem}
+\begin{problem}{instrinsic:vector.field}
+Prove that each continuously differentiable vector field \(X\) on \(M\) gives a continuously differentiable map \(x \in M \mapsto \pr{x,X(x)} \in TM\).
+Prove that any continuously differentiable map \(s \colon M \to TM\) arises in this way from a vector field if and only if \(\pi \circ s=\id\) is the identity map.
+\end{problem}
+
+
+\optionalSection{The cotangent bundle}
+The \emph{cotangent bundle}\define{cotangent!bundle} \(T^*M\)%
+\Notation{T*M}{T^*M}{cotangent bundle of manifold \(M\)}
+is the set of all pairs \(\pr{x,\xi}\) where \(x \in M\) and \(\xi \in T^*_x M\) is a cotangent vector.
+\begin{problem}{tangent.vectors:cotangent}
+Suppose that \(f\) is a chart on a manifold \(M\), associating to each point \(x \in U_M\) in some open set \(U_M \subset M\) some point \(y=f(x) \in U_{\R{n}}\) where \(U_{\R{n}} \subset \R{n}\) is open.
+Each \(1\)-form \(\alpha\) on \(U_{\R{n}}\) pulls back to a \(1\)-form on \(M\).
+Prove that \(f^*dy_1,\dots,f^*dy_n\) is a basis of the cotangent space \(T_x^*M\).
+Hence every cotangent vector at \(m\) has the form \(\sum a_i f^*dy_j\).
+Prove that the map \(\sum a_i f^*dy_i \mapsto (f(x),a_1,\dots,a_n)\) is a chart on \(T^*M\).
+Use such charts to prove that \(T^*M\) is a manifold of dimension \(\dim TM = 2 \dim M\).
+What are the transition maps?
+Prove that the \emph{projection map}%
+\define{projection}
+\(\pi \colon (x,\xi) \in T^*M \mapsto x \in M\) is continuously differentiable.
+Do the same for the tangent bundle.
+\end{problem}
+\begin{problem}{tangent.vectors:one.form}
+Prove that each \(C^k\) \(1\)-form \(\xi\) on \(M\) gives a \(C^k\) map \(x \in M \mapsto \xi(x) \in T^* M\).
+Prove that a \(C^k\) map \(\xi \colon M \to T^*M\) arises in this way from a \(1\)-form if and only if \(\pi \circ \xi=\id\) is the identity map.
+\end{problem}
+
+\optionalSection{The hyperplane bundle}
+The \emph{projectivised cotangent bundle}\define{projectivised cotangent bundle}\define{bundle!projectivised cotangent} of a manifold \(M\) (perhaps with corners), denoted \(\ProjCot{M}\)\Notation{PT*M}{\ProjCot{M}}{projectivised cotangent bundle}, is the set of all choices of point \(x \in M\) and of cotangent line \(\ell\) at \(x\).
+The projectivised cotangent bundle \(\ProjCot{M}\) is also called the \emph{bundle of tangent hyperplanes}; we can draw \((x,\ell)\) as a point \(x\) and a hyperplane \(\ell^{\perp} \subset T_x M\).
+A choice of hyperplane \(H_x\subset T_x M\) at every \(x\in M\) is a \emph{hyperplane field}; it is \(C^k\) if, near each point of \(M\), there is some \(C^k\) \(1\)-form \(\xi\) so that \(\xi^{\perp}_x=H_x\).
+\begin{problem}{tangent.vectors:define.proj.cot} 
+Explain why \(\ProjCot{M}\) is a manifold so that the map \(\ProjCot{M} \to M\) is smooth, and the fibers of this map are submanifolds.
+\end{problem}
+\begin{problem}{tangent.vectors:spheres}
+The spheres centered at the origin of Euclidean space \(\R{n}\) have tangent spaces which are hyperplanes, giving a hyperplane field on \(\R{n}-\set{0}\).
+Write down a choice of \(1\)-form \(\xi\) on \(\R{n}-\set{0}\) so that this hyperplane field is \(\xi^{\perp}\).
+\end{problem}

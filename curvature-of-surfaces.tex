@@ -1,0 +1,845 @@
+\chapter{Curvature of surfaces}
+\section{Example: surfaces of revolution}
+Take a curve \(C\) in the plane, and rotate it around a line in that plane (the \emph{axis of revolution}) to create a \emph{surface of revolution}\define{surface!of revolution} \(S\).
+Suppose for simplicity that the curve doesn't touch the axis of revolution.
+Place the axis of revolution vertically.
+Write the points of \(\E[3]\) in cylindrical coordinates \((r \cos \theta, r \sin \theta, z)\).
+Our plane is \(\theta=0\), and our axis of revolution is \(r=0\).
+Our plane curve \(C\) is arclength parameterized as \(\ot{x}(s)=(r(s),0,z(s))\).
+Take adapted frames \(\pr{\ot{x},\ot{e}}\) for the curve in the plane, but swap \(\ot{e}_2\) and \(\ot{e}_3\) so that \(\ot{e}_2\) is normal to the plane and \(\ot{e}_3\) tangent to the plane but normal to the curve:
+\begin{align*}
+\ot{e}_1(s)&=\frac{d\ot{x}}{ds} = (\cos \phi(s),0,\sin \phi(s)),\\
+\ot{e}_2(s)&=(0,1,0),\\
+\ot{e}_3(s)&=(-\sin \phi(s),0,\cos \phi(s)).
+\end{align*}
+
+Let \(\rho(\theta)\) be the rotation matrix rotating \(\E[3]\) about the axis of revolution by an angle \(\theta\).
+Make an adapted frame at each point of  the surface as 
+\begin{align*}
+x(s,\theta)&=\rho(\theta)\ot{x}(s)=(r \cos \theta,r\sin\theta,z), \\
+e(s,\theta)&=\rho(\theta)\ot{e}(s),
+\end{align*}
+\begin{problem}{moving.frame:findom12}
+Find all \(\omega_i\), \(\gamma_{ij}\).
+\end{problem}
+\begin{answer}{moving.frame:findom12}
+Note that \(\rho\) rotates the point \(\ot{x}\) of our plane around on a circle perpendicular to \(e_1, e_3\) and tangent to \(e_2\), with radius \(r\), so that
+\[
+\frac{d \rho}{d \theta} \ot{x} = r e_2.
+\]
+Therefore
+\begin{align*}
+\omega_1 
+&=
+e_1 \cdot dx, 
+\\
+&=
+e_1 \cdot d\pr{\rho \ot{x}},
+\\
+&=
+e_1 \cdot \rho \, d\ot{x} + e_1 \cdot \frac{d\rho}{d\theta} \, \ot{x} \, d\theta,
+\\
+&=
+e_1 \cdot \rho \, \ot{e}_1 ds +  e_1 \cdot r e_2 \, d\theta,
+\\
+&=
+e_1 \cdot e_1 ds
+\\
+&=ds.
+\end{align*}
+Similarly, \(\omega_3 = 0\) and
+\begin{align*}
+\omega_2
+&=
+e_2 \cdot dx, 
+\\
+&=
+e_2 \cdot d\pr{\rho \ot{x}},
+\\
+&=
+e_2 \cdot \rho \, d\ot{x} + e_2 \cdot \frac{d\rho}{d\theta} \, \ot{x} \, d\theta,
+\\
+&=
+e_2 \cdot \rho \, \ot{e}_1 + e_2 \cdot r e_2 \, d\theta,
+\\
+&=
+r \, d\theta.
+\end{align*}
+Note that 
+\begin{align*}
+d\ot{e}_1&=\dot\phi\,\ot{e}_3 ds,\\
+d\ot{e}_2&=0,\\
+d\ot{e}_3&=-\dot\phi\,\ot{e}_1 ds,
+\end{align*}
+and
+\[
+d\rho=\rho
+\begin{pmatrix}
+0 & -1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}d\theta.
+\]
+Compute
+\begin{align*}
+de_1
+&=
+d(\rho \ot{e}_1),
+\\
+&=
+d\rho \, \ot{e}_1 + \rho \, d\ot{e}_1,
+\\
+&=
+\rho
+\begin{pmatrix}
+0 & -1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}
+\ot{e}_1 d\theta
++
+\rho \dot{\phi} \ot{e}_3 ds,
+\\
+&=
+\rho
+\begin{pmatrix}
+0 & -1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}
+\begin{pmatrix}
+\cos\phi\\
+0\\
+\sin\phi
+\end{pmatrix}
+d\theta
++
+\dot{\phi} e_3 ds,
+\\
+&=
+\rho
+\begin{pmatrix}
+0\\
+\cos\phi\\
+0
+\end{pmatrix}
+d\theta
++
+\dot{\phi} e_3 ds,
+\\
+&=
+\cos\phi e_2d\theta
++
+\dot{\phi} e_3 ds.
+\end{align*}
+and similarly
+\begin{align*}
+de_2
+&=
+d(\rho \ot{e}_2),
+\\
+&=
+d\rho \, \ot{e}_2,
+\\
+&=
+\rho
+\begin{pmatrix}
+0 & -1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}
+\ot{e}_2 d\theta
+\\
+&=
+-
+\rho
+\begin{pmatrix}
+1 \\
+0 \\
+0
+\end{pmatrix}
+d\theta
+\\
+&=
+-\begin{pmatrix}
+\cos\theta\\
+\sin\theta\\
+0
+\end{pmatrix}
+d\theta.
+\end{align*}
+Finally,
+\begin{align*}
+de_3
+&=
+d(\rho \ot{e}_3),
+\\
+&=
+d\rho \, \ot{e}_3 + \rho \, d\ot{e}_3,
+\\
+&=
+\rho
+\begin{pmatrix}
+0 & -1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}
+\ot{e}_3 d\theta
+-
+\rho \dot{\phi} \ot{e}_1 ds,
+\\
+&=
+\rho
+\begin{pmatrix}
+0 & -1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}
+\begin{pmatrix}
+-\sin\phi\\
+0\\
+\cos\phi
+\end{pmatrix}
+d\theta
+-
+\dot{\phi} e_1 ds,
+\\
+&=
+\rho
+\begin{pmatrix}
+0\\
+-\sin\phi\\
+0
+\end{pmatrix}
+d\theta
+-
+\dot{\phi} e_1 ds,
+\\
+&=
+-\sin\phi \, e_2d\theta
+-\dot{\phi} e_1 ds.
+\end{align*}
+Therefore 
+\begin{align*}
+\gamma_{12}&=-\gamma_{21},\\
+&=-e_2\cdot de_1,\\
+&=-e_2\cdot(\cos\phi \, e_2 d\theta+\dot\phi e_3 ds),\\
+&=-\cos\phi \, d\theta.
+\end{align*}
+\begin{align*}
+\gamma_{13}&=e_1 \cdot de_3,\\
+&=-\dot\phi \, ds,\\
+\end{align*}
+\begin{align*}
+\gamma_{23}&=e_2\cdot de_3,\\
+&=-\sin\phi \, d\theta.
+\end{align*}
+\end{answer}
+The shape operator:
+\[
+\begin{pmatrix}
+\gamma_{13}\\
+\gamma_{23}
+\end{pmatrix}
+=
+\begin{pmatrix}
+-\dot\phi & 0 \\
+0 & -\frac{\sin \phi}{r}
+\end{pmatrix}
+\begin{pmatrix}
+\omega_1\\
+\omega_2
+\end{pmatrix}.
+\]
+So the Gauss curvature of a surface of revolution is
+\[
+K=\frac{\dot{\phi} \sin \phi}{r}=-\frac{\ddot{r}}{r},
+\]
+while the mean curvature is
+\[
+H=-\frac{1}{2}\pr{\dot{\phi}+ \frac{\sin \phi}{r}}.
+\]
+\begin{example}
+Take a function \(\ot{H}(s)\) and try to construct a curve \(\ot{x}(s)\) in the plane, so that the associated surface of revolution has mean curvature \(H(s,\theta)=\ot{H}(s)\).
+To do this, we have to solve the equations
+\begin{align*}
+\dot{r}(s) &= \cos \phi(s), \\
+\dot\phi(s) &= -2\ot{H}(s)-\frac{\sin \phi(s)}{r(s)}
+\end{align*}
+with \(r > 0\).
+Each initial value \(r=r_0>0\) and \(\phi=\phi_0\) at some \(s=s_0\) determines a unique local solution, by the existence and uniqueness theorem for ordinary differential equations.
+Solve for \(z\) by \(z(s) = \int \sin \phi(s) \, ds\), again unique up to adding a constant.
+\end{example}
+\begin{problem}{moving.frame:integral}
+If we want \(H\) to be constant, say equal to a constant \(H_0\), can you integrate this coupled system of ordinary differential equations?
+Hint: is \(r \sqrt{1-\dot{r}^2}+H_0 r^2\) constant along solutions?
+\end{problem}
+\begin{answer}{moving.frame:integral}
+If \(\sin\phi=0\) everywhere, the curve is a horizontal line and the surface of revolution an annulus.
+Suppose that \(\sin\phi\) is not everywhere zero; pick an interval on which \(\sin\phi\ne 0\), and let \(\varepsilon\) be the sign of \(\sin\phi\).
+Differentiate to find that the function 
+\[
+\beta\defeq\varepsilon r \sqrt{1-\dot{r}^2}+H_0 r^2
+\]
+is constant along solutions, say equal to \(\beta_0\).
+Solve for \(\dot{r}\):
+\[
+\dot{r}^2 = 1-\frac{\beta_0-H_0r^2}{r^2}.
+\]
+Substitute \(u=r^2\):
+\[
+\dot{u}=2\sqrt{H_0u^2+u-\beta_0}.
+\]
+Integrate:
+\[
+\int\frac{du}{2\sqrt{H_0u^2+u-\beta_0}}=s.
+\]
+This integral can be solved in elementary functions giving \(s=s(r)\); for example, if \(H_0>0\),
+\begin{align*}
+s&=
+\frac{
+	(4\beta_0H_0+1)
+	\log
+	\pr{
+		2\sqrt{H_0}
+		{
+			\sqrt{
+				H_0u^2+u-\beta_0
+				}
+			+2H_0u+1
+		}
+	}
+	}{16H_0^{3/2}},
+\\
+&=
+\frac{
+	(4\beta_0H_0+1)
+	\log
+	\pr{
+		2\sqrt{H_0}
+		{
+			\sqrt{
+				H_0r^4+r^2-\beta_0
+				}
+			+2H_0r^2+1
+		}
+	}
+	}{16H_0^{3/2}},
+\end{align*}
+The surfaces of revolution of constant positive mean curvature are obtained by solving implicitly for \(r=r(s)\).
+\end{answer}
+\begin{example}
+Similarly, we can prescribe Gauss curvature \(K=\ot{K}(s)\) arbitrarily by solving the equation
+\[
+\ddot{r}+\ot{K} r = 0.
+\]
+For example, the surfaces of revolution with zero Gauss curvature are the circular cones given by rotating a line segment.
+More generally, for constant Gauss curvature \(K=K_0\), the solutions are (with \(k_0\defeq\sqrt{\left|K_0\right|}\))
+\[
+r(s) = \begin{cases}
+a\cos k_0s+ b\sin k_0s, & \text{ if \(K_0 > 0\)}, \\
+a+bs, & \text{ if \(K_0=0\)}, \\
+a\cosh k_0 s
++
+b\sinh k_0 s, & \text{ if \(K_0 < 0\)}.
+\end{cases}
+\] 
+
+For \(K_0>0\),  translate \(s\) to arrange \(b=0\), so write
+\[
+r(s)=r_0 \cos k_0 s,
+\]
+so that
+\[
+\dot{z}^2=1-\dot{r}^2=1-r_0^2K_0 \sin^2 k_0 s,
+\]
+giving
+\[
+z= \int \sqrt{1-r_0^2K_0 \sin^2 k_0 s} \, ds,
+\]
+an elliptic integral, usually denoted \(E(k_0s \, | \, r_0^2K_0)/k_0\).
+Similar remarks apply to \(K_0<0\).
+\end{example}
+\begin{problem}{moving.frames:Weingarten}
+Take a curve \(C_0\) in the plane \(\R[2]\).
+Prove that there is a curve \(C_1\) in the plane \(\E[2]\) whose associated surface of revolution satisfies \((H,K) \in C_0\) at every point.
+\end{problem}
+
+\section{Orientations}
+We could have used only positively oriented frames \(e_1,e_2,e_3\) of \(\E[3]\).
+We could then look at an oriented surface, and define its \emph{adapted frames} to have \(e_1,e_2\) a positively oriented basis of the tangent plane, and \(e_1,e_2,e_3\) a positively oriented basis of \(\E[3]\).
+The expression 
+\[
+g=
+\begin{pmatrix}
+h & 0 \\
+0 & n
+\end{pmatrix}
+\]
+simplifies to having \(h\) a rotation matrix, and \(n=1\), so
+\[
+g=
+\begin{pmatrix}
+\cos \theta & -\sin \theta & 0 \\
+\sin \theta & \cos \theta & 0 \\
+0 & 0 & 1
+\end{pmatrix},
+\]
+which we just write as \(e^{i\theta}\).
+\begin{problem}{moving.frame:area.defined}
+Over an oriented surface, prove that the \(2\)-form \(dA\defeq\omega_1\wedge\omega_2\) is the pullback of a unique \(2\)-form \(dA\) on the surface, the \emph{area form}\define{area form}.
+\end{problem}
+\begin{problem}{moving.frame:mean.curv.defined}
+Over an oriented surface, prove that the mean curvature is the pullback of a unique function on the surface.
+\end{problem}
+\begin{problem}{moving.frame:Hopfy}
+Prove that, on any surface, oriented or not, the shape operator admits a unique expression as 
+\[
+\frac{q}{2} \omega^2 + \frac{H}{2} (\omega \bar\omega + \bar\omega\omega) + \frac{\bar{q}}{2} \bar\omega^2.
+\]
+for some complex-valued \(q \colon \frameBundle{S} \to \C\) and real-value \(H \colon \frameBundle{S} \to \R\).
+How are the \(a_{ij}\) related to \(q,H\)?
+\end{problem}
+\begin{answer}{moving.frame:Hopfy}
+Taking real and imaginary parts \(q=q_1+iq_2\):
+\[
+\begin{pmatrix}
+a_{11} & a_{12} \\
+a_{12} & a_{22}
+\end{pmatrix}
+=
+\begin{pmatrix}
+H+q_1 & -q_2 \\
+-q_2 & H-q_1
+\end{pmatrix}.
+\]
+So \(H=(a_{11}+a_{22})/2\) is the mean curvature, and
+\[
+q=\frac{a_{11}-a_{22}-2i\, a_{12}}{2}.
+\]
+Note that \(|q|^2=q\bar{q}=H^2-K\), so \(q=0\) precisely at umbilic points.
+\end{answer}
+The expression \(q\omega^2\) is the \emph{Hopf differential}.\define{Hopf differential}
+\begin{problem}{moving.frame:Hopf.2}
+If the surface is oriented, prove that the Hopf differential descends to the surface, as a complex valued quadratic form on tangent vectors.
+\end{problem}
+The \emph{Gauss map}\define{Gauss map} of a surface is \(e_3\), mapping the frame bundle to the unit sphere.
+\begin{problem}{moving.frame:Gauss.map}
+Prove that the Gauss map of an oriented surface is the composition of the map \((x,e)\in\frameBundle{S}\mapsto x\) with a unique map \(x \in S\mapsto e_3(x)\), also called the \emph{Gauss map}.
+\end{problem}
+
+
+\optionalSection{Recovering a surface from its inner products and shape operator}
+\begin{theorem}[Bonnet]\define{theorem!Bonnet}\define{Bonnet!theorem}
+If two connected oriented surfaces in \(3\)-dimensional Euclidean space are identified by  a diffeomorphism preserving orientation and the inner product and shape operator on every tangent space, then the diffeomorphism is induced by an orientation preserving rigid motion of \(3\)-dimensional Euclidean space.
+\end{theorem}
+\begin{proof}
+Use the orientations of the surfaces to define ``identifying'' the shape operators: we have a well defined normal vector on each surface, so we treat the shape operator as a symmetric bilinear form on tangent spaces.
+Such a diffeomorphism, say \(\phi \colon S \to \ot{S}\), clearly identifies positively oriented orthonormal frames \(e_1,e_2\) of tangent spaces of \(S\) with those of \(\ot{S}\).
+Taking the usual orientation of \(\E[3]\), these extend uniquely into positive oriented orthonormal frames \(e_1,e_2,e_3=e_1\times e_2\), a diffeomorphism of the adapted frames, clearly identifying the soldering \(1\)-forms \(\omega_1,\omega_2\) and \(\omega_3=0\).
+Differentiate to find that the Levi--Civita connection \(1\)-form \(\gamma_{12}\) matches.
+Having the same shape operator ensures precisely that \(\gamma_{31},\gamma_{32}\) match.
+It then follows by antisymmetry of \(\gamma_{ij}\) that all connection \(1\)-forms agree.
+Let 
+\[
+h=h(x,e)=
+\begin{pmatrix}
+1 & 0\\
+x & e
+\end{pmatrix}
+\]
+as above, and \(\ot{h}\) in the same way for the corresponding surface:
+\[
+h^{-1}dh=\ot{h}^{-1}d\ot{h}=
+\begin{pmatrix}
+0 & 0 \\
+\omega & \alpha
+\end{pmatrix},
+\]
+under the diffeomorphism.
+So \(h\) and \(\ot{h}\) satisfy the same first order linear ordinary differential equation 
+\[
+dh = 
+\begin{pmatrix}
+0 & 0 \\
+\omega & \alpha
+\end{pmatrix}
+h
+\]
+along any curve in the frame bundle \(\frameBundle{S}\).
+Apply a rigid motion to one of the two surfaces, so that their frame bundles contain at least one frame in common.
+By existence and uniqueness for linear ordinary differential equations, \(h=\ot{h}\) along any curve in \(\frameBundle{S}\) starting at that frame.
+The adapted frames which are positively oriented for \(\E[3]\) and with \(e_1,e_2\) positively oriented on the surface form a connected manifold.
+Hence \(h=\ot{h}\).
+\end{proof}
+
+\optionalSection{Parallel surfaces}\SubIndex{parallel surfaces}%
+Start with a surface \(S\) with a chosen normal direction, i.e. a unit normal vector \(e_3\) at each point, smoothly varying.
+Let \(\ot{S}\) be the translation of \(S\) in that direction by a distance \(t\).
+So then \(\ot{x}=x+te_3\), \(d\ot{x}=dx+t \, de_3\) and \(e_3\cdot d\ot{x}=e_3 \cdot dx+te_3\cdot de_3=0\), so \(e_3\) is still normal to \(\ot{S}\) at \(\ot{x}\).
+Hence \(T_{\ot{x}} \ot{S} = T_x S\) is constant in \(t\), and the Gauss map is unchanged.
+Identify \(\frameBundle{\ot{S}}\cong\frameBundle{S}\) by 
+\[
+\Phi \colon (x,e)\mapsto (\ot{x},\ot{e})=(x+te_3,e).
+\]
+The soldering \(1\)-forms are
+\begin{align*}
+\otomega_i&=e_i\cdot d\ot{x},
+\\
+&=e_i\cdot dx + t e_i \cdot de_3,
+\\
+&=
+\omega_i+t\gamma_{i3},
+\\
+&=
+\omega_i+ta_{ij}\omega_j,
+\end{align*}
+which we can write as \(\otomega=(I+ta)\omega\).
+The Levi-Civita connection \(1\)-form is
+\[
+\qc_{12}=e_1\cdot de_2=\gamma_{12}.
+\]
+The shape operator is
+\begin{align*}
+\qc_{i3}&=e_i\cdot de_3,\\
+&=\gamma_{i3},
+\\
+&=
+a_{ij}\omega_j
+\end{align*}
+If we write this as \(\qc_{*3}=a\omega\), then 
+\[
+\qc_{*3}=a\omega=a(I+ta)^{-1}\qf{},
+\]
+so
+\[
+\ot{a}=a(I+ta)^{-1}.
+\]
+In any frame in which \(a\) is diagonalized, so is \(\ot{a}\):
+\[
+a=
+\begin{pmatrix}
+k_1&0\\
+0&k_2
+\end{pmatrix}
+\]
+in principal curvatures, so 
+\[
+\ot{a}=
+\begin{pmatrix}
+\ot{k}_1&0\\
+0&\ot{k}_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+\frac{k_1}{1+tk_1}&0\\
+0&\frac{k_2}{1+tk_2}
+\end{pmatrix}.
+\]
+Hence Gauss curvature
+\[
+\ot{K}=\frac{\det a}{\det(I+ta)}=\frac{K}{1+2Ht+Kt^2}
+\]
+and mean curvature
+\[
+\ot{H}=\frac{H+Kt}{1+2Ht+Kt^2}.
+\]
+In particular, the parallel surface will not be smooth enough to compute such quantities at any point \(\ot{x}=x+te_3\) where \(1+tk_1\) or \(1+tk_2\) vanish.
+But if these don't vanish, then the differential of the map is
+\[
+d\ot{x}=dx+t \, de_3= \omega_i \, e_i + ta_{ij} \omega_je_i
+\]
+an immersion.
+Surfaces parallel to a Weingarten surface are also Weingarten, but for a different relation between mean and Gauss curvature.
+
+\optionalSection{Constant mean curvature surfaces}%
+On an oriented surface, a \emph{complex differential}\define{complex differential} is an expression of the form \(f\omega^k\) on the frame bundle, but which is in fact defined on the surface.
+In other words, it doesn't transform as we right translate by \(e^{i\theta}\).
+Since \(\omega\) transforms by \(e^{-i\theta}\), we need \(f\) to transform by \(e^{ik\theta}\):
+\[
+r_{e^{i\theta}}^*f=e^{ik\theta}f.
+\]
+\begin{problem}{moving.frame:diff.Hopf}
+Differentiating this, show that
+\[
+df+ikf\alpha=Df \omega + \bar{D}f \bar\omega,
+\]  
+for unique complex functions \(Df,\bar{D}f\).
+\end{problem}
+\begin{answer}{moving.frame:diff.Hopf}
+In our complex notation, we are identifying the matrix
+\[
+\begin{pmatrix}
+0 & -1 & 0 \\
+1 &  0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}
+\]
+with the complex number \(i\).
+The fibers of \(\frameBundle{S} \to S\) have the form
+\[
+(x(t),e(t))=(x_0,e_0e^{it}).
+\]
+So if we write out \(\gamma=\transpose{e}de\) in our complex notation,
+on each fiber,
+\[
+\gamma=i \, dt,
+\]
+so \(\alpha=\gamma_{12}=-dt\).
+We are given that
+\[
+f(x(t),e(t))=f(x_0,e_0e^{it})=e^{ikt}f(x_0,e_0),
+\]
+so on the fiber
+\[
+\frac{df}{dt}=ikf,
+\]
+i.e.
+\[
+df+ikf\alpha=0.
+\]
+So in complex notation, \(df+ikf\alpha\) vanishes on vertical vectors for \(\frameBundle{S} \to S\), i.e. is a multiple of \(\omega,\bar\omega\).
+\end{answer}
+A \emph{holomorphic differential}\define{holomorphic differential} is one for which \(0=\bar{D}f\), i.e. \(df-ikf\alpha\) is complex linear.
+
+A \emph{holomorphic chart} on an oriented surface in \(\E[3]\) is a chart on an open subset of the surface with differential \(dz\) a holomorphic differential.
+Any two such charts locally agree up to complex analytic transition maps.
+The Korn--Lichtenstein theorem\SubIndex{theorem!Korn--Lichtenstein}\SubIndex{Korn--Lichtenstein theorem} says that any oriented surface is covered by domains of holomorphic charts.
+Hence any oriented surface in \(\E[3]\) is a Riemann surface.
+\begin{problem}{moving.frame:Hopf.1}
+Compute that the Hopf differential satisfies
+\[
+dq+2iq\alpha = Dq \omega +  \bar{D}q \bar\omega,
+\]
+where
+\(
+\bar{D}q=
+2(H_1-H_2i)
+\)
+where \(H\) is the mean curvature, and \(dH=H_1\omega_1+H_2\omega_2\).
+Thereby, prove:
+\end{problem}
+\begin{answer}{moving.frame:Hopf.1}
+\begin{align*}
+Dq&=a_{111}-3a_{122}+i(a_{222}-3a_{112}),\\
+\bar{D}q&=2(H_1-iH_2).
+\end{align*}
+\end{answer}
+\begin{theorem}
+An oriented surface has constant mean curvature just when its Hopf differential is holomorphic.
+\end{theorem}
+The Riemann--Roch theorem \cite{Griffiths:1989} p. 99 shows that a compact Riemann surface of genus \(g\) has a space of quadratic differentials of complex dimension: 
+\[
+\begin{cases}
+0,&g=0,\\
+1,&g=1,\\ 
+3g-3,&g\ge 2.
+\end{cases}
+\]
+It is well known that there is precisely one genus zero compact Riemann surface, up to holomorphic diffeomorphism: the Riemann sphere \cite{Griffiths:1989} p. 125.
+Applying Bonnet's theorem.
+\begin{corollary}
+For any constant \(H_0\), the sphere has at most one immersion in \(\E[3]\) with constant mean curvature equal to \(H_0\), up to rigid motion: as a round sphere of radius \(1/H_0\).
+\end{corollary}
+
+\section{Away from umbilics}
+Recall that principal curvatures of a surface are the eigenvalues of its shape operator.
+Suppose that they are distinct \(k_1\ne k_2\), i.e. there are no umbilic points.
+A \emph{Darboux frame}\define{Darboux frame}\define{frame!Darboux} is one in which \(e_1,e_2\) are eigenvectors of the shape operator with eigenvalues \(k_1<k_2\).
+The set of Darboux frames of the surface is a surface, as each Darboux frame is uniquely determined up to signs.
+On that surface, \(\gamma_{i3}=k_i\omega_i\), for \(i,j=1,2\).
+\prob{moving.frame:not.umb}%
+{Differentiate the equations of a Darboux frame to see that
+\[
+d
+\begin{pmatrix}
+k_1\\
+k_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+k_{11}&k_{12}\\
+k_{21}&k_{22}
+\end{pmatrix}
+\begin{pmatrix}
+\omega_1\\
+\omega_2
+\end{pmatrix},
+\]
+for some functions \(k_{ij}\), perhaps \emph{not} symmetric in lower indices, while
+\[
+\gamma_{12}=\frac{k_{12}\omega_1+k_{21}\omega_2}{k_2-k_1}.
+\]}
+\begin{answer}{moving.frame:not.umb}%
+\begin{align*}
+0
+&=
+\begin{pmatrix}
+d(\gamma_{13}-k_1\omega_1)\\
+d(\gamma_{23}-k_2\omega_2)
+\end{pmatrix}
+\\
+&=
+\begin{pmatrix}
+-\gamma_{12}\wedge\gamma_{23}-dk_1\wedge\omega_1+k_1\gamma_{12}\wedge\omega_2\\
+-\gamma_{21}\wedge\gamma_{13}-dk_2\wedge\omega_2+k_2\gamma_{21}\wedge\omega_1
+\end{pmatrix}
+\\
+&=
+\begin{pmatrix}
+-\gamma_{12}\wedge k_2\omega_2-dk_1\wedge\omega_1+k_1\gamma_{12}\wedge\omega_2\\
+\gamma_{12}\wedge k_1\omega_1-dk_2\wedge\omega_2-k_2\gamma_{12}\wedge\omega_1
+\end{pmatrix}
+\\
+&=
+-%
+\begin{pmatrix}
+dk_1\wedge\omega_1+(k_2-k_1)\gamma_{12}\wedge\omega_2\\
+(k_2-k_1)\gamma_{12}\wedge\omega_1+dk_2\wedge\omega_2
+\end{pmatrix}
+\end{align*}
+\end{answer}
+Expand \(0=d^2k_i\) to find that, if we let
+\begin{align*}
+Dk_{i1}&=dk_{i1}+k_{i2}\gamma_{12},\\
+Dk_{i2}&=dk_{i2}-k_{i1}\gamma_{12},
+\end{align*}
+then
+\(
+Dk_{ij}=k_{ijk}\omega_k
+\)
+with \(k_{ijk}=k_{ikj}\).
+Recall that Gauss curvature is \(K=k_1k_2\).
+Plug into the equation
+\[
+d\gamma_{12}=K\omega_1\wedge\omega_2.
+\]
+to get
+\[
+d\left(
+\frac{k_{12}\omega_1+k_{21}\omega_2}{k_2-k_1}
+\right)
+=
+k_1k_2\omega_1\wedge\omega_2.
+\]
+Expanding this out gives
+\[
+0=
+\frac{k_{122}-k_{211}}{k_2-k_1}
++\frac{2k^2_{12}+2k^2_{21}}{(k_2-k_1)^2}
++k_1k_2.
+\]
+
+\begin{lemma}\label{lemma:max.min.k}
+If a surface bears a point at which one principal curvature is maximal and the other minimal, then either the point is umbilic or the Gauss curvature is not positive at that point.
+\end{lemma}
+\begin{proof}
+We can assume that \(k_2>k_1\) near that point, and then adapt frames as above.
+At a maximum of \(k_2\) and minimum of \(k_1\), \(0=dk_1=dk_2\), so \(k_{ij}=0\) and so \(\gamma_{12}=0\), so \(Dk_{ij}=dk_{ij}=k_{ijk}\omega_k\).
+Since \(k_2\) is maximal, along the flow of \(e_1\), \(k_{211}\le 0\).
+Since \(k_1\) is minimal, along the flow of \(e_2\), \(k_{122}\ge 0\).
+Plug in above to get \(K=k_1k_2\le 0\).
+\end{proof}
+
+\begin{theorem}[Liebmann]\SubIndex{Liebmann, H.}
+Suppose that \(S\) is a connected compact surface in \(\E[3]\) of (i) constant Gauss curvature or (ii) constant mean curvature with Gauss curvature not having any critical zeroes.
+Then \(S\) is a round sphere.
+\end{theorem}
+\begin{proof}
+By problem~\vref{problem:moving.frame:compact}, there is a point of positive Gauss and mean curvature, so the constant is a positive constant.
+At any point at which the principal curvatures are as far apart from one another as possible, one is maximal and the other minimal, as their product is constant.
+Apply lemma~\vref{lemma:max.min.k} to find a point of nonpositive Gauss curvature where the Gauss curvature is critical.
+\end{proof}
+\prob{moving.frame:distinct.lambda}{Suppose that \(S\) is a connected surface in \(\E[3]\) and that one principal curvature is a nonzero constant, and always distinct from the other.
+Prove that \(S\) is a union of circles of constant radius, with centres on a curve.}
+\begin{answer}{moving.frame:distinct.lambda}
+Arrange \(e_1,e_2\) to diagonalize the shape operator, so 
+\begin{align*}
+\gamma_{13}&=k_1\omega_1,\\
+\gamma_{23}&=k_2\omega_2,
+\end{align*}
+with \(k_1\) constant.
+Differentiate to find that \(\gamma_{12}\) is a multiple of \(\omega_2\).
+So then along the flow of \(e_1\), \(\gamma_{12}=0\) and \(\gamma_{23}=0\) i.e. \(e_2\) is constant, so \(e_1,e_3\) rotate in the plane, with \(\gamma_{13}=k_1\), so at a constant rate, i.e. on a circle.
+\end{answer}
+
+We will define completeness in appendix~\ref{chapter:geodesics}; for the moment, we just need to know that on a complete surface,\SubIndex{complete!surface}\SubIndex{surface!complete} every bounded vector field is complete.\SubIndex{complete!vector field}\SubIndex{vector field!complete} 
+\begin{theorem}[Hilbert]\define{theorem!Hilbert}\define{Hilbert!surface theorem}
+No complete surface in \(\E[3]\) has constant negative Gauss curvature.
+\end{theorem}
+\begin{proof}
+Take a surface of constant negative Gauss curvature, say equal to \(-1\).
+We can assume it is connected, and replace it by its universal covering space if needed, so assume it is simply connected.
+Let \(u\) be half the angle between the asymptotic curves, so \(0<u<\pi/2\).
+Check that the principal curvatures are \(-\cot u,\tan u\).
+A surface of negative Gauss curvature has no umbilics.
+Differentiate the equations 
+\begin{align*}
+\gamma_{13}&=-\cot u \, \omega_1,\\
+\gamma_{23}&=\tan u \, \omega_2.
+\end{align*}
+Check that \(\omega_1/\sin u\) and \(\omega_2/\cos u\) are closed \(1\)-forms; noting that \(0 < u < \pi/2\), so the denominators don't vanish.
+Because the surface is connected and simply connected, there are functions \(s_1,s_2\) so that 
+\begin{align*}
+ds_1&=\omega_1/\sin u,\\
+ds_2&=\omega_2/\cos u,
+\end{align*}
+unique up to constant and with \(ds_1,ds_2\) linearly independent.
+
+The surface is complete, so \(e_1,e_2\) have complete flows.
+The indefinite integral \(\int \omega_1\) along curves \(\omega_2=0\) is an unbounded function, defined up to constant.
+But \(s_1\) grows at least as fast, so is also unbounded along curves on which \(ds_2=0\), and vice versa.
+So the map \((s_1,s_2)\) from our surface to the plane is onto, and a local diffeomorphism.
+
+The vector fields \(\p{s_1}=\sin u \, e_1\), \(\p{s_2}=\cos u \, e_2\) are complete and commuting.
+Flows of these for times \(s_1,s_2\) invert our previous map, hence a diffeomorphism.
+
+Let \(x\defeq(s_1-s_2)/2\), \(y\defeq(s_1+s_2)/2\).
+The level sets of \(x\) and \(y\) are precisely the asymptotic curves.
+Check that \(\gamma_{12}=-u_xdx+u_ydy\), and that the relation \(d\gamma_{12}=K\omega_1\wedge\omega_2\) becomes the \emph{sine--Gordon equation}\SubIndex{sine--Gordon equation} for the angle \(\theta=2u\):
+\[
+\theta_{xy}=\sin\theta.
+\]
+Note also that \(0<\theta<\pi\), so \(\sin\theta>0\).
+The area form is \(\omega_1\wedge\omega_2=2\sin \theta dx \wedge dy\).
+
+Apply Stokes's theorem to a rectangle \(R\) in the \(xy\)-plane
+\[
+\int_{\partial R}\gamma_{12}=\int_R d\gamma_{12},
+\]
+to find
+\[
+\theta(x,y)-\theta(0,y)=\theta(x,0)-\theta(0,0)+\int \sin \theta \, dx \, dy.
+\]
+The difference in values of \(\theta\) along the top of any rectangle is at least as large as the difference along the bottom.
+
+Since \(0<\theta<\pi\), the area of the rectangle, in the geometry of our surface, is never more than \(4\pi\).
+Our coordinates are global, so any measureable subset of the surface has area no more than \(4\pi\).
+Each set of infinite Euclidean area thus contains sets of large measure where \(\sin \theta\) gets small, so \(\theta\) gets close to \(0\) or \(\pi\).
+
+Suppose that \(\theta\) is not constant on some horizontal line.
+Change the sign of \(x\) and \(y\) if needed, to arrange that \(\theta\) increases along a horizontal line segment.
+Split that line segment into three line segments.
+On the leftmost, suppose that \(\theta\) increases by some amount \(\varepsilon_L\), and on the rightmost by some amount \(\varepsilon_R\).
+\[
+\begin{tikzpicture}[scale=.7]
+\fill[gray!40,opacity=.25](-1,0) rectangle (1,1);
+\draw[thick,gray] (-1,1) -- (-1,0) -- (1,0) -- (1,1);
+\draw[thick,gray] (-.333,1) -- (-.333,0) -- (.333,0) -- (.333,1);
+\node (b) at (-.333,-.1){};
+\node (c) at (.333,-.1){};
+\draw[-stealth,thick,gray] (-1,-.1) -- (-.333,-.1);
+\node[below] at (-.666,-.1) {\(\varepsilon_L\)};
+\draw[-stealth,thick,gray] (.333,-.1) -- (1,-.1);
+\node[below] at (.666,-.1) {\(\varepsilon_R\)};
+\end{tikzpicture}
+\]
+Draw the half strips above the line segments.
+So \(\theta\) increases by at least \(\varepsilon_L\) across each parallel line segment across the left half strip.
+But \(\theta>0\) everywhere, so in the middle strip, \(\theta>\varepsilon_L\).
+Similarly, in the middle strip, \(\theta<\pi-\varepsilon_R\).
+So \(\sin \theta\) is bounded away from zero in the middle strip, a contradiction.
+
+Hence \(\theta\) is constant on every horizontal line, i.e. \(0=\theta_x\), so \(0=\theta_{xy}=\sin \theta\), a contradiction.
+\end{proof}
+
