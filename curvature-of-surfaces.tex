@@ -8,9 +8,9 @@ Our plane is \(\theta=0\), and our axis of revolution is \(r=0\).
 Our plane curve \(C\) is arclength parameterized as \(\ot{x}(s)=(r(s),0,z(s))\).
 Take adapted frames \(\pr{\ot{x},\ot{e}}\) for the curve in the plane, but swap \(\ot{e}_2\) and \(\ot{e}_3\) so that \(\ot{e}_2\) is normal to the plane and \(\ot{e}_3\) tangent to the plane but normal to the curve:
 \begin{align*}
-\ot{e}_1(s)&=\frac{d\ot{x}}{ds} = (\cos \phi(s),0,\sin \phi(s)),\\
+\ot{e}_1(s)&=\frac{d\ot{x}}{ds} = (\cos \varphi(s),0,\sin \varphi(s)),\\
 \ot{e}_2(s)&=(0,1,0),\\
-\ot{e}_3(s)&=(-\sin \phi(s),0,\cos \phi(s)).
+\ot{e}_3(s)&=(-\sin \varphi(s),0,\cos \varphi(s)).
 \end{align*}
 
 Let \(\rho(\theta)\) be the rotation matrix rotating \(\E[3]\) about the axis of revolution by an angle \(\theta\).
@@ -67,9 +67,9 @@ r \, d\theta.
 \end{align*}
 Note that 
 \begin{align*}
-d\ot{e}_1&=\dot\phi\,\ot{e}_3 ds,\\
+d\ot{e}_1&=\dot\varphi\,\ot{e}_3 ds,\\
 d\ot{e}_2&=0,\\
-d\ot{e}_3&=-\dot\phi\,\ot{e}_1 ds,
+d\ot{e}_3&=-\dot\varphi\,\ot{e}_1 ds,
 \end{align*}
 and
 \[
@@ -98,7 +98,7 @@ d\rho \, \ot{e}_1 + \rho \, d\ot{e}_1,
 \end{pmatrix}
 \ot{e}_1 d\theta
 +
-\rho \dot{\phi} \ot{e}_3 ds,
+\rho \dot{\varphi} \ot{e}_3 ds,
 \\
 &=
 \rho
@@ -108,29 +108,29 @@ d\rho \, \ot{e}_1 + \rho \, d\ot{e}_1,
 0 & 0 & 0
 \end{pmatrix}
 \begin{pmatrix}
-\cos\phi\\
+\cos\varphi\\
 0\\
-\sin\phi
+\sin\varphi
 \end{pmatrix}
 d\theta
 +
-\dot{\phi} e_3 ds,
+\dot\varphi e_3 ds,
 \\
 &=
 \rho
 \begin{pmatrix}
 0\\
-\cos\phi\\
+\cos\varphi\\
 0
 \end{pmatrix}
 d\theta
 +
-\dot{\phi} e_3 ds,
+\dot\varphi e_3 ds,
 \\
 &=
-\cos\phi e_2d\theta
+\cos\varphi e_2d\theta
 +
-\dot{\phi} e_3 ds.
+\dot\varphi e_3 ds.
 \end{align*}
 and similarly
 \begin{align*}
@@ -186,7 +186,7 @@ d\rho \, \ot{e}_3 + \rho \, d\ot{e}_3,
 \end{pmatrix}
 \ot{e}_3 d\theta
 -
-\rho \dot{\phi} \ot{e}_1 ds,
+\rho \dot\varphi \ot{e}_1 ds,
 \\
 &=
 \rho
@@ -196,43 +196,43 @@ d\rho \, \ot{e}_3 + \rho \, d\ot{e}_3,
 0 & 0 & 0
 \end{pmatrix}
 \begin{pmatrix}
--\sin\phi\\
+-\sin\varphi\\
 0\\
-\cos\phi
+\cos\varphi
 \end{pmatrix}
 d\theta
 -
-\dot{\phi} e_1 ds,
+\dot\varphi e_1 ds,
 \\
 &=
 \rho
 \begin{pmatrix}
 0\\
--\sin\phi\\
+-\sin\varphi\\
 0
 \end{pmatrix}
 d\theta
 -
-\dot{\phi} e_1 ds,
+\dot\varphi e_1 ds,
 \\
 &=
--\sin\phi \, e_2d\theta
--\dot{\phi} e_1 ds.
+-\sin\varphi \, e_2d\theta
+-\dot\varphi e_1 ds.
 \end{align*}
 Therefore 
 \begin{align*}
 \gamma_{12}&=-\gamma_{21},\\
 &=-e_2\cdot de_1,\\
-&=-e_2\cdot(\cos\phi \, e_2 d\theta+\dot\phi e_3 ds),\\
-&=-\cos\phi \, d\theta.
+&=-e_2\cdot(\cos\varphi \, e_2 d\theta+\dot\varphi e_3 ds),\\
+&=-\cos\varphi \, d\theta.
 \end{align*}
 \begin{align*}
 \gamma_{13}&=e_1 \cdot de_3,\\
-&=-\dot\phi \, ds,\\
+&=-\dot\varphi \, ds,\\
 \end{align*}
 \begin{align*}
 \gamma_{23}&=e_2\cdot de_3,\\
-&=-\sin\phi \, d\theta.
+&=-\sin\varphi \, d\theta.
 \end{align*}
 \end{answer}
 The shape operator:
@@ -243,8 +243,8 @@ The shape operator:
 \end{pmatrix}
 =
 \begin{pmatrix}
--\dot\phi & 0 \\
-0 & -\frac{\sin \phi}{r}
+-\dot\varphi & 0 \\
+0 & -\frac{\sin\varphi}{r}
 \end{pmatrix}
 \begin{pmatrix}
 \omega_1\\
@@ -253,30 +253,30 @@ The shape operator:
 \]
 So the Gauss curvature of a surface of revolution is
 \[
-K=\frac{\dot{\phi} \sin \phi}{r}=-\frac{\ddot{r}}{r},
+K=\frac{\dot\varphi \sin \varphi}{r}=-\frac{\ddot{r}}{r},
 \]
 while the mean curvature is
 \[
-H=-\frac{1}{2}\pr{\dot{\phi}+ \frac{\sin \phi}{r}}.
+H=-\frac{1}{2}\pr{\dot\varphi+ \frac{\sin \phi}{r}}.
 \]
 \begin{example}
 Take a function \(\ot{H}(s)\) and try to construct a curve \(\ot{x}(s)\) in the plane, so that the associated surface of revolution has mean curvature \(H(s,\theta)=\ot{H}(s)\).
 To do this, we have to solve the equations
 \begin{align*}
-\dot{r}(s) &= \cos \phi(s), \\
-\dot\phi(s) &= -2\ot{H}(s)-\frac{\sin \phi(s)}{r(s)}
+\dot{r}(s) &= \cos \varphi(s), \\
+\dot\varphi(s) &= -2\ot{H}(s)-\frac{\sin \varphi(s)}{r(s)}
 \end{align*}
 with \(r > 0\).
-Each initial value \(r=r_0>0\) and \(\phi=\phi_0\) at some \(s=s_0\) determines a unique local solution, by the existence and uniqueness theorem for ordinary differential equations.
-Solve for \(z\) by \(z(s) = \int \sin \phi(s) \, ds\), again unique up to adding a constant.
+Each initial value \(r=r_0>0\) and \(\varphi=\varphi_0\) at some \(s=s_0\) determines a unique local solution, by the existence and uniqueness theorem for ordinary differential equations.
+Solve for \(z\) by \(z(s) = \int \sin \varphi(s) \, ds\), again unique up to adding a constant.
 \end{example}
 \begin{problem}{moving.frame:integral}
 If we want \(H\) to be constant, say equal to a constant \(H_0\), can you integrate this coupled system of ordinary differential equations?
 Hint: is \(r \sqrt{1-\dot{r}^2}+H_0 r^2\) constant along solutions?
 \end{problem}
 \begin{answer}{moving.frame:integral}
-If \(\sin\phi=0\) everywhere, the curve is a horizontal line and the surface of revolution an annulus.
-Suppose that \(\sin\phi\) is not everywhere zero; pick an interval on which \(\sin\phi\ne 0\), and let \(\varepsilon\) be the sign of \(\sin\phi\).
+If \(\sin\varphi=0\) everywhere, the curve is a horizontal line and the surface of revolution an annulus.
+Suppose that \(\sin\varphi\) is not everywhere zero; pick an interval on which \(\sin\varphi\ne 0\), and let \(\varepsilon\) be the sign of \(\sin\varphi\).
 Differentiate to find that the function 
 \[
 \beta\defeq\varepsilon r \sqrt{1-\dot{r}^2}+H_0 r^2
@@ -435,7 +435,7 @@ If two connected oriented surfaces in \(3\)-dimensional Euclidean space are iden
 \end{theorem}
 \begin{proof}
 Use the orientations of the surfaces to define ``identifying'' the shape operators: we have a well defined normal vector on each surface, so we treat the shape operator as a symmetric bilinear form on tangent spaces.
-Such a diffeomorphism, say \(\phi \colon S \to \ot{S}\), clearly identifies positively oriented orthonormal frames \(e_1,e_2\) of tangent spaces of \(S\) with those of \(\ot{S}\).
+Such a diffeomorphism \(S \to \ot{S}\), clearly identifies positively oriented orthonormal frames \(e_1,e_2\) of tangent spaces of \(S\) with those of \(\ot{S}\).
 Taking the usual orientation of \(\E[3]\), these extend uniquely into positive oriented orthonormal frames \(e_1,e_2,e_3=e_1\times e_2\), a diffeomorphism of the adapted frames, clearly identifying the soldering \(1\)-forms \(\omega_1,\omega_2\) and \(\omega_3=0\).
 Differentiate to find that the Levi--Civita connection \(1\)-form \(\gamma_{12}\) matches.
 Having the same shape operator ensures precisely that \(\gamma_{31},\gamma_{32}\) match.
@@ -637,7 +637,7 @@ The Riemann--Roch theorem \cite{Griffiths:1989} p. 99 shows that a compact Riema
 \end{cases}
 \]
 It is well known that there is precisely one genus zero compact Riemann surface, up to holomorphic diffeomorphism: the Riemann sphere \cite{Griffiths:1989} p. 125.
-Applying Bonnet's theorem.
+Applying Bonnet's theorem:
 \begin{corollary}
 For any constant \(H_0\), the sphere has at most one immersion in \(\E[3]\) with constant mean curvature equal to \(H_0\), up to rigid motion: as a round sphere of radius \(1/H_0\).
 \end{corollary}

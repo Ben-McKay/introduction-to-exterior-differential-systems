@@ -110,7 +110,7 @@ yields a unique almost complex structure on the space parameterized by two compl
 \prob{almost.complex:coframe.ti.2}{Prove that any two complex coframings \(\omega^{\mu},\otomega^{\mu}\) yield the same almost complex structure just when \(\otomega^{\mu}=g^{\mu}_{\nu}\omega^{\nu}\) for a unique matrix \(g=(g^{\mu}_{\nu})\) of functions.}
 
 Any complex differential form is expressed in any complex coframing \(\omega^{\mu}\) as a sum of wedge products of \(\omega^{\mu}\) and \(\bar\omega^{\mu}\). Following convention, write \(\bar\omega^{\mu}\) as \(\omega^{\bar{\mu}}\).
-A \emph{\((p,q)\)-form} is a differential form expressed with \(p\) factors of \(\omega^{\mu}\) and \(q\) of \(\omega^{\bar{\mu}}\).
+A \((p,q)\)-\emph{form} is a differential form expressed with \(p\) factors of \(\omega^{\mu}\) and \(q\) of \(\omega^{\bar{\mu}}\).
 For example, \(\omega^{\mu}\) is \((1,0)\) while \(\omega^{\bar{\mu}}\) is \((0,1)\).
 In particular,
 \[
@@ -147,7 +147,7 @@ d_0(g\omega)&=(d_0 g)\wedge\omega+g \, d_0\omega,\\
 d_{-1}(g\omega)&=g\,d_{-1}\omega.
 \end{align*}
 Hence \(d_{-1}\omega=0\) just when \(d_{-1}(g\omega)=0\).
-If \(u_{\mu},v_{\mu}\) are the vector fields dual to the real and imaginary parts of the \(\omega^{\mu}\), the \emph{torsion tensor}\define{torsion tensor}, or \emph{Nijenhuis tensor}\define{Nijenhuis tensor}
+If \(u_{\mu},v_{\mu}\) are the vector fields dual to the real and imaginary parts of the \(\omega^{\mu}\), the \emph{torsion tensor}\define{torsion!tensor}, or \emph{Nijenhuis tensor}\define{Nijenhuis tensor}
 \[
 \tau\defeq
 (u_{\mu}+iv_{\mu})d_{-1}\omega^{\mu}
@@ -227,7 +227,7 @@ If \(\pi\wedge\omega\) occurs in a tableau, at some grade,  it contributes \(2\)
 \end{pmatrix}.
 \]
 Count with a complex tableau as if it were real linear, but double the characters.
-\begin{theorem}
+\begin{theorem}\label{theorem:analytic.NN}
 An analytic almost complex structure has zero torsion just when it arises from a complex structure.
 \end{theorem}
 This theorem remains true with milder assumptions than analyticity \cite{Hill/Taylor:2003}.
@@ -334,7 +334,10 @@ Consider the coframing
 \prob{almost.complex:torone}{Take exterior derivatives and find torsion vanishing: \(\SU{3}\) has a left invariant complex structure.}
 \prob{almost:complex:tortwo}{On the other hand, if we conjugate one of the last three \(1\)-forms in the coframing, prove that we arrive at a left invariant almost complex structure which is not complex.}
 \end{example}
-
+\begin{problem*}{almost.complex:Weil}Prove theorem~\vref{theorem:analytic.NN} by complexifying variables locally, and applying the Frobenius theorem.\end{problem*}
+\begin{answer}{almost.complex:Weil}
+\cite{Weil:1958} pp. 36--37
+\end{answer}
 \optionalSection{Almost complex submanifolds}%
 An \emph{almost complex submanifold} of an almost complex manifold \(M\) is a submanifold whose tangent planes are \(J\)-invariant.
 Suppose that \(M\) has real dimension \(2(p+q)\), and we look for almost complex submanifolds of dimension \(2p\).

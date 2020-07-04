@@ -1,0 +1,63 @@
+\chapter{Analytic functions}\label{chapter:analytic.functions}%
+\chapterSummary{A review of the theory of Taylor series and analytic functions.}%
+\section{Formal Taylor series}
+For \(x_1,x_2,\dots,x_n\) real variables and \(a_1,a_2,\dots,a_n\) nonnegative integers, let
+\begin{align*}
+x&\defeq(x_1,x_2,\dots,x_n),\\
+a&\defeq(a_1,a_2,\dots,a_n),\\ 
+x^a&\defeq x_1^{a_1} \dots x_n^{a_n},\\
+a!&\defeq a_1!\dots a_n!\text{ and}\\ 
+\partial^a&\defeq\frac{\partial^{a_1}}{\partial x_1^{a_1}} \dots \frac{\partial^{a_n}}{\partial x_n^{a_n}}.
+\end{align*}
+A \emph{formal Taylor series}\define{Taylor series!formal}\define{formal!Taylor series} is an expression \(\sum c_a \pr{x-x_0}^a\) with real constants \(c_a\), not required to converge.
+\begin{problem}{cauchy:formal}
+Prove that the formal Taylor series \(\sum_n (2n)! t^n\) diverges for \(t \ne 0\).
+\end{problem}
+We add, subtract, multiply, differentiate and compose in the obvious way: finitely many terms at a time.
+Crucially, each output term depends only on input terms of lower or equal order (or, for the derivative, on just one order higher), so on only \emph{finitely} many input terms.
+When we add, multiply, differentiate or compose, each step is only adding or multiplying coefficients.
+In particular, the sum, product, derivative (in any variable) and composition of formal Taylor series with positive terms has positive terms.
+
+A formal Taylor series \(\sum b_a x^a\) \emph{majorizes}\define{majorize} another \(\sum c_a x^a\) if \(b_a \ge \left|c_a\right|\) for all \(a\).
+If a convergent series majorizes another, the other is absolutely convergent.
+If \(f\) majorizes \(g\) and \(u\) majorizes \(v\) then \(f \circ u, f+u, fu, \partial^a \! f\) majorizes \(g \circ v, g+v, gv, \partial^a \! g\) respectively. 
+
+The geometric series
+\[
+ \frac{1}{1-t}=1+t+t^2+\dots
+\]
+has a Taylor series with positive coefficients.
+A formal Taylor series \(c_0+c_1 t + \dots\) with all \(\left|c_j\right|<1\) converges absolutely for \(|t|<1\), because the geometric series converges and majorizes it.
+Rescaling \(t\) and our series, we see that if a formal Taylor series is majorized by a geometric series, then it converges near the origin, i.e. if \(\left|c_j\right|\) are bounded by a geometric series, in other words \(\left|c_j\right| \le Mr^j\) for some \(M, r>0\), then \(c_0 + c_1 t + \dots\) converges absolutely near the origin.
+An \emph{analytic function}\define{analytic function} is one which is locally the sum of a convergent Taylor series.
+
+\begin{lemma}\label{lemma:cauchy:convergent.Taylor}
+A formal Taylor series converges to an analytic function just when it is majorized by a product of geometric series in one variable each.
+\end{lemma}
+\begin{proof}
+We give the proof for one variable around the point \(x=0\), and let the reader generalize.
+Take any analytic function \(f(x)\) with convergent Taylor series \(f(x)=\sum c_n x^n\).
+Since it converges absolutely for \(x\) near \(0\), \(\sum \left|c_n\right| r^n\) converges for \(r\) near \(0\), so the terms of this series are bounded.
+Rescale to get a bound of \(1\), i.e. \(\left|c_n\right| r^n < 1\) for all \(n\).
+Therefore 
+\[
+\left|c_n\right| \le \frac{1}{r^n}
+\]
+i.e. \(f(x)\) is majorized by \(1/(1-x)\).
+\end{proof}
+\prob{cauchy-kov:u.con}{Prove that any two formal Taylor series which converge near the origin to the same analytic function agree.}
+\begin{answer}{cauchy-kov:u.con}
+\cite{Serre:2006}, p. 68. 
+\end{answer}
+\prob{cauchy-kov:u.pwr.an}{Prove that an analytic function given by a convergent Taylor series around some point is also given by a convergent Taylor series around every nearby point.}
+\begin{answer}{cauchy-kov:u.pwr.an}
+\cite{Serre:2006}, p. 69. 
+\end{answer}
+\prob{cauchy-kov:u.a.c}{Prove that any two analytic functions defined on a connected open set which agree near some point agree everywhere.}
+The derivative and composition of analytic functions is analytic, and the analytic inverse and implicit function theorems hold with the usual proofs \cite{Krantz/Parks:2002,Serre:2006}.
+
+\section{Complexification}
+Every Taylor series converging in some domain of real variables continues to converge for complex values of those variables, with small imaginary parts, by the same majorization.
+Hence every analytic function of real variables extends to an open set in a domain of complex variables.
+By elementary complex analysis \cite{Ahlfors:1978}, sums, differences, products and derivatives of analytic functions on an open set are analytic, as are quotients, wherever the denominator doesn't vanish, and the analytic inverse and implicit function theorems hold.
+

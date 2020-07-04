@@ -1,0 +1,669 @@
+\chapter{\texorpdfstring{The Cartan--K\"ahler theorem}{The Cartan-Kaehler theorem}}\label{chapter:Cartan.Kaehler}%
+\chapterSummary{We find a test for existence of local solutions of partial differential equations, which we can apply directly when the equations are expressed in 1-forms as a linear Pfaffian system.}
+
+\section{The characters}
+A \emph{free derivative} in a tableau is an entry which is nonzero modulo all of the entries in earlier columns, and above it in the same column, and \(\vartheta\) and \(\omega\).
+We shade the free derivatives, for example:
+\[
+d 
+\begin{pmatrix}
+\vartheta_1 \\
+\vartheta_2 \\
+\vartheta_3 \\
+\vartheta_4
+\end{pmatrix}
+=
+-
+\begin{tableau} 
+0                 & 0                 & 0     \\
+\freeDeriv{\pi_1} & 0                 & \pi_2 \\
+0                 & \freeDeriv{\pi_3} & \pi_4 \\
+\freeDeriv{\pi_2} & \freeDeriv{\pi_4} & \freeDeriv{\pi_5}
+\end{tableau}
+\wedge
+\begin{pmatrix}
+\omega_1 \\
+\omega_2 \\
+\omega_3
+\end{pmatrix}
+\qquad \text{ mod } \vartheta_1 , \dots , \vartheta_4 
+\]
+The \emph{naive characters}\define{character!naive} of a tableau \(d\vartheta=-\varpi \wedge \omega\mod{\vartheta}\) are the numbers \(s_1, s_2, \dots, s_n\) of free derivatives in each column. 
+A linear Pfaffian system with tableau
+\[
+d 
+\begin{pmatrix}
+\vartheta_1 \\
+\vartheta_2 \\
+\vartheta_3 \\
+\vartheta_4
+\end{pmatrix}
+=
+-
+\begin{tableau} 
+0                 & 0                 & 0     \\
+\freeDeriv{\pi_1} & 0                 & \pi_2 \\
+0                 & \freeDeriv{\pi_3} & \pi_4 \\
+\freeDeriv{\pi_2} & \freeDeriv{\pi_4} & \freeDeriv{\pi_5}
+\end{tableau}
+\wedge
+\begin{pmatrix}
+\omega_1 \\
+\omega_2 \\
+\omega_3
+\end{pmatrix}
+\qquad \text{ mod } \vartheta_1 , \dots , \vartheta_4 
+\]
+has naive characters \(s_1=2, s_2=2, s_3=1\), just counting the shaded entries in each column.
+But if we replace the basis of \(\omega\) 1-forms, adding suitable multiples of \(\omega_2\) to \(\omega_1\), we alter the first column by adding a multiple of the second column, so add a multiple of \(\pi_4\) to the third row, for example like
+\begin{align*}
+d 
+\begin{pmatrix}
+\vartheta_1 \\
+\vartheta_2 \\
+\vartheta_3 \\
+\vartheta_4
+\end{pmatrix}
+=&
+-
+\begin{tableau}
+0           & 0     & 0     \\
+\freeDeriv{\pi_1+\pi_2} & 0     				& \freeDeriv{\pi_2} \\
+\freeDeriv{\pi_4}       & \freeDeriv{\pi_3} 	& \pi_4 \\
+\freeDeriv{\pi_2+\pi_5} & \pi_4 				& \pi_5
+\end{tableau}
+\wedge
+\begin{pmatrix}
+\omega_1 \\
+\omega_2 \\
+\omega_3-\omega_1
+\end{pmatrix}
+\qquad \text{ mod } \vartheta_1 , \dots , \vartheta_4,
+\\
+=&
+-
+\begin{tableau}
+0           & 0     & 0     \\
+\freeDeriv{\bar\pi_1}   & 0     & \freeDeriv{\bar\pi_5} \\
+\freeDeriv{\pi_4}       & \freeDeriv{\pi_3} & \pi_4 \\
+\freeDeriv{\bar\pi_2}   & \pi_4 & \bar\pi_2-\bar\pi_5
+\end{tableau}
+\wedge
+\begin{pmatrix}
+\bar\omega_1 \\
+\bar\omega_2 \\
+\bar\omega_3
+\end{pmatrix}
+\qquad \text{ mod } \vartheta_1 , \dots , \vartheta_4.
+\end{align*}
+making \(s_1=3, s_2=1, s_3=1\), with new choices of differential forms represented by putting bars on top.
+By ``borrowing'' from later columns, we increase the earlier naive characters at the expense of later ones.
+Similarly, we can add some multiple of \(\omega_3\) to \(\omega_2\) to arrange 
+\newcommand*{\bbar}[1]{\bar{\bar{#1}}}
+\[
+d 
+\begin{pmatrix}
+\vartheta_1 \\
+\vartheta_2 \\
+\vartheta_3 \\
+\vartheta_4
+\end{pmatrix}
+=
+-
+\begin{tableau}
+0           & 0                           & 0     \\
+\freeDeriv{\bar\pi_1}   & \freeDeriv{\bar\pi_5}                   & \bar\pi_5 \\
+\freeDeriv{\pi_4}       & \freeDeriv{\bar\pi_3}                   & \pi_4 \\
+\freeDeriv{\bar\pi_2}   & \pi_4 + \bar\pi_2-\bar\pi_5 & \bar\pi_2-\bar\pi_5
+\end{tableau}
+\wedge
+\begin{pmatrix}
+\bbar\omega_1 \\
+\bbar\omega_2 \\
+\bbar\omega_3
+\end{pmatrix}
+\qquad \text{ mod } \vartheta_1 , \dots , \vartheta_4
+\]
+so that \(s_1=3, s_2=2, s_3=0\) are the new naive characters.
+
+In generic bases of \(\vartheta,\omega\), the free derivatives are the first \(s_j\) entries in column \(j\) of the tableau; such a tableau is in \emph{normal form}\define{normal form!tableau}\define{tableau!normal form}; for example:
+\[
+\begin{tableau}
+\freeDeriv{\bar\pi_1}   & \freeDeriv{\bar\pi_5}                   & \bar\pi_5 \\
+\freeDeriv{\pi_4}       & \freeDeriv{\bar\pi_3}                   & \pi_4 \\
+\freeDeriv{\bar\pi_2}   & \pi_4 + \bar\pi_2-\bar\pi_5 & \bar\pi_2-\bar\pi_5\\
+0           & 0                           & 0     \\
+\end{tableau}
+\wedge
+\begin{pmatrix}
+\bbar\omega_1 \\
+\bbar\omega_2 \\
+\bbar\omega_3
+\end{pmatrix}
+\qquad \text{ mod } \vartheta_1 , \dots , \vartheta_4
+\]
+
+The \emph{characters}\define{character} are the values of the naive characters in normal form: the nonnaive \(s_1\) is the largest value that the naive \(s_1\) can acheive for any basis of 1-forms \(\omega_i\), the nonnaive \(s_2\) is the largest value of the naive \(s_2\) subject to \(s_1\) acheiving its maximum, etc.
+
+For any linear Pfaffian system with Cauchy characteristics of locally constant dimension,  the system can be quotiented by Cauchy characteristics.
+The tableau remains the same, so the characters remain the the same.
+
+
+\begin{problem}{pfaffian:determined}
+Prove that a linear Pfaffian system without Cauchy characteristics is determined just when it has characters \(s_1=\dots=s_{n-1}\) and \(s_n=0\).
+\end{problem}
+\begin{answer}{pfaffian:determined}
+As usual, we can pretend that our system is classical.
+If the system is determined, we can assume that it is \(u_t=f\of{t,x,u,u_x}\), and just compute the tableau for \(\omega_{\mu}=dx_{\mu}\), \(\vartheta_i=du_i-\sum p_{ij} \, dx_j\), and \(\varpi_{ij} = dp_{ij}\).
+If \(s_1=\dots=s_{n-1}\) and \(s_n=0\) then every \(\varpi\) in the last column is a linear multiple of those in earlier columns, all of which are linearly independent.
+Since the system is classical, we can suppose that \(\omega_{\mu}=dx_{\mu}\), \(\vartheta_i=du_i-\sum_j p_{ij} \, dx_j\), and \(\varpi_{ij} = dp_{ij}\), so that our differential equations are relations among these \(x,u,p\).
+The \(dp_{in}\) are linear combinations of the other \(dp_{ij}\), i.e. we can solve for \(p_n=u_{x_n}\) in terms of \(x,u\) and \(u_{x_j}\) for \(j < n\).
+\end{answer}
+
+\begin{proposition}
+Take an analytic linear Pfaffian system with characters \(s_1, \dots, s_n\).
+If \(s_1=\dots=s_{n-1}=n\), with \emph{any} constant value of \(s_n\), then there are analytic integral manifolds through every point tangent to every integral element.
+\end{proposition}
+\begin{proof}
+The \(\vartheta, \omega, \pi\) are linearly independent.
+They vanish just on the Cauchy characteristics. 
+So the Cauchy characteristics have constant dimension.
+Locally quotient by Cauchy characteristics: assume there are none.
+Suppose that there are free derivatives in the last column. 
+Take a linear subspace \(V \subset T_m M\) in any tangent space of \(M\), so that on \(V\) those free derivative 1-forms are linearly dependent on the free derivatives in earlier columns, modulo \(\vartheta, \omega\), but for which the remaining linearly independent \(\vartheta,\omega\) and free derivative 1-forms are linearly independent.
+Take any analytic submanifold \(X \subset M\)  with \(V\) as one of its tangent spaces.
+On \(X\) the system becomes determined near \(m\).
+Apply the Cauchy--Kovalevskaya theorem.
+\end{proof}
+
+
+
+
+\section{\texorpdfstring{The Cartan--K\"ahler theorem}{The Cartan Kaehler theorem}}
+
+
+Intuitively, an \emph{integral element} is a potential tangent space to an integral manifold.
+To be precise: an \emph{integral element}\define{integral!element} of a Pfaffian system \(\vartheta_i,\omega_j\) on a manifold \(M\) is a linear subspace of a tangent space \(T_m M\) on which \(0=\vartheta_i\) and \(0=d\vartheta_i\) for all \(i\), while \(\omega_1, \omega_2, \dots, \omega_n\) form a basis of the 1-forms.
+Assume that we have quotiented out Cauchy characteristics, and so the \(\vartheta_i, \omega_j, \pi_k\) form a basis of each cotangent space.
+Each integral element is given just precisely by specifying that \(\pi_i = \sum_j p_{ij} \omega_j\) for some numbers \(p_{ij}\) so that \(d\vartheta\) vanishes with these plugged in.
+For example, the tableau 
+\[
+d 
+\begin{pmatrix}
+\vartheta_1 \\
+\vartheta_2 \\
+\vartheta_3 \\
+\vartheta_4
+\end{pmatrix}
+=
+-
+\begin{tableau}
+0 & 0 & 0 \\
+\freeDeriv{\pi_1} & 0 & \pi_2 \\
+0 & \freeDeriv{\pi_3} & \pi_4 \\
+\freeDeriv{\pi_2} & \freeDeriv{\pi_4} & \freeDeriv{\pi_5}
+\end{tableau}
+\wedge
+\begin{pmatrix}
+\omega_1 \\
+\omega_2 \\
+\omega_3
+\end{pmatrix}
+\qquad \text{ mod } \vartheta_1 , \dots , \vartheta_4 
+\]
+has integral elements given by setting
+\[
+\begin{pmatrix}
+\pi_1 \\
+\pi_2 \\
+\pi_3 \\
+\pi_4 \\
+\pi_5
+\end{pmatrix}
+=
+\begin{pmatrix}
+p_{11} & p_{12} & p_{13} \\
+p_{21} & p_{22} & p_{23} \\
+p_{31} & p_{32} & p_{33} \\
+p_{41} & p_{42} & p_{43} \\
+p_{51} & p_{52} & p_{53}
+\end{pmatrix}
+\begin{pmatrix}
+\omega_1 \\
+\omega_2 \\
+\omega_3
+\end{pmatrix}
+\]
+but then subject to equations given by plugging these into \(d\vartheta=0\).
+Each line of the tableau, say
+\[
+\varpi_1 \ \varpi_2 \ \varpi_3,
+\]
+if we write our integral element as \(\varpi_i = \sum q_{ij} \omega_j\),
+gives us equations \(q_{12}=q_{21}, q_{13}=q_{31}, q_{23}=q_{32}\).
+In our example, this gives:
+\begin{alignat*}{3}
+p_{12} =& \, 0,      & \quad p_{13} =& \, p_{21}, & \quad p_{22} =& \, 0, \\
+0      =& \, p_{31}, & \quad 0=& \, p_{41},       & \quad p_{33} =& \, p_{42}, \\
+p_{22} =& \, p_{41}, & \quad p_{23} =& \, p_{51}, & \quad p_{43} =& p_{52}.
+\end{alignat*}
+So each integral element has a unique expression
+\[
+\begin{pmatrix}
+\pi_1 \\
+\pi_2 \\
+\pi_3 \\
+\pi_4 \\
+\pi_5
+\end{pmatrix}
+=
+\begin{pmatrix}
+p_{11} & 0      & p_{21} \\
+p_{21} & 0      & p_{51} \\
+0      & p_{32} & p_{42} \\
+0      & p_{42} & p_{52} \\
+p_{51} & p_{52} & p_{53}
+\end{pmatrix}
+\begin{pmatrix}
+\omega_1 \\
+\omega_2 \\
+\omega_3
+\end{pmatrix}.
+\]
+
+If there are Cauchy characteristics, then the above recipe determines the integral elements modulo Cauchy characteristics, i.e. in the quotient space of \(T_m M\) by Cauchy characteristics.
+Let \(s\) be the dimension of integral elements modulo Cauchy characteristics, i.e. counting using the above recipe.
+If there are no Cauchy characteristics then \(s\) is the dimension of the space of integral elements passing through a given point.
+A linear Pfaffian system is \emph{involutive}\define{involutive!linear Pfaffian system}\define{linear!Pfaffian system!involutive} if \(s_1+2s_2+\dots+ns_n=s\).
+Our example has \(s_1=3, s_2=2, s_1=0\) and \(s=7\), so it is involutive.
+
+We generalise the definition of integral element slightly: an \emph{integral element} of a Pfaffian system \(\vartheta,\omega\) on a manifold \(M\) is a linear subspace \(E \subset TM\) for \(\vartheta=0\) and the 1-forms \(\omega_1, \omega_2, \dots, \omega_n\) span the dual space of \(E\).
+An \emph{extension} \(E_+\) of an integral element \(E\) is an integral element containing \(E\).
+
+\begin{theorem}[Cartan--K\"ahler]
+For any analytic involutive linear Pfaffian system
+\[
+\vartheta_1, \vartheta_2, \dots, \vartheta_{s_0}, 
+\omega_1, \omega_2, \dots, \omega_n
+\]
+every noncharacteristic  integral element of dimension \(n-1\) lies in the tangent space of an integral manifold of dimension \(n\).
+In particular, there are integral manifolds through every point and tangent to every \(n\) dimensional integral element.
+\end{theorem}
+
+Since our example tableau is involutive, the Cartan--K\"ahler theorem tells us that any linear Pfaffian system with such a tableau has integral manifolds of dimension 3 through any point.
+
+
+
+
+\section{\texorpdfstring{Proving parts of the Cartan--K\"ahler theorem}{Proving parts of the Cartan Kaehler theorem}}
+
+Suppose that we have linear Pfaffian system \(\vartheta,\omega\) in normal form, for example:
+\[
+\begin{tableau}
+\freeDeriv{\pi_1} & \freeDeriv{\pi_4} & \freeDeriv{\pi_6} \\
+\freeDeriv{\pi_2} & \freeDeriv{\pi_5} & \pi_1-\pi_5 \\
+\freeDeriv{\pi_3} & \pi_2                   & \pi_1+\pi_2 \\ 
+\pi_1-\pi_2             & 0                       & \pi_3 
+\end{tableau}
+\]
+The \emph{principal components}\define{principal!component} are the \(\omega_1, \omega_2, \dots, \omega_j\) coefficients of each free derivative in column \(j\).
+Our example has principal components: 
+\begin{enumerate}
+\item
+the \(\omega_1\) components of \(\pi_1, \pi_2, \pi_3\) and
+\item
+the \(\omega_1,\omega_2\) components of \(\pi_4, \pi_5\) and
+\item
+the \(\omega_1,\omega_2,\omega_3\) components of \(\pi_6\).
+\end{enumerate}
+On an integral element, the \(\omega_1\) component of \(\pi_6\) determines the \(\omega_3\) component of \(\pi_1\).
+
+%\begin{problem}{Cartan.Kaehler:normal.form}
+%Prove that, at any given point of a manifold with a linear Pfaffian system \(\vartheta,\omega\), every tableau reaches normal form after a generic change of basis of \(\vartheta\) and of \(\omega\).
+%\end{problem}
+
+\begin{lemma}\label{lemma:pick.pis}
+Take a linear Pfaffian system.
+In normal form, every integral element modulo Cauchy characteristics is uniquely determined by the principal components.
+Hence the dimension \(s\) of the space of integral elements modulo Cauchy characteristics satisfies \(s \le s_1+2s_2+\dots+ns_n\). 
+The tableau is involutive just when the principal components can be specified arbitrarily, determining an integral element modulo Cauchy characteristics.
+\end{lemma}
+\begin{proof}
+Each nonprincipal component of any free derivative is related by the equations of the tableau to some earlier component in some later column, i.e. to a linear combination of earlier components.
+\end{proof}
+
+
+\begin{lemma}\label{lemma:generic}
+A linear Pfaffian system is involutive at a point just when, after quotienting out the Cauchy characteristics at that point, the generic integral element of dimension \(j\le n\) extends to an integral element of any higher dimension \(k\le n\), with a space of extensions of dimension 
+\[
+(j+1)s_{j+1} + (j+2)s_{j+2} + \dots + ks_k.
+\]
+\end{lemma}
+The phrase ``the generic integral element'' here means ``every integral element except those satisfying some nontrivial algebraic equation at each point of our manifold''.
+\begin{proof}
+The generic integral element of dimension \(j\) has \(\omega_1, \omega_2, \dots, \omega_j\) linearly independent, so is determined by its principal components of \(\omega_1, \omega_2, \dots, \omega_j\).
+If involutive, then the values of the principal components are arbitrary, and still yield an \(n\)-dimensional integral element.
+On the other hand, suppose that we can extend generic integral elements.
+Inductively, we can pick their principal components at each step, arbitrarily, and still get an integral element.
+\end{proof}
+
+
+\begin{lemma}\label{lemma:restrict}
+For any involutive linear Pfaffian system, the restriction of the system to a generic hypersurface is also an involutive linear Pfaffian system, with characters \(s_1,s_2,\dots,s_{n-1}\) and Cartan integer \(s-ns_n\).
+\end{lemma}
+\begin{proof}
+By ``generic'' here we can just mean a hypersurface on which 
+\[
+\vartheta,\omega_1, \omega_2, \dots, \omega_{n-1}
+\] 
+are linearly independent in normal form at some point.
+Restriction to a hypersurface forces some relation on \(\omega_n\), which we can arrange is \(\omega_n=0\).
+The characters \(s_1, s_2, \dots, s_{n-1}\) don't change.
+Every integral element of the system intersects the tangent plane of the hypersurface in an integral element, giving arbitrary principal components, so we still have involution.
+\end{proof}
+
+\begin{lemma}
+For any involutive linear Pfaffian system, after quotienting out Cauchy characteristics, the characters and the dimension \(s\) of the space of integral elements are constant.
+In particular, if we arrange normal form at a point, then we arrange it using the same 1-forms at all nearby points.
+\end{lemma}
+\begin{proof}
+Principal components take arbitrary values, uniquely determining each integral element.
+At nearby points, these same components (perhaps no longer principal) can then take arbitrary values at all nearby points, uniquely determining each integral element.
+So the dimension \(s\) of the space of integral elements is constant near any point of involutivity.
+Similarly after we restrict to a generic submanifold, the dimension \(s\) for the restricted system is constant near any point of involutivity.
+The dimensions of such restrictions inductively recover the values of the characters by lemma~\vref{lemma:restrict}.
+\end{proof}
+
+In particular, any involutive linear Pfaffian system has locally constant rank of its Cauchy characteristics, since it has locally constant values for \(s_1, s_2, \dots, s_n\).
+Therefore we can locally quotient by Cauchy characteristics.
+Henceforth in this chapter, we can always assume in all proofs, without loss of generality, that our linear Pfaffian system has no Cauchy characteristics.
+
+\begin{lemma}\label{lemma:sn.is.zero}
+If the Cartan--K\"ahler theorem is true for all linear Pfaffian systems with \(s_n=0\), then it is true for all linear Pfaffian systems.
+\end{lemma}
+\begin{proof}
+Arrange normal form at some point.
+Pick a linear subspace of the tangent space of codimension \(s_n\) on which the free derivatives in the final column are dependent on those in earlier columns, keeping the \(\vartheta, \omega\) and earlier column free derivatives still linearly independent.
+Any analytic submanifold of codimension \(s_n\) with that (or any nearby) tangent space will restrict those free derivative in the final column to be dependent on those in earlier columns, keeping the \(\vartheta, \omega\) and earlier column free derivatives still linearly independent, at least near our point. 
+The free derivatives in the final column are preceded in the tableau in all earlier columns by free derivatives.
+The restriction doesn't generate torsion, because each torsion term, say a multiple of \(\omega_i \wedge \omega_n\), gets absorbed into the free derivative in column \(i\).
+The effect on the characters and space of integral elements is as in lemma~\vref{lemma:pick.pis}: \(s_n'=0\) while \(s'=s-ns_n\), so still involutive.
+\end{proof}
+
+
+\begin{lemma}\label{lemma:classy}
+If the Cartan--K\"ahler theorem is true for all classical linear Pfaffian systems with \(s_n=0\), then it is true for all linear Pfaffian systems.
+\end{lemma}
+\begin{proof}
+For a nonclassical system, pick a point and take some local coordinates so that, perhaps after a linear change of coordinates, \(dx_j=\omega_j\) at that one point.
+The system \(\vartheta_1,\dots,\vartheta_{s_0},dx_1,\dots,dx_n\) is classical.
+The \(dx_j\) are linearly independent on each integral manifold, and so near our chosen point the \(\omega_j\) are also linearly independent on that integral manifold, and vice versa.
+\end{proof}
+
+
+We need to prove that every noncharacteristic hyperplane in every integral element lies tangent to an \emph{initial data submanifold}\define{initial data submanifold}, i.e. an analytic noncharacteristic submanifold on which \(\vartheta=0\).
+\begin{problem}{Cartan.Kaehler:nonchar.hyper}
+Prove that \(s_n>0\) just when every hyperplane of every integral element is characteristic.
+\end{problem}
+So we can suppose that there is a noncharacteristic hyperplane in every integral element, and so the generic hyperplane in any integral element is noncharacteristic.
+
+\begin{example} 
+Return to our tableau above, which we rewrite as
+\[
+d 
+\begin{pmatrix}
+\vartheta_1 \\
+\vartheta_2 \\
+\vartheta_3 \\
+\vartheta_4
+\end{pmatrix}
+=
+-
+\begin{tableau}
+0                       & 0                           & 0     \\
+\freeDeriv{\pi_1}       & \freeDeriv{\pi_5}           & \pi_5 \\
+\freeDeriv{\pi_4}       & \freeDeriv{\pi_3}           & \pi_4 \\
+\freeDeriv{\pi_2}       & \pi_4 + \pi_2-\pi_5         & \pi_2-\pi_5
+\end{tableau}
+\wedge
+\begin{pmatrix}
+\omega_1 \\
+\omega_2 \\
+\omega_3
+\end{pmatrix}
+\qquad \text{ mod } \vartheta_1 , \dots , \vartheta_4.
+\]
+As in lemma~\ref{lemma:classy}, we can assume that \(\omega_j=dx_j\); in particular, we can assume that the 1-forms \(\omega_j\) are closed.
+Invent some new variables \(a_1, a_2\) and let \(\vartheta_0=\omega_3-a_1 \omega_1-a_2 \omega_2\).
+Integral submanifolds of \(\vartheta_0, \vartheta_2, \dots, \vartheta_4\) on which \(\omega_1, \omega_2\) are linearly independent are initial data surfaces, for generic values of \(a_1, a_2\).
+
+The new tableau is
+\[
+d 
+\begin{pmatrix}
+\vartheta_0 \\
+\vartheta_1 \\
+\vartheta_2 \\
+\vartheta_3 \\
+\vartheta_4
+\end{pmatrix}
+=
+-
+\begin{tableau}
+\freeDeriv{da_1}                      & \freeDeriv{da_2} \\
+0                                     & 0                             \\
+\freeDeriv{\pi_1+a_1\pi_5}            & \freeDeriv{\pr{1+a_2}\pi_5}    \\
+\freeDeriv{\pr{1+a_1}\pi_4}           & \freeDeriv{\pi_3+a_2\pi_4}    \\
+\freeDeriv{\pr{1+a_1}\pi_2-a_1 \pi_5} & \pi_4 + \pr{1+a_2}\pi_2-\pi_5 
+\end{tableau}
+\wedge
+\begin{pmatrix}
+\omega_1 \\
+\omega_2 
+\end{pmatrix}
+\]
+modulo \(\vartheta_0 , \dots , \vartheta_4\).
+Note that this tableau is also involutive.
+\end{example}
+
+
+\begin{lemma}
+Take an analytic linear Pfaffian system with involutive tableau \(d \vartheta = - \varpi \wedge \omega\).
+Suppose that we have proven the Cartan--K\"ahler theorem for all analytic linear Pfaffian systems whose tableau has fewer columns than \(\varpi\) has.
+Then every noncharacteristic hyperplane in every integral element lies tangent to an initial data submanifold.
+\end{lemma}
+\begin{proof}
+We can as above assume that \(s_n=0\), \(\omega_j\) is closed and there are no Cauch characteristics.
+Invent some new variables \(a_1, a_2, \dots, a_{n-1}\) and let \(\vartheta_0=\omega_n-\sum a_j \omega_j\).
+Integral submanifolds of \(\vartheta_0, \vartheta_1, \dots, \vartheta_{s_0}\) on which \(\omega_1, \omega_2, \dots, \omega_{n-1}\) are linearly independent are initial data submanifolds, for generic values of \(a_1, a_2, \dots, a_{n-1}\).
+When forming the new system, we only added various multiples (with \(a_j\) coefficients) of later columns to earlier columns, so we didn't change the free derivatives, except in the new final row, where we add one independent \(da_j\) to each column, making it a free derivative.
+So the new system has \(s_j'=1+s_j\) for \(j<n\).
+All of the integral elements of the original system have different values for their principal components, so have distinct intersections with the hyperplane \(\omega_n=\sum a_j \omega_j\).
+The new tableau has a row consisting of \(da_1, da_2,\dots,da_{n-1}\).
+Therefore the space of integral elements has dimension 
+\[
+s'=s+\frac{n(n-1)}{2},
+\]
+so is involutive.
+\end{proof}
+
+
+
+\section{\texorpdfstring{Proof of the Cartan--K\"ahler theorem for simple examples}{Proof of the Cartan Kaehler theorem for simple examples}}
+
+\begin{example}
+Consider our earlier example once again:
+\[
+d 
+\begin{pmatrix}
+\vartheta_1 \\
+\vartheta_2 \\
+\vartheta_3 \\
+\vartheta_4
+\end{pmatrix}
+=
+-
+\begin{tableau}
+0           & 0                           & 0     \\
+\freeDeriv{\pi_1}       & \freeDeriv{\pi_5}                       & \pi_5 \\
+\freeDeriv{\pi_4}       & \freeDeriv{\pi_3}                       & \pi_4 \\
+\freeDeriv{\pi_2}       & \pi_4 + \pi_2-\pi_5         & \pi_2-\pi_5
+\end{tableau}
+\wedge
+\begin{pmatrix}
+\omega_1 \\
+\omega_2 \\
+\omega_3
+\end{pmatrix}
+\qquad \text{ mod } \vartheta_1 , \dots , \vartheta_4.
+\]
+As in lemma~\vref{lemma:classy}, assume \(\omega_j=dx_j\).
+The system is not determined.
+We can make a new determined system out of it by adding some new variables \(a,b,c\), and new 1-forms denoted by \(\bar\vartheta\) as follows:
+\[
+\begin{pmatrix}
+\bar\vartheta_1 \\
+\bar\vartheta_2 \\
+\bar\vartheta_3 \\
+\bar\vartheta_4
+\end{pmatrix}
+=
+\begin{pmatrix}
+\vartheta_1 \\
+\vartheta_2 \\
+\vartheta_3 \\
+\vartheta_4
+\end{pmatrix}
++
+\begin{pmatrix}
+a & b & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & c & 0
+\end{pmatrix}
+\begin{pmatrix}
+\omega_1 \\
+\omega_2 \\
+\omega_3
+\end{pmatrix}
+\]
+so that
+\[
+d 
+\begin{pmatrix}
+\bar\vartheta_1 \\
+\bar\vartheta_2 \\
+\bar\vartheta_3 \\
+\bar\vartheta_4
+\end{pmatrix}
+=
+-
+\begin{tableau}
+\freeDeriv{da}          & \freeDeriv{db}                                   & 0     \\
+\freeDeriv{\pi_1}       & \freeDeriv{\pi_5}                                & \pi_5 \\
+\freeDeriv{\pi_4}       & \freeDeriv{\pi_3}                                & \pi_4 \\
+\freeDeriv{\pi_2}       & \freeDeriv{dc + \pi_4 + \pi_2-\pi_5}             & \pi_2-\pi_5
+\end{tableau}
+\wedge
+\begin{pmatrix}
+\omega_1 \\
+\omega_2 \\
+\omega_3
+\end{pmatrix}
+\qquad \text{ mod } \bar\vartheta_1 , \dots , \bar\vartheta_4.
+\]
+The trick: we choose where to add variables \(a,b,c\) so that the resulting tableau has new \(da, db, dc\) 1-forms, linearly independent, in the ``holes'' (where we don't see free derivatives), except in the final column.
+In other words, we precisely force the resulting tableau to be determined.
+Write each integral element as \(\pi_i=\sum_j p_{ij} \omega_j\), \(da=\sum a_i \omega_i\) and so on, and read from the tableau:
+\begin{alignat*}{3}
+            a_2 &= b_1,         & \ a_3 &=0,                \ & b_3&=0,\\
+          p_{12}&=p_{51},       & \ p_{13}     &=p_{51},    \ & p_{53}&=p_{52}, \\
+          p_{42}&=p_{31},       & \ p_{43}     &=p_{41},    \ & p_{33}&=p_{42}, \\
+          p_{22}&=c_1+p_{41}+p_{21}-p_{51}, & \  
+          p_{23}&=p_{21}-p_{51}, & \
+c_3 + p_{43} + p_{23} - p_{53} &= p_{22}-p_{52}.
+\end{alignat*}
+From these equations, distill expressions for \(\partial_{x_3}\pr{a,b,c}\) in terms of other derivatives of \(a,b,c\):
+\begin{align*}
+\pderiv{}{x_3}
+\begin{pmatrix}
+a \\
+b \\
+c
+\end{pmatrix}
+=
+\pderiv{}{x_1}
+\begin{pmatrix}
+0 \\
+0 \\
+c
+\end{pmatrix}.
+\end{align*}
+These are determined linear equations.
+
+Take an analytic noncharacteristic integral surface for the original Pfaffian system.
+That integral surface is a noncharacteristic integral surface for the new system, but with \(0=a=b=c\).
+By the Cauchy--Kovalevskaya theorem,\SubIndex{Cauchy--Kovalevskaya theorem}\SubIndex{theorem!Cauchy--Kovalevskaya}
+ there is a unique analytic integral 3-dimensional manifold for the new system containing that integral surface.
+But on that integral 3-dimensional manifold, \(a,b,c\) satisfy a determined linear system of equations with initial condition \(0=a=b=c\).
+There is a unique solution, but \(0=a=b=c\) is a solution, so \(0=a=b=c\) throughout the integral 3-dimensional manifold.
+Therefore the integral 3-dimensional manifold for the new system is an integral 3-dimensional manifold for the old system.
+\end{example}
+
+
+
+
+\section{Finishing the proof of the Cartan--K\"ahler theorem}
+\begin{lemma}
+Every initial data hypersurface of an analytic involutive linear Pfaffian system lies in a unique integral manifold.
+\end{lemma}
+\begin{proof}
+Suppose the tableau is \(d\vartheta=-\varpi \wedge \omega \mod{\vartheta}\) in normal form.
+From lemma~\vref{lemma:classy}, we can suppose \(s_n=0\), \(\omega_j\) are closed and there are no Cauchy characteristics.
+Add new variables \(q\) and let \(\bar\vartheta=\vartheta-q\omega\), one new \(q_{ij}\) variable just exactly when \(\varpi_{ij}\) is not linearly independent of the \(\varpi\) higher up in the same column or in earlier columns, i.e. doesn't contribute to \(s_j\).
+The tableau of \(\bar\vartheta,\omega\) is the \emph{melted}\define{tableau!melted}\define{melted tableau} tableau.
+In particular, we add no \(q_{in}\) variables, i.e. there are no \(dq\) in the last column of the melted tableau, so the melted tableau is determined.
+The \emph{frozen tableau}\define{frozen tableau}\define{tableau!frozen} is the melted tableau with the equations \(dq=0\) added, an involutive linear Pfaffian system with the same equations on integral elements as our original tableau, independent of the value of \(q\).
+
+\begin{lemma}\label{lemma:original.i.e}
+A melted integral element is a frozen integral element just when the \(\omega_1,\omega_2,\dots,\omega_{n-1}\) components of \(dq\) vanish on it.
+\end{lemma}
+\begin{proof}
+Both melted and frozen tableau have \(s_n=0\), so neither has principal \(\omega_n\) components.
+By involutivity of both tableau, there is a unique integral element of each with any given values of \(\pi\) principal components and zero \(dq\) principal components.
+Every integral element of the frozen tableau is also an integral element of the melted tableau, so it must be the same integral element.
+\end{proof}
+
+\begin{lemma}
+The linear equations satisfied by melted integral elements determine the \(\omega_n\) component of \(dq\) as a linear function of the \(\omega_1, \omega_2, \dots, \omega_{n-1}\) components of \(dq\).
+\end{lemma}
+\begin{proof}
+By lemma~\vref{lemma:original.i.e}, a melted integral element on which the \(\omega_1, \omega_2, \dots, \omega_{n-1}\) components of \(dq\) vanish has \(\omega_n\) component also vanishing.
+The equations on integral elements are linear.
+So the \(\omega_n\) component of \(dq\) is a linear function of the other components of \(dq\).
+\end{proof}
+
+We finish the proof.
+Assume \(\omega_i=dx_i\) as usual.
+Our linear function giving the \(\omega_n\) component of \(dq\) is a linear equation:
+\[
+\pderiv{q}{x_n} = \dots
+\]
+on any integral manifold with \(q=0\) on the initial data hypersurface.
+So \(q=0\) on the melted integral manifold, by the uniqueness of the Cauchy--Kovalevskaya theorem: the unique melted integral manifold containing the initial data hypersurface is also an integral manifold of the original tableau.
+\end{proof}
+
+
+
+
+\section{Notes}
+
+\begin{enumerate}
+\item
+We won't need the notions of \emph{principal component}\SubIndex{principal!component} 
+or \emph{melted}\SubIndex{melted tableau}\SubIndex{tableau!melted} 
+or \emph{frozen}\SubIndex{frozen tableau}\SubIndex{tableau!frozen} 
+tableau henceforth; please forget about them.
+\item
+A more general Cartan--K\"ahler theorem is proven in chapter~\ref{chapter:eds} for finding submanifolds on which some differential forms of arbitrary degree vanish.
+\end{enumerate}

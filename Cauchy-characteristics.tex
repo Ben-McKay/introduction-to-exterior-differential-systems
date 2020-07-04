@@ -409,7 +409,8 @@ Since Cauchy characteristic vector fields are symmetries, these pullback forms c
 Finish the proof.
 \end{problem}
 \begin{answer}{Cauchy:disconnected}
-For any diffeomorphism \(\phi\) preserving \(\II\) and \(\pi\), the generators for \(U_a\) give generators for \(\phi(U_a)\), so we can extend to \(\pi^{-1}\bar{U}_a\).
+Invariance of our generators under the flows of the Cauchy characteristic vector fields extends their definition to the largest set invariant under those flows and containing their domain.
+Each diffeomorphism \(\phi\) preserving \(\II\) and \(\pi\) interchanging components allows us to extend that domain further, so that it becomes the preimage of an open set in \(\bar{M}\).
 \end{answer}
 \begin{problem}{Cauchy:counter}
 Does theorem~\vref{theorem:quotient} generalize to infinite type?
@@ -683,14 +684,14 @@ Plug this in to see that the characteristics are the curves whose velocities sat
 \end{answer}
 Since we have assumed that \(a,b,c\) do not all simultaneously vanish, the shape operator is nowhere zero, so not every curve is asymptotic.
 
-A \emph{ribbon}\define{ribbon} is a choice of curve \(\ot{C}\), its \emph{spine}, and a \emph{ruling line}\define{ruling line} \(\ell\) at each point of \(\ot{C}\), perpendicular to the tangent line to \(\ot{C}\), and analytically varying along the spine.
+A \emph{ribbon}\define{ribbon} is a choice of curve, its \emph{spine}, and a \emph{ruling line}\define{ruling line} at each point of the spine, perpendicular to the tangent line to the spine, and analytically varying along the spine.
 A ribbon is \emph{nondegenerate}\define{ribbon!nondegenerate}\define{nondegenerate ribbon} if the ruling line is nowhere perpendicular to the curvature vector of the spine.
 A nondegenerate ribbon has a unit tangent vector along its spine, and a curvature vector, and their cross product, so imposes a basis, orienting the perpendicular space to every ruling line.
 \begin{marginfigure}
 \input{ribbon}
 \end{marginfigure}
 Take a surface \(S\) with analytic Riemannian metric and an embedded connected analytic curve \(C\) in \(S\) with an orientation of \(S\) defined along \(C\).
-Take a nondegenerate ribbon \ in \(\E[3]\) and an analytic isometry \(\iota \colon C \to \ot{C}\).
+Take a nondegenerate ribbon \ in \(\E[3]\), with spine \(\ot{C}\), and an analytic isometry \(\iota \colon C \to \ot{C}\).
 Use the isometry to identify an orientation of \(C\) with one of \(\ot{C}\).
 Use the orientation defined along \(C\) to extend \(\iota_*\) to a linear isometry of each tangent plane to the perpendicular to each ruling line.
 \begin{theorem}
