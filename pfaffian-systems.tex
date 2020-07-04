@@ -1,0 +1,823 @@
+\chapter{Linear Pfaffian systems}\label{chapter:linear.Pfaffian}%
+\chapterSummary{We express partial differential equations in terms of 1-forms, to make changes of variable easier.
+This will also make it easy to compute ``compatibility conditions'' necessary to ensure the existence of local solutions.}
+
+
+\section{Linear Pfaffian systems}
+To express a differential equation \(0=f\of{x,u,u_x}\), add a variable \(p\) to represent the derivative \(u_x\), let \(\vartheta=du-p \, dx\), \(\omega=dx\) and let \(M\) be the manifold \(M=\Set{(x,u,p)|0=f\of{x,u,p}}\) (assuming it is a manifold).
+Any submanifold of \(M\) on which \(0=\vartheta\) and \(0\ne \omega\) is locally the graph of a solution.
+It is easy to generalise this to any number of variables and any number of equations of any order.
+
+A \emph{Pfaffian system}\define{Pfaffian system} on a manifold \(M\) is a collection of linearly independent 1-forms  \(\vartheta_1, \vartheta_2, \dots, \vartheta_{s_0}\), and a larger collection of linearly independent 1-forms \(\vartheta_1, \vartheta_2, \dots, \vartheta_{s_0}, \omega_1, \omega_2, \dots, \omega_n\).
+An \emph{integral manifold}\define{integral!manifold}\define{manifold!integral} of a Pfaffian system is a submanifold \(X\) of \(M\) on which all \(\vartheta_i\) vanish while \(\omega_1, \omega_2, \dots, \omega_n\) remain linearly independent on \(X\) and span the 1-forms on \(X\).
+
+A differential form \(\xi\) \emph{vanishes modulo} \(\vartheta_1,\dots,\vartheta_{s_0}\), denoted \(\xi = 0 \mod{\vartheta}\), if \(\xi\) is a linear combination \(\xi=\sum_i \xi_i \wedge \vartheta_i\) for some 1-forms \(\xi_i\).
+A Pfaffian system is \emph{linear}\define{Pfaffian system!linear}\define{linear!Pfaffian system} if \(d\vartheta=0 \mod{\vartheta,\omega}\) (in other words, \(d\vartheta_i = 0 \mod{\vartheta,\omega}\) for all \(i\)) and \emph{classical}\define{Pfaffian system!classical} if \(d(\vartheta,\omega)=0 \mod{\vartheta,\omega}\).
+Warning: linear Pfaffian systems can be used to represent \emph{nonlinear} systems of partial differential equations; the term \emph{linear Pfaffian system} is standard terminology, but confusing.
+From now on, we will only study linear Pfaffian systems.
+\begin{problem}{pfaffian.systems:tableau}
+Prove that any linear Pfaffian system \(\vartheta,\omega\), at any one chosen point, satisfies
+\(
+d\vartheta = - \varpi \wedge \omega + \tau \mod{\vartheta},
+\)
+where
+\[
+\vartheta=
+\begin{pmatrix}
+\vartheta_1 \\
+\vartheta_2 \\
+\vdots \\
+\vartheta_{s_0}
+\end{pmatrix},  \ 
+\omega
+=
+\begin{pmatrix}
+\omega_1 \\
+\omega_2 \\
+\vdots \\
+\omega_n
+\end{pmatrix}
+\]
+and the \emph{tableau}\define{tableau} \(\varpi\) is a matrix
+\[
+\varpi=
+\begin{pmatrix}
+\varpi_{11} & \varpi_{12} & \dots & \varpi_{1n} \\
+\varpi_{21} & \varpi_{22} & \dots & \varpi_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+\varpi_{s_0 1} & \varpi_{s_0 2} & \dots & \varpi_{s_0 n}
+\end{pmatrix}
+\]
+of 1-forms \(\varpi_{ij}\), and
+\[
+\tau=
+\frac{1}{2}\sum_{ij} 
+\begin{pmatrix}
+t_{1ij} \omega_i \wedge \omega_j \\
+t_{2ij} \omega_i \wedge \omega_j \\
+\vdots \\
+t_{s_0 ij} \omega_i \wedge \omega_j 
+\end{pmatrix}
+\]
+is the \emph{torsion}\define{torsion} and where 
+\(
+\vartheta_1 , \dots , \vartheta_{s_0}, \omega_1, \dots , \omega_n,
+\pi_1 , \dots , \pi_t
+\)
+are linearly independent, and each \(\varpi_{ij}\) is a multiple of the \(\pi_i\).
+\end{problem}
+\begin{answer}{pfaffian.systems:tableau}
+Add some 1-forms \(\pi_{\alpha}\) to the given 1-forms \(\vartheta_a,\omega_i\) to get a basis of 1-forms.
+Expand \(d\vartheta_a\) in that basis, and quotient by every \(\vartheta_b\); each term has some \(\omega_i\) in it, because it vanishes modulo the \(\omega_i\).
+So there are no \(\pi \wedge \pi\) terms.
+\end{answer}
+\begin{example}
+If \(\vartheta=du-q^2 \, dx\) and \(\omega=dx\), then \(d\vartheta = - 2q \, dq \wedge dx\) has tableau whose entries change rank from point to point.
+\end{example}
+
+\begin{problem}{pfaffian.systems:lap.tab}
+Follow the recipe above on the Laplace equation \(0=u_{xx}+u_{yy}\) to compute the 1-forms \(\vartheta_1, \vartheta_2, \vartheta_3, \omega_1, \omega_2\) and find the tableau.
+\end{problem}
+\begin{answer}{pfaffian.systems:lap.tab}
+Let 
+\begin{align*}
+\begin{pmatrix}
+\vartheta_1 \\
+\vartheta_2 \\
+\vartheta_3
+\end{pmatrix}
+&=
+\begin{pmatrix}
+du-p \, dx-q \, dy \\
+dp-r \, dx-s \, dy \\
+dq-s \, dx+r \, dy
+\end{pmatrix},
+\\
+\begin{pmatrix}
+\omega_1 \\
+\omega_2
+\end{pmatrix}
+&=
+\begin{pmatrix}
+dx \\
+dy
+\end{pmatrix},
+\\
+\begin{pmatrix}
+\pi_1 \\
+\pi_2
+\end{pmatrix}
+&=
+\begin{pmatrix}
+dr \\
+ds
+\end{pmatrix}
+\end{align*}
+and then the tableau is
+\[
+d
+\begin{pmatrix}
+\vartheta_1 \\
+\vartheta_2 \\
+\vartheta_3
+\end{pmatrix}
+=
+-
+\begin{pmatrix}
+0 & 0 \\
+\pi_1 & \pi_2 \\
+\pi_2 & -\pi_1
+\end{pmatrix}
+\wedge
+\begin{pmatrix}
+\omega_1 \\
+\omega_2
+\end{pmatrix}.
+\]
+\end{answer}
+
+\begin{example}
+Take a linear Pfaffian system with
+\[
+d
+\begin{pmatrix}
+\vartheta_1 \\
+\vartheta_2 
+\end{pmatrix}
+=
+-
+\begin{pmatrix}
+\pi_1 & 0 \\
+\pi_2 & \pi_3 
+\end{pmatrix}
+\wedge
+\begin{pmatrix}
+\omega_1 \\
+\omega_2
+\end{pmatrix}
++
+\begin{pmatrix}
+\omega_1 \wedge \omega_2 \\
+0
+\end{pmatrix}
+\mod{\vartheta_1, \vartheta_2}.
+\]
+Let \(\bar\pi_1 = \pi_1 + \omega_2\) and write the system equivalently as
+\[
+d
+\begin{pmatrix}
+\vartheta_1 \\
+\vartheta_2 
+\end{pmatrix}
+=
+-
+\begin{pmatrix}
+\bar\pi_1 & 0 \\
+\pi_2 & \pi_3 
+\end{pmatrix}
+\wedge
+\begin{pmatrix}
+\omega_1 \\
+\omega_2
+\end{pmatrix}
++
+\begin{pmatrix}
+0 \\
+0
+\end{pmatrix}
+\mod{\vartheta_1, \vartheta_2},
+\]
+so we can \emph{absorb} the torsion.
+Changing bases to arrange that torsion vanishes is \emph{absorbing the torsion}\define{torsion!absorbing}\define{absorbing torsion}.
+\end{example}
+\begin{example}
+A linear Pfaffian system with
+\[
+d
+\begin{pmatrix}
+\vartheta_1 \\
+\vartheta_2 
+\end{pmatrix}
+=
+-
+\begin{pmatrix}
+0 & 0 \\
+\pi_1 & \pi_2 
+\end{pmatrix}
+\wedge
+\begin{pmatrix}
+\omega_1 \\
+\omega_2
+\end{pmatrix}
++
+\begin{pmatrix}
+\omega_1 \wedge \omega_2 \\
+0
+\end{pmatrix}
+\mod{\vartheta_1, \vartheta_2}
+\]
+has a torsion term \(\omega_1 \wedge \omega_2\) which we \emph{can't} absorb.
+So it has no integral surfaces, because on an integral surface \(0=\vartheta_1\) so \(0=d \vartheta_1=\omega_1 \wedge \omega_2\), doesn't satisfy the independence condition \(0 \ne \omega_1 \wedge \omega_2\).
+\end{example}
+
+
+
+
+\section{The Frobenius theorem}\define{Frobenius theorem}\define{theorem!Frobenius}
+A linear Pfaffian system is \emph{Frobenius}\define{Frobenius!Pfaffian system}\define{Pfaffian system!Frobenius} if there is a foliation by integral manifolds so that every integral manifold  lies in one of the leaves of the foliation.
+Equivalently, \(\vartheta_i\) form a basis of the \(1\)-forms perpendicular to leaves of a foliation, and the \(\omega_j\) form a basis of the \(1\)-forms on each leaf.
+
+We ask the reader to recall:
+\begin{lemma}\label{lemma:Cartan.family.form}
+For any \((p+1)\)-form \(\vartheta\) and vector fields \(X_0,\dots,X_p\),
+\begin{align*}
+d\vartheta(X_0,\dots,X_p)
+&=
+(-1)^i X_i (\phi(X_0,\dots,\hat{v}_i,\dots,X_p))
+\\
+& \qquad +
+\sum_{i < j} (-1)^{i+j} \vartheta([X_i,X_j],X_0,\dots,\hat{X}_i,\dots,\hat{X}_j,\dots,X_p).
+\end{align*}
+\end{lemma}
+\begin{theorem}[Frobenius theorem]\label{theorem:Frobenius.forms}
+A linear Pfaffian system \(\vartheta_i,\omega_j\) is Frobenius just when (1) the 1-forms \(\vartheta_i, \omega_j\) of the system form a basis for all of the 1-forms on the manifold and (2) the tableau vanishes and (3) the torsion vanishes.
+\end{theorem}
+\begin{proof}
+By linear independence of these \(\vartheta_i\), there is a smoothly varying local basis \(X_j\) of the vector fields on which all \(\vartheta_i\) vanish.
+If \(d\vartheta=0 \mod{\vartheta}\) then \(d\vartheta_i = \sum_j \xi_{ij} \wedge \vartheta_j\) for some smooth \(\xi_{ij}\).
+By lemma~\vref{lemma:Cartan.family.form}, \(\left[X_j,X_k\right] \hook \vartheta_i=0\) for \(j,k \le s_0\).
+But therefore \(\left[X_j,X_k\right]\) is a multiple of the \(X_i\), i.e.  the plane field spanned by the \(X_i\) is bracket closed, so Frobenius.
+The Frobenius theorem: this plane field is the tangent plane field of a foliation.
+
+On the other hand, if the plane field is a foliation, so bracket closed, then by lemma~\vref{lemma:Cartan.family},  \(d\vartheta_i\of{X_j,X_k}=0\).
+Write out a basis of 1-forms \(\vartheta_i, \pi_j\), and write out \(d\vartheta_i\) in this basis, and plug in the \(X_j, X_k\) to see that \(d\vartheta=0 \mod{\vartheta}\).
+\end{proof}
+
+
+\section{Application: surfaces with constant shape operator}
+\begin{lemma}
+For each frame \((x,e)\) of \(\R{3}\), there is a unique surface with zero shape operator passing through \(x\) and normal to \(e_3\): a flat plane.
+\end{lemma}
+\begin{proof}
+This is already clear geometrically: the shape operator is the curvature of geodesics.
+Let \(M=\frameBundle{\R{3}}\) be the frame bundle of \(\R{3}\).
+The frame bundle \(\frameBundle{Q} \subset \frameBundle{\R{3}}\) of a surface \(Q \subset \R{3}\) satisfies \(\omega_3=0\) and 
+\[
+\begin{pmatrix}
+\gamma_{13} \\
+\gamma_{23} 
+\end{pmatrix}
+=
+\begin{pmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{pmatrix}
+\begin{pmatrix}
+\omega_1 \\
+\omega_2 
+\end{pmatrix}
+\]
+for some smooth functions \(a_{11}, a_{12}=a_{21}, a_{22}\).
+To have vanishing shape operator, \(0=a_{11}=a_{12}=a_{22}\), so
+\(0=\omega_3=\gamma_{13}=\gamma_{23}\).
+
+Consider on \(M\) the Pfaffian system with equations \(\vartheta_0 = \omega_3, \vartheta_1=\gamma_{13}, \vartheta_2=\gamma_{23}\) with independence conditions \(\Omega_1=\omega_1, \Omega_2=\omega_2, \Omega_3=\gamma_{12}\).
+(To avoid confusion, we write our independence conditions as \(\Omega_j\) rather than \(\omega_j\).)
+The reader might wonder why this \(\Omega_3\): because the frame bundle \(\frameBundle{Q}\) of a surface is a 3-dimensional submanifold of \(\frameBundle{\R{3}}\), so we need 3 independence conditions.
+The condition that \(\Omega_3\ne 0\), i.e. that \(\gamma_{12}\ne 0\), is precisely that we can rotate our frame tangent to our surface \(M\).
+The frame bundle \(\frameBundle{Q} \subset M\) of any surface with zero shape operator is an integral manifold of our Pfaffian system; actually to be precise each component of \(\frameBundle{Q}\) is an integral manifold, since \(Q\) might have more than one orientation, so \(\frameBundle{Q}\) might have more than one component.
+Check that the Pfaffian system is Frobenius, so there is a unique integral manifold through 
+each point of \(M\).
+But we already have an example of such an integral manifold, so that must be the only one.
+\end{proof}
+
+
+\begin{lemma}\label{lemma:sphere.unique}
+Pick a constant \(k_0 \in \R{}\).
+For each frame \((x,e)\) of \(\R{3}\), there is a unique surface with shape operator \(A(u,v)=k_0 u \cdot v\) passing through \(x\) and normal to \(e_3\): a sphere, if \(k_0 \ne 0\).
+\end{lemma}
+\begin{proof}
+Again take \(M=\frameBundle{\R{3}}\) and the Pfaffian system
+\begin{align*}
+\vartheta_0 &\defeq \omega_3, \\
+\vartheta_1 &\defeq \gamma_{13} - k_0 \omega_1, \\
+\vartheta_2 &\defeq \gamma_{23} - k_0 \omega_2, \\
+\Omega_1 &\defeq \omega_1, \\
+\Omega_2 &\defeq \omega_2, \\
+\Omega_3 &\defeq \gamma_{12}.
+\end{align*}
+Again the system is Frobenius, so there is only one integral manifold through each point.
+Rotating and translating a sphere of suitable radius gives one such integral manifold through each point of \(M\), the frame bundle of that sphere.
+\end{proof}
+
+
+The shape operator of a surface is a symmetric bilinear form, so orthogonally diagonalizable.
+Its eigenvalues are the \emph{principal curvatures}\define{surface!principal curvatures}\define{principal!curvatures}\define{curvature!principal}.
+If it has two distinct principal curvatures then its two perpendicular eigenlines are called the \emph{principal directions}\define{principal!directions}\define{surface!principal directions}.
+
+
+\begin{lemma}
+If a connected surface in \(\R{3}\) has constant principal curvatures, then it is locally an open subset of a plane or a sphere or a cylinder.
+\end{lemma}
+\begin{proof}
+Lemma~\vref{lemma:sphere.unique} handles the case of one principal curvature, so assume that there are two principal curvatures.
+After picking a frame on a surface \(Q\) so that \(e_1\) and \(e_2\) are in the principal directions, we find \(0=\omega_3=\gamma_{13}-k_1 \omega_1=\gamma_{23}-k_2 \omega_2\), for constants \(k_1, k_2\).
+Differentiate all three equations to find that \(0=\pr{k_1-k_2}\gamma_{12} \wedge \omega_2=\pr{k_1-k_2} \gamma_{12} \wedge \omega_1\), forcing \(\gamma_{12}=0\) by Cartan's lemma.
+Differentiating the equation \(\gamma_{12}=0\), we find \(0=k_1 k_2 \omega_1 \wedge \omega_2\) so that either \(k_1=0\) or \(k_2=0\).
+We can assume that \(k_1=0\), i.e. \(\gamma_{13}=0\).
+But then 
+\begin{align*}
+de_1
+&=
+\pr{e_1 \cdot de_1} e_1 +
+\pr{e_2 \cdot de_1} e_2 +
+\pr{e_3 \cdot de_1} e_3,
+\\
+&=
+\gamma_{11} e_1 +
+\gamma_{21} e_2 +
+\gamma_{31} e_3,
+\\
+&=
+0.
+\end{align*}
+Therefore \(e_1\) is constant as we travel along the surface.
+So the surface is a collection of straight lines, in this \(e_1\) direction, all placed perpendicular to a curve in the \(e_2, e_3\)-plane.
+On that curve, \(\omega_1=0\), and \(d \omega_2=0\) so we can write locally \(\omega_2=ds\) for some function \(s\).
+Then we find 
+\begin{align*}
+de_2
+&=
+\pr{e_1 \cdot de_2} e_1 +
+\pr{e_2 \cdot de_2} e_2 +
+\pr{e_3 \cdot de_2} e_3,
+\\
+&=
+\gamma_{12} e_1 +
+\gamma_{22} e_2 +
+\gamma_{32} e_3,
+\\
+&=
+-k_2 ds e_3.
+\end{align*}
+and
+\begin{align*}
+de_3
+&=
+\pr{e_1 \cdot de_3} e_1 +
+\pr{e_2 \cdot de_3} e_2 +
+\pr{e_3 \cdot de_3} e_3,
+\\
+&=
+\gamma_{13} e_1 +
+\gamma_{23} e_2 +
+\gamma_{33} e_3,
+\\
+&=
+k_2 ds e_2.
+\end{align*}
+Check that the vectors \(E_2 = k_2 \cos(s) e_2 + k_2 \sin(s) e_3\), \(E_3 = -k_2 \sin(s) e_2 + k_2 \cos(s) e_3\) are constant.
+Rotate so that \(E_1=e_1, E_2, E_3\) are the standard basis vectors of \(\R{3}\), to see that the surface \(Q\) is a right circular cylinder of radius \(1/\left|k_2\right|\).
+\end{proof}
+
+
+
+\section{Writing a Pfaffian system as a system of differential equations}
+
+\begin{example}
+In variables \(x,u,p\), let \(\vartheta=du-p \, dx\) and \(\omega=dx\).
+The integral manifolds of this Pfaffian system are, locally, functions \(u=u(x)\) with \(p=u'(x)\).
+Proof: on integral manifolds, \(\omega=dx \ne 0\) is a coframing, so locally \(u=u(x)\) and \(p=p(x)\).
+Plug in to the equation \(0=\vartheta\) to get \(u'(x)dx=p \, dx\), so \(p=u'(x)\).
+Global solutions allow \(u(x)\) a ``multivalued function'' with derivative \(p(x)=u'(x)\).
+\end{example}
+
+We can recognise some Pfaffian systems from their tableaux, for example:
+\begin{lemma}\label{lemma:contact.three}
+Take a 3-dimensional manifold \(M\) and a classical Pfaffian system locally represented by a 1-form \(\vartheta_1\)  and a 1-form \(\omega_1\) with \(d\vartheta_1 \ne 0 \mod{\vartheta_1}\). 
+Then near each point there are local coordinates \(u,x,p\) so that the Pfaffian system is equivalently represented by \(\vartheta_1=du-p \,dx\) and \(\omega_1=dx\).
+\end{lemma}
+\begin{proof}
+By the Frobenius theorem,\SubIndex{Frobenius theorem}\SubIndex{theorem!Frobenius} because \(d\pr{\vartheta_1,\omega_1}=0 \mod{\vartheta_1,\omega_1}\), there are local coordinates \(x,u\) for which \(\vartheta_1,\omega_1\) is spanned by \(du,dx\).
+Write \(dx\) as a linear combination of \(\vartheta_1,\omega_1\).
+After perhaps permuting which is \(x\) and which is \(u\), we can arrange that \(dx\) has nonzero coefficient of \(\omega_1\).
+We can add any combination of the \(\vartheta_1\) as needed to \(\omega_1\), and rescale as needed, to get an equivalent Pfaffian system with \(\omega_1=dx\).
+Then \(\vartheta_1\) is expressed in terms of \(dx, du\) with a nonzero \(du\) coefficient, so after rescaling we get \(\vartheta_1=du-p \, dx\) for some function \(p\).
+Since \(d\vartheta_1 \ne 0 \mod{\vartheta_1}\),  expand out to see that \(dx, du, dp\) are linearly independent, so \(x, u, p\) are local coordinates.
+\end{proof}
+
+
+\begin{problem}{pfaffian:rank.1}
+Take a linear Pfaffian system \(\vartheta_1,\dots,\vartheta_{s_0},\omega_1\).
+Prove that there is an integral curve through every point.
+\end{problem}
+\begin{answer}{pfaffian:rank.1}
+We can write the Pfaffian system locally as \(d\vartheta_i = - \varpi_i \wedge \omega_1 \mod{\vartheta_j}\).
+At each point \(m \in M\), there is some tangent vector \(X\) so that \(0=X \hook \vartheta_i\) and \(X \hook \omega_1 \ne 0\), and we can choose \(X\) to vary smoothly.
+Flow lines of \(X\) are integral curves.
+\end{answer}
+
+
+
+\section{Making contact with the Cauchy--Kovalevskaya theorem}\SubIndex{Cauchy--Kovalevskaya theorem}\SubIndex{theorem!Cauchy--Kovalevskaya}
+
+
+A more serious example: take \((t,x,u)\) in an open subset of \(\R{3}\) and consider a differential equation
+\[
+u_t = f\of{t,x,u,u_x}.
+\]
+Associate to this differential equation the Pfaffian system on
+\begin{align*}
+M&\defeq \R{4}_{t,x,u,p} \\
+\intertext{given by}
+\vartheta_1&\defeq du-f(t,x,u,p) \, dt - p \, dx, \\
+\omega_1&\defeq dx+f_p \, dt, \\
+\omega_2&\defeq dt.
+\end{align*}
+Check that \(d\vartheta_1=-\pi_1\wedge \omega_1 \mod \vartheta_1\) where 
+\[
+\pi_1 = dp-\pr{f_x + f_u p} \, dt.
+\]
+
+
+
+\begin{theorem}\label{theorem:4.d}
+Take a classical Pfaffian system \(\vartheta_1,\omega_1,\omega_2\) on a 4-dimensional manifold \(M\) so that \(d\vartheta_1 \ne 0 \mod{\vartheta_1}\).
+Then near each point there are local coordinates \(t,x,u,p\) and there is a function \(f=f(t,x,u,p)\) so that, up to equivalence, \(\vartheta_1=du-p \, dx - f \, dt\), \(\omega_1=dx+f_p \, dt\), \(\omega_2=dt\).
+The integral manifolds of the Pfaffian system are locally graphs \(u=u(x,y), p=u_x\), so that \(u_t=f\of{t,x,u,u_x}\).
+If the Pfaffian system is analytic, there is then a unique analytic integral surface containing any analytic integral curve of the associated Pfaffian system \(\vartheta_1=0\) and \(\omega_1 \ne 0\).
+\end{theorem}
+Note that this associated Pfaffian system has integral manifolds by the solution of problem~\vref{problem:pfaffian:rank.1}.
+\begin{proof}
+Write out \(d\vartheta_1=-\pi_1 \wedge \omega_1 - \pi_2 \wedge \omega_2\). 
+Then \(\pi_1\) and \(\pi_2\) are linearly dependent modulo \(\vartheta_1, \omega_1, \omega_2\) because \(M\) has 4 dimensions.
+But not both of \(\pi_1, \pi_2\) can vanish modulo \(\vartheta_1,\omega_1,\omega_2\).
+Replace these \(\omega_1, \omega_2\) and \(\pi_1, \pi_2\) by suitable linear combinations to arrange that \(\pi_2=0\).
+
+As in lemma~\vref{lemma:contact.three}, we argue that there are local coordinates \(t,x,u\) in which \(\omega_1=dx, \omega_1=dt, \vartheta_1=du-p \, dx - q \, dt\).
+By linear dependence of \(\pi_1, \pi_2\) mod \(\vartheta_1,\omega_1,\omega_2\), after perhaps swapping \(t,q\) with \(x,p\), \(dq=0 \mod{dt,dx,du,dp}\), so that locally \(q=f\of{t,x,u,p}\).
+Our Pfaffian system is equivalent locally to the one in our example above:
+\begin{align*}
+\vartheta_1&=du-f(t,x,u,p) \, dt - p \, dx, \\
+\omega_1&= dx+f_p \, dt, \\
+\omega_2&= dt, \\
+\pi_1&=dp-\pr{f_x + f_u p} \, dt.
+\end{align*}
+The linearisation of \(u_t=f\of{t,x,u,u_x}\) is
+\[
+v_t = f_u\of{t,u,u_x}v + f_{u_x}\of{t,x,u,u_x}v_x.
+\]
+The symbol of the linearisation is
+\[
+\sigma(\xi_t \, dt + \xi_x \, dx)= \xi_t - f_p(t,x,u,p)\xi_x.
+\]
+The characteristic variety is where this vanishes, i.e. on multiples of 
+\[
+\xi = f_p(t,x,u,p) \, dt + dx = \omega_1.
+\]
+Noncharacteristic initial data is precisely any curve \(C\) in the plane, say \((s \mapsto (t(s),x(s))\) and functions \(u=u(s), p=p(s)\) so that \(\vartheta_1=0\) on the curve \(\hat{C}\) given by \(s \mapsto (t(s),x(s),u(s),p(s))\), i.e. 
+\[
+u'(s)=f\of{t(s),x(s),u(s),p(s)}\frac{dt}{ds} + p(s)\frac{dx}{ds}
+\]
+and so that \(\omega_1\ne 0\) on \(\hat{C}\), i.e.
+\[
+x'(s) + f_p\of{t(s),x(s),u(s),p(s)} t'(s) \ne 0.
+\]
+So \(\hat{C}\) can be just any curve in \(\R{4}_{t,x,u,p}\) with \(\omega_1 \ne 0\) and \(\vartheta_1=0\).
+In particular, the special choice of \(x(s)=s\), \(t(s)=t_0\) constant, \(u(s)\) arbitrary and \(p(s)=u'(s)\) gives us initial data sufficient to construct any local solution.
+\end{proof}
+
+
+
+
+\section{The characteristic variety of a linear Pfaffian system}
+Take a torsion-free linear Pfaffian system with tableau
+\[
+d 
+\begin{pmatrix}
+\vartheta_1 \\
+\vartheta_2 \\
+\vdots \\
+\vartheta_{s_0}
+\end{pmatrix}
+=
+-
+\begin{pmatrix}
+\varpi_{11} & \dots & \varpi_{1n} \\
+\varpi_{21} & \dots & \varpi_{2n} \\
+\vdots  & \ddots & \vdots \\
+\varpi_{s_0 1} & \dots & \varpi_{s_0 n}
+\end{pmatrix}
+\wedge
+\begin{pmatrix}
+\omega_1 \\
+\omega_2 \\
+\vdots \\
+\omega_n
+\end{pmatrix}
+\qquad \text{ mod } \vartheta_1 , \dots , \vartheta_{s_0} 
+\]
+where 
+\[
+\vartheta_1 , \dots , \vartheta_{s_0}, \omega_1, \dots , \omega_n,
+\pi_1 , \dots , \pi_t
+\]
+is a coframing, and each \(\varpi_{ij}\) is a multiple of the \(\pi_k\).
+Write down a basis for the linear relations among the \(\varpi_{ij}\). 
+For example suppose
+\[
+d 
+\begin{pmatrix}
+\vartheta_1 \\
+\vartheta_2 \\
+\vartheta_3 \\
+\vartheta_4
+\end{pmatrix}
+=
+-
+\begin{pmatrix}
+0 & 0 & 0 \\
+\pi_1 & 0 & \pi_2 \\
+0 & \pi_3 & \pi_4 \\
+\pi_2 & \pi_4 & \pi_5
+\end{pmatrix}
+\wedge
+\begin{pmatrix}
+\omega_1 \\
+\omega_2 \\
+\omega_3
+\end{pmatrix}
+\qquad \text{ mod } \vartheta_1 , \dots , \vartheta_4 
+\]
+as on page 18, equation (1) of \cite{Cartan:1911}. 
+The linear relations are
+\begin{align*}
+\varpi_{11} &= 0 \\
+\varpi_{12} &= 0 \\
+\varpi_{13} &= 0 \\
+\varpi_{22} &= 0 \\
+\varpi_{31} &= 0 \\
+\varpi_{23} - \varpi_{41} &= 0 \\
+\varpi_{33} - \varpi_{42} &= 0 \\
+\end{align*}
+For each such relation, for instance the relation \(\varpi_{33} - \varpi_{42} = 0\),
+we write down a row vector with \(s_0\) columns (in our example \(s_0=4\)), and translate each term in our linear relation as follows: \(a \varpi_{ij}\) tells us to place \(a \xi_j\) in the \(i\)-th column.
+For example, \(\varpi_{33} - \varpi_{42} = 0\) gives
+\(
+\begin{pmatrix}
+0 & 0 & \xi_3 & -\xi_2
+\end{pmatrix}
+\).
+If we do this for all of our linear relations, we obtain a collection of row vectors, which we write down one after another to form a matrix called the \emph{symbol}\define{symbol!Pfaffian system}:
+\[
+\begin{pmatrix}
+\xi_1 & 0 & 0 & 0 \\
+\xi_2 & 0 & 0 & 0 \\
+\xi_3 & 0 & 0 & 0 \\
+0 & \xi_2 & 0 & 0 \\
+0 & 0 & \xi_1 & 0 \\
+0 & \xi_3 & 0 & - \xi_1 \\
+0 & 0 & \xi_3 & - \xi_2
+\end{pmatrix}
+\]
+The \emph{characteristic variety}\define{characteristic variety!linear Pfaffian system} of a linear Pffafian system is the set of 
+\[ 
+[\xi]=\left[\xi_1, \xi_2, \dots, \xi_n\right] 
+\]
+for which the symbol does not have full rank.
+In our example, the determinants of \(3 \times 3\) minors are
+\[
+\xi_1^2 \xi_2, \ \xi_1 \xi_2^2, \ \xi_1 \xi_2 \xi_3
+\]
+up to sign, each containing a factor of \(\xi_1 \xi_2\). 
+Dividing out that factor leaves \(\xi_1, \xi_2, \xi_3\), one of which is nonzero at each point of our projective space.
+Therefore the factor \(\xi_1 \xi_2\) cuts out the characteristic variety. 
+The variety generated will be, when projectivised, a pair of projective lines
+\[
+\charvariety{} = (\xi_1 = 0) \cup (\xi_2 = 0)
+\]
+The real points \([\xi]\) satisfying the above condition belong to the real characteristic
+variety; the complex characteristic variety consists of the complex \([\xi]\)
+satisfying the same real equations. 
+
+If we have a row of zeroes in the tableau, say in the first row, as we did in the first row of our example, then it will lead to rows in the symbol matrix like:
+\[
+\begin{pmatrix}
+\xi_1 & 0 & \dots & 0 \\
+\xi_2 & 0 & \dots & 0 \\
+\vdots & \ddots & \ddots & \vdots \\
+\xi_n & 0 & \dots & 0
+\end{pmatrix}
+\]
+which have no effect on the resulting characteristic variety, since the rest of the symbol matrix will never use this first column. 
+Consequently, we can just forget these rows. 
+On the other extreme, if we have a row of the tableau which has \(\pi\)'s in it which are entirely independent of each other and of anything else in the tableau, say in
+the first row:
+\[
+d \vartheta_1 = - \pi_{11} \wedge \omega_1 - \dots - \pi_{1n} \wedge \omega_n,
+\]
+then this contributes nothing to the symbol matrix, and thus nothing to the characteristic variety.
+
+
+\section{Equivalence of the two definitions of characteristic variety}
+Let us see how to pass between the two definitions of characteristic variety. 
+Any system of differential equations can be written (by adding variables to represent derivatives) in terms of only first derivatives, without changing its characteristic variety. 
+Linearizing equations won't change the characteristic variety. 
+In fact, we linearise about a single point \(\pr{x,u,u_x}\), to obtain linear constant coefficient equations. 
+The characteristic variety only depends on highest derivatives, so we can drop lower order terms. 
+Therefore, we can approximate any system of partial differential equations, about a chosen point, by a first order linear system with constant coefficients, and no zero order terms, without changing the characteristic variety at the one chosen point.
+
+Pick two vector spaces \(X, U\), and denote the set of linear maps \(X \to U\) as \(X^* \otimes U\).
+Pick a linear subspace \(A \subseteq X^* \otimes U\) of matrices, a linear family of linear maps. 
+Think of our differential equation as \(u'(x) \in A\) for a map \(u \colon \op{X} \to U\).
+This sort of equation can be used to approximate any differential equation, without changing the characteristic variety.
+Let \(Z = \pr{X^* \otimes U}/A\) and define the projection map
+\[
+q \colon X^* \otimes U \to Z, \qquad \phi \mapsto \phi + A.
+\]
+Our differential operator is
+\[
+P \left [ u (x) \right ] = q(u'(x)) = u'(x) + A \in Z.
+\]
+The symbol
+\[
+\opsymbol[P]{\xi} u = q( u \otimes \xi ) = u \otimes \xi + A \in Z
+\]
+is not injective precisely when the rank one linear map \(u \otimes \xi\) belongs to \(A\).
+Therefore characteristics \([\xi] \in \charvariety{}\) correspond to covectors \(\xi \in X^*\) for which there is a rank one linear map \(u \otimes \xi\) with kernel \([\xi]\),
+satisfying our system of partial differential equations.
+
+Take linear coordinates \(x_1, \dots x_n\) on \(X\), \(u_1, \dots , u_m\) on \(U\), and for each \(\phi \in X^* \otimes U\), write its matrix entries in this basis as \(p_{ij}\).
+Define
+\begin{align*}
+\omega_j &= dx_j \\
+\pi_{ij} &= dp_{ij} \\
+\vartheta_i &= du_i - \sum_j p_{ij} \cdot dx_j.
+\end{align*}
+The equations \(\vartheta = 0, d\vartheta = -\pi \wedge \omega\) with \(\pi \in A\) and \(\omega_1 \wedge \dots \wedge \omega_n \ne 0 \) hold precisely on the graphs of solutions of the system of partial differential equations.
+In other words, we want to solve those equations and force \(\pi\) to satisfy the relations \(p \pi = 0 \in Z\).
+So these \(p \pi\) are the relations among the \(\pi\), i.e. a basis of \(Z = \pr{V^* \otimes W}/A\)  describes the relations among the \(\pi\).
+Following the algorithm we initially outlined, each relation among the \(\pi\)'s gives a row of the symbol, and a relation \(0=\sum_{ij} a_{ij} \pi_{ij}\) gives the row
+\[
+\begin{pmatrix}
+a_{i1} \xi_i & a_{i2} \xi_i & a_{i3} \xi_i & \dots & a_{in} \xi_i
+\end{pmatrix}
+\]
+which hits some \(w \in W\) to give
+\[
+\sum_{ij} a_{ij} \xi_i w_j = \sum_{ij} a_{ij} (w \otimes \xi)_{ji}
+\]
+The symbol is the map
+\[
+u \in U \mapsto u \otimes \xi + A \in Z
+\]
+having as rows the relations among the \(\pi\)'s.
+The characteristic variety consists of the \([\xi]\) for which the symbol has nonzero kernel, i.e. so that there are nonzero \(u \in U\) with \(u \otimes \xi \in A\).
+Therefore the algorithm above recovers the classical story for linear equations with constant coefficients, and therefore for all systems of differential equations.
+\begin{problem}{pfaffian:s.one}
+Suppose that a linear Pfaffian system has characters \(s_1>0\) but \(s_2=s_3=\dots=s_n=0\).
+Prove that the characteristic variety is a point, so there is a single characteristic hyperplane in each tangent plane of each maximal integral manifold.
+\end{problem}
+
+
+\section{The Cauchy--Kovalevskaya theorem in the language of linear Pfaffian systems}\SubIndex{Cauchy--Kovalevskaya theorem}\SubIndex{theorem!Cauchy--Kovalevskaya}
+A Pfaffian system is \emph{determined}\define{Pfaffian system!determined}\define{determined!Pfaffian system} if its symbol is a square matrix and, at every point, not every \([\xi]\) belongs to the characteristic variety.
+\begin{theorem}
+Suppose that \(\vartheta_1,\dots,\vartheta_{s_0},\omega_1,\dots,\omega_n\) is a determined analytic linear Pfaffian system.
+Then there are analytic integral manifolds through every point of \(M\).
+Every noncharacteristic embedded submanifold \(X \subseteq M\) of dimension \(n-1\) lies in an analytic integral manifold.
+Any two such integral manifolds agree near \(X\).
+\end{theorem}
+\begin{proof}
+First, suppose that the Pfaffian system is classical.
+The same steps as in theorem~\vref{theorem:4.d} show the existence of local coordinates in which the Pfaffian system is expressed as a system of partial differential equations.
+The determinacy of the Pfaffian system is precisely the determinacy of the equations, so we apply theorem~\vref{theorem:determined}.
+
+For a nonclassical system, pick a point and take some local coordinates so that, perhaps after a linear change of coordinates, at that one point we have \(dx_j=\omega_j\) for various of the coordinates \(x_j\).
+Then the system 
+\[
+\vartheta_1,\dots,\vartheta_{s_0},dx_1,\dots,dx_n
+\]
+is classical, so has a local integral manifold containing an open subset of \(X\).
+By local uniqueness, such integral manifolds glue together.
+The \(dx_j\) are linearly independent on our integral manifold, and so near our chosen point the \(\omega_j\) are also linearly independent on our integral manifold.
+\end{proof}
+
+
+
+
+
+
+\section{Symmetries of a Pfaffian system}
+\begin{lemma}\label{lemma:symmetries}
+The span \(I \subseteq T^*M\) of some smooth linearly independent 1-forms is invariant under the flow of a vector field \(X\) on \(M\) just when \(\LieDer_X I \subset I\).
+\end{lemma}
+\begin{proof}
+Locally, take a basis of local sections \(\vartheta_i\) of \(I\), so that \(\LieDer_X \vartheta_i = \sum_j a_{ji} \vartheta_j\) for some functions \(a_{ij}\), which we write as a matrix \(a=\pr{a_{ij}}\).
+On the space \(M \times \R{n^2}\), take the vector field \(Y(m,g)=\pr{X(m),-ga(m)}\) and write its flow lines through points \(\pr{m,I}\) as \(F^Y_t\of{m,I}=\pr{F^X_t(m),g\of{t,m}}\).
+By definition, \(\LieDer_X g(t,m)=-g(t,m)a(m)\) and \(g(0,m)=I\).
+Check that
+\[
+0 = \LieDer_X \sum_j g_{ij} \vartheta_j,
+\]
+so that the \(\vartheta_i\) transform by linear combinations along the flow of \(X\).
+\end{proof}
+
+
+
+
+
+
+\section{Cauchy characteristics}
+A \emph{Cauchy characteristic vector}\define{Cauchy!characteristic} of a collection of 1-forms \(\vartheta_1,\dots,\vartheta_{s_0}\) is a vector \(v \in TM\) so that \(0=v \hook \vartheta_i\) and \(0=v \hook d\vartheta_i \mod{\vartheta}\) for every 1-form \(\vartheta_i\).
+A \emph{Cauchy characteristic vector field} is a vector field of Cauchy characteristic vectors.
+A \emph{Cauchy characteristic} is a minimal nonempty set of points invariant under the flows of all Cauchy characteristic vector fields.
+
+
+\begin{theorem}
+For any collection of linearly independent 1-forms on a manifold \(M\), the Cauchy characteristic vectors \(V \subseteq TM\) of the collection form a family of linear subspaces of \(TM\), having constant rank just when \(V\) is the tangent bundle of a foliation.
+\end{theorem}
+\begin{proof}
+Take local sections \(X,Y\) of \(V\), and compute
+\[
+[X,Y]\hook \vartheta=-d\vartheta(X,Y)+Y(X \hook \vartheta) - X(Y \hook \vartheta)=0.
+\]
+The Lie derivative is
+\[
+\LieDer_X \vartheta = X \hook d \vartheta + d\of{X \hook \vartheta}=0\mod{\vartheta}.
+\]
+By lemma~\ref{lemma:symmetries}, the flow of \(X\) preserves the span \(I\) of the 1-forms \(\vartheta_i\).
+The Lie derivative of the bracket is
+\[
+\LieDer_{[X,Y]} \vartheta = \pr{\LieDer_X \LieDer_Y - \LieDer_X \LieDer_Y} \vartheta \in I.
+\]
+Therefore
+\[
+[X,Y] \hook d \vartheta=-d\of{[X,Y]\hook \vartheta} + \LieDer_{[X,Y]}\vartheta \in I.
+\]
+So \([X,Y]\) is also a section of \(V\).
+Suppose that \(V\) is locally spanned by linearly independent vector fields.
+The Frobenius theorem~\vref{theorem:Frobenius.forms} says that \(V\) is the tangent bundle of a foliation.
+\end{proof}
+
+
+
+
+\begin{theorem}
+If a surjective submersion \(\pi \colon M \to \bar{M}\) has connected fibers, each lying in a Cauchy characteristic of some collection of linearly independent 1-forms, then the 1-forms in our collection are linear combinations of pullbacks from \(\bar{M}\) of some linearly independent 1-forms.
+The maximal submanifolds in \(M\) on which our 1-forms vanish are then the preimages of the maximal submanifolds in \(\bar{M}\) on which those 1-forms vanish.
+\end{theorem}
+So we can reduce the problem of finding integral manifolds on \(M\) to the problem of finding integral manifolds on \(\bar{M}\).
+Note that we only need the 1-forms to be smooth here, not necessarily analytic.
+\begin{proof}
+For any \(\vartheta\) in our collection, at each point \(m \in M\), \(\vartheta_m\) vanishes on each fiber \(\Kernel \pi'(m)\) because the tangent space to the fiber is spanned by Cauchy characteristic vectors.
+Therefore \(\vartheta_m=\pi^*\bar\vartheta_{\bar{m}}\) where \(\bar{m}=\pi(m)\), for a unique \(\bar\vartheta_{\bar{m}} \in T^*_{\bar{m}} \bar{M}\).
+Take a local smooth section \(m=s(\bar{m})\) of \(\pi \colon M \to \bar{M}\).
+Extend \(\bar\vartheta\) to be \(\bar\vartheta=s^*\vartheta\), so  \(\bar\vartheta\) is smooth.
+Pulling back the various \(\vartheta_i\) by our section, we 1-forms on \(\bar{M}\).
+The 1-forms \(\vartheta_i\) transform among one another under the flows of all Cauchy characteristic vector fields.
+So \(\bar\vartheta\) pulls back to be a linear combination of them.
+\end{proof}
+
+
+\begin{example} 
+On a 4-dimensional manifold \(M\) take a classical Pfaffian system locally represented as \(\vartheta_1, \omega_1, \omega_2\) with \(d \vartheta_1 \ne 0\) modulo \(\vartheta_1\).
+By theorem~\vref{theorem:4.d}) we can locally represent this Pfaffian system as
+\begin{align*}
+\vartheta_1&=du-f(t,x,u,p) \, dt - p \, dx, \\
+\omega_1&= dx+f_p \, dt, \\
+\omega_2&= dt, \\
+\pi&=dp-\pr{f_x + f_u p} \, dt.
+\end{align*}
+The Cauchy characteristic vector fields are the multiples of the vector field
+\[
+X=\partial_t-f_p \partial_x + \pr{q-pf_p} \partial_u + \pr{f_x+f_up} \partial_p.
+\]
+The Cauchy characteristics are the flow lines of this vector field, which are the curves
+\[
+\frac{d}{dt}
+\begin{pmatrix}
+t \\
+x \\
+u \\
+p
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 \\
+-f_p \\
+q-pf_p \\
+f_x + f_u p
+\end{pmatrix}.
+\]
+Every integral surface is foliated by these curves, and conversely if we take any integral curve of the Pfaffian system \(\vartheta=0\) and \(\omega_0 \ne 0\), the flow lines of \(X\) through that curve form an integral surface.
+Therefore there are local solutions to our differential equation, even if the equation is only twice continuously differentiable, not just for analytic equations.
+
+Globally, suppose that the Cauchy characteristic curves are the fibers of a fiber bundle \(q \colon M \to Q\) over a 3-dimensional manifold \(Q\).
+Then \(Q\) bears a classical Pfaffian system, locally given by 1-forms \(\vartheta_1 = du-p \, dx, \omega_1=dx\), locally identified by a local section of \(q \colon M \to Q\) with the locus \(\pr{t=t_0}\), transverse to the Cauchy characteristics.
+Every curve \(C \subset Q\) on which \(\vartheta_1=0\) and \(\omega_1 \ne 0\) has preimage \(q^{-1} C \subset M\) an integral surface, and all connected integral surfaces arise this way.
+\end{example}
+
+More generally, for purely local questions we can always assume that the Cauchy characteristics form the leaves of a fiber bundle \(M \to \bar{M}\) as above, since they do locally (as long as the Cauchy characteristics have constant rank).
+But then we can also assume that we have already quotiented them out, and we are working on the base manifold \(\bar{M}\) of the fiber bundle \(M \to \bar{M}\).
+We let the reader puzzle over what to do about the different choices (perhaps purely local) of \(\omega_j\) 1-forms on \(M\) and \(\bar{M}\), but this will have little consequence for the theory.

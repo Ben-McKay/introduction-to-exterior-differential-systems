@@ -14,7 +14,7 @@ Don't try to draw all integral curves, surfaces, and so on, but only the generic
 \section{Cartan's test}
 An integral line is \emph{extendable} if it lies in an integral plane, and so on.
 We can imagine that extendability of generic integral manifolds is related to extendability of generic integral elements.
-\prob{test:ext}{Prove that any integral element is extendable just when its codimension exceeds the rank of its polar equations.}
+\prob{test:ext}{Prove that any integral element is extendable just when its codimension, in the space of integral elements, exceeds the rank of its polar equations.}
 
 A \(0\)-dimensional integral element is \emph{regular}\define{regular!integral element}\define{integral!element!regular} if its polar equations have locally maximal rank.
 Locally maximal rank is the same as locally constant rank, as linearly independent polar equations remain linearly independent nearby.
@@ -28,7 +28,7 @@ An integral element is involutive if and only if it is ordinary.
 In each component of the space of integral elements, either none are involutive or the generic one is involutive.
 \end{corollary}
 Ordinarity occurs precisely when the generic integral line sits in an integral plane, and so on:
-\prob{test:generic}{Prove that an integral plane \(E_2\) is ordinary just when, for any integral line \(E_1\subset E_2\), every integral line \(F_1\) close enough to \(E_1\) sits in an integral plane \(F_2\).}
+\prob{test:generic}{Prove that an integral plane \(E_2\) is ordinary just when, for any integral line \(E_1\subset E_2\), every integral line close enough to \(E_1\) sits in an integral plane.}
 \section{Differentiating on the Grassmann bundle}
 Each differential form \(\vartheta\) yields an equation \(0=\vartheta\), satisfied by the integral elements of the exterior differential system it generates.
 At any given point \(m_0 \in M\), integral elements are points of the Grassmannian \(\Gr{p}{T_{m_0} M}\).\prob{eds:polar.diff}{Identify the polar equations at an integral element with the differentials of those equations on the Grassmannian.}
@@ -255,14 +255,19 @@ As we vary \(k\), these dimensions of determine all of the characters.
 Any other choice of determined systems of differential equations, giving rise to the same integral manifolds (or at least to the same Taylor series of integral manifolds at each order), injectively on each order of Taylor series, also has general solution depending on \(s_0\) constants, \(s_1\) functions of one variable, \(s_2\) functions of two variables, and so on.
 
 \optionalSection{Deformation}%
-A \emph{local deformation}\define{local deformation} of an integral manifold \(X\) is an analytic map \(\phi\) defined on an open subset of \(X\times\R\)  containing \(X\times\set{0}\) so that, for each constant \(t\), \(x\mapsto\phi(x,t)\) is an integral manifold, where defined.
-The \emph{velocity} of the deformation is
+A \emph{local deformation}\define{local deformation} of an integral manifold \(X\) is an analytic map \(\phi\) defined on an open subset of \(X\times\R\)  containing \(X\times\set{0}\) so that, for each constant \(t\), \(x\mapsto\phi(x,t)\) is an integral manifold, where defined, with \(\phi(x,0)=x\).
+The \emph{velocity} of the deformation is the projection of
 \(
-\left.\pderiv{\phi}{t}\right|_{t=0}.
+\left.\pderiv{\phi}{t}\right|_{t=0}
 \)
+to the normal bundle of \(X\).
 By deforming initial data, any integral manifold of any determined system is covered in open sets admitting local deformation with velocity any solution of the linearization.
 We have not yet justified Cartan's strategy to prove the Cartan--K\"ahler theorem, but we can already see that, since the strategy is a sequence of determined problems, we can apply the same reasoning;
 any involutive analytic integral manifold of any exterior differential system is covered in open sets admitting local deformation with velocity any solution of the linearization.
+Local analytic velocity fields exist in the same generality as integral manifolds, solving linear determined problems.
+
+The Holmgren uniqueness theorem \cite{John:1991} p. 80 proves that, on any analytic involutive integral manifold, any continuously differentiable velocity field is uniquely determined by its continuously differentiable initial data at each step in the sequence of linear determined problems.
+However, existence of continuously differentiable velocity fields is not guaranteed.
 
 \optionalSection{Prolongation}%
 When we prolong, we form new equations \(\pi=p_j\omega^j\) for each polar.

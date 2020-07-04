@@ -1,0 +1,15 @@
+\documentclass[tikz]{standalone}
+\usepackage{pgfplots}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[view/h=-30]
+	\addplot3[
+		surf,
+		shader=interp,
+		%shader=flat,
+		samples=70,
+		domain=-3:3,y domain=-2:2] 
+		{sin(deg(x+y))};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

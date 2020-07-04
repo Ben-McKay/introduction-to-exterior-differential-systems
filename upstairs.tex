@@ -1,0 +1,659 @@
+\chapter{Riemannian geometry upstairs}\label{chapter:upstairs}
+
+\section{Where we are going}
+In this appendix, we assume that the reader has previous experience in Riemannian geometry, from any of the standard textbooks, for example \cite{doCarmo:1992,Gallot.Hulin.Lafontaine:2004,Milnor:1963,Morgan:1998,ONeill:1983}.
+We imitate the theory of chapter~\vref{chapter:moving.frame} as closely as possible, making any Riemannian manifold seem roughly like a submanifold of Euclidean space.
+For the next few pages, the reader will have to grit his or her teeth and bear with some formal but not very geometric material.
+
+\section{Surfaces}
+To get started, we suppose that \(g\) is a Riemannian metric on a surface \(M\).
+For simplicity of notation, write \(g\)-inner products as dot products.
+An \emph{orthonormal frame}\define{frame!orthonormal}\define{orthonormal frame}  \((m,e)\) is a choice of point \(m\) of \(M\) and a choice of orthonormal basis \(e_1, e_2\) of the tangent plane \(T_m M\).
+The \emph{tangent frame bundle} of \(M\) is the collection of orthonormal frames of tangent spaces of \(M\).
+Note that for a surface \(M\) in \(\E[3]\), this is \emph{not} the same as the frame bundle we constructed previously in appendix~\vref{chapter:moving.frame}, which we could refer to as the \emph{bundle of ambient adapted frames}.
+The tangent frame bundle of a surface in \(\E[3]\) is the quotient of the ambient adapted frame bundle by ignoring \(e_3\), giving a \(2-1\) covering map.
+Nonetheless, we will use the same notation \(\frameBundle{M}\) for the tangent frame bundle.
+
+Take any two linearly independent vector fields  on an open subset \(U\subseteq M\).
+Apply the Gram--Schmidt orthogonalization procedure to them to construct orthonormal vector fields, say \(\eu{1}, \eu{2}\), defined on \(U\).
+Over \(U\), any orthonormal frame \(e_1,e_2\) is uniquely expressed as
+\begin{align*}
+e_1&=\cos \theta \eu{1} \pm \sin \theta \eu{2},\\
+e_2&=-\sin \theta \eu{1} \pm \cos \theta \eu{2}.
+\end{align*}
+In this way, we identify \(\frameBundle{U}\cong U \times (S^1 \cup S^1)\), so the tangent frame bundle becomes a manifold.
+The map \(p \colon (m,e) \in \frameBundle{M} \mapsto m \in M\) is the \emph{foot map}, a smooth map.
+The \emph{soldering forms} \(\omega_1,\omega_2\) on \(\frameBundle{M}\) are defined by
+\[
+p'(m,e_1,e_2)v=\omega_1(v)e_1+\omega_2(v)e_2.
+\]
+If the dual \(1\)-forms to \(\eu{1},\eu{2}\) on \(U\) are \(\omu{1},\omu{2}\) then
+\[
+\begin{pmatrix}
+\omega_1\\
+\omega_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+\cos \theta  & \pm \sin \theta \\
+-\sin \theta & \pm \cos \theta
+\end{pmatrix}
+\begin{pmatrix}
+\omu{1}\\
+\omu{2}
+\end{pmatrix}.
+\]
+
+Suppose henceforth that the surface is oriented.
+We pick out only the positively oriented frames, to get rid of \(\pm\) so (using the same notation to also denote the bundle of positively oriented orthonormal frames) \(\frameBundle{U}\cong U\times S^1\).
+Let \(\omega\defeq\omega_1+i\omega_2\), and write this as
+\[
+\omega=e^{i\theta}\omu{}.
+\]
+The area form \(dA\defeq \omu{1}\wedge\omu{2}\) pulls back to \(dA=\omega_1\wedge\omega_2\), independent of the choice of \(\eu{1},\eu{2}\), so a globally defined invariant on \(M\).
+Since \(dA\) is a nonzero area form, \(d\omu{1},d\omu{2}\) must be multiples of it, say
+\begin{align*}
+d\omu{1}&=-a_1dA,\\
+d\omu{2}&=-a_2dA.
+\end{align*}
+Let \(\amu\defeq a_1\omu{1}+a_2\omu{2}\).
+Take exterior derivative of both sides to see that \(d\omu{}=i\amu\wedge\omu{}\) on \(U\), and that
+\[
+d\omega=i \, (\amu+d\theta) \wedge \omega.
+\]
+The real-valued \(1\)-form  \(\amu\) on \(U\) is uniquely determined by \(0=d\omu{}-i\amu\wedge\omu{}\).
+So the real-valued \(1\)-form \(\alpha\defeq\amu+d\theta\) is as well, giving \(0=d\omega-i\alpha\wedge\omega\) for a unique real-valued \emph{Levi-Civita connection \(1\)-form} \(\alpha\).
+Take exterior derivative of that equation to see that
+\[
+d\alpha=K\omega_1\wedge\omega_2,
+\]
+for a unique function \(K\) on the tangent frame bundle.
+But on \(\frameBundle{U}\), \(d\alpha=d(\amu+d\theta)=d\amu\) is the same for any choice of framing, i.e. \(K\) is a function well defined on the surface \(M\).
+\begin{problem}{upstairs:unorien}
+Suppose that \(M\) is not orientable.
+Prove that \(K\) is nonetheless well defined, while the area form \(dA=\omega_1\wedge\omega_2\) is not.
+Prove that the curvature form \(K \, dA\) is well defined on \(M\) if and only if \(K=0\).
+\end{problem}
+\begin{theorem}[Theorema egregium]\SubIndex{theorema egregium}
+The Levi-Civita connection \(1\)-form and the Gauss curvature of a Riemannian metric on a surface depend only on the Riemannian metric, not on any choice of isometric immersion into Euclidean space.
+\end{theorem}
+
+Geodesic normal coordinates work out exactly the same.
+But on abstract surfaces, we learn more.
+Take any smooth function \(K(r,\theta)\); there is a unique solution \(h\) to \(h_{rr}+Kh=0\) with \(h=0\) and \(h_r=1\) at \(r=0\): every smooth function \(K\) defined near the origin of the plane is the Gauss curvature of some abstract Riemannian metric \(dr^2 + h^2 \, d\theta^2\) near the origin.
+We need to be more careful to be sure that this metric is smooth at the origin.
+The reader can check this by applying the equation \(h_{rr}+Kh=0\) iteratively to see that a Fourier series of  \(h\) in \(\theta\), with coefficients expanded in a Taylor series in \(r\), turns out to contain only terms which can be written as monomials in \(x,y\).
+If \(K<0\) then \(h_{rr}=-Kh>0\) for \(h>0\), so \(h\) grows, and so has no zeroes: if \(K<0\) is defined in the plane, there is a Riemannian metric \(dr^2+h^2 \, d\theta^2\) defined in the plane with Gauss curvature \(K\).
+By construction, \(r,\theta\) are geodesic normal coordinates, so this metric is complete.
+\begin{theorem}
+Any connected surface bearing a complete metric of negative Gauss curvature has exponential map at any point a smooth universal covering map from the plane.
+\end{theorem}
+\begin{proof}
+The exponential map is defined in the plane by completeness, but \(h\) has no zeroes so the exponential map is a local diffeomorphism.
+The pullback metric is a complete.
+So the exponential map covers each geodesic disk on the surface with geodesic disks in the plane, and so is a covering map.
+\end{proof}
+
+The smoothness of isometries follows, with the same proof.
+The Gauss--Bonnet theorem also follows, with the same proof,\SubIndex{Gauss--Bonnet theorem}\SubIndex{theorem!Gauss--Bonnet} for any oriented surface with Riemannian metric, even with corners.
+We have only uncovered the structure equations for an oriented surface.
+If we allow an unoriented surface, this gets more complicated, but instead let us consider the general Riemannian manifold in any dimension.
+
+\section{Repeating in any dimension}
+Suppose that \(g\) is a Riemannian metric on a manifold \(M\).
+An \emph{orthonormal frame}\define{frame!orthonormal}\define{orthonormal frame}  \((m,e)\) is a choice of point \(m\) of \(M\) and a choice of orthonormal basis \(e_1, e_2, \dots, e_n\) of the tangent space\SubIndex{tangent!space} \(T_m M\).
+If you pick an orthonormal frame \((m,e)\) and I pick another one, say \((m,e')\) at the same point \(m\), then yours and mine must agree up to a unique orthogonal matrix, because they are orthonormal bases of the same vector space \(T_m M\).
+So \(e_j' = \sum_i h_{ij} e_i\) for a uniquely determined orthogonal \(n \times n\) matrix \(h=\pr{h_{ij}}\); denote this \(e'\) as \(eh\).
+
+Any rigid motion \(\phi\) of \(M\) (i.e. diffeomorphism preserving the Riemannian metric) takes orthonormal frames to orthonormal frames, taking \(e_1, e_2, \dots, e_n\) to \(\phi_* e_1, \phi_* e_2, \dots, \phi_* e_n\).
+
+The \emph{frame bundle}\define{frame bundle}\define{bundle!frame} of a Riemannian manifold \(M\) is the set \(\frameBundle{M}\) of orthonormal frames.
+To be more concrete, take any local coordinates \(x_1, x_2, \dots, x_n\) on \(M\) and take some linearly independent vector fields \(\bar{e}_1, \bar{e}_2, \dots, \bar{e}_n\).
+Applying Gram--Schmidt orthogonalization to these, we can assume they form a local orthonormal framing.
+Every point \((m,e)\) of \(\frameBundle{M}\) has some orthogonal matrix \(h=h_{ij}\) so that \(e_j=\sum_i h_{ij} \bar{e}_i\).
+Make \(\frameBundle{M}\) into a manifold, with local coordinates \(x_1, x_2, \dots, x_n, h_{12}, h_{13}, \dots, h_{n-1,n}\).
+
+The map \(p \colon (m,e) \in \frameBundle{M} \mapsto m \in M\) is the \emph{foot map}.\define{foot map}
+\begin{problem}{riemannian.geometry:frame.bundle.manifold}
+Prove that the frame bundle \(\frameBundle{M}\) is a smooth manifold in such a manner that the foot map is smooth and the map \((m,e) \mapsto (m,eh)\) is smooth for any orthogonal matrix \(h\).
+\end{problem}
+If \(v\) is a tangent vector on the manifold \(\frameBundle{M}\), say \(v \in T_{(m,e)} \frameBundle{M}\), we can write \(p'(m,e) v\), the infinitesimal motion \(\dot{m}\) of the point \(m\), in the basis \(e_1, e_2, \dots, e_n\), say as
+\[
+p'(m,e)v = v_1 e_1 + v_2 e_2 + \dots + v_n e_n.
+\]
+Each of these \(v_1, v_2, \dots, v_n\) are numbers which depend linearly on the choice of vector \(v \in T\frameBundle{M}\); define \(1\)-forms \(\omega_1, \omega_2, \dots, \omega_n\), the \emph{soldering forms}\define{soldering forms}, by \(v \hook \omega_i = v_i = g\of{e_i,p'(m,e)v}\).
+So the soldering forms measure, as we move a frame, how the foot point of the frame moves, as measured in the frame itself as a basis.
+
+Take an orthonormal framing \(\eu{1}, \eu{2}, \dots, \eu{n}\) on \(M\), with dual coframing \(\omu{1}, \omu{2}, \dots, \omu{n}\).
+Take local coordinates \(x_1, x_2, \dots, x_n\) on \(M\) near a point \(m\).
+Every element of \(\frameBundle{M}\) near \((m,e)\) is uniquely represented by the coordinates \(x_1, x_2, \dots, x_n\) of its point of \(M\) and by writing its frame as \(eh\), so that 
+\[
+x_1, x_2, \dots, x_n, h_{12}, h_{13}, \dots, h_{n-1,n}
+\]
+are local coordinates on \(\frameBundle{M}\).
+Write each tangent vector \(v \in T\frameBundle{M}\) as 
+\[
+v = v_i \pderiv{}{x_i} + v_{ij} \pderiv{}{h_{ij}}.
+\]
+We find that
+\[
+p'(m,e)v=v_i \pderiv{}{x_i},
+\]
+so that
+\[
+v \hook \omega_i=v_i \pderiv{}{x_i} \hook h_{ji}\xi_j.
+\]
+In other words, 
+\[
+\omega_i = h_{ji} \omu{j}
+\]
+in these coordinates.
+
+\begin{problem}{riemannian.geometry:section}
+A local section \(s\) of the bundle \(\frameBundle{M} \to M\), i.e. a choice point \((x,e(x)) \in \frameBundle{M}\) above each point \(x\) in some open set \(U \subset M\), is precisely an orthonormal framing \(\eu{1},\eu{2}, \dots, \eu{n}\) on \(U\).
+Suppose that \(\omu{1}, \omu{2}, \dots, \omu{n}\) is the dual orthonormal coframing.
+Prove that \(s^* \omega_i = \omu{i}\).
+\end{problem}
+
+For any orthogonal \(n \times n\) matrix \(h\), write \(r_h(m,e)\) to mean \((m,eh)\).
+Recall that \(r_h \colon \frameBundle{M} \to \frameBundle{M}\) is a diffeomorphism.
+Recall the foot map \(p(m,e)=m\); clearly \(p(m,eh)=m=p(m,e)\), so \(p \circ r_h=p\).
+Let
+\[
+\omega\defeq
+\begin{pmatrix}
+\omega_1 \\
+\omega_2 \\
+\vdots \\
+\omega_n
+\end{pmatrix}.
+\]
+\begin{problem}{upstairs:transform.h}
+Denote by \(\transpose{h}\) the transpose of any \(n \times n\) orthogonal matrix \(h\).
+For any Riemannian manifold \(M\) , prove that the soldering forms on the frame bundle of \(M\) satisfy \(r_h^* \omega = \transpose{h} \omega\).
+\end{problem}
+\begin{answer}{upstairs:transform.h}
+At any point \((m,e) \in \frameBundle{M}\), for any vector \(v \in T_{(m,e)} \frameBundle{M}\),
+\begin{align*}
+v \hook r_h^* \omega_i
+&=
+\pr{r_h'(m,e) v} \hook \omega_i,
+\\
+&=
+g\of{(eh)_i, p'\of{m,eh} r_h'(m,e) v},
+\\
+&=
+g\of{h_{ji} e_j,\pr{p \circ r_h}'(m,e) v},
+\\
+&=
+h_{ji} g\of{e_j,p'(m,e) v},
+\\
+&=
+h_{ji} \pr{v \hook \omega_j},
+\\
+&=
+v \hook \pr{h_{ji} \omega_j}.
+\end{align*}
+\end{answer}
+We want to work entirely on the frame bundle, so we need to recognise when a map of frame bundles arises from an isometry of Riemannian metrics.
+\begin{lemma}
+Suppose that \(\phi \colon P \to Q\) is a (local) Riemannian isometry.
+Denote by \(\phi_*\) or \(F\) the map \((p,e) \mapsto \pr{q,e'}\) where \(q=\phi(p)\) and \(e'_i = \phi'(p)e_i\).
+Then 
+\begin{enumerate}
+\item
+\(F \colon \frameBundle{P} \to \frameBundle{Q}\) is a (local) diffeomorphism and
+\item
+\(F \circ r_h = r_h \circ F\) for any orthogonal \(n \times n\) matrix \(h\) and
+\item
+\(F^* \omega=\omega\), i.e. \(F\) preserves the soldering form.
+\end{enumerate}
+
+Conversely, if \(F \colon \frameBundle{P} \to \frameBundle{Q}\) is a (local) diffeomorphism and \(F^* \omega=\omega\), i.e. \(F\) preserves the soldering form, then we can cover \(\frameBundle{P}\) by open sets on each of which \(F\) has the form \(F=\phi_*\) for a unique local Riemannian isometry \(\phi\). 
+If furthermore \(P\) is connected and, at some point \(\pr{p_0,e}\) of \(\frameBundle{P}\), \(F\of{p_0,eh} = r_h F{p_0,e}\) for one orthogonal \(n \times n\) matrix \(h\) with negative determinant, then \(F=\phi_*\) for a unique (local) Riemannian isometry \(\phi\). 
+\end{lemma}
+\begin{proof}
+Given a (local) isometry \(\phi\), write out our local coordinates on the frame bundles, using orthonormal frames on \(P\) and \(Q\) identified by \(\phi\), and check that \(\phi_*\) is a local diffeomorphism, and preserves \(\omega\).
+Unwind the definition of \(\omega\) to check that \(\phi_* r_h= r_h \phi_*\) for any orthogonal matrix \(h\).
+
+Conversely, take a smooth map \(F \colon \frameBundle{P} \to \frameBundle{Q}\) so that
+\begin{enumerate}
+\item
+a (local) diffeomorphism  and
+\item
+\(F^* \omega=\omega\), i.e. \(F\) preserves the soldering form.
+\end{enumerate}
+Denote our foot maps as \(p \colon \frameBundle{P} \to P\) and \(q \colon \frameBundle{Q} \to Q\) and our metrics as \(g_P\) and \(g_Q\).
+The fibers of the foot map \(\frameBundle{P} \to P\) are precisely the leaves of the foliation \(\omega=0\).
+So locally \(F\) takes leaves to leaves, i.e. open subsets of fibers to fibers.
+So restricting to a smaller open set in \(\frameBundle{P}\), we can suppose that \(F\) preserves fibers.
+The smooth map \(q \circ F \colon \frameBundle{P} \to Q\) is constant on fibers, so (by the rank theorem) descends uniquely to a smooth map \(\phi \colon P \to Q\) (after perhaps restricting to a smaller open set) so that \(\phi \circ p = q \circ F\).
+
+\begin{problem}{upstairs:prove.local.isom}
+Prove that \(\phi\) is a local Riemannian isometry.
+\end{problem}
+\begin{answer}{upstairs:prove.local.isom}
+At any point \(\pr{p_0,e} \in \frameBundle{P}\), if we let \(\pr{q_0,e'}=F\of{p_0,e}\),
+\begin{align*}
+v \hook \omega_i\of{p_0,e}
+&=
+g_P\of{e_i, p'\of{p_0,e}v},
+\\
+&=
+v \hook F^* \omega_i \of{p_0,e},
+\\
+&=
+\pr{F'\of{p_0,e}v} \hook \omega_i,
+\\
+&=
+g_Q\of{e'_i,q'\of{q_0,e'} \circ F'\of{p_0,e}v},
+\\
+&=
+g_Q\of{e'_i,\pr{q \circ F}'\of{p_0,e}v},
+\\
+&=
+g_Q\of{e'_i,\pr{\phi \circ p}'\of{p_0,e}v},
+\\
+&=
+g_Q\of{e'_i,\phi'\of{p_0} p'\of{p_0,e}v}.
+\end{align*}
+So finally, for any vector \(w \in T_{p_0} P\), write \(w=p'\of{p_0,e}v\) for some \(v\) (since \(p\) is a submersion), and then we have
+\[
+g_P\of{e_i,w}=g_Q\of{e_i',\phi'\of{p_0}w}.
+\]
+If we take \(w=e_j\), we get
+\[
+g_P\of{e_i,e_j}=g_Q\of{e_i',\phi'\of{p_0}e_j},
+\]
+so that \(\phi'\of{p_0}e_j = e_j'\).
+\end{answer}
+The value of \(\phi\) is defined by noting that \(q \circ F\) is locally constant along a fiber of \(p\).
+In particular, the value of \(q \circ F\) remains the same along any path inside each fiber of \(p\).
+The fiber of \(p\) above a point \(p_0\) of \(P\) consists of the orthonormal frames at the given point \(p_0\), and is thus a copy of the group of \(n \times n\) orthogonal matrices.
+The rotation matrices form a path connected component of that group.
+Every orthogonal matrix is either a rotation matrix or has negative determinant.
+So we have only to check equivariance of \(F\) under one negative determinant matrix to see that \(\phi\) extends to be defined globally.
+\end{proof}
+
+\section{The Levi--Civita connection}
+Take a coframing \(\omu{1}, \omu{2}, \dots, \omu{n}\) on an open subset of a manifold \(M\).
+Since these \(1\)-forms are a basis of the \(1\)-forms, every differential form admits a unique expansion in them.
+In particular, the \(2\)-forms \(d\omu{i}\) admit a unique expansion (in Einstein summation notation):
+\[
+d \omu{i} = -c_{ijk} \omu{j} \wedge \omu{k}
+\]
+for some functions \(c_{ijk}\) on \(M\); the minus sign is for future convenience.
+
+\begin{lemma}
+Consider the vector space \(V\) for which each element \(t\) of \(V\) is a collection \(t=\pr{t_{ijk}}\) of numbers \(t_{ijk}\), defined for \(i,j,k=1,2,\dots,n\).
+Let \(B \subset V\) be those antisymmetric in \(i,j\), and let \(C \subset V\) be those antisymmetric in \(j,k\).
+Then the linear map \(b \in B \mapsto c \in C\) given by
+\[
+c_{ijk} = \frac{1}{2}\pr{b_{ijk} - b_{ikj}}
+\]
+is a linear isomorphism with inverse
+\[
+b_{ijk} = c_{ijk} + c_{jki} + c_{kji}.
+\]
+\end{lemma}
+
+\begin{lemma}[The fundamental lemma of Riemannian geometry I]\label{lemma:flrg.one}\define{lemma!fundamental, of Riemannian geometry}\define{fundamental!lemma of Riemannian geometry}
+For any smooth orthonormal coframing \(\omu{1}, \omu{2}, \dots, \omu{n}\) on a Riemannian manifold, there is a unique collection of smooth \(1\)-forms \(\gmu{i}{j}=-\gmu{j}{i}\), the Levi--Civita connection \(1\)-forms, so that 
+\[
+d\omu{i} = -\gmu{i}{j}\wedge\omu{j}.
+\]
+\end{lemma}
+\begin{proof}
+Write \(d\omu{i} = -c_{ijk}\omu{j}\wedge\omu{k}\) for unique \(c_{ijk}\) antisymmetric in \(j,k\).
+Apply our (constant) linear isomorphism at each point to write \(d\omu{i} = -b_{ijk} \omu{j}\wedge\omu{k}\) for unique \(b_{ijk}\) antisymmetric in \(i,j\).
+Let \(\gmu{i}{j}\defeq b_{ijk}\omu{k}\).
+Then it is clear that \(\gmu{j}{i}=-\gmu{i}{j}\).
+Conversely, expand any such \(\gmu{i}{j}\) into \(\gmu{i}{j}=b_{ijk}\omu{k}\) and apply the linear isomorphism to see that you return back to the same \(c_{ijk}\).
+\end{proof}
+
+\begin{lemma}[The fundamental lemma of Riemannian geometry II]%
+\label{lemma:FLRG}%
+\define{lemma!fundamental, of Riemannian geometry}%
+\define{fundamental!lemma of Riemannian geometry}
+For any Riemannian manifold \(M\) with orthonormal frame bundle \(\frameBundle{M}\) and soldering forms \(\omega_1, \omega_2, \dots, \omega_n\), there is a unique collection of smooth \(1\)-forms \(\gamma_{ij}=-\gamma_{ji}\) on the frame bundle so that 
+\[
+d \omega_i = - \gamma_{ij} \wedge \omega_j.
+\]
+\end{lemma}
+\begin{proof}
+Take an orthonormal coframing \(\omu{1}, \omu{2},\dots,\omu{n}\) with Levi-Civita \(1\)-forms \(\gmu{i}{j}\) and dual framing \(\eu{1},\eu{2},\dots,\eu{n}\) as above.
+Write out each orthonormal frame as \(e_j = h_{ij}\eu{i}\).
+Write \(\omu{i}\) to mean both the \(\omu{i}\) coframing and the pullback of this coframing by the foot map.
+Recall that in our induced coordinates on \(\frameBundle{M}\), 
+\[
+\omega_i = h_{ji}\omu{j}.
+\]
+Take exterior derivative:
+\begin{align*}
+d \omega_i 
+&= 
+dh_{ji} \wedge \omu{j} - h_{ji} \gmu{j}{k} \wedge\omu{k},
+\\
+&=
+dh_{ji} h^{-1}_{jm} \wedge h_{m\ell} \omu{\ell} 
+-
+h_{ji} \gmu{j}{k} h^{-1}_{km} h_{m \ell}\omu{\ell},
+\\
+&=
+-\gamma_{ij}\wedge\omega_j,
+\end{align*}
+where
+\[
+\gamma_{ij} = - dh_{ik} h^{-1}_{kj} + h_{ik} \gmu{k}{m} h_{mj}.
+\]
+If there are two choices for \(\gamma_{ij}\), then the difference, say \(\zeta_{ij}\), satisfies 
+\[
+0 = \zeta_{ij} \wedge \omega_j.
+\]
+By Cartan's lemma, 
+\[
+\zeta_{ij} = b_{ijk} \omega_k,
+\]
+with \(b_{ijk}\) antisymmetric in \(i,j\) and symmetric in \(j,k\).
+By our linear algebra lemma above, this ensures that \(b_{ijk}=0\) for all \(i,j,k\).
+\end{proof}
+
+Note that as a consequence, every local Riemannian isometry preserves not only the soldering form but also the Levi-Civita connection \(1\)-forms.
+
+\begin{lemma}
+For any Riemannian manifold \(M\) and any \(n \times n\) orthogonal matrix \(h\), the soldering forms and Levi--Civita connection \(1\)-forms on the frame bundle of \(M\) satisfy \(r_h^* \omega = \transpose{h} \omega\) and \(r_h^* \gamma = h^{-1} \gamma h\) for any orthogonal \(n \times n\) matrix \(h\).
+\end{lemma}
+\begin{proof}
+Expand out \(0=r_h^*(d\omega_i+\gamma_{ij} \wedge\omega_j)\), using \(r_h^*\omega_i=h_{ji} \omega_j\).
+\end{proof}
+\begin{lemma}
+The soldering and Levi--Civita connection forms together coframe the frame bundle.
+The soldering forms vanish precisely on the fibers of the map \(\frameBundle{M} \to M\), for any Riemannian manifold \(M\).
+If \(M\) is \(n\)-dimensional, given any antisymmetric \(n\times n\) matrix \(A\), define a vector field \(\vec{A}\) on \(\frameBundle{M}\) by
+\[
+\vec{A}=\left.\frac{d}{dt}\right|_{t=0} r_{e^{tA}}.
+\]
+This is well defined, since \(e^{tA}\) is orthogonal.
+Moreover, \(\vec{A}\hook\omega=0\) and \(\vec{A}\hook\gamma=A\).
+\end{lemma}
+\begin{proof}
+As above, take coordinates \((x,h)\) on \(\frameBundle{M}\) arising from coordinates \(x\) on \(M\).
+The action of any \(g \in \Orth{n}\) is \(r_g(x,h)=(x,hg)\), so \(\vec{A}\hook (dx,dh)=(0,hA)\).
+From the definitions of \(\omega,\gamma\), \(\vec{A} \hook (\omega,\gamma)=(0,A)\).
+Clearly \(\omega=0\) on the fibers, and has linearly independent components \(\omega_i\).
+So \(\omega,\gamma\) coframe.
+\end{proof}
+
+
+\section{The curvature}
+The soldering and connection \(1\)-forms are linearly independent, giving a basis of each tangent space of the frame bundle.
+But any two bases of a vector space look the same as any other two, so we can't yet see how one Riemannian manifold differs from another.
+We want to say that they are differently ``curved''.
+\begin{lemma}\label{lemma:curvature.exists}
+For any Riemannian manifold \(M\), there are unique functions \(R_{ijk\ell}\) on the frame bundle of \(M\) so that the soldering forms \(\omega_i\) and Levi-Civita connection forms \(\gamma_{ij}\) of \(M\) satisfy
+\begin{align*}
+d\omega_i + \gamma_{ij} \wedge \omega_j &= 0, \\
+d\gamma_{ij} + \gamma_{ik} \wedge \gamma_{kj} &= \frac{1}{2}R_{ijk\ell} \omega_k \wedge \omega_{\ell}
+\end{align*}
+and
+\begin{align*}
+0 &= R_{ijk\ell} + R_{jik\ell},
+\\
+&= R_{ijk\ell} + R_{ij\ell k},
+\\
+&= R_{k\ell ij},
+\\
+&= R_{ijk\ell} + R_{kij\ell} + R_{jki\ell}.
+\end{align*}
+If we let \(\Omega_{ij} \defeq R_{ijk\ell} \omega_k \wedge \omega_{\ell}\), then
+for any orthogonal \(n \times n\) matrix \(h\), 
+\begin{align*}
+r_h^* \omega &= \transpose{h} \omega, \\
+r_h^* \gamma &= h^{-1} \gamma h, \\
+r_h^* \Omega &= h^{-1} \Omega h.
+\end{align*}
+\end{lemma}
+\begin{problem}{upstairs:prove.FLRG}
+Take exterior derivative of both sides of \(0=d\omega_i + \gamma_{ij} \wedge \omega_j\), and apply Cartan's lemma to prove lemma~\vref{lemma:curvature.exists}.
+\end{problem}
+\begin{answer}{upstairs:prove.FLRG}
+So far, we know that \(0=d\omega_i + \gamma_{ij} \wedge \omega_j\).
+Take exterior derivative of both sides to arrive at
+\[
+0 = \pr{d\gamma_{ij} + \gamma_{ik} \wedge \gamma_{kj}} \wedge \omega_j.
+\]
+Apply Cartan's lemma to prove that there are \(1\)-forms \(\beta_{ijk}\) so that
+\[
+d\gamma_{ij} + \gamma_{ik} \wedge \gamma_{kj} = \beta_{ijk} \wedge \omega_k.
+\]
+These \(\beta_{ijk}\) are symmetric in \(j,k\).
+Adding the above equation as given, together with the same equation with \(i\) and \(j\) swapped, we get
+\[
+0 = \pr{\beta_{ijk} + \beta_{jik}} \wedge \omega_k.
+\]
+By Cartan's lemma (lemma~\vref{lemma:Cartans}), 
+\[
+\beta_{ijk}+\beta_{jik} = f_{ijk\ell} \omega_{\ell},
+\]
+for unique functions \(f_{ijk\ell}\) symmetric in \(i,j\) and in \(k,\ell\).
+Therefore, if we alternate using this equation and the symmetry of \(\beta_{ijk}\) in \(j,k\):
+\begin{align*}
+\beta_{ijk}
+&=
+-\beta_{jik} + f_{ijk\ell} \omega_{\ell},
+\\
+&=
+-\beta_{jki} + f_{ijk\ell} \omega_{\ell},
+\\
+&=
+\beta_{kji} + \pr{-f_{jki\ell} + f_{ijk\ell}} \omega_{\ell},
+\\
+&=
+\beta_{kij} + \pr{-f_{jki\ell} + f_{ijk\ell}} \omega_{\ell},
+\\
+&=
+-\beta_{ikj} + \pr{f_{kij\ell}-f_{jki\ell} + f_{ijk\ell}} \omega_{\ell},
+\\
+&=
+-\beta_{ijk} + \pr{f_{kij\ell}-f_{jki\ell} + f_{ijk\ell}} \omega_{\ell},
+\\
+\intertext{so we add \(\beta_{ijk}\) to both sides and divide by 2,}
+&=
+\frac{1}{2}\pr{f_{kij\ell}-f_{jki\ell} + f_{ijk\ell}} \omega_{\ell}.
+\end{align*}
+Therefore
+\[
+d\gamma_{ij} + \gamma_{ik} \wedge \gamma_{kj} =
+\frac{1}{2} R_{ijk\ell} \omega_k \wedge \omega_{\ell},
+\]
+where
+\[
+R_{ijk\ell}\defeq \frac{1}{2} 
+\pr{
+f_{kij\ell}-f_{jki\ell}
+-
+f_{\ell ijk}-f_{j\ell ik}
+}.
+\]
+We leave the reader to check the identities.
+\end{answer} 
+The \emph{curvature tensor}\define{curvature!tensor} \(R\) is the object that associates to any 4 tangent vectors \(u,v,w,z \in T_m M\) the number
+\[
+\ip{R(u,v)w}{z} = R_{ijk\ell} u_i v_j w_k z_{\ell},
+\]
+where \(u=u_i e_i, v=v_i e_i, w=w_i e_i, z=z_i e_i\) in some orthonormal basis \(e_1, e_2, \dots, e_n\), and \(R_{ijk\ell}\) are the values of the function defined above at the frame \(e_1, e_2, \dots, e_n\).
+One easily checks that
+\[
+r_h^* R_{ijk\ell} = R_{abcd} h_{ai} h_{jb} h_{kc} h_{\ell d},
+\]
+and this ensures that the curvature is well-defined.
+Each smooth orthonormal framing is a smooth section of the frame bundle, in which we can write the curvature directly, and we see that the curvature \(\ip{R(u,v)w}{z}\) varies smoothly as we smoothly vary \(u,v,w,z\).
+
+
+\section{Submanifolds}
+Take an immersed submanifold \(P\) of a Riemannian manifold \(M\), where \(p\defeq \dim P\) and \(p+q \defeq \dim M\).
+If we denote the immersion \(P \to M\) as \(f \colon P \to M\), a frame \((p_0,e_1,\dots,e_p,e_{p+1},\dots,e_{p+q})\) is \emph{adapted} if \(e_1, \dots, e_p \in f'(p_0) T_{p_0} P\).
+Let \(\adaptedFrameBundle{P}{M}\) be the set of all adapted frames.
+We have obvious maps \(\frameBundle{P} \gets \adaptedFrameBundle{P}{M} \to \frameBundle{M}\).
+On \(\adaptedFrameBundle{P}{M}\), the \(1\)-forms \(\omega_i\) of \(\frameBundle{P}\) pull back to \(\omega_i\), while those of \(\frameBundle{M}\) either pullback to \(\omega_i\) if \(i=1,2,\dots,p\) or to \(0\) if \(i=p+1,p+2,\dots,p+q\).
+It is convenient to let indices \(i,j,k,\ell\) vary over \(1,2,\dots,p\) and let \(a,b,c,d\) vary over \(p+1,p+2,\dots,p+q\), so \(\omega_I=0\) on \(\adaptedFrameBundle{P}{M}\).
+The \emph{shape operator}\define{shape operator} is
+\[
+A \defeq \omega_i \gamma_{ia} e_a.
+\]
+\begin{lemma}
+The shape operator of an immersed submanifold is a symmetric linear operator, pulled back from a unique symmetric linear operator on tangent vectors of \(P\), associating to each pair of tangent vectors to the submanifold a normal vector.
+\end{lemma}
+\begin{proof}
+On \(\adaptedFrameBundle{P}{M}\), \(\omega_a=0\) so \(0=d\omega_a=-\gamma_{ai} \wedge \omega_i\).
+By Cartan's lemma, \(\gamma_{ai}=-a_{aij} \omega_j\) for unique functions \(a_{aij}=a_{aji}\).
+\end{proof}
+
+
+
+%\section{Geodesic flow}
+%Take a point \((m,e,y) \in \frameBundle{M} \times \R{n}\).
+%For any orthogonal \(n \times n\) matrix \(h\), write \(r_h(m,e,y)\) to mean \((m,eh,\transpose{h} y)\).
+%\begin{lemma}\label{lemma:quotient.TM}
+%The map \((m,e,y) \in \frameBundle{M} \times \R{n} \mapsto y_i e_i \in TM\) is a fiber bundle map, invariant under the action of the orthogonal group \(\Orth{n}\), and the quotient space \(\frameBundle{M}/\Orth{n}\) is the tangent bundle \(TM\).
+%\end{lemma}
+%\begin{proof}
+%Clearly \((m,eh,\transpose{h}y) \mapsto h_{ji} y_j h_{ki} e_k = y_i e_i\), so the map is invariant.
+%The map is clearly smooth and onto, with fibers precisely the orbit of \(\Orth{n}\).
+%In any local coordinates \(x_1,x_2,\dots,x_n\) on \(M\).
+%Pick a orthonormal framing \(X_1(x),\dots,X_n(x)\).
+%Take coordinates \(x_1,x_2,\dots,x_n,v_1,v_2,\dots,v_n\) on \(TM\), where each tangent vector is uniquely represented as
+%\(v_i X_i(x)\).
+%Write out coordinates \(x_1,\dots,x_n,h_{11},\dots,h_{nn}\) on \(\frameBundle{M}\) as above, and then our map is expressed in these coordinates as
+%\[
+%(x,h,y) \mapsto (x,v)
+%\]
+%where \(v_i = y_j h_{ji}\).
+%So our map is a fiber bundle map.
+%\end{proof}
+%
+%
+%Define a vector field \(\geodesicVectorField\) on \(\frameBundle{M} \times \R{n}\) by the linear equations
+%\begin{align*}
+%\geodesicVectorField \hook \omega &= y, \\
+%\geodesicVectorField \hook \gamma &= 0, \\
+%\geodesicVectorField \hook dy &= 0.
+%\end{align*}
+%\begin{problem}{upstairs:descend}
+%Prove that the vector field \(\geodesicVectorField\) is invariant under the orthogonal group action.
+%Prove that there is a unique vector field, the \emph{geodesic spray}, also denoted \(\geodesicVectorField\), on the tangent bundle, to which \(\geodesicVectorField\) projects.
+%\end{problem}
+%\begin{answer}{upstairs:descend}
+%By definition,
+%\[
+%\left.
+%\geodesicVectorField \hook
+%\begin{pmatrix}
+%\omega \\
+%\gamma \\
+%dy
+%\end{pmatrix}
+%\right|_{(m,e,y)}
+%=
+%\begin{pmatrix}
+%y \\
+%0 \\
+%0
+%\end{pmatrix}.
+%\]
+%Therefore
+%\begin{align*}
+%r_{h*} \geodesicVectorField
+%\hook
+%\left.
+%\begin{pmatrix}
+%\omega \\
+%\gamma \\
+%dy
+%\end{pmatrix}
+%\right|_{(m,eh,\transpose{h}y)}
+%&=
+%\geodesicVectorField
+%\hook
+%r_h^*
+%\left.
+%\begin{pmatrix}
+%\omega \\
+%\gamma \\
+%dy
+%\end{pmatrix}
+%\right|_{(m,e,y)},
+%\\
+%&=
+%\geodesicVectorField
+%\hook
+%\left.
+%\begin{pmatrix}
+%\transpose{h} \omega \\
+%\transpose{h} \gamma h \\
+%\transpose{h} dy
+%\end{pmatrix}
+%\right|_{(m,e,y)},
+%\\
+%&=
+%\geodesicVectorField
+%\hook
+%\left.
+%\begin{pmatrix}
+%\transpose{h} y \\
+%0 \\
+%0
+%\end{pmatrix}
+%\right|_{(m,e,y)},
+%\\
+%&=
+%\geodesicVectorField
+%\hook
+%\left.
+%\begin{pmatrix}
+%\omega \\
+%\gamma \\
+%dy
+%\end{pmatrix}
+%\right|_{(m,eh,\transpose{h}y)},
+%\end{align*}
+%so \(r_{h*} \geodesicVectorField = \geodesicVectorField\).
+%In our local coordinates, as in lemma~\vref{lemma:quotient.TM}, we see that \(\geodesicVectorField\) descends to a unique vector field on \(TM\).
+%\end{answer}
+%Take a flow line of \(\geodesicVectorField\) on \(TM\); its projection to \(M\) is a \emph{geodesic}.\define{geodesic}
+%\begin{lemma}
+%Every geodesic has constant speed.
+%\end{lemma}
+%\begin{proof}
+%Let \(\pi \colon (m,e,y) \in \frameBundle{M} \times \R{n} \mapsto m \in M\).
+%We take the curve \(m(t)=\pi \circ (m(t),e(t),y(t))\) associated to a flow line of \(\geodesicVectorField\).
+%Clearly \(y\) is constant along the flow of \(\geodesicVectorField\) and \((\dot{m}(t),\dot{e}(t),0) \hook \omega = y\).
+%But \(\omega\) is by definition \(\omega^i=g(e_i,\dot{m}(t))\), so \(\dot{m}(t)=y_i e_i\) and so \(|\dot{m}(t)|=|y|\) is constant.
+%\end{proof}
+%\begin{lemma}
+%Pick a point \(m_0 \in M\) and \(v_0 \in T_{m_0} M\) on a Riemannian manifold \(M\).
+%Let \(G\) be the group of all diffeomorphisms of \(M\) preserving the Riemannian metric and also preserving the point \(m_0\) and the vector \(v_0\).
+%Then the geodesic flow line through \((m_0,v_0) \in T_{m_0} M\), i.e. the flow line of \(\geodesicVectorField\), is invariant under \(G\).
+%\end{lemma}
+%\begin{proof}
+%Each diffeomorphism \(\phi\) of \(M\) preserving the Riemannian metric acts on \(\frameBundle{M}\) by taking 
+%\[
+%(m,e_1,\dots,e_n) \mapsto (\phi(m),\phi'(m)e_1,\dots,\phi'(m)e_n).
+%\]
+%Since the vector field \(\geodesicVectorField\) is defined in terms of the Riemannian metric, it is preserved by all such diffeomorphisms acting on \(\frameBundle{M}\).
+%\end{proof}
+%\begin{example}
+%Euclidean space has lines as geodesics: each line is the set of fixed points of the group \(G\) of rigid motions preserving a point of the line and a nonzero vector tangent to the line at that point. 
+%\end{example}
+%\begin{example}
+%Picking a plane, we can rotate the unit sphere by the rotations which fix every point of that plane.
+%The group \(G\) of those rotations fixes the great circle on which the sphere intersects the plane, and fixes every tangent vector to that great circle.
+%The group \(G\) then moves the unit vectors perpendicular to that plane arbitrarily.
+%The sphere has great circles as geodesics: each great circle is the set of fixed points of the group \(G\) of rigid motions preserving a point of the great circle and a nonzero vector tangent to the great circle at that point.
+%\end{example}
+%\begin{example}
+%Products of spheres: each geodesic projects to a great circle on each sphere.
+%Conversely, pick one great circle on each sphere, and a path which winds at constant speed around each of those great circles.
+%Moving along those paths simultaneously gives a geodesic.
+%The product of the great circles is a flat torus, and the sphere's geodesics somewhere tangent to that flat torus are the geodesics of that flat torus.
+%\end{example}

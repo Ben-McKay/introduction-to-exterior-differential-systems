@@ -184,7 +184,29 @@ d\theta\\
 \end{pmatrix}.
 \]
 \end{example}
-
+\prob{tableux:fol}{As in our example of triply orthogonal webs, construct an exterior differential system whose integral \(4\)-manifolds are foliations of open subsets of \(3\)-dimensional Euclidean space.
+Write out the tableau and find the characters.}
+\begin{answer}{tableux:fol}
+We can ask that \(e_1\) be perpendicular to the leaves of our foliation.
+(If you use \(e_3\) instead of \(e_1\) here, you will find it more complicated to write out the tableau.)
+So then \(\omega_1\wedge d\omega_1=0\) on the foliation.
+Expand out 
+\[
+d\omega_1=-\gamma_{12}\wedge\omega_2-\gamma_{13}\wedge\omega_3
+\]
+to arrive at the tableau
+\[
+\Tablo{!*\gamma_{12},!*\gamma_{13}}
+\wedge
+\begin{gradedIndependents}
+\emptyGrade
+\omega_1\wedge\omega_2\+
+\omega_1\wedge\omega_3
+\end{gradedIndependents}.
+\]
+so \(s_1=0,s_2=1,s_3=1\), foliations of open sets of \(3\)-dimensional Euclidean space depend on \(1\) function of \(3\) variables.
+We can see them as the level sets of \(1\) function of \(3\) variables, but the function is defined only up to composition with a strictly increasing or strictly decreasing function.
+\end{answer}
 
 \section{Torsion}
 The tableau is \emph{adapted}\define{adapted tableau} to the flag
