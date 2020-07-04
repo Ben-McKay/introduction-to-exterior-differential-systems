@@ -31,18 +31,18 @@ We leave the change of coordinates to the reader.%
 \vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:eds:change.rank}.}
 If \(\theta=du-q^2 \, dx\) then \(d\theta = - 2q \, dq \wedge dx\).
 \vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:v.b.rank}.}
-Suppose that, to each point \(x\in M\) of a manifold \(M\), we have an associated \(p \times q\) matrix \(\phi(x)\), with entries analytic functions on \(M\).
-Let \(K\) be the set of pairs \((x,v)\) so that \(x \in M\) and \(v\) is a vector in the kernel of \(\phi(x)\).
-If \(\phi(x)\) has rank independent of \(x\), let us prove that \(K\) is an embedded submanifold of \(M \times \R[q]\).
+Suppose that, to each point \(x\in M\) of a manifold \(M\), we have an associated \(p \times q\) matrix \(\varphi(x)\), with entries analytic functions on \(M\).
+Let \(K\) be the set of pairs \((x,v)\) so that \(x \in M\) and \(v\) is a vector in the kernel of \(\varphi(x)\).
+If \(\varphi(x)\) has rank independent of \(x\), let us prove that \(K\) is an embedded submanifold of \(M \times \R[q]\).
 Let's also prove that, for any map \(w\colon M \to \R[p]\), the following are equivalent:
 \begin{enumerate}
-\item At every point \(x \in M\), there is a vector \(v\) so that \(\phi(v)=w(x)\).
-\item Near every point \(x \in M\), there is an analytic vector valued function \(v\) on an open subset of \(M\), so that \(\phi(v(x))=w(x)\); if \(\phi\) is 1-1 at every point \(x \in M\), then \(v\) is unique.
+\item At every point \(x \in M\), there is a vector \(v\) so that \(\varphi(v)=w(x)\).
+\item Near every point \(x \in M\), there is an analytic vector valued function \(v\) on an open subset of \(M\), so that \(\varphi(v(x))=w(x)\); if \(\varphi\) is 1-1 at every point \(x \in M\), then \(v\) is unique.
 \end{enumerate}
-We can change \(\phi\) by multiplying by arbitrary invertible matrices of analytic functions.
-Since \(\phi\) has constant rank, for any chosen point of \(M\), we can permute rows and columns to get the upper left corner to be invertible at that point, and hence near that point, of the same rank as \(\phi\):
+We can change \(\varphi\) by multiplying by arbitrary invertible matrices of analytic functions.
+Since \(\varphi\) has constant rank, for any chosen point of \(M\), we can permute rows and columns to get the upper left corner to be invertible at that point, and hence near that point, of the same rank as \(\varphi\):
 \[
-\phi=
+\varphi=
 \begin{pmatrix}
 A&B\\
 C&D
@@ -64,7 +64,7 @@ Multiply:
 I&0\\
 -C&I
 \end{pmatrix}
-\phi
+\varphi
 \begin{pmatrix}
 I&-B\\
 0&I
@@ -1192,7 +1192,8 @@ By problem~\vref{problem:v.b.rank}, the space of Cauchy characteristics is a vec
 Above we saw that Cauchy characteristics are bracket closed.
 Problem~\vref{problem:Frobenius} shows that the retracting space is therefore Frobenius,\SubIndex{Frobenius theorem}\SubIndex{theorem!Frobenius} so \(\pi\) exists locally.
 \vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Cauchy:disconnected}.}
-For any diffeomorphism \(\phi\) preserving \(\II\) and \(\pi\), the generators for \(U_a\) give generators for \(\phi(U_a)\), so we can extend to \(\pi^{-1}\bar{U}_a\).
+Invariance of our generators under the flows of the Cauchy characteristic vector fields extends their definition to the largest set invariant under those flows and containing their domain.
+Each diffeomorphism \(\phi\) preserving \(\II\) and \(\pi\) interchanging components allows us to extend that domain further, so that it becomes the preimage of an open set in \(\bar{M}\).
 \vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Cauchy.chars:other.way}.}
 Let \(\II\defeq\pi^*\bar\II\) and \(\bar\JJ\defeq\pi_*\II\).
 Easily \(\bar\II\subseteq\bar\JJ\).
@@ -1986,21 +1987,6 @@ t\cos^2\theta
 \vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:moving.frame:lines.on.surface}.}
 We get \(\dot{e}_1=0\) along such a curve, at that point, so \(0=\gamma_{21}=\gamma_{31}\), so \(a_{11}=0\).
 Since this occurs in all directions, \(a=0\).
-\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Gauss.Bonnet:two.geodesics}.}
-By Gauss--Bonnet, if the region is \(R\),
-\[
-0 > \int_R K \, dA = \beta_1+\beta_2+2\pi(\chi_R-1),
-\]
-so \(\chi_R<1\).
-\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:G.B:euler.char}.}
-The sphere has Gauss map the identity, so degree \(1\), so \(\chi=2\).
-Another way to see this: \(K=1\) on the unit sphere, and area is \(4 \pi\).
-The torus has a nowhere zero vector field \(X\), being a surface of revolution, so \(\chi=0\).
-The disk has the Morse function \(f(x,y)=x^2+y^2\), so \(\chi=1\).
-Smooth off corners of less than a right angle, by deforming to locally look like a square, and then clip off to get a quarter circle: \(\chi\) doesn't change.
-Similarly for more than right angle.
-Take two surfaces \(S,T\), and deform until they each contain a perfect half sphere.
-Cut holes along the equators, glue tubes to connect, a surface \(S\# T\), and get a sum formula from the Gauss--Bonnet integral \(\chi_{S\# T}=\chi_S+\chi_T-2\).
 \vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:geodesics:behaviour.of.radial}.}
 The fact that \(\exp'_{x_0}=I\) means that at the origin,
 \[
@@ -2034,6 +2020,12 @@ Hence \(h \to 0\) as  \(r \to 0\) and
 \]
 \vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:geodesics:triangle}.}
 Gauss--Bonnet
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:geodesics:proper}.}
+If our geodesic is \(x(t)\), then \(f(x(t))\) has local minima as its only critical points.
+Moreover, they are isolated, as \(f(x(t)\) is critical only where \(x(t)\) reaches the minimum of \(f\) or becomes tangent to a level set of \(f\).
+If \(f(x(t)\) stays bounded as \(t\to\infty\), then \(x(t)\) stays in a compact sublevel set of \(f\).
+But \(f(x(t))\) increases for large enough \(t\), so \(x(t)\) approaches the boundary of that sublevel set, i.e. a level set.
+Geodesics near each level set enter or leave soon, a contradiction.
 \vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:geodesics:prescribed.K}.}
 The differential equation forces \(h=r-Kr^3/3!+O(r)^4\), and inductively forces \(\p{r}^k\p{\theta}^{\ell} h=O(r)^{\ell}\).
 Note that

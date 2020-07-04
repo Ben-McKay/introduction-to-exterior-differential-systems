@@ -2,15 +2,13 @@
 
   \item absorbing torsion, \FancyIndexEntry{17}
   \item adapted
-    \subitem frame, \FancyIndexEntry{133}
+    \subitem frame, \FancyIndexEntry{131}
     \subitem frame bundle, \FancyIndexEntry{34}
   \item adapted tableau, \FancyIndexEntry{16}
   \item almost complex structure, \FancyIndexEntry{26}
   \item analytic, \hyperpage{1}
   \item analytic convergence, \FancyIndexEntry{95}
   \item analytic function, \FancyIndexEntry{78}
-  \item angle
-    \subitem interior, \FancyIndexEntry{127}
   \item area form, \FancyIndexEntry{113}
   \item asymptotic curve, \FancyIndexEntry{67}
   \item asymptotically simple, \FancyIndexEntry{95}
@@ -21,7 +19,7 @@
     \subitem theorem, \FancyIndexEntry{114}
   \item borrow polars, \FancyIndexEntry{18}
   \item Bryant
-    \subitem Robert, \hyperpage{145}
+    \subitem Robert, \hyperpage{144}
   \item bundle
     \subitem frame, \FancyIndexEntry{101}
   \item bundled, \FancyIndexEntry{61}
@@ -29,14 +27,14 @@
   \indexspace
 
   \item Cartan
-    \subitem \'Elie, \hyperpage{144}
+    \subitem \'Elie, \hyperpage{143}
     \subitem Henri, \hyperpage{96}
   \item Cartan's lemma, \FancyIndexEntry{6}
   \item Cartan's test, \FancyIndexEntry{40}
   \item Cartan--K\"ahler theorem, \FancyIndexEntry{4}, 
 		\FancyIndexEntry{54}
   \item Cauchy
-    \subitem Augustin Louis, \hyperpage{144}
+    \subitem Augustin Louis, \hyperpage{143}
     \subitem characteristic, \FancyIndexEntry{62}
     \subitem characteristic vector, \FancyIndexEntry{62}
   \item Cauchy characteristic, \FancyIndexEntry{63}
@@ -51,14 +49,14 @@
   \item characteristic vector
     \subitem Cauchy, \FancyIndexEntry{62}
   \item Chern
-    \subitem Shiing-Shen, \hyperpage{145}
-  \item circle, \FancyIndexEntry{139}
+    \subitem Shiing-Shen, \hyperpage{144}
+  \item circle, \FancyIndexEntry{137}
   \item codimension, \FancyIndexEntry{1}
   \item coframe, \FancyIndexEntry{8}
   \item coframing, \FancyIndexEntry{8}
   \item compatibility, \hyperpage{7}
   \item complete
-    \subitem surface, \hyperpage{118}, \hyperpage{138}
+    \subitem surface, \hyperpage{118}, \hyperpage{136}
     \subitem vector field, \hyperpage{60}, \hyperpage{118}
   \item complex differential, \FancyIndexEntry{116}
   \item conformal, \FancyIndexEntry{69}
@@ -80,7 +78,7 @@
   \indexspace
 
   \item Darboux frame, \FancyIndexEntry{117}
-  \item degree, \FancyIndexEntry{126, 127}
+  \item degree, \FancyIndexEntry{126}
   \item determined, \FancyIndexEntry{92}
     \subitem integral element, \FancyIndexEntry{49}
 
@@ -92,7 +90,7 @@
     \subitem graded ring, \FancyIndexEntry{95}
   \item Euler characteristic, \FancyIndexEntry{124, 125}
   \item Euler--Tricomi equation, \FancyIndexEntry{94}
-  \item exponential map, \FancyIndexEntry{134}
+  \item exponential map, \FancyIndexEntry{132}
   \item exterior differential system, \FancyIndexEntry{59}
     \subitem pullback, \FancyIndexEntry{63}
     \subitem pushforward, \FancyIndexEntry{63}
@@ -101,7 +99,7 @@
 
   \item fiber, \FancyIndexEntry{35}
   \item finite type, \FancyIndexEntry{61}
-  \item flow, geodesic, \FancyIndexEntry{131}
+  \item flow, geodesic, \FancyIndexEntry{129}
   \item form
     \subitem soldering, \FancyIndexEntry{105}
   \item formal
@@ -111,7 +109,7 @@
     \subitem adapted, \FancyIndexEntry{121}
     \subitem bundle, \FancyIndexEntry{104}
     \subitem Darboux, \FancyIndexEntry{117}
-    \subitem orthonormal, \FancyIndexEntry{99}, \FancyIndexEntry{141}
+    \subitem orthonormal, \FancyIndexEntry{99}, \FancyIndexEntry{140}
   \item frame bundle, \FancyIndexEntry{101}
     \subitem adapted, \FancyIndexEntry{34}
   \item Frobenius, \FancyIndexEntry{6}
@@ -125,15 +123,14 @@
 
   \item Gauss curvature, \FancyIndexEntry{108}
   \item Gauss map, \FancyIndexEntry{113}, \FancyIndexEntry{126}
-  \item Gauss--Bonnet theorem, \FancyIndexEntry{125}, 
-		\FancyIndexEntry{128}, \hyperpage{143}
+  \item Gauss--Bonnet theorem, \FancyIndexEntry{125}, \hyperpage{142}
   \item generic, \FancyIndexEntry{39}
     \subitem integral flag, \FancyIndexEntry{3}
-  \item geodesic, \FancyIndexEntry{132}, \FancyIndexEntry{139}
+  \item geodesic, \FancyIndexEntry{130}, \FancyIndexEntry{137}
     \subitem curvature, \FancyIndexEntry{121}
-    \subitem flow, \FancyIndexEntry{131}
-    \subitem minimal, \FancyIndexEntry{139}
-    \subitem spray, \FancyIndexEntry{131}
+    \subitem flow, \FancyIndexEntry{129}
+    \subitem minimal, \FancyIndexEntry{137}
+    \subitem spray, \FancyIndexEntry{129}
   \item germ, \FancyIndexEntry{96}
     \subitem convergence, \FancyIndexEntry{96}
   \item grade, \FancyIndexEntry{41}
@@ -146,7 +143,7 @@
     \subitem elementary, \FancyIndexEntry{95}
   \item Grassmann bundle, \FancyIndexEntry{3}
   \item Griffiths
-    \subitem Phillip, \hyperpage{146}
+    \subitem Phillip, \hyperpage{145}
 
   \indexspace
 
@@ -158,7 +155,7 @@
   \item holomorphic curve, \FancyIndexEntry{31}
   \item holomorphic differential, \FancyIndexEntry{116}
   \item Hopf differential, \FancyIndexEntry{113}
-  \item Hopf--Rinow theorem, \hyperpage{139}
+  \item Hopf--Rinow theorem, \hyperpage{137}
   \item hyperplane, \FancyIndexEntry{1}
   \item hypersurface, \FancyIndexEntry{1}
 
@@ -166,7 +163,7 @@
 
   \item index
     \subitem of vector field, \FancyIndexEntry{124}
-  \item injectivity radius, \FancyIndexEntry{135}
+  \item injectivity radius, \FancyIndexEntry{133}
   \item integral
     \subitem element, \FancyIndexEntry{2}
       \subsubitem ordinary, \FancyIndexEntry{39}
@@ -176,8 +173,6 @@
     \subitem line, \FancyIndexEntry{2}
     \subitem manifold, \FancyIndexEntry{1}
     \subitem plane, \FancyIndexEntry{2}
-  \item interior
-    \subitem angle, \FancyIndexEntry{127}
   \item involutive, \FancyIndexEntry{3}
   \item isothermal coordinates, \FancyIndexEntry{71}
 
@@ -188,13 +183,13 @@
   \indexspace
 
   \item K\"ahler
-    \subitem Eric, \hyperpage{144}
+    \subitem Eric, \hyperpage{143}
   \item Korn--Lichtenstein theorem, \hyperpage{116}
   \item Kovalevskaya
-    \subitem Sofia Vasilyevna, \hyperpage{144}
+    \subitem Sofia Vasilyevna, \hyperpage{143}
   \item Krull intersection theorem, \FancyIndexEntry{96}
   \item Kuranishi
-    \subitem Masatsugu, \hyperpage{145}
+    \subitem Masatsugu, \hyperpage{144}
 
   \indexspace
 
@@ -206,7 +201,7 @@
   \item lemma
     \subitem Cartan's, \FancyIndexEntry{6}
     \subitem Phat Nguyen, \FancyIndexEntry{95}
-  \item length space, \FancyIndexEntry{139}
+  \item length space, \FancyIndexEntry{137}
   \item Levi-Civita connection, \FancyIndexEntry{9}
     \subitem forms, \FancyIndexEntry{105}
   \item Lie bracket, \hyperpage{7}
@@ -229,10 +224,9 @@
   \item Maurer--Cartan form, \FancyIndexEntry{21}, \FancyIndexEntry{30}
   \item mean curvature, \FancyIndexEntry{109}
   \item mean curvature vector, \FancyIndexEntry{109}
-  \item minimal geodesic, \FancyIndexEntry{139}
+  \item minimal geodesic, \FancyIndexEntry{137}
   \item minimal surface
     \subitem equation, \FancyIndexEntry{94}
-  \item Morse function, \FancyIndexEntry{129}
 
   \indexspace
 
@@ -245,7 +239,7 @@
   \item orange, \hyperpage{68}
   \item ordinary
     \subitem integral element, \FancyIndexEntry{39}
-  \item orthonormal frame, \FancyIndexEntry{99}, \FancyIndexEntry{141}
+  \item orthonormal frame, \FancyIndexEntry{99}, \FancyIndexEntry{140}
 
   \indexspace
 
@@ -270,19 +264,19 @@
   \indexspace
 
   \item radius
-    \subitem injectivity, \FancyIndexEntry{135}
+    \subitem injectivity, \FancyIndexEntry{133}
   \item regular
     \subitem integral element, \FancyIndexEntry{39}
   \item restraining manifold, \hyperpage{53, 54}
   \item retracting space, \FancyIndexEntry{63}
   \item ribbon, \FancyIndexEntry{67}
     \subitem nondegenerate, \FancyIndexEntry{67}
-  \item Riemannian metric, \FancyIndexEntry{141}
+  \item Riemannian metric, \FancyIndexEntry{139}
   \item ruling line, \FancyIndexEntry{67}
 
   \indexspace
 
-  \item Sard's theorem, \hyperpage{126, 127}, \hyperpage{130}
+  \item Sard's theorem, \hyperpage{126, 127}
   \item second fundamental form, \FancyIndexEntry{109}
   \item semipositive, \FancyIndexEntry{41}
   \item Serret--Frenet frame, \FancyIndexEntry{102}
@@ -296,13 +290,13 @@
     \subitem formal, \FancyIndexEntry{79}
   \item special Lagrangian submanifold, \hyperpage{4}
   \item spray
-    \subitem geodesic, \FancyIndexEntry{131}
+    \subitem geodesic, \FancyIndexEntry{129}
   \item structure equations, \FancyIndexEntry{107, 108}
     \subitem of Euclidean space, \FancyIndexEntry{106}
   \item submanifold, \FancyIndexEntry{1}
     \subitem special Lagrangian, \hyperpage{4}
   \item surface
-    \subitem complete, \hyperpage{118}, \hyperpage{138}
+    \subitem complete, \hyperpage{118}, \hyperpage{136}
     \subitem of revolution, \FancyIndexEntry{111}
     \subitem principal curvatures, \FancyIndexEntry{109}
     \subitem principal directions, \FancyIndexEntry{109}
@@ -325,21 +319,20 @@
 		\hyperpage{92}
     \subitem Frobenius, \hyperpage{6--8}, \hyperpage{49}, 
 		\hyperpage{63}, \hyperpage{163}
-    \subitem Gauss--Bonnet, \FancyIndexEntry{125}, 
-		\FancyIndexEntry{128}, \hyperpage{143}
+    \subitem Gauss--Bonnet, \FancyIndexEntry{125}, \hyperpage{142}
     \subitem Hilbert, \FancyIndexEntry{118}
     \subitem Hilbert basis, \FancyIndexEntry{96}
-    \subitem Hopf--Rinow, \hyperpage{139}
+    \subitem Hopf--Rinow, \hyperpage{137}
     \subitem Korn--Lichtenstein, \hyperpage{116}
     \subitem Krull intersection, \FancyIndexEntry{96}
     \subitem Lie's third, \FancyIndexEntry{21}, \hyperpage{50}
-    \subitem Sard, \hyperpage{126, 127}, \hyperpage{130}
-  \item theorema egregium, \hyperpage{140}, \hyperpage{143}
+    \subitem Sard, \hyperpage{126, 127}
+  \item theorema egregium, \hyperpage{138}, \hyperpage{141}
   \item third fundamental form, \FancyIndexEntry{110}
   \item torsion, \hyperpage{36}
     \subitem absorbing, \FancyIndexEntry{17}
     \subitem of a curve, \FancyIndexEntry{102}
-  \item torsion tensor, \FancyIndexEntry{28}
+    \subitem tensor, \FancyIndexEntry{28}
   \item triply orthogonal web, \FancyIndexEntry{8}
 
   \indexspace

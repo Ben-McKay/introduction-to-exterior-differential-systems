@@ -60,7 +60,7 @@
 \indexentry{Cauchy--Riemann equations|FancyIndexEntry}{25}
 \indexentry{Cauchy--Riemann equations|FancyIndexEntry}{25}
 \indexentry{almost complex structure|FancyIndexEntry}{26}
-\indexentry{torsion tensor|FancyIndexEntry}{28}
+\indexentry{torsion!tensor|FancyIndexEntry}{28}
 \indexentry{Nijenhuis tensor|FancyIndexEntry}{28}
 \indexentry{Maurer--Cartan form|FancyIndexEntry}{30}
 \indexentry{holomorphic curve|FancyIndexEntry}{31}
@@ -243,47 +243,39 @@
 \indexentry{theorem!Sard|hyperpage}{126}
 \indexentry{Sard's theorem|hyperpage}{127}
 \indexentry{theorem!Sard|hyperpage}{127}
-\indexentry{interior!angle|FancyIndexEntry}{127}
-\indexentry{angle!interior|FancyIndexEntry}{127}
-\indexentry{degree|FancyIndexEntry}{127}
-\indexentry{Gauss--Bonnet theorem|FancyIndexEntry}{128}
-\indexentry{theorem!Gauss--Bonnet|FancyIndexEntry}{128}
-\indexentry{Morse function|FancyIndexEntry}{129}
-\indexentry{Sard's theorem|hyperpage}{130}
-\indexentry{theorem!Sard|hyperpage}{130}
-\indexentry{geodesic!spray|FancyIndexEntry}{131}
-\indexentry{spray!geodesic|FancyIndexEntry}{131}
-\indexentry{flow, geodesic|FancyIndexEntry}{131}
-\indexentry{geodesic!flow|FancyIndexEntry}{131}
-\indexentry{geodesic|FancyIndexEntry}{132}
-\indexentry{adapted!frame|FancyIndexEntry}{133}
-\indexentry{exponential map|FancyIndexEntry}{134}
-\indexentry{injectivity radius|FancyIndexEntry}{135}
-\indexentry{radius!injectivity|FancyIndexEntry}{135}
-\indexentry{complete!surface|hyperpage}{138}
-\indexentry{surface!complete|hyperpage}{138}
-\indexentry{length space|FancyIndexEntry}{139}
-\indexentry{minimal geodesic|FancyIndexEntry}{139}
-\indexentry{geodesic!minimal|FancyIndexEntry}{139}
-\indexentry{geodesic|FancyIndexEntry}{139}
-\indexentry{Hopf--Rinow theorem|hyperpage}{139}
-\indexentry{theorem!Hopf--Rinow|hyperpage}{139}
-\indexentry{circle|FancyIndexEntry}{139}
-\indexentry{theorema egregium|hyperpage}{140}
-\indexentry{Riemannian metric|FancyIndexEntry}{141}
-\indexentry{frame!orthonormal|FancyIndexEntry}{141}
-\indexentry{orthonormal frame|FancyIndexEntry}{141}
-\indexentry{theorema egregium|hyperpage}{143}
-\indexentry{Gauss--Bonnet theorem|hyperpage}{143}
-\indexentry{theorem!Gauss--Bonnet|hyperpage}{143}
-\indexentry{Cauchy!Augustin Louis|hyperpage}{144}
-\indexentry{Kovalevskaya!Sofia Vasilyevna|hyperpage}{144}
-\indexentry{Cartan!Elie@\'Elie|hyperpage}{144}
-\indexentry{Kaehler@K\"ahler!Eric|hyperpage}{144}
-\indexentry{Chern!Shiing-Shen|hyperpage}{145}
-\indexentry{Bryant!Robert|hyperpage}{145}
-\indexentry{Kuranishi!Masatsugu|hyperpage}{145}
-\indexentry{Griffiths!Phillip|hyperpage}{146}
+\indexentry{geodesic!spray|FancyIndexEntry}{129}
+\indexentry{spray!geodesic|FancyIndexEntry}{129}
+\indexentry{flow, geodesic|FancyIndexEntry}{129}
+\indexentry{geodesic!flow|FancyIndexEntry}{129}
+\indexentry{geodesic|FancyIndexEntry}{130}
+\indexentry{adapted!frame|FancyIndexEntry}{131}
+\indexentry{exponential map|FancyIndexEntry}{132}
+\indexentry{injectivity radius|FancyIndexEntry}{133}
+\indexentry{radius!injectivity|FancyIndexEntry}{133}
+\indexentry{complete!surface|hyperpage}{136}
+\indexentry{surface!complete|hyperpage}{136}
+\indexentry{length space|FancyIndexEntry}{137}
+\indexentry{minimal geodesic|FancyIndexEntry}{137}
+\indexentry{geodesic!minimal|FancyIndexEntry}{137}
+\indexentry{geodesic|FancyIndexEntry}{137}
+\indexentry{Hopf--Rinow theorem|hyperpage}{137}
+\indexentry{theorem!Hopf--Rinow|hyperpage}{137}
+\indexentry{circle|FancyIndexEntry}{137}
+\indexentry{theorema egregium|hyperpage}{138}
+\indexentry{Riemannian metric|FancyIndexEntry}{139}
+\indexentry{frame!orthonormal|FancyIndexEntry}{140}
+\indexentry{orthonormal frame|FancyIndexEntry}{140}
+\indexentry{theorema egregium|hyperpage}{141}
+\indexentry{Gauss--Bonnet theorem|hyperpage}{142}
+\indexentry{theorem!Gauss--Bonnet|hyperpage}{142}
+\indexentry{Cauchy!Augustin Louis|hyperpage}{143}
+\indexentry{Kovalevskaya!Sofia Vasilyevna|hyperpage}{143}
+\indexentry{Cartan!Elie@\'Elie|hyperpage}{143}
+\indexentry{Kaehler@K\"ahler!Eric|hyperpage}{143}
+\indexentry{Chern!Shiing-Shen|hyperpage}{144}
+\indexentry{Bryant!Robert|hyperpage}{144}
+\indexentry{Kuranishi!Masatsugu|hyperpage}{144}
+\indexentry{Griffiths!Phillip|hyperpage}{145}
 \indexentry{vector bundle|hyperpage}{148}
 \indexentry{Frobenius theorem|hyperpage}{163}
 \indexentry{theorem!Frobenius|hyperpage}{163}
