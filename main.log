@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.10.23)  24 APR 2020 11:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.10.23)  25 MAY 2020 13:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2198,23 +2198,23 @@ Overfull \hbox (2.59097pt too wide) detected at line 120
  []
 
 
-Overfull \hbox (4.06699pt too wide) detected at line 126
- \T1/clm2j/m/n/9 129
+Overfull \hbox (2.68097pt too wide) detected at line 127
+ \T1/clm2j/m/n/9 131
  []
 
 
-Overfull \hbox (3.17596pt too wide) detected at line 136
+Overfull \hbox (3.17596pt too wide) detected at line 137
  \T1/clm2j/m/n/9 147
  []
 
 
-Overfull \hbox (3.60797pt too wide) detected at line 137
- \T1/clm2j/m/n/9 173
+Overfull \hbox (3.46396pt too wide) detected at line 138
+ \T1/clm2j/m/n/9 175
  []
 
 
-Overfull \hbox (3.05896pt too wide) detected at line 138
- \T1/clm2j/m/n/9 177
+Overfull \hbox (3.60797pt too wide) detected at line 139
+ \T1/clm2j/m/n/9 179
  []
 
 )
@@ -2388,7 +2388,7 @@ Underfull \vbox (badness 1596) has occurred while \output is active []
  [20] (./main.mw)
 \openout10 = `main.mw'.
 
-LaTeX Font Info:    Try loading font information for U+euf on input line 767.
+LaTeX Font Info:    Try loading font information for U+euf on input line 789.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
@@ -2477,12 +2477,12 @@ s an application of the Cartan--
 \openout10 = `main.mw'.
 
 \mycount=\count428
-<integrate-differential.pdf, id=493, 1381.11981pt x 401.37956pt>
+<integrate-differential.pdf, id=497, 1381.11981pt x 401.37956pt>
 File: integrate-differential.pdf Graphic file (type pdf)
 <use integrate-differential.pdf>
 Package pdftex.def Info: integrate-differential.pdf  used on input line 10.
 (pdftex.def)             Requested size: 256.0748pt x 74.41942pt.
-<parabola.pdf, id=494, 1208.39456pt x 1381.11981pt>
+<parabola.pdf, id=498, 1208.39456pt x 1381.11981pt>
 File: parabola.pdf Graphic file (type pdf)
 <use parabola.pdf>
 Package pdftex.def Info: parabola.pdf  used on input line 14.
@@ -2663,7 +2663,7 @@ j/m/n/10 (-10) . Be-cause $\OML/lmm/m/it/10 ![]; [] ; ![]$
  [56] (./main.mw)
 \openout10 = `main.mw'.
 
-<Voyage-a-la-lune.jpg, id=715, 499.11469pt x 745.28438pt>
+<Voyage-a-la-lune.jpg, id=721, 499.11469pt x 745.28438pt>
 File: Voyage-a-la-lune.jpg Graphic file (type jpg)
 <use Voyage-a-la-lune.jpg>
 Package pdftex.def Info: Voyage-a-la-lune.jpg  used on input line 28.
@@ -2766,12 +2766,12 @@ Overfull \hbox (57.67357pt too wide) in paragraph at lines 690--691
 \openout10 = `main.mw'.
 
 \mycount=\count433
-<earth.jpg, id=1478, 8030.0pt x 8030.0pt>
+<earth.jpg, id=1484, 8030.0pt x 8030.0pt>
 File: earth.jpg Graphic file (type jpg)
 <use earth.jpg>
 Package pdftex.def Info: earth.jpg  used on input line 6.
 (pdftex.def)             Requested size: 113.70576pt x 113.81102pt.
-<Mercator_projection_SW.jpg, id=1479, 2065.7175pt x 1752.5475pt>
+<Mercator_projection_SW.jpg, id=1485, 2065.7175pt x 1752.5475pt>
 File: Mercator_projection_SW.jpg Graphic file (type jpg)
 <use Mercator_projection_SW.jpg>
 Package pdftex.def Info: Mercator_projection_SW.jpg  used on input line 7.
@@ -2911,7 +2911,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \openout10 = `main.mw'.
 
 \mycount=\count436
-<wave.pdf, id=1610, 1381.11981pt x 1019.68956pt>
+<wave.pdf, id=1616, 1381.11981pt x 1019.68956pt>
 File: wave.pdf Graphic file (type pdf)
 <use wave.pdf>
 Package pdftex.def Info: wave.pdf  used on input line 19.
@@ -3021,7 +3021,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \openout10 = `main.mw'.
 
  (./genus-2-surface-with-frame.tex
-<genus-2-surface-2.pdf, id=1722, 1381.11981pt x 666.36955pt>
+<genus-2-surface-2.pdf, id=1730, 1381.11981pt x 666.36955pt>
 File: genus-2-surface-2.pdf Graphic file (type pdf)
 <use genus-2-surface-2.pdf>
 Package pdftex.def Info: genus-2-surface-2.pdf  used on input line 4.
@@ -3164,64 +3164,64 @@ Package pdftex.def Info: genus-2-surface-2.pdf  used on input line 4.
  [123] (./main.mw)
 \openout10 = `main.mw'.
 
- (./interior-angle.tex)
 \openout10 = `main.mw'.
 
  [124] (./main.mw)
 \openout10 = `main.mw'.
 
-
-
-LaTeX Warning: Marginpar on page 125 moved by 37.23608pt.
-
 \openout10 = `main.mw'.
 
-[125] (./main.mw)
+ [125] (./main.mw)
 \openout10 = `main.mw'.
 
 \openout10 = `main.mw'.
 
- [126] (./main.mw)
+
+[126] (./main.mw)
 \openout10 = `main.mw'.
 
-) (./geodesics.tex
+ (./interior-angle.tex)
 \openout10 = `main.mw'.
 
  [127] (./main.mw)
 \openout10 = `main.mw'.
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 \openout10 = `main.mw'.
 
-
-[128
-
-] (./main.mw)
+ [128]
+(./main.mw)
 \openout10 = `main.mw'.
 
-\mycount=\count441
 \openout10 = `main.mw'.
 
  [129] (./main.mw)
 \openout10 = `main.mw'.
 
-\openout10 = `main.mw'.
-
-\openout10 = `main.mw'.
-
+) (./geodesics.tex
 \openout10 = `main.mw'.
 
  [130] (./main.mw)
 \openout10 = `main.mw'.
 
+\mycount=\count441
 \openout10 = `main.mw'.
 
- [131] (./main.mw)
+ [131
+
+]
+(./main.mw)
 \openout10 = `main.mw'.
 
 \openout10 = `main.mw'.
 
+\openout10 = `main.mw'.
 
-[132] (./main.mw)
+\openout10 = `main.mw'.
+
+ [132] (./main.mw)
 \openout10 = `main.mw'.
 
 \openout10 = `main.mw'.
@@ -3236,13 +3236,13 @@ LaTeX Warning: Marginpar on page 125 moved by 37.23608pt.
 
 \openout10 = `main.mw'.
 
- [135] (./main.mw)
+ [135]
+(./main.mw)
 \openout10 = `main.mw'.
 
 \openout10 = `main.mw'.
 
-
-[136] (./main.mw)
+ [136] (./main.mw)
 \openout10 = `main.mw'.
 
 \openout10 = `main.mw'.
@@ -3257,13 +3257,13 @@ LaTeX Warning: Marginpar on page 125 moved by 37.23608pt.
 
 \openout10 = `main.mw'.
 
- [139] (./main.mw)
+ [139]
+(./main.mw)
 \openout10 = `main.mw'.
 
 \openout10 = `main.mw'.
 
-
-[140] (./main.mw)
+ [140] (./main.mw)
 \openout10 = `main.mw'.
 
 \openout10 = `main.mw'.
@@ -3271,29 +3271,35 @@ LaTeX Warning: Marginpar on page 125 moved by 37.23608pt.
  [141] (./main.mw)
 \openout10 = `main.mw'.
 
-)
 \openout10 = `main.mw'.
 
  [142] (./main.mw)
 \openout10 = `main.mw'.
 
-<Augustin_Louis_Cauchy.jpg, id=2035, 641.39626pt x 942.52126pt>
+)
+\openout10 = `main.mw'.
+
+ [143]
+(./main.mw)
+\openout10 = `main.mw'.
+
+<Augustin_Louis_Cauchy.jpg, id=2056, 641.39626pt x 942.52126pt>
 File: Augustin_Louis_Cauchy.jpg Graphic file (type jpg)
 <use Augustin_Louis_Cauchy.jpg>
 Package pdftex.def Info: Augustin_Louis_Cauchy.jpg  used on input line 57.
 (pdftex.def)             Requested size: 142.26378pt x 209.05235pt.
-<Sofya_Vasilyevna_Kovalevskaya_Bust.jpg, id=2036, 693.34032pt x 1027.58907pt>
+<Sofya_Vasilyevna_Kovalevskaya_Bust.jpg, id=2057, 693.34032pt x 1027.58907pt>
 File: Sofya_Vasilyevna_Kovalevskaya_Bust.jpg Graphic file (type jpg)
 <use Sofya_Vasilyevna_Kovalevskaya_Bust.jpg>
 Package pdftex.def Info: Sofya_Vasilyevna_Kovalevskaya_Bust.jpg  used on input 
 line 59.
 (pdftex.def)             Requested size: 142.26378pt x 210.84528pt.
-<Elie-Cartan-1904.png, id=2037, 298.86656pt x 423.08063pt>
+<Elie-Cartan-1904.png, id=2058, 298.86656pt x 423.08063pt>
 File: Elie-Cartan-1904.png Graphic file (type png)
 <use Elie-Cartan-1904.png>
 Package pdftex.def Info: Elie-Cartan-1904.png  used on input line 61.
 (pdftex.def)             Requested size: 142.26378pt x 201.39145pt.
-<Erich-Kaehler.jpeg, id=2038, 256.96pt x 401.5pt>
+<Erich-Kaehler.jpeg, id=2059, 256.96pt x 401.5pt>
 File: Erich-Kaehler.jpeg Graphic file (type jpg)
 <use Erich-Kaehler.jpeg>
 Package pdftex.def Info: Erich-Kaehler.jpeg  used on input line 63.
@@ -3305,23 +3311,23 @@ Overfull \hbox (114.24408pt too wide) in paragraph at lines 56--65
 
 \openout10 = `main.mw'.
 
-[143
+[144
 
  <./Augustin_Louis_Cauchy.jpg> <./Sofya_Vasilyevna_Kovalevskaya_Bust.jpg> <./El
 ie-Cartan-1904.png (PNG copy)> <./Erich-Kaehler.jpeg>] (./main.mw)
 \openout10 = `main.mw'.
 
-<chern.jpg, id=2045, 334.1283pt x 225.2415pt>
+<chern.jpg, id=2065, 334.1283pt x 225.2415pt>
 File: chern.jpg Graphic file (type jpg)
 <use chern.jpg>
 Package pdftex.def Info: chern.jpg  used on input line 76.
 (pdftex.def)             Requested size: 341.43306pt x 230.16602pt.
-<robert-bryant.jpeg, id=2046, 610.9224pt x 921.2016pt>
+<robert-bryant.jpeg, id=2066, 610.9224pt x 921.2016pt>
 File: robert-bryant.jpeg Graphic file (type jpg)
 <use robert-bryant.jpeg>
 Package pdftex.def Info: robert-bryant.jpeg  used on input line 77.
 (pdftex.def)             Requested size: 128.0374pt x 193.06447pt.
-<Kuranishi_Masatsugu.jpg, id=2047, 622.325pt x 648.4225pt>
+<Kuranishi_Masatsugu.jpg, id=2067, 622.325pt x 648.4225pt>
 File: Kuranishi_Masatsugu.jpg Graphic file (type jpg)
 <use Kuranishi_Masatsugu.jpg>
 Package pdftex.def Info: Kuranishi_Masatsugu.jpg  used on input line 79.
@@ -3331,7 +3337,7 @@ Overfull \hbox (85.79132pt too wide) in paragraph at lines 73--81
  [] 
  []
 
-<phillip-griffiths.jpg, id=2048, 301.6068pt x 203.3999pt>
+<phillip-griffiths.jpg, id=2068, 301.6068pt x 203.3999pt>
 File: phillip-griffiths.jpg Graphic file (type jpg)
 <use phillip-griffiths.jpg>
 Package pdftex.def Info: phillip-griffiths.jpg  used on input line 84.
@@ -3343,7 +3349,7 @@ Overfull \hbox (0.43306pt too wide) in paragraph at lines 83--87
 
 \openout10 = `main.mw'.
 
-[144
+[145
 
  <./chern.jpg> <./robert-bryant.jpeg> <./Kuranishi_Masatsugu.jpg>]
 (./main.mw)
@@ -3351,25 +3357,19 @@ Overfull \hbox (0.43306pt too wide) in paragraph at lines 83--87
 
 \openout10 = `main.mw'.
 
- [145 <./phillip-griffiths.jpg>] (./main.mw)
-\openout10 = `main.mw'.
-
-\openout10 = `main.mw'.
-
- [146
-
-
-] (./main.mw)
+ [146 <./phillip-griffiths.jpg>] (./main.mw)
 \openout10 = `main.mw'.
 
 \mycount=\count442
-
-(./main.ans
+ (./main.ans
 \openout10 = `main.mw'.
 
  [147
 
-] (./main.mw)
+
+
+]
+(./main.mw)
 \openout10 = `main.mw'.
 
 \openout10 = `main.mw'.
@@ -3388,13 +3388,13 @@ Overfull \hbox (0.43306pt too wide) in paragraph at lines 83--87
 
 \openout10 = `main.mw'.
 
- [150]
+ [150] (./main.mw)
+\openout10 = `main.mw'.
+
+\openout10 = `main.mw'.
+
+ [151]
 (./main.mw)
-\openout10 = `main.mw'.
-
-\openout10 = `main.mw'.
-
- [151] (./main.mw)
 \openout10 = `main.mw'.
 
 \openout10 = `main.mw'.
@@ -3409,13 +3409,13 @@ Overfull \hbox (0.43306pt too wide) in paragraph at lines 83--87
 
 \openout10 = `main.mw'.
 
- [154]
+ [154] (./main.mw)
+\openout10 = `main.mw'.
+
+\openout10 = `main.mw'.
+
+ [155]
 (./main.mw)
-\openout10 = `main.mw'.
-
-\openout10 = `main.mw'.
-
- [155] (./main.mw)
 \openout10 = `main.mw'.
 
 \openout10 = `main.mw'.
@@ -3423,8 +3423,24 @@ Overfull \hbox (0.43306pt too wide) in paragraph at lines 83--87
  [156] (./main.mw)
 \openout10 = `main.mw'.
 
+\openout10 = `main.mw'.
 
-Overfull \hbox (32.73288pt too wide) in paragraph at lines 814--816
+ [157] (./main.mw)
+\openout10 = `main.mw'.
+
+\openout10 = `main.mw'.
+
+ [158] (./main.mw)
+\openout10 = `main.mw'.
+
+\openout10 = `main.mw'.
+
+ [159]
+(./main.mw)
+\openout10 = `main.mw'.
+
+
+Overfull \hbox (32.73288pt too wide) in paragraph at lines 999--1001
 \T1/clm2j/m/n/9 (-10) as an-a-lytic func-tions, but $\OML/lmm/m/it/9 f[]\OT1/lm
 r/m/n/9 (\OML/lmm/m/it/9 x\OT1/lmr/m/n/9 ) = 0$ \T1/clm2j/m/n/9 (-10) for $\OML
 /lmm/m/it/9 x$ \T1/clm2j/m/n/9 (-10) in-te-ger, ex-cept at $\OML/lmm/m/it/9 x \
@@ -3436,28 +3452,12 @@ ML/lmm/m/it/9 ; [] ; n \OMS/lmsy/m/n/9 ^^@
 
 \openout10 = `main.mw'.
 
-[157] (./main.mw)
+[160] (./main.mw)
 \openout10 = `main.mw'.
 
 \openout10 = `main.mw'.
 
- [158] (./main.mw)
-\openout10 = `main.mw'.
-
-\openout10 = `main.mw'.
-
- [159] (./main.mw)
-\openout10 = `main.mw'.
-
-\openout10 = `main.mw'.
-
- [160] (./main.mw)
-\openout10 = `main.mw'.
-
-\openout10 = `main.mw'.
-
-
-[161] (./main.mw)
+ [161] (./main.mw)
 \openout10 = `main.mw'.
 
 \openout10 = `main.mw'.
@@ -3472,13 +3472,13 @@ ML/lmm/m/it/9 ; [] ; n \OMS/lmsy/m/n/9 ^^@
 
 \openout10 = `main.mw'.
 
- [164] (./main.mw)
+
+[164] (./main.mw)
 \openout10 = `main.mw'.
 
 \openout10 = `main.mw'.
 
-
-[165] (./main.mw)
+ [165] (./main.mw)
 \openout10 = `main.mw'.
 
 \openout10 = `main.mw'.
@@ -3493,23 +3493,19 @@ ML/lmm/m/it/9 ; [] ; n \OMS/lmsy/m/n/9 ^^@
 
 \openout10 = `main.mw'.
 
- [168] (./main.mw)
+
+[168] (./main.mw)
 \openout10 = `main.mw'.
 
 \openout10 = `main.mw'.
 
-
-[169] (./main.mw)
+ [169] (./main.mw)
 \openout10 = `main.mw'.
 
 \openout10 = `main.mw'.
 
  [170] (./main.mw)
 \openout10 = `main.mw'.
-
-) (./main.bbl (./main.brf)
-\tf@brf=\write20
-\openout10 = `main.brf'.
 
 \openout10 = `main.mw'.
 
@@ -3518,13 +3514,25 @@ ML/lmm/m/it/9 ; [] ; n \OMS/lmsy/m/n/9 ^^@
 
 \openout10 = `main.mw'.
 
-[172
 
-] (./main.mw)
+[172] (./main.mw)
+\openout10 = `main.mw'.
+
+\openout10 = `main.mw'.
+
+ [173] (./main.mw)
+\openout10 = `main.mw'.
+
+) (./main.bbl (./main.brf)
+\tf@brf=\write20
+\openout10 = `main.brf'.
+
+\openout10 = `main.mw'.
+
+ [174] (./main.mw)
 \openout10 = `main.mw'.
 
 \mycount=\count443
-
 bibitemlist
 
 Underfull \hbox (badness 3590) in paragraph at lines 27--27
@@ -3534,7 +3542,9 @@ féren-tiels ex-térieurs et leurs ap-pli-ca-tions
 
 \openout10 = `main.mw'.
 
-[173] (./main.mw)
+[175
+
+] (./main.mw)
 \openout10 = `main.mw'.
 
 \openout10 = `main.mw'.
@@ -3543,19 +3553,19 @@ féren-tiels ex-térieurs et leurs ap-pli-ca-tions
 
 \openout10 = `main.mw'.
 
- [174] (./main.mw)
+ [176] (./main.mw)
 \openout10 = `main.mw'.
 
 )
 No file not.gls.
 \openout10 = `main.mw'.
 
-[175] (./main.mw)
+[177] (./main.mw)
 \openout10 = `main.mw'.
 
 \openout10 = `main.mw'.
 
- [176
+ [178
 
 ] (./main.mw)
 \openout10 = `main.mw'.
@@ -3575,7 +3585,7 @@ Overfull \hbox (0.98097pt too wide) in paragraph at lines 43--45
 
 \openout10 = `main.mw'.
 
-[177
+[179
 
 
 ] (./main.mw)
@@ -3587,22 +3597,22 @@ Overfull \hbox (0.98097pt too wide) in paragraph at lines 43--45
 
 \openout10 = `main.mw'.
 
- [178] (./main.mw)
+ [180] (./main.mw)
 \openout10 = `main.mw'.
 
 
-Overfull \hbox (0.76009pt too wide) in paragraph at lines 290--292
+Overfull \hbox (0.76009pt too wide) in paragraph at lines 291--293
 []| \T1/clm2j/m/n/9 (-10) of map be-tween man-i-folds of equal
  []
 
 \openout10 = `main.mw'.
 
-[179] (./main.mw)
+[181] (./main.mw)
 \openout10 = `main.mw'.
 
 \openout10 = `main.mw'.
 
- [180
+ [182
 
 ] (./main.mw)
 \openout10 = `main.mw'.
@@ -4330,27 +4340,43 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 107.
 
 \openout10 = `main.mw'.
 
+\openout10 = `main.mw'.
+
+\openout10 = `main.mw'.
+
+\openout10 = `main.mw'.
+
+\openout10 = `main.mw'.
+
+\openout10 = `main.mw'.
+
+\openout10 = `main.mw'.
+
+\openout10 = `main.mw'.
+
+\openout10 = `main.mw'.
+
 )
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 107.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 107.
 \openout10 = `main.out'.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 348B558CF86B6C12ABD13C5E6B3EA840;1190.
+(rerunfilecheck)             Checksum: 031355988D7ADD58C1637C59CF842F04;1190.
 \openout10 = `main.brf'.
 
 Package rerunfilecheck Info: File `main.brf' has not changed.
-(rerunfilecheck)             Checksum: 8ACF6FE94C671B3E4F7D1CB8DB64463F;2240.
+(rerunfilecheck)             Checksum: C479F121151336A40A6356398C88EED0;2381.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 107.
 \openout10 = `main.toc'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56286 strings out of 492609
- 1225120 string characters out of 6131461
- 1655228 words of memory out of 5000000
- 57714 multiletter control sequences out of 15000+600000
- 683428 words of font info for 414 fonts, out of 8000000 for 9000
+ 56339 strings out of 492609
+ 1225893 string characters out of 6131461
+ 1656024 words of memory out of 5000000
+ 57739 multiletter control sequences out of 15000+600000
+ 684002 words of font info for 420 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,31n,127p,1019b,3661s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/cfr-lm/t1-clm.enc}{/usr/share/
@@ -4384,10 +4410,10 @@ nts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb
 ></usr/share/texmf/fonts/type1/public/lm/lmvtt10.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on main.pdf (186 pages, 52318774 bytes).
+Output written on main.pdf (188 pages, 52338703 bytes).
 PDF statistics:
- 2965 PDF objects out of 2984 (max. 8388607)
- 2361 compressed objects within 24 object streams
- 701 named destinations out of 1000 (max. 500000)
+ 3009 PDF objects out of 3580 (max. 8388607)
+ 2402 compressed objects within 25 object streams
+ 717 named destinations out of 1000 (max. 500000)
  75270 words of extra memory for PDF output out of 89155 (max. 10000000)
 

@@ -89,6 +89,10 @@ Thomas~A. Ivey and J.~M. Landsberg, \emph{Cartan for beginners: differential
   geometry via moving frames and exterior differential systems}, American
   Mathematical Society, Providence, RI, 2003.
 
+\bibitem{John:1991}
+Fritz John, \emph{Partial differential equations}, fourth ed., Applied
+  Mathematical Sciences, vol.~1, Springer-Verlag, New York, 1991. \MR{1185075}
+
 \bibitem{Kakie:1989}
 Kunio Kaki\'{e}, \emph{On the integration of involutive systems of nonlinear
   partial differential equations}, J. Fac. Sci. Univ. Tokyo Sect. IA Math.
@@ -98,6 +102,11 @@ Kunio Kaki\'{e}, \emph{On the integration of involutive systems of nonlinear
 \bysame, \emph{Overdetermined elliptic systems of nonlinear differential
   equations in two independent variables}, Comment. Math. Univ. St. Pauli
   \textbf{57} (2008), no.~2, 91--136.
+
+\bibitem{Kitagawa:1990}
+Keiichiro Kitagawa, \emph{Sur le th\'{e}or\`eme de {C}auchy-{K}owalevski: une
+  remarque sur le m\'{e}moire du m\^{e}me titre de {S}. {M}izohata}, J. Math.
+  Kyoto Univ. \textbf{30} (1990), no.~1, 1--32. \MR{1041710}
 
 \bibitem{Krantz/Parks:2002}
 Steven~G. Krantz and Harold~R. Parks, \emph{A primer of real analytic
@@ -149,6 +158,12 @@ Joseph~L. Taylor, \emph{Several complex variables with connections to algebraic
 Chuu~Lian Terng and Karen Uhlenbeck (eds.), \emph{Surveys in differential
   geometry: integral systems [integrable systems]}, International Press,
   Boston, MA, 1998.
+
+\bibitem{Weil:1958}
+Andr\'{e} Weil, \emph{Introduction \`a l'\'{e}tude des vari\'{e}t\'{e}s
+  k\"{a}hl\'{e}riennes}, Publications de l'Institut de Math\'{e}matique de
+  l'Universit\'{e} de Nancago, VI. Actualit\'{e}s Sci. Ind. no. 1267, Hermann,
+  Paris, 1958. \MR{0111056}
 
 \bibitem{Whittaker/Watson:1996}
 E.~T. Whittaker and G.~N. Watson, \emph{A course of modern analysis}, Cambridge

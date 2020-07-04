@@ -190,6 +190,189 @@ k_2 ds e_2.
 \end{align*}
 Check that the vectors \(E_2 = k_2 \cos(s) e_2 + k_2 \sin(s) e_3\), \(E_3 = -k_2 \sin(s) e_2 + k_2 \cos(s) e_3\) are constant.
 Rotate so that \(E_1=e_1, E_2, E_3\) are the standard basis vectors of \(\E[3]\), to see that the surface \(S\) is a right circular cylinder of radius \(1/\left|k_2\right|\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:eds:Alin}.}
+Start by looking at the geometry of the given foliation.
+Suppose that the foliation is of an open subset \(U\) of \(3\)-dimensional Euclidean space.
+Consider the \(4\)-dimensional manifold \(M\) of all orthonormal frames \(e_1,e_2,e_3\) at points \(x\in U\) for which \(e_3\) is perpendicular to the leaf through \(x\) of the given foliation.
+By the Frobenius theorem,
+\begin{align*}
+0
+&=\omega_3\wedge d\omega_3,
+\\
+&=\omega_3\wedge(\gamma_{13}\wedge\omega_1+\gamma_{23}\wedge\omega_2),
+\\
+&=
+\gamma_{13}\wedge\omega_1\wedge\omega_3+\gamma_{23}\wedge\omega_2\wedge\omega_3.
+\end{align*}
+So on \(M\),
+\[
+\begin{pmatrix}
+\gamma_{13}\\
+\gamma_{23}
+\end{pmatrix}
+=
+\begin{pmatrix}
+a_{11}&a_{12}&a_{13}\\
+a_{21}&a_{22}&a_{23}
+\end{pmatrix}
+\begin{pmatrix}
+\omega_1\\
+\omega_2\\
+\omega_3
+\end{pmatrix}
+\]
+for some functions \(a_{ij}\) on \(M\).
+Plugging these in above, we find that \(a_{12}=a_{21}\).
+Clearly \(a_{11}\omega_1^2+a_{12}\omega_1\omega_2+a_{21}\omega_2\omega_1+a_{22}\omega_2^2\) is the shape operator of each leaf of the foliation.
+
+Now consider the problem of constructing a triply orthogonal web incorporating this foliation as one of its three.
+We need to find a choice of \(e_1,e_2\) at each point to construct a frame, so that \(e_1\) will be perpendicular to the leaves of the first foliation, and \(e_2\) perpendicular to the leaves of the second foliation, and the third foliation will be the one we started with, already perpendicular to \(e_3\).
+So we will need to solve the exterior differential system
+\[
+0=\omega_1\wedge d\omega_1=\omega_2\wedge d\omega_2
+\]
+on \(M\), i.e. with the equations
+\[
+\begin{pmatrix}
+\gamma_{13}\\
+\gamma_{23}
+\end{pmatrix}
+=
+\begin{pmatrix}
+a_{11}&a_{12}&a_{13}\\
+a_{21}&a_{22}&a_{23}
+\end{pmatrix}
+\begin{pmatrix}
+\omega_1\\
+\omega_2\\
+\omega_3
+\end{pmatrix}
+\]
+already in force.
+
+Note that on \(M\), \(\omega_1,\omega_2,\omega_3,\gamma_{12}\) are linearly independent \(1\)-forms.
+We are looking for an integral \(3\)-manifold \(X\) of that exterior differential system, on which we want \(\omega_1,\omega_2,\omega_3\) to be linearly independent, i.e. \(X\) projects by local diffeomorphism to \(3\)-dimensional Euclidean space.
+
+It might be simpler to write our foliation shape operator as
+\[
+\begin{pmatrix}
+\gamma_{13}\\
+\gamma_{23}
+\end{pmatrix}
+=
+\begin{pmatrix}
+a_{131}&a_{132}&a_{133}\\
+a_{231}&a_{232}&a_{233}
+\end{pmatrix}
+\begin{pmatrix}
+\omega_1\\
+\omega_2\\
+\omega_3
+\end{pmatrix}
+\]
+and then we are imposing only the relations \(a_{132}=a_{231}\), i.e. symmetry in these two outer indices.
+
+Differentiate the equations of our exterior differential system to find that on any integral \(3\)-manifold \(X\):
+\begin{align*}
+0
+&=
+\omega_i\wedge d\omega_i,
+\\
+&=
+-\omega_i\wedge\sum_j\gamma_{ij}\wedge\omega_j,
+\end{align*}
+which forces \(\gamma_{ij}\) to be a linear combination
+\[
+\gamma_{ij}=\sum_k a_{ijk}\omega_k,
+\]
+with \(a_{ijk}=-a_{jik}\) since \(\gamma_{ij}=-\gamma_{ji}\).
+But plug in to get
+\[
+0=\omega_i\wedge\sum_{jk}(a_{ijk}-a_{ikj})\omega_k\wedge\omega_j
+\]
+so that \(a_{ijk}=a_{ikj}\) if \(i,j,k\) are all distinct.
+So for distinct indices, \(a_{ijk}\) is symmetric in \(jk\), but antisymmetric in \(ij\).
+These two involutions generate the permutation group, and so the sign of \(a_{ijk}\) is a representation of the permutations on \(3\) letters.
+But any two involutions are conjugate in the permutation group, so they must force the same sign change.
+Hence \(a_{ijk}=0\) for \(i,j,k\) distinct.
+This is precisely the demand that the shape operators of the leaves of all three foliations are thus diagonal in the frame \(e_1,e_2,e_3\).
+In other words, each leaf of each foliation lies normal to each leaf of each other foliation, and intersects tangent to a principal direction, i.e. along a principal curve.
+
+We can assume that \(U\) is connected.
+Either
+\begin{enumerate}
+\item
+the leaves of the given foliation are everywhere umbilic, hence each leaf is an open subset of a sphere or plane, and so \(a_{132}=0\) and \(a_{131}=a_{232}\), or else
+\item
+the vectors \(e_1,e_2\) have to be chosen in principal directions and this determines them up to \(4\) choices, at least on a dense open subset of \(U\).
+\end{enumerate}
+
+Suppose that the leaves are spheres or planes, so \(a_{132}=0\) and \(a_{131}=a_{232}\), say.
+The exterior differential system is generated in dimension \(3\) by \(\gamma_{12}\wedge\omega_1\wedge\omega_2=0\), so every line or plane in any tangent space of \(M\) is an integral element.
+Planes, i.e. integral planes, generically have \(\omega_1,\omega_2\) linearly independent on them, so are generically of the form
+\begin{align*}
+\gamma_{12}&=p_1\omega_1+p_2\omega_2,\\
+\omega_3&=q_1\omega_1+q_2\omega_2,\\
+\end{align*}
+so lie in a unique \(3\)-dimensional integral element \(\gamma_{12}=p_1\omega_1+p_2\omega_2\).
+The polar equations of any integral point or line are trivial, but the generic integral plane has polar equation \(\gamma_{12}-p_1\omega_1-p_2\omega_2\), so \(s_1=0,s_2=1,s_3=0\), solutions depend on \(1\) function of \(2\) variables.
+
+We can explicitly construct the web: take any leaf of our given foliation, the \emph{initial leaf}, and draw on it any foliation by curves.
+On that same surface, draw the orthogonal foliation by curves.
+Drag each leaf of each of those foliations along the flow of \(e_3\), through space, to trace out a surface.
+
+We want to see that this construction always creates a triply orthogonal web.
+Any triply orthogonal web containing the given foliation has to arise from this construction: the leaves of the other two foliations intersect the initial leaf in curves, and the vector field \(e_3\) is tangent to every leaf of the other two foliations.
+
+Conversely, take a foliation of the initial leaf by curves.
+Locally pick any orthonormal vector fields \(e_1,e_2\) tangent to that leaf, with \(e_1\) tangent and \(e_2\) perpendicular to that curve foliation.
+Drag, as above.
+We produce two more foliations of Euclidean space, defined near that leaf.
+But it is not clear whether they remain perpendicular.
+The leaves of the two new foliations both contain \(e_3\), and they start off perpendicular along the initial leaf.
+
+Compute the change in the Euclidean metric along the flow of \(e_3\):
+\[
+\LieDer_{e_3} \omega_i\omega_i
+=2a_{i3j}\omega_i\omega_j.
+\]
+So umbilicity of the given leaves is precisely the condition that the Euclidean metric varies only by scaling as we flow along \(e_3\), on the perpendicular vectors to \(e_3\), and so any pair of planes in a tangent space which start perpendicular will remain so.
+Hence the construction always succeeds.
+
+Suppose now that the leaves are nowhere umbilic.
+We will see that each foliation by nonumbilic surfaces lies in at most one, and typically no, triply orthogonal web.
+We need \(e_1,e_2\) to diagonalize the shape operator, i.e. to lie in principal directions.
+Imagine drawing the principal curves, i.e. the curves in those directions, on each leaf.
+Our given foliation by surfaces has now, on each surface, two foliations by perpendicular curves.
+We want to see whether, when we flow along the unit normal vector field \(e_3\) of the foliation, these principal curves flow into one another.
+For a generic foliation by surfaces, the flow of \(e_3\) will spin the principal curves of one leaf around into various curves on other leaves, not necessarily principal.
+
+We need \(a_{132}=0\), so the shape operator is diagonalized, i.e. \(e_1,e_2\) point in principal directions, and we suppose the leaves are not umbilic, so \(a_{131}\ne a_{232}\).
+Our frames form a \(3\)-manifold \(X\) in the frame bundle.
+We have to decide whether \(X\) is an integral manifold.
+On \(X\), \(\gamma_{ij}=\sum_k a_{ijk}\omega_k\), for some functions \(a_{ijk}=-a_{jik}\).
+To have a triply orthogonal web, we need precisely that \(a_{ijk}=0\) if \(i,j,k\) are distinct, i.e. the shape operators are diagonalized.
+This is precisely the condition that the prinicipal curves flow into one another.
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:tableux:fol}.}
+We can ask that \(e_1\) be perpendicular to the leaves of our foliation.
+(If you use \(e_3\) instead of \(e_1\) here, you will find it more complicated to write out the tableau.)
+So then \(\omega_1\wedge d\omega_1=0\) on the foliation.
+Expand out
+\[
+d\omega_1=-\gamma_{12}\wedge\omega_2-\gamma_{13}\wedge\omega_3
+\]
+to arrive at the tableau
+\[
+\Tablo{!*\gamma_{12},!*\gamma_{13}}
+\wedge
+\begin{gradedIndependents}
+\emptyGrade
+\omega_1\wedge\omega_2\+
+\omega_1\wedge\omega_3
+\end{gradedIndependents}.
+\]
+so \(s_1=0,s_2=1,s_3=1\), foliations of open sets of \(3\)-dimensional Euclidean space depend on \(1\) function of \(3\) variables.
+We can see them as the level sets of \(1\) function of \(3\) variables, but the function is defined only up to composition with a strictly increasing or strictly decreasing function.
 \vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:tableaux:polar}.}
 The polar equations of \(E_j\) are given by setting \(\omega^i=0\) for \(i>j\), and plugging in, with \(\pi^{\alpha}=0\) on \(E_j\), so all terms with 2 or more \(\pi\) vanish, i.e. the polars in grades \(0,1,2,\dots,j\).
 Hence the characters of \(E_p\) are the numbers of polars in each grade.
@@ -463,6 +646,8 @@ we find
 \[
 d\omega=-\omega\wedge\omega.
 \]
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:almost.complex:Weil}.}
+\cite{Weil:1958} pp. 36--37
 \vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:eds:polar.diff}.}
 Take a \(\vartheta\)-integral element
 \[
@@ -1451,9 +1636,9 @@ r \, d\theta.
 \end{align*}
 Note that
 \begin{align*}
-d\ot{e}_1&=\dot\phi\,\ot{e}_3 ds,\\
+d\ot{e}_1&=\dot\varphi\,\ot{e}_3 ds,\\
 d\ot{e}_2&=0,\\
-d\ot{e}_3&=-\dot\phi\,\ot{e}_1 ds,
+d\ot{e}_3&=-\dot\varphi\,\ot{e}_1 ds,
 \end{align*}
 and
 \[
@@ -1482,7 +1667,7 @@ d\rho \, \ot{e}_1 + \rho \, d\ot{e}_1,
 \end{pmatrix}
 \ot{e}_1 d\theta
 +
-\rho \dot{\phi} \ot{e}_3 ds,
+\rho \dot{\varphi} \ot{e}_3 ds,
 \\
 &=
 \rho
@@ -1492,29 +1677,29 @@ d\rho \, \ot{e}_1 + \rho \, d\ot{e}_1,
 0 & 0 & 0
 \end{pmatrix}
 \begin{pmatrix}
-\cos\phi\\
+\cos\varphi\\
 0\\
-\sin\phi
+\sin\varphi
 \end{pmatrix}
 d\theta
 +
-\dot{\phi} e_3 ds,
+\dot\varphi e_3 ds,
 \\
 &=
 \rho
 \begin{pmatrix}
 0\\
-\cos\phi\\
+\cos\varphi\\
 0
 \end{pmatrix}
 d\theta
 +
-\dot{\phi} e_3 ds,
+\dot\varphi e_3 ds,
 \\
 &=
-\cos\phi e_2d\theta
+\cos\varphi e_2d\theta
 +
-\dot{\phi} e_3 ds.
+\dot\varphi e_3 ds.
 \end{align*}
 and similarly
 \begin{align*}
@@ -1570,7 +1755,7 @@ d\rho \, \ot{e}_3 + \rho \, d\ot{e}_3,
 \end{pmatrix}
 \ot{e}_3 d\theta
 -
-\rho \dot{\phi} \ot{e}_1 ds,
+\rho \dot\varphi \ot{e}_1 ds,
 \\
 &=
 \rho
@@ -1580,47 +1765,47 @@ d\rho \, \ot{e}_3 + \rho \, d\ot{e}_3,
 0 & 0 & 0
 \end{pmatrix}
 \begin{pmatrix}
--\sin\phi\\
+-\sin\varphi\\
 0\\
-\cos\phi
+\cos\varphi
 \end{pmatrix}
 d\theta
 -
-\dot{\phi} e_1 ds,
+\dot\varphi e_1 ds,
 \\
 &=
 \rho
 \begin{pmatrix}
 0\\
--\sin\phi\\
+-\sin\varphi\\
 0
 \end{pmatrix}
 d\theta
 -
-\dot{\phi} e_1 ds,
+\dot\varphi e_1 ds,
 \\
 &=
--\sin\phi \, e_2d\theta
--\dot{\phi} e_1 ds.
+-\sin\varphi \, e_2d\theta
+-\dot\varphi e_1 ds.
 \end{align*}
 Therefore
 \begin{align*}
 \gamma_{12}&=-\gamma_{21},\\
 &=-e_2\cdot de_1,\\
-&=-e_2\cdot(\cos\phi \, e_2 d\theta+\dot\phi e_3 ds),\\
-&=-\cos\phi \, d\theta.
+&=-e_2\cdot(\cos\varphi \, e_2 d\theta+\dot\varphi e_3 ds),\\
+&=-\cos\varphi \, d\theta.
 \end{align*}
 \begin{align*}
 \gamma_{13}&=e_1 \cdot de_3,\\
-&=-\dot\phi \, ds,\\
+&=-\dot\varphi \, ds,\\
 \end{align*}
 \begin{align*}
 \gamma_{23}&=e_2\cdot de_3,\\
-&=-\sin\phi \, d\theta.
+&=-\sin\varphi \, d\theta.
 \end{align*}
 \vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:moving.frame:integral}.}
-If \(\sin\phi=0\) everywhere, the curve is a horizontal line and the surface of revolution an annulus.
-Suppose that \(\sin\phi\) is not everywhere zero; pick an interval on which \(\sin\phi\ne 0\), and let \(\varepsilon\) be the sign of \(\sin\phi\).
+If \(\sin\varphi=0\) everywhere, the curve is a horizontal line and the surface of revolution an annulus.
+Suppose that \(\sin\varphi\) is not everywhere zero; pick an interval on which \(\sin\varphi\ne 0\), and let \(\varepsilon\) be the sign of \(\sin\varphi\).
 Differentiate to find that the function
 \[
 \beta\defeq\varepsilon r \sqrt{1-\dot{r}^2}+H_0 r^2
@@ -1765,15 +1950,6 @@ Arrange \(e_1,e_2\) to diagonalize the shape operator, so
 with \(k_1\) constant.
 Differentiate to find that \(\gamma_{12}\) is a multiple of \(\omega_2\).
 So then along the flow of \(e_1\), \(\gamma_{12}=0\) and \(\gamma_{23}=0\) i.e. \(e_2\) is constant, so \(e_1,e_3\) rotate in the plane, with \(\gamma_{13}=k_1\), so at a constant rate, i.e. on a circle.
-\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:G.B:euler.char}.}
-The sphere has Gauss map the identity, so degree \(1\), so \(\chi=2\).
-Another way to see this: \(K=1\) on the unit sphere, and area is \(4 \pi\).
-The torus has a nowhere zero vector field \(X\), being a surface of revolution, so \(\chi=0\).
-The disk has the Morse function \(f(x,y)=x^2+y^2\), so \(\chi=1\).
-Smooth off corners of less than a right angle, by deforming to locally look like a square, and then clip off to get a quarter circle: \(\chi\) doesn't change.
-Similarly for more than right angle.
-Take two surfaces \(S,T\), and deform until they each contain a perfect half sphere.
-Cut holes along the equators, glue tubes to connect, a surface \(S\# T\), and get a sum formula from the Gauss--Bonnet integral \(\chi_{S\# T}=\chi_S+\chi_T-2\).
 \vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:moving.frame:torsion.relation}.}
 \begin{align*}
 e_3 \frac{d}{ds}\left(\cos \theta \ot{e}_2 + \sin\theta \ot{e}_3\right)
@@ -1810,6 +1986,21 @@ t\cos^2\theta
 \vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:moving.frame:lines.on.surface}.}
 We get \(\dot{e}_1=0\) along such a curve, at that point, so \(0=\gamma_{21}=\gamma_{31}\), so \(a_{11}=0\).
 Since this occurs in all directions, \(a=0\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:Gauss.Bonnet:two.geodesics}.}
+By Gauss--Bonnet, if the region is \(R\),
+\[
+0 > \int_R K \, dA = \beta_1+\beta_2+2\pi(\chi_R-1),
+\]
+so \(\chi_R<1\).
+\vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:G.B:euler.char}.}
+The sphere has Gauss map the identity, so degree \(1\), so \(\chi=2\).
+Another way to see this: \(K=1\) on the unit sphere, and area is \(4 \pi\).
+The torus has a nowhere zero vector field \(X\), being a surface of revolution, so \(\chi=0\).
+The disk has the Morse function \(f(x,y)=x^2+y^2\), so \(\chi=1\).
+Smooth off corners of less than a right angle, by deforming to locally look like a square, and then clip off to get a quarter circle: \(\chi\) doesn't change.
+Similarly for more than right angle.
+Take two surfaces \(S,T\), and deform until they each contain a perfect half sphere.
+Cut holes along the equators, glue tubes to connect, a surface \(S\# T\), and get a sum formula from the Gauss--Bonnet integral \(\chi_{S\# T}=\chi_S+\chi_T-2\).
 \vspace \smallskipamount \newparagraph \noindent \textbf {\ref{problem:geodesics:behaviour.of.radial}.}
 The fact that \(\exp'_{x_0}=I\) means that at the origin,
 \[

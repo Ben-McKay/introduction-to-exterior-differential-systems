@@ -10,6 +10,7 @@
 \backcite {BCGGG:1991}{{36}{4}{problemTheorem.4.2}}
 \backcite {Malgrange:2005}{{36}{4}{problemTheorem.4.2}}
 \backcite {Han/Hong:2006}{{37}{4}{problemTheorem.4.4}}
+\backcite {John:1991}{{45}{5}{section*.43}}
 \backcite {Chern:1989}{{62}{8.20}{problemTheorem.8.20}}
 \backcite {Chern:1989}{{62}{8.22}{problemTheorem.8.22}}
 \backcite {Douady/Buff:2000}{{69}{9}{theorem.9.1}}
@@ -19,6 +20,7 @@
 \backcite {Alinhac/Baouendi:1995}{{85}{{{\emph {a.}}}}{Item.50}}
 \backcite {Metivier:1993}{{85}{{{\emph {b.}}}}{Item.51}}
 \backcite {Onishchik/Sulanke:2006}{{89}{B}{section*.78}}
+\backcite {Kitagawa:1990}{{94}{B}{problemTheorem.B.9}}
 \backcite {Ahlfors:1978}{{95}{C}{section*.83}}
 \backcite {PhatNguyen:2014}{{95}{C.1}{theorem.C.1}}
 \backcite {PhatNguyen:2014}{{96}{C.2}{theorem.C.2}}
@@ -31,11 +33,12 @@
 \backcite {Taylor:2002}{{96}{C.4}{theorem.C.4}}
 \backcite {Griffiths:1989}{{116}{E}{theorem.E.2}}
 \backcite {Griffiths:1989}{{116}{E}{theorem.E.2}}
-\backcite {McKay:2018}{{123}{F}{section*.108}}
+\backcite {McKay:2018}{{126}{F}{section*.109}}
 \backcite {Gromov:2007}{{139}{G}{Item.56}}
 \backcite {Gromov:2007,McKay:2018}{{139}{G}{Item.56}}
 \backcite {Chern:1989}{{148}{10}{Item.71}}
-\backcite {Ahlfors:1978}{{157}{10}{Item.73}}
-\backcite {Whittaker/Watson:1996}{{157}{10}{Item.73}}
-\backcite {Serre:2006}{{162}{10}{Item.77}}
-\backcite {Serre:2006}{{162}{10}{Item.77}}
+\backcite {Weil:1958}{{155}{10}{AMS.137}}
+\backcite {Ahlfors:1978}{{160}{10}{Item.75}}
+\backcite {Whittaker/Watson:1996}{{160}{10}{Item.75}}
+\backcite {Serre:2006}{{165}{10}{Item.79}}
+\backcite {Serre:2006}{{165}{10}{Item.79}}
