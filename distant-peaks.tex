@@ -1,0 +1,20 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\begin{document}
+\begin{tikzpicture}
+	\begin{axis}[
+		axis lines=none,
+		domain=0:20,
+		xtick style={draw=none},
+		ytick style={draw=none},
+		xticklabels={},
+		yticklabels={},
+	]
+	% use TeX as calculator:
+	\addplot[mark=none,blue,samples=150] {exp(-x/6)*sin(deg(x))};
+	\addplot[mark=square] coordinates {(1.4,.78)};
+	\addplot[mark=square] coordinates {(7.65,.27)};
+	\addplot[mark=square] coordinates {(14,.095)};
+	\end{axis}
+\end{tikzpicture}
+\end{document}

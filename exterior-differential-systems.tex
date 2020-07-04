@@ -96,7 +96,7 @@ The \emph{characters}\define{character} \(s_0,s_1,\dots,s_p\) of the flag are th
 
 Consider all flags inside a given \(E_p\).
 Polar equations remain linearly independent under small motions of a flag.
-A \emph{generic}\define{integral!flag!generic}\define{generic!integral flag} flag is one with maximal rank polar equations, i.e. maximal character sums.
+A \emph{generic}\define{integral!flag!generic}\define{generic!integral flag} flag is one with locally maximal rank polar equations, i.e. locally maximal character sums.
 Generic flags form a dense open subset of flags, as we will see.
 The \emph{characters} of the integral element are those of its generic flag.
 \prob{trivial.integral.chars}{What are the characters of the integral flags of our trivial examples?}
@@ -258,18 +258,18 @@ So harmonic functions exist near any point of the plane, with prescribed value a
 Prove: if constant rank linear equations depend analytically on parameters, then we can locally pick a solution depending analytically on those parameters.
 \end{problem}
 \begin{answer}{v.b.rank}
-Suppose that, to each point \(x\in M\) of a manifold \(M\), we have an associated \(p \times q\) matrix \(\phi(x)\), with entries analytic functions on \(M\).
-Let \(K\) be the set of pairs \((x,v)\) so that \(x \in M\) and \(v\) is a vector in the kernel of \(\phi(x)\).
-If \(\phi(x)\) has rank independent of \(x\), let us prove that \(K\) is an embedded submanifold of \(M \times \R[q]\).
+Suppose that, to each point \(x\in M\) of a manifold \(M\), we have an associated \(p \times q\) matrix \(\varphi(x)\), with entries analytic functions on \(M\).
+Let \(K\) be the set of pairs \((x,v)\) so that \(x \in M\) and \(v\) is a vector in the kernel of \(\varphi(x)\).
+If \(\varphi(x)\) has rank independent of \(x\), let us prove that \(K\) is an embedded submanifold of \(M \times \R[q]\).
 Let's also prove that, for any map \(w\colon M \to \R[p]\), the following are equivalent:
 \begin{enumerate}
-\item At every point \(x \in M\), there is a vector \(v\) so that \(\phi(v)=w(x)\).
-\item Near every point \(x \in M\), there is an analytic vector valued function \(v\) on an open subset of \(M\), so that \(\phi(v(x))=w(x)\); if \(\phi\) is 1-1 at every point \(x \in M\), then \(v\) is unique.
+\item At every point \(x \in M\), there is a vector \(v\) so that \(\varphi(v)=w(x)\).
+\item Near every point \(x \in M\), there is an analytic vector valued function \(v\) on an open subset of \(M\), so that \(\varphi(v(x))=w(x)\); if \(\varphi\) is 1-1 at every point \(x \in M\), then \(v\) is unique.
 \end{enumerate} 
-We can change \(\phi\) by multiplying by arbitrary invertible matrices of analytic functions.
-Since \(\phi\) has constant rank, for any chosen point of \(M\), we can permute rows and columns to get the upper left corner to be invertible at that point, and hence near that point, of the same rank as \(\phi\):
+We can change \(\varphi\) by multiplying by arbitrary invertible matrices of analytic functions.
+Since \(\varphi\) has constant rank, for any chosen point of \(M\), we can permute rows and columns to get the upper left corner to be invertible at that point, and hence near that point, of the same rank as \(\varphi\):
 \[
-\phi=
+\varphi=
 \begin{pmatrix}
 A&B\\
 C&D
@@ -291,7 +291,7 @@ Multiply:
 I&0\\
 -C&I
 \end{pmatrix}
-\phi
+\varphi
 \begin{pmatrix}
 I&-B\\
 0&I
@@ -419,7 +419,7 @@ Again take \(M=\frameBundleE{3}\) with the exterior differential system
 Again the system is Frobenius, so there is only one \(3\)-dimensional integral manifold through each point.
 Rotate and translate a sphere of suitable radius to see one such integral manifold through each point of \(M\), the frame bundle of that sphere.
 \end{answer}
-\prob{Frobenius:cylinder}{Prove that any connected and embedded surface in \(\E[3]\) with constant principal curvatures is an open subset of a plane or a sphere or a cylinder.}
+\prob{Frobenius:cylinder}{Prove that any connected and embedded surface in \(\E[3]\) with constant principal curvatures is an open subset of a plane, sphere or cylinder.}
 \begin{answer}{Frobenius:cylinder}
 Problem~\vref{problem:Frobenius:sphere.unique} handles the case of one principal curvature, so assume that there are two principal curvatures.
 After picking a frame on a surface \(S\) so that \(e_1\) and \(e_2\) are in the principal directions, we find \(0=\omega_3=\gamma_{13}-k_1 \omega_1=\gamma_{23}-k_2 \omega_2\), for constants \(k_1, k_2\).
@@ -575,6 +575,174 @@ The reader can find the characters: \(s_1,s_2,s_3=0,3,0\), and see that the inte
 \end{proof}
 The reader familiar with Riemannian geometry will note that this proof works just as well for any \(3\)-dimensional Riemannian manifold.
 For more on orthogonal webs in Euclidean space, see \cite{Darboux:1993,DeTurck/Yang:1984,Terng/Uhlenbeck:1998,Zakharov:1998}.
+\begin{problem*}{eds:Alin}A question of Alin Albu-Sch\"affer: suppose we are given an analytic foliation of an open subset of \(3\)-dimensional Euclidean space by surfaces.
+Is there, at least locally, a triply orthogonal web which has this as one of its three foliations?%
+\end{problem*}
+\begin{answer}{eds:Alin}
+Start by looking at the geometry of the given foliation.
+Suppose that the foliation is of an open subset \(U\) of \(3\)-dimensional Euclidean space.
+Consider the \(4\)-dimensional manifold \(M\) of all orthonormal frames \(e_1,e_2,e_3\) at points \(x\in U\) for which \(e_3\) is perpendicular to the leaf through \(x\) of the given foliation.
+By the Frobenius theorem, 
+\begin{align*}
+0
+&=\omega_3\wedge d\omega_3,
+\\
+&=\omega_3\wedge(\gamma_{13}\wedge\omega_1+\gamma_{23}\wedge\omega_2),
+\\
+&=
+\gamma_{13}\wedge\omega_1\wedge\omega_3+\gamma_{23}\wedge\omega_2\wedge\omega_3.
+\end{align*}
+So on \(M\),
+\[
+\begin{pmatrix}
+\gamma_{13}\\
+\gamma_{23}
+\end{pmatrix}
+=
+\begin{pmatrix}
+a_{11}&a_{12}&a_{13}\\
+a_{21}&a_{22}&a_{23}
+\end{pmatrix}
+\begin{pmatrix}
+\omega_1\\
+\omega_2\\
+\omega_3
+\end{pmatrix}
+\]
+for some functions \(a_{ij}\) on \(M\).
+Plugging these in above, we find that \(a_{12}=a_{21}\).
+Clearly \(a_{11}\omega_1^2+a_{12}\omega_1\omega_2+a_{21}\omega_2\omega_1+a_{22}\omega_2^2\) is the shape operator of each leaf of the foliation.
+
+Now consider the problem of constructing a triply orthogonal web incorporating this foliation as one of its three.
+We need to find a choice of \(e_1,e_2\) at each point to construct a frame, so that \(e_1\) will be perpendicular to the leaves of the first foliation, and \(e_2\) perpendicular to the leaves of the second foliation, and the third foliation will be the one we started with, already perpendicular to \(e_3\).
+So we will need to solve the exterior differential system
+\[
+0=\omega_1\wedge d\omega_1=\omega_2\wedge d\omega_2
+\]
+on \(M\), i.e. with the equations
+\[
+\begin{pmatrix}
+\gamma_{13}\\
+\gamma_{23}
+\end{pmatrix}
+=
+\begin{pmatrix}
+a_{11}&a_{12}&a_{13}\\
+a_{21}&a_{22}&a_{23}
+\end{pmatrix}
+\begin{pmatrix}
+\omega_1\\
+\omega_2\\
+\omega_3
+\end{pmatrix}
+\]
+already in force.
+
+Note that on \(M\), \(\omega_1,\omega_2,\omega_3,\gamma_{12}\) are linearly independent \(1\)-forms.
+We are looking for an integral \(3\)-manifold \(X\) of that exterior differential system, on which we want \(\omega_1,\omega_2,\omega_3\) to be linearly independent, i.e. \(X\) projects by local diffeomorphism to \(3\)-dimensional Euclidean space.
+
+It might be simpler to write our foliation shape operator as
+\[
+\begin{pmatrix}
+\gamma_{13}\\
+\gamma_{23}
+\end{pmatrix}
+=
+\begin{pmatrix}
+a_{131}&a_{132}&a_{133}\\
+a_{231}&a_{232}&a_{233}
+\end{pmatrix}
+\begin{pmatrix}
+\omega_1\\
+\omega_2\\
+\omega_3
+\end{pmatrix}
+\]
+and then we are imposing only the relations \(a_{132}=a_{231}\), i.e. symmetry in these two outer indices.
+
+Differentiate the equations of our exterior differential system to find that on any integral \(3\)-manifold \(X\):
+\begin{align*}
+0
+&=
+\omega_i\wedge d\omega_i,
+\\
+&=
+-\omega_i\wedge\sum_j\gamma_{ij}\wedge\omega_j,
+\end{align*}
+which forces \(\gamma_{ij}\) to be a linear combination
+\[
+\gamma_{ij}=\sum_k a_{ijk}\omega_k,
+\]
+with \(a_{ijk}=-a_{jik}\) since \(\gamma_{ij}=-\gamma_{ji}\).
+But plug in to get
+\[
+0=\omega_i\wedge\sum_{jk}(a_{ijk}-a_{ikj})\omega_k\wedge\omega_j
+\]
+so that \(a_{ijk}=a_{ikj}\) if \(i,j,k\) are all distinct.
+So for distinct indices, \(a_{ijk}\) is symmetric in \(jk\), but antisymmetric in \(ij\).
+These two involutions generate the permutation group, and so the sign of \(a_{ijk}\) is a representation of the permutations on \(3\) letters.
+But any two involutions are conjugate in the permutation group, so they must force the same sign change.
+Hence \(a_{ijk}=0\) for \(i,j,k\) distinct.
+This is precisely the demand that the shape operators of the leaves of all three foliations are thus diagonal in the frame \(e_1,e_2,e_3\).
+In other words, each leaf of each foliation lies normal to each leaf of each other foliation, and intersects tangent to a principal direction, i.e. along a principal curve.
+
+We can assume that \(U\) is connected.
+Either
+\begin{enumerate}
+\item
+the leaves of the given foliation are everywhere umbilic, hence each leaf is an open subset of a sphere or plane, and so \(a_{132}=0\) and \(a_{131}=a_{232}\), or else 
+\item
+the vectors \(e_1,e_2\) have to be chosen in principal directions and this determines them up to \(4\) choices, at least on a dense open subset of \(U\).
+\end{enumerate}
+
+Suppose that the leaves are spheres or planes, so \(a_{132}=0\) and \(a_{131}=a_{232}\), say.
+The exterior differential system is generated in dimension \(3\) by \(\gamma_{12}\wedge\omega_1\wedge\omega_2=0\), so every line or plane in any tangent space of \(M\) is an integral element.
+Planes, i.e. integral planes, generically have \(\omega_1,\omega_2\) linearly independent on them, so are generically of the form 
+\begin{align*}
+\gamma_{12}&=p_1\omega_1+p_2\omega_2,\\
+\omega_3&=q_1\omega_1+q_2\omega_2,\\
+\end{align*}
+so lie in a unique \(3\)-dimensional integral element \(\gamma_{12}=p_1\omega_1+p_2\omega_2\).
+The polar equations of any integral point or line are trivial, but the generic integral plane has polar equation \(\gamma_{12}-p_1\omega_1-p_2\omega_2\), so \(s_1=0,s_2=1,s_3=0\), solutions depend on \(1\) function of \(2\) variables.
+
+We can explicitly construct the web: take any leaf of our given foliation, the \emph{initial leaf}, and draw on it any foliation by curves.
+On that same surface, draw the orthogonal foliation by curves.
+Drag each leaf of each of those foliations along the flow of \(e_3\), through space, to trace out a surface.
+
+We want to see that this construction always creates a triply orthogonal web.
+Any triply orthogonal web containing the given foliation has to arise from this construction: the leaves of the other two foliations intersect the initial leaf in curves, and the vector field \(e_3\) is tangent to every leaf of the other two foliations.
+
+Conversely, take a foliation of the initial leaf by curves.
+Locally pick any orthonormal vector fields \(e_1,e_2\) tangent to that leaf, with \(e_1\) tangent and \(e_2\) perpendicular to that curve foliation.
+Drag, as above.
+We produce two more foliations of Euclidean space, defined near that leaf.
+But it is not clear whether they remain perpendicular.
+The leaves of the two new foliations both contain \(e_3\), and they start off perpendicular along the initial leaf.
+
+Compute the change in the Euclidean metric along the flow of \(e_3\):
+\[
+\LieDer_{e_3} \omega_i\omega_i
+=2a_{i3j}\omega_i\omega_j.
+\]
+So umbilicity of the given leaves is precisely the condition that the Euclidean metric varies only by scaling as we flow along \(e_3\), on the perpendicular vectors to \(e_3\), and so any pair of planes in a tangent space which start perpendicular will remain so.
+Hence the construction always succeeds.
+
+Suppose now that the leaves are nowhere umbilic.
+We will see that each foliation by nonumbilic surfaces lies in at most one, and typically no, triply orthogonal web.
+We need \(e_1,e_2\) to diagonalize the shape operator, i.e. to lie in principal directions.
+Imagine drawing the principal curves, i.e. the curves in those directions, on each leaf.
+Our given foliation by surfaces has now, on each surface, two foliations by perpendicular curves.
+We want to see whether, when we flow along the unit normal vector field \(e_3\) of the foliation, these principal curves flow into one another.
+For a generic foliation by surfaces, the flow of \(e_3\) will spin the principal curves of one leaf around into various curves on other leaves, not necessarily principal.
+
+We need \(a_{132}=0\), so the shape operator is diagonalized, i.e. \(e_1,e_2\) point in principal directions, and we suppose the leaves are not umbilic, so \(a_{131}\ne a_{232}\).
+Our frames form a \(3\)-manifold \(X\) in the frame bundle.
+We have to decide whether \(X\) is an integral manifold.
+On \(X\), \(\gamma_{ij}=\sum_k a_{ijk}\omega_k\), for some functions \(a_{ijk}=-a_{jik}\).
+To have a triply orthogonal web, we need precisely that \(a_{ijk}=0\) if \(i,j,k\) are distinct, i.e. the shape operators are diagonalized.
+This is precisely the condition that the prinicipal curves flow into one another.
+\end{answer}
+
 
 \optionalSection{Generality of integral manifolds}%
 If I describe some family of submanifolds as integral manifolds of an exterior differential system, you might find a different description of the same submanifolds as integral manifolds of a different exterior differential system, perhaps on a different manifold, with different characters.

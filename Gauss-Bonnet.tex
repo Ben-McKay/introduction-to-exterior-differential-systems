@@ -2,6 +2,176 @@
 \chapterSummary{We prove that the integral of Gauss curvature over a compact oriented surface in \(3\)-dimensional Euclidean space is a diffeomorphism invariant.}
 
 
+\section{Length and curvature of curves}
+\begin{problem}{moving.frame:reparameterization}
+Suppose that \(x(t)\) is a smooth curve in \(\E[3]\) so that \(x'(t) \ne 0\) for every \(t\) with \(t_0 \le t \le t_1\).
+Prove that there is a reparameterization \(y(t)=x(\tau(t))\) for some function \(\tau(t)\) so that \(y'(t)\) is a unit length vector, i.e. \(y(t)\) has unit speed.
+Prove that \(\tau(t)\) is uniquely determined up to adding a constant.
+Prove that the length of \(y(t)\) for \(a \le t \le b\) is equal to the length of \(x(t)\) for \(\tau(a) \le t \le \tau(b)\).
+\end{problem}
+Take an oriented curve \(C\), in other words an oriented \(1\)-dimensional manifold, and a smooth immersion \(f \colon C \to S\) to a surface \(S\).
+An \emph{adapted frame}%
+\define{frame!adapted}
+for \(C\) at a point \(c \in C\) is a frame \((x,e)\) for \(S\), where \(x=f(c)\), so that \(e_1\) is a positively oriented basis of the tangent line to \(C\) at \(m\).
+Let \(\adaptedFrameBundle{C}{S}\) be the set of all pairs \(\pr{c,e}\) so that \(c \in C\) and \(e\) is an adapted frame for \(C\) at \(c\).
+\begin{problem}{geodesics:curve.adapt}
+Prove that the set \(\adaptedFrameBundle{C}{S}\) is a curve in \(C \times \frameBundle{S}\).
+\end{problem}
+Map \(\pr{c,e} \in \adaptedFrameBundle{C}{S} \mapsto \pr{f(c),e} \in \frameBundle{S}\).
+Using this map to pullback \(\omega_1, \omega_2\) and \(\alpha=\gamma_{12}\).
+If we parameterize \(C\), say as \(x(t)\), then \(e_1(t)\) is the unit vector in the direction of \(x'(t)\), so that \(\omega_1=e_1(t) \cdot dx=e_1(t) \cdot \frac{dx}{dt} \, dt=\norm{\dot{x}(s)} \, dt\).
+So \(\omega_1\) is a well defined \(1\)-form on the curve \(C\) and \(\int_C \omega_1\) is the length of the curve \(C\).
+Meanwhile \(e_2\) is perpendicular to the tangent line to \(C\), so on \(\adaptedFrameBundle{C}{S}\), \(\omega_2=e_2 \cdot dx=e_2 \cdot \frac{dx}{dt} \, dt=0\).
+Therefore \(0=d\omega_2=\alpha \wedge \omega_1\).
+
+Applying Cartan's lemma, \(\alpha=-\kappa_2 \, \omega_1\) for some function \(\kappa_2\).
+The \(1\)-form \(\omega_1\) is a basis for the \(1\)-forms on \(\adaptedFrameBundle{C}{S}\). 
+The equations \(\omega_2=0\) and \(\alpha=-\kappa_2 \omega_1\) are precisely the linear equations that cut out the tangent spaces of \(\adaptedFrameBundle{C}{S}\) inside \(\frameBundle{S}\).
+\begin{problem}{geodesics:curvature.defined}
+Prove that \(\kappa_2 e_2\), the \emph{geodesic curvature}%
+\define{curvature!geodesic}\define{geodesic!curvature}
+of the curve \(C\) at the point \(c\), is the projection of the curvature vector of \(C\) (as a space curve in \(\E[3]\)) to the tangent plane of \(S\).
+\end{problem}
+\begin{problem}{moving.frame:reparam}
+Prove that the geodesic curvature of an oriented curve is unchanged if we reorient the curve.
+\end{problem}
+\begin{example} A flat plane \(P \subset \E[3]\) is perpendicular to a constant unit vector \(e_3\), so \(0=de_3=e_3 \cdot dx=e_3 \cdot de_1 = e_3 \cdot de_2\).
+Therefore on \(\frameBundle{P}\), the shape operator vanishes.
+Given a curve in the plane, the adapted frames have \(\omega_2=0\) and \(\alpha = -\kappa_2 \omega_1\).
+If the curve is given by \(s \mapsto \pr{x_1(s),x_2(s)}\) in an arclength parameterization then we write the velocity vector as a 
+\[
+e_1 = \pr{\dot{x}_1,\dot{x}_2}=\pr{\cos \phi, \sin \phi},
+\] 
+and then, rotating by a right angle, 
+\[
+e_2 = \pr{-\dot{x}_2,\dot{x}_1}=\pr{-\sin \phi, \cos \phi},
+\]
+so that
+\[
+-\alpha=e_2 \cdot de_1 = \dot{\phi}(s) \, ds,
+\]
+i.e. \(\kappa = \dot{\phi}(s)\), the curvature is the rate of rotation of the unit tangent vector.
+We can recover a curve from its curvature \(\kappa\), by integrating \(\kappa\) to find \(\phi\), and then integrating 
+\[
+\frac{dx}{ds} = \pr{\cos \phi, \sin \phi}
+\]
+to recover the curve.
+Constants of integration represent rotation and translation of the curve.
+\end{example}
+\begin{example} 
+To get a curve of constant curvature \(\kappa=\kappa_0\) in the plane, we integrate to find \(\phi = \kappa s\), up to a constant, and then up to a constant,
+\[
+x(s)=\frac{1}{\kappa_0} \pr{-\sin \kappa_0s, \cos \kappa_0 s},
+\]
+a circle.
+\end{example}
+\begin{lemma}
+Take a curve \(C\) on a surface \(S\) in \(\E[3]\).
+Suppose that \(C\) has curvature vector as a space curve nowhere perpendicular to \(S\).
+Take \(\theta\) to be the angle between that curvature vector and its projection to the surface \(S\).
+Its surface invariants (geodesic curvature \(\kappa\) and shape operator \(a\)) are related to its invariants as a space curve (the curvature \(k\) and torsion \(t\) of \(C\)) by
+\begin{align*}
+\kappa &= k\cos \theta,\\
+a(\dot{x},\dot{x}) &= k\sin \theta,\\
+a(\dot{x},\dot{x}^{\perp})&=\dot\theta+t
+\end{align*}
+where \(\dot{x}\) is its unit speed velocity in either orientation, and \(\dot{x}^{\perp}\) is the unit tangent vector to \(S\) normal to \(C\) which is closest to the curvature vector. 
+\end{lemma}
+\begin{proof}
+Write the Serret--Frenet frame to \(C\) as \(e_1,\ot{e}_2,\ot{e}_3\), and all adapted frames to the surface \(S\) for which \(e_1\) is tangent to the curve \(C\) as \(e_1,e_2,e_3\).
+Since \(e_1\) is the same for both frames, the other two pairs of legs are orthogonal transformations of one another:
+\begin{align*}
+\ot{e}_2 &= \cos \theta e_2 \mp \sin \theta e_3, \\
+\ot{e}_3 &= \sin \theta e_2 \pm \cos \theta e_3.
+\end{align*}
+The angle \(\theta\) is at most \(\pi/2\), and equal just when the curvature vector as a space curve is perpendicular to the normal line on \(S\), which we suppose never happens.
+Pick \(e_3\) so that \(\pm=+\).
+The Serret--Frenet equations are
+\begin{align*}
+\dot{x} &= e_1, \\
+\dot{e}_1 &= k\ot{e}_2, \\
+\dot{\ot{e}}_2&=-ke_1+t\ot{e}_3,\\
+\dot{\ot{e}}_3&=-t\ot{e}_2.
+\end{align*}
+Geodesic curvature is \(\kappa ds = -\alpha\).
+The connection forms are
+\begin{align*}
+\begin{pmatrix}
+-\alpha \\
+-a_{11}ds \\
+-a_{12}ds
+\end{pmatrix}
+&=
+\begin{pmatrix}
+\gamma_{21} \\
+\gamma_{31} \\
+\gamma_{32}
+\end{pmatrix},
+\\
+&=
+\begin{pmatrix}
+e_2 \dot{e}_1 \\
+e_3 \dot{e}_1 \\
+e_3 \dot{e}_2
+\end{pmatrix}ds,
+\\
+&=
+\begin{pmatrix}
+k \cos \theta \\
+\pm  k \sin \theta \\
+e_3 \frac{d}{ds}\left(\cos \theta \ot{e}_2 + \sin\theta \ot{e}_3\right)
+\end{pmatrix}ds.
+\end{align*}
+\begin{problem}{moving.frame:torsion.relation}
+Expand out the last line to finish the proof.
+\end{problem}
+\begin{answer}{moving.frame:torsion.relation}
+\begin{align*}
+e_3 \frac{d}{ds}\left(\cos \theta \ot{e}_2 + \sin\theta \ot{e}_3\right)
+&=
+e_3 \left(-\dot\theta\sin \theta \ot{e}_2 
++\cos\theta \dot{\ot{e}}_2
++\dot\theta\cos\theta \ot{e}_3
++ \sin\theta\dot{\ot{e}}_3
+\right),
+\\
+&=
+e_3 \left(-\dot\theta\sin \theta \ot{e}_2 
++\cos\theta (-ke_1+t\ot{e}_3)
++ \dot\theta\cos\theta \ot{e}_3
+- t \sin\theta\ot{e}_2
+\right),
+\\
+&=
+e_3 \left(-\dot\theta\sin \theta \ot{e}_2 
++t\cos\theta \ot{e}_3
++ \dot\theta\cos\theta \ot{e}_3
+- t \sin\theta\ot{e}_2
+\right),
+\\
+&=
+\dot\theta\sin^2 \theta
+t\cos^2\theta
+\dot\theta\cos^2\theta
++ t \sin^2\theta,
+\\
+&=
+\dot\theta+t.
+\end{align*}
+\end{answer}
+\end{proof}
+\begin{problem}{moving.frame:lines.on.surface}
+Suppose that a surface has a straight line on it, through every point, in every tangent direction through that point.
+Prove that it is a plane.
+\end{problem}
+\begin{answer}{moving.frame:lines.on.surface}
+We get \(\dot{e}_1=0\) along such a curve, at that point, so \(0=\gamma_{21}=\gamma_{31}\), so \(a_{11}=0\).
+Since this occurs in all directions, \(a=0\).
+\end{answer}
+
+
+
+
 \section{The Gauss map}
 Consider first a surface \(S\) in \(\E[3]\).
 On its frame bundle we have \(\omega_1, \omega_2\) and \(\gamma_{12}\), so that
@@ -184,160 +354,7 @@ Since we can vary our surface continuously without changing indices, we can see 
 In particular, we can arrange that \(S\) is flat near \(x_0\) with \(f\) a quadratic function instead, without changing the index.
 But we saw above that the index of \(X=\nabla f\) at \(x_0\) is then \(1\) if \(\det f''\of{x_0} > 0\) and \(-1\) if \(\det f''\of{x_0} < 0\).
 \end{proof}
-
-\section{Gauss--Bonnet with corners}
-\begin{marginfigure}
-\input{interior-angle}
-\end{marginfigure}
-The \emph{interior angle}\define{interior!angle}\define{angle!interior} at a corner of an oriented surface \(S\) in \(\E[3]\) with corners is the angle as seen from inside the surface moving in the counterclockwise direction in any positively oriented chart. 
-The \emph{Euler characteristic} of \(S\) is
-\[
-\chi_S\defeq 
-\frac{\int_S K \, dA}{2\pi}
-+ \frac{\int_{\partial S} \kappa}{2\pi} 
-+ \sum \frac{\pi-\beta_i}{2\pi}.
-\]
-where \(\kappa\) is the geodesic curvature of the boundary of \(S\) and the \(\beta_i\) are the interior angles of the corners.
-
-If a vector field \(X\) on a surface \(S\) is nowhere zero along an oriented piecewise continuously differentiable curve \(C\) in \(S\), the \emph{degree}\define{degree} of \(X\) along \(C\) is the degree of the map
-\[
-c \in C \mapsto \pr{\cos \theta, \sin \theta} \in \mathbb{S}^1
-\]
-where \(\theta=\theta(c)\) is the angle between \(X\) and the unit positively oriented tangent vector to \(C\) at each point \(c \in C\).
-The \emph{Euler characteristic} of \(X\) is
-\[
-\chi_X\defeq \sum_{x \in S} \operatorname{index}_x X 
-+ \operatorname{degree}_{\partial S} X.
-\]
-\begin{theorem}[Gauss--Bonnet]\define{Gauss--Bonnet theorem}\define{theorem!Gauss--Bonnet}
-Suppose that \(S\) is a compact oriented surface with boundary and corners in \(\E[3]\).
-Suppose that \(X\) is a vector field on \(S\) with finitely many zeroes, none on the boundary or corners.
-Then \(\chi_X=\chi_S\).
-\end{theorem}
-\begin{proof}
-The zeroes \(x_i\) of \(X\) lie in the interior of \(S\).
-Around each zero \(x_i\) take a subset \(D_i \subset S\) diffeomorphic to a closed disk.
-Make these \(D_i\) small enough that they are disjoint from one another.
-Let 
-\[
-S' \defeq S-\bigcup D_i.
-\]
-Let 
-\[
-e_1 \defeq \frac{X}{\norm{X}},
-\]
-and let \(e_2\) be the rotation of \(e_1\) by a right angle in the positively oriented direction.
-
-Lift \(S'\) to a surface in \(\frameBundle{S}\) by taking \(x \in S' \mapsto \pr{x,e_1(x),e_2(x)} \in \frameBundle{S}\).
-In each disk \(D_i\) we can pick coordinates, and take an orthonormal framing \(e_1', e_2'\) along the coordinate directions (or take any orthonormal framing you prefer).
-Write
-\[
-\begin{pmatrix}
-e_1 \\
-e_2
-\end{pmatrix}
-=
-\begin{pmatrix}
-\cos \theta & -\sin \theta \\
-\sin \theta & \cos \theta
-\end{pmatrix}
-\begin{pmatrix}
-e_1' \\
-e_2'
-\end{pmatrix}
-\]
-near each \(C_i\).
-As before, \(\alpha'=\alpha-d\theta\).
-
-Along the boundary of \(S\), at each point we have a choice of orthonormal frame \(e_1', e_2'\) with \(e_1'\) tangent to the boundary. 
-At corners this determines two orthonormal frames.
-Construct a piecewise continuously differentiable curve \(C\) in \(\frameBundle{S}\) as follows.
-First, lift up each boundary curve of \(S\) to a curve in \(\frameBundle{S}\) by taking each point \(x\) to \(\pr{x,e_1'(x),e_2'(x)}\).
-This goes right up to boundary, where we end up with one of our two choices.
-However, we now have neighbouring boundary edges lifted up into curves in the frame bundle which don't meet.
-We take the end of one, and join to the beginning of the next one, by drawing a curve \(\pr{x,e_1'(t), e_2'(t)}\) in the frame bundle, rotating the frame so that \(e_1'(t)\) goes continuously from one choice to the other through a positively oriented rotation, fixing the point \(x\) along this curve. 
-So \(C\) is a curve in \(\frameBundle{S}\) over \(\partial S\).
-As above, \(\alpha' = \alpha - d\theta\),
-relating the connection form \(\alpha'\) of the frame bundle restricted to the curve \(C\) to the connection form along \(e_1, e_2\).
-
-Integrate:
-\begin{align*}
-\int_{S'} K \, dA 
-&=
-\int_{S'} d\alpha,
-\\
-&=
-\int_{\partial S'} \alpha,
-\\
-&=
--\sum_i \int_{C_i} \alpha
-+\int_{\partial S} \alpha,
-\\
-&=
--\sum_i \int_{C_i} \alpha' + \sum_i \int_{C_i} d\theta
-+\int_C \alpha' - \int_C d\theta,
-\\
-&=
--\sum_i \int_{D_i} K \, dA + \sum_i \int_{C_i} d\theta
-+\int_C \alpha' - \int_C d\theta.
-\end{align*}
-Away from the corners of \(\partial S\), the integral \(\int_C \alpha'\) is the integral of the geodesic curvature of \(\partial S\).
-At the corners, it is integrating exactly \(d\theta\), since \(\alpha'=\alpha-d\theta\).
-So these integrals add up to give total angles rotated.
-Summing up:
-\[
-\int_S K \, dA
-=
-2 \pi \sum_i \operatorname{index}_{x_i} X
- + \int_{\partial S} \kappa - 2 \pi \operatorname{degree}_{\partial S} X 
- + \sum \pr{\pi-\beta_i}.
-\]
-\end{proof}
-\begin{problem}{moving.frame:constant.angle}
-Suppose that a surface \(S\) has two collections of geodesics, each collection being the level sets of some functions \(u\) and \(v\) with \(du \ne 0\) and \(dv \ne 0\).
-Suppose that the angle between these geodesics is constant and nonzero.
-Prove that the Gauss curvature of \(S\) is zero.
-\end{problem}
-A \emph{Morse function}\define{Morse function} \(f\) on a surface \(S\) is a function whose finitely many critical points are local minima, local maxima, or saddle points, with definite Hessian in local coordinates, and with differential nonzero at every boundary point.
-The gradient \(X=\nabla f\) of a Morse function is a vector field \(X\) with only finitely many zeroes, each of index \(1\) (maxima or minima) or \(-1\) (saddle points).
-The \emph{Euler characteristic} of \(f\) is
-\[
-\chi_f\defeq
-\#{\text{minima of }f}
--\#{\text{saddle points of }f}
-+\#{\text{maxima of }f} 
-+ \operatorname{degree}_{\partial S} df.
-\]
 \begin{corollary}
-For any Morse function \(f\) on any compact oriented surface \(S\) with boundary and corners in \(\E[3]\), \(\chi_f=\chi_S\).
+Diffeomorphic surfaces have equal Euler characteristic.
 \end{corollary}
-\begin{theorem}\label{theorem:exists.decent.vf.corner}
-Every compact oriented surface \(S\), twice continuously differentiable, has a twice continuously differentiable Morse function.
-\end{theorem}
-\begin{proof}
-By Sard's theorem,\SubIndex{Sard's theorem}\SubIndex{theorem!Sard} the generic point \(n\) of the unit sphere is a regular value of the Gauss map.
-For such a value of \(n\), the differential of the Gauss map has full rank.
-Its differential has determinant given by the Gauss curvature, so the Gauss curvature is nonzero at every point \(x \in S\) for which \(\nu(x)=n\).
-Again by Sard's theorem, we can arrange that these points are regular values of the Gauss map, i.e. have nonzero Gauss curvature.
-Let \(f(x) \defeq \ip{n}{x}\).
-As in the proof of theorem~\vref{theorem:exists.decent.vf}, the vector field 
-\[
-X=\nabla f = f_1 e_1 + f_2 e_2
-\]
-has only finitely many zeroes and winding number \(\pm 1\) at each.
-Note that we don't actually need to ensure that \(n\) occurs in the image of the Gauss map.
 
-Since there are only finitely many corners, by slightly changing the value of \(n\), we can ensure that \(n\) is not perpendicular to \(T_x S\) at any corner \(x\), i.e. that \(df \ne 0\) at any corner, so \(X\ne 0\) at the corners.
-Along the boundary, the Gauss map of \(S\) maps the \(1\)-dimensional boundary to the \(2\)-dimensional sphere, so the generic value of \(n\) does not occur in the image of this map, again by Sard's theorem, i.e. we can ensure that \(n\) is not perpendicular to \(T_x S\) at any boundary point \(x\), i.e. that \(df \ne 0\) at any boundary point, so \(X\ne 0\) at every point of the boundary.
-\end{proof}
-\prob{G.B:euler.char}{Find the Euler characteristics of some surfaces.}
-\begin{answer}{G.B:euler.char}
-The sphere has Gauss map the identity, so degree \(1\), so \(\chi=2\).
-Another way to see this: \(K=1\) on the unit sphere, and area is \(4 \pi\).
-The torus has a nowhere zero vector field \(X\), being a surface of revolution, so \(\chi=0\).
-The disk has the Morse function \(f(x,y)=x^2+y^2\), so \(\chi=1\).
-Smooth off corners of less than a right angle, by deforming to locally look like a square, and then clip off to get a quarter circle: \(\chi\) doesn't change.
-Similarly for more than right angle.
-Take two surfaces \(S,T\), and deform until they each contain a perfect half sphere.
-Cut holes along the equators, glue tubes to connect, a surface \(S\# T\), and get a sum formula from the Gauss--Bonnet integral \(\chi_{S\# T}=\chi_S+\chi_T-2\).
-\end{answer}

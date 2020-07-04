@@ -3,174 +3,6 @@
 Geodesics are locally shortest paths on a surface.
 We prove that they exist and that they are smooth.}
 
-\section{Length and curvature of curves}
-\begin{problem}{moving.frame:reparameterization}
-Suppose that \(x(t)\) is a smooth curve in \(\E[3]\) so that \(x'(t) \ne 0\) for every \(t\) with \(t_0 \le t \le t_1\).
-Prove that there is a reparameterization \(y(t)=x(\tau(t))\) for some function \(\tau(t)\) so that \(y'(t)\) is a unit length vector, i.e. \(y(t)\) has unit speed.
-Prove that \(\tau(t)\) is uniquely determined up to adding a constant.
-Prove that the length of \(y(t)\) for \(a \le t \le b\) is equal to the length of \(x(t)\) for \(\tau(a) \le t \le \tau(b)\).
-\end{problem}
-Take an oriented curve \(C\), in other words an oriented \(1\)-dimensional manifold, and a smooth immersion \(f \colon C \to S\) to a surface \(S\).
-An \emph{adapted frame}%
-\define{frame!adapted}
-for \(C\) at a point \(c \in C\) is a frame \((x,e)\) for \(S\), where \(x=f(c)\), so that \(e_1\) is a positively oriented basis of the tangent line to \(C\) at \(m\).
-Let \(\adaptedFrameBundle{C}{S}\) be the set of all pairs \(\pr{c,e}\) so that \(c \in C\) and \(e\) is an adapted frame for \(C\) at \(c\).
-\begin{problem}{geodesics:curve.adapt}
-Prove that the set \(\adaptedFrameBundle{C}{S}\) is a curve in \(C \times \frameBundle{S}\).
-\end{problem}
-Map \(\pr{c,e} \in \adaptedFrameBundle{C}{S} \mapsto \pr{f(c),e} \in \frameBundle{S}\).
-Using this map to pullback \(\omega_1, \omega_2\) and \(\alpha=\gamma_{12}\).
-If we parameterize \(C\), say as \(x(t)\), then \(e_1(t)\) is the unit vector in the direction of \(x'(t)\), so that \(\omega_1=e_1(t) \cdot dx=e_1(t) \cdot \frac{dx}{dt} \, dt=\norm{\dot{x}(s)} \, dt\).
-So \(\omega_1\) is a well defined \(1\)-form on the curve \(C\) and \(\int_C \omega_1\) is the length of the curve \(C\).
-Meanwhile \(e_2\) is perpendicular to the tangent line to \(C\), so on \(\adaptedFrameBundle{C}{S}\), \(\omega_2=e_2 \cdot dx=e_2 \cdot \frac{dx}{dt} \, dt=0\).
-Therefore \(0=d\omega_2=\alpha \wedge \omega_1\).
-
-Applying Cartan's lemma, \(\alpha=-\kappa_2 \, \omega_1\) for some function \(\kappa_2\).
-The \(1\)-form \(\omega_1\) is a basis for the \(1\)-forms on \(\adaptedFrameBundle{C}{S}\). 
-The equations \(\omega_2=0\) and \(\alpha=-\kappa_2 \omega_1\) are precisely the linear equations that cut out the tangent spaces of \(\adaptedFrameBundle{C}{S}\) inside \(\frameBundle{S}\).
-\begin{problem}{geodesics:curvature.defined}
-Prove that \(\kappa_2 e_2\), the \emph{geodesic curvature}%
-\define{curvature!geodesic}
-of the curve \(C\) at the point \(c\), is the projection of the curvature vector of \(C\) (as a space curve in \(\E[3]\)) to the tangent plane of \(S\).
-\end{problem}
-\begin{problem}{moving.frame:reparam}
-Prove that the geodesic curvature of an oriented curve is unchanged if we reorient the curve.
-\end{problem}
-\begin{example} A flat plane \(P \subset \E[3]\) is perpendicular to a constant unit vector \(e_3\), so \(0=de_3=e_3 \cdot dx=e_3 \cdot de_1 = e_3 \cdot de_2\).
-Therefore on \(\frameBundle{P}\), the shape operator vanishes.
-Given a curve in the plane, the adapted frames have \(\omega_2=0\) and \(\alpha = -\kappa_2 \omega_1\).
-If the curve is given by \(s \mapsto \pr{x_1(s),x_2(s)}\) in an arclength parameterization then we write the velocity vector as a 
-\[
-e_1 = \pr{\dot{x}_1,\dot{x}_2}=\pr{\cos \phi, \sin \phi},
-\] 
-and then, rotating by a right angle, 
-\[
-e_2 = \pr{-\dot{x}_2,\dot{x}_1}=\pr{-\sin \phi, \cos \phi},
-\]
-so that
-\[
--\alpha=e_2 \cdot de_1 = \dot{\phi}(s) \, ds,
-\]
-i.e. \(\kappa = \dot{\phi}(s)\), the curvature is the rate of rotation of the unit tangent vector.
-We can recover a curve from its curvature \(\kappa\), by integrating \(\kappa\) to find \(\phi\), and then integrating 
-\[
-\frac{dx}{ds} = \pr{\cos \phi, \sin \phi}
-\]
-to recover the curve.
-Constants of integration represent rotation and translation of the curve.
-\end{example}
-\begin{example} 
-To get a curve of constant curvature \(\kappa=\kappa_0\) in the plane, we integrate to find \(\phi = \kappa s\), up to a constant, and then up to a constant,
-\[
-x(s)=\frac{1}{\kappa_0} \pr{-\sin \kappa_0s, \cos \kappa_0 s},
-\]
-a circle.
-\end{example}
-\begin{lemma}
-Take a curve \(C\) on a surface \(S\) in \(\E[3]\).
-Suppose that \(C\) has curvature vector as a space curve nowhere perpendicular to \(S\).
-Take \(\theta\) to be the angle between that curvature vector and its projection to the surface \(S\).
-Its surface invariants (geodesic curvature \(\kappa\) and shape operator \(a\)) are related to its invariants as a space curve (the curvature \(k\) and torsion \(t\) of \(C\)) by
-\begin{align*}
-\kappa &= k\cos \theta,\\
-a(\dot{x},\dot{x}) &= k\sin \theta,\\
-a(\dot{x},\dot{x}^{\perp})&=\dot\theta+t
-\end{align*}
-where \(\dot{x}\) is its unit speed velocity in either orientation, and \(\dot{x}^{\perp}\) is the unit tangent vector to \(S\) normal to \(C\) which is closest to the curvature vector. 
-\end{lemma}
-\begin{proof}
-Write the Serret--Frenet frame to \(C\) as \(e_1,\ot{e}_2,\ot{e}_3\), and all adapted frames to the surface \(S\) for which \(e_1\) is tangent to the curve \(C\) as \(e_1,e_2,e_3\).
-Since \(e_1\) is the same for both frames, the other two pairs of legs are orthogonal transformations of one another:
-\begin{align*}
-\ot{e}_2 &= \cos \theta e_2 \mp \sin \theta e_3, \\
-\ot{e}_3 &= \sin \theta e_2 \pm \cos \theta e_3.
-\end{align*}
-The angle \(\theta\) is at most \(\pi/2\), and equal just when the curvature vector as a space curve is perpendicular to the normal line on \(S\), which we suppose never happens.
-Pick \(e_3\) so that \(\pm=+\).
-The Serret--Frenet equations are
-\begin{align*}
-\dot{x} &= e_1, \\
-\dot{e}_1 &= k\ot{e}_2, \\
-\dot{\ot{e}}_2&=-ke_1+t\ot{e}_3,\\
-\dot{\ot{e}}_3&=-t\ot{e}_2.
-\end{align*}
-Geodesic curvature is \(\kappa ds = -\alpha\).
-The connection forms are
-\begin{align*}
-\begin{pmatrix}
--\alpha \\
--a_{11}ds \\
--a_{12}ds
-\end{pmatrix}
-&=
-\begin{pmatrix}
-\gamma_{21} \\
-\gamma_{31} \\
-\gamma_{32}
-\end{pmatrix},
-\\
-&=
-\begin{pmatrix}
-e_2 \dot{e}_1 \\
-e_3 \dot{e}_1 \\
-e_3 \dot{e}_2
-\end{pmatrix}ds,
-\\
-&=
-\begin{pmatrix}
-k \cos \theta \\
-\pm  k \sin \theta \\
-e_3 \frac{d}{ds}\left(\cos \theta \ot{e}_2 + \sin\theta \ot{e}_3\right)
-\end{pmatrix}ds.
-\end{align*}
-\begin{problem}{moving.frame:torsion.relation}
-Expand out the last line to finish the proof.
-\end{problem}
-\begin{answer}{moving.frame:torsion.relation}
-\begin{align*}
-e_3 \frac{d}{ds}\left(\cos \theta \ot{e}_2 + \sin\theta \ot{e}_3\right)
-&=
-e_3 \left(-\dot\theta\sin \theta \ot{e}_2 
-+\cos\theta \dot{\ot{e}}_2
-+\dot\theta\cos\theta \ot{e}_3
-+ \sin\theta\dot{\ot{e}}_3
-\right),
-\\
-&=
-e_3 \left(-\dot\theta\sin \theta \ot{e}_2 
-+\cos\theta (-ke_1+t\ot{e}_3)
-+ \dot\theta\cos\theta \ot{e}_3
-- t \sin\theta\ot{e}_2
-\right),
-\\
-&=
-e_3 \left(-\dot\theta\sin \theta \ot{e}_2 
-+t\cos\theta \ot{e}_3
-+ \dot\theta\cos\theta \ot{e}_3
-- t \sin\theta\ot{e}_2
-\right),
-\\
-&=
-\dot\theta\sin^2 \theta
-t\cos^2\theta
-\dot\theta\cos^2\theta
-+ t \sin^2\theta,
-\\
-&=
-\dot\theta+t.
-\end{align*}
-\end{answer}
-\end{proof}
-\begin{problem}{moving.frame:lines.on.surface}
-Suppose that a surface has a straight line on it, through every point, in every tangent direction through that point.
-Prove that it is a plane.
-\end{problem}
-\begin{answer}{moving.frame:lines.on.surface}
-We get \(\dot{e}_1=0\) along such a curve, at that point, so \(0=\gamma_{21}=\gamma_{31}\), so \(a_{11}=0\).
-Since this occurs in all directions, \(a=0\).
-\end{answer}
-
-
 \section{Geodesic flow}
 Each point \(\pr{x^o,e^o} \in \frameBundleE{3}\) moves along a path \(x(t)=x^o + t e_1, e(t)=e^o\).
 In other words, don't rotate the frame, but slide the base point \(x\) along the direction of the first leg of the frame.
@@ -660,6 +492,98 @@ In particular, negatively (positively) curved geodesic triangles have larger (sm
 \end{problem}
 \begin{answer}{geodesics:triangle}
 Gauss--Bonnet
+\end{answer}
+
+\section{The Hessian}
+We will prove:
+\begin{theorem}\label{theorem:hessian}
+Take an open set on a surface in \(\E[3]\), with smooth boundary of nonnegative geodesic curvature.
+Whenever a geodesic enters the interior of that open set, it is not tangent to the boundary.
+\end{theorem}
+Take a function \(f\colon S \to\R\).
+Pulling \(f\) back to the frame bundle of \(S\), because \(df\) is semibasic, \(df=f_1\omega_1+f_2\omega_2\) for some functions \(f_1,f_2\).
+Differentiate to find
+\[
+d
+\begin{pmatrix}
+f_1\\
+f_2
+\end{pmatrix}
++
+\begin{pmatrix}
+0 & \alpha\\
+-\alpha & 0
+\end{pmatrix}
+\begin{pmatrix}
+f_1\\
+f_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+f_{11} & f_{12} \\
+f_{21} & f_{22}
+\end{pmatrix}
+\begin{pmatrix}
+\omega_1\\
+\omega_2
+\end{pmatrix}
+\]
+for unique functions \(f_{ij}=f_{ji}\).
+Check that the operator
+\[
+D^2f\defeq f_{ij}\omega_i\omega_j
+\]
+is a symmetric bilinear form on tangent spaces of \(S\), the \emph{Hessian} of \(f\).
+The differential \(df\) restricts to any curve to become 
+\[
+df=\frac{df}{ds}ds=f_1 \omega_1
+\]
+measuring the rate at which \(f\) increases along the curve, and the Hessian becomes
+\[
+\frac{d^2f}{ds^2}=\frac{df_1}{ds}=f_{11},
+\]
+the acceleration of \(f\) along the curve.
+Any curve on which the Hessian is positive has \(f\) accelerating, so at any point of that curve, if \(df\) vanishes at that point of the curve, i.e. the curve is tangent to a level set of \(f\), then \(f\) increases on either side of that point, i.e. the curve stays outside of the sublevel set.
+
+If \(df\ne 0\), we can pick out a particular choice of frame: make \(e_1\) tangent to level sets of \(f\).
+So \(df=f_2\omega_2\), i.e. \(f_1=0\), on this subbundle of the frame bundle, adapted to \(f\).
+We can further orient the surface by requiring \(f_2>0\).
+Our equations simplify to
+\begin{align*}
+f_2\alpha&=f_{11}\omega_1+f_{12}\omega_2,\\
+df_2&=f_{21}\omega_1+f_{22}\omega_2.
+\end{align*}
+On any one level set \(\omega_2=0\) so
+\[
+\alpha=-\kappa_2\omega_1=-\frac{f_{11}}{f_2},
+\]
+so the geodesic curvature of the level set is
+\[
+\kappa_2=\frac{f_{11}}{f_2},
+\]
+so the sign of the geodesic curvature of each level set is the sign of the acceleration of \(f\) along that level set.
+In particular, the level sets are geodesic just when the Hessian vanishes along all of them.
+
+Given any curve \(C\), we can locally make a function \(f\) with that curve as level set.
+Take two curves \(C_0\) and \(C_1\) tangent at a point.
+Suppose they are both oriented, and lie on an oriented surface.
+Write each as a level set of functions \(f_0\) and \(f_1\), with differentials pointing on the positive side of the oriented tangent line.
+At the point of tangency, both functions have vanishing differential on both curves.
+Clearly \(f_0\) has larger Hessian on that tangent line just when \(C_0\) has larger curvature.
+So then \(f_0-f_1\) has positive Hessian on that tangent line, and so \(f_0-f_1\) grows nearby on \(C_1\).
+But \(f_1\) is constant on \(C_1\).
+So \(f_0\) grows on \(C_1\) at all points nearby.
+So \(C_1\) has just one point of tangency with \(C_0\) near that point, and everywhere else nearby leaves the sublevel set of \(f_0\).
+In particular, if \(C_1\) is a geodesic, \(f_1\) has vanishing Hessian along \(C_1\), proving theorem~\vref{theorem:hessian}.
+\prob{geodesics:proper}{Suppose that \(M\) is a complete surface in \(3\)-dimensional Euclidean space, and \(f\) is a smooth proper function on \(M\) whose only critical point is a single local minimum.
+Suppose that all level sets of \(f\) are positively curved.
+Prove that every geodesic on \(M\) enters each compact set only finitely many times.}
+\begin{answer}{geodesics:proper}
+If our geodesic is \(x(t)\), then \(f(x(t))\) has local minima as its only critical points.
+Moreover, they are isolated, as \(f(x(t)\) is critical only where \(x(t)\) reaches the minimum of \(f\) or becomes tangent to a level set of \(f\).
+If \(f(x(t)\) stays bounded as \(t\to\infty\), then \(x(t)\) stays in a compact sublevel set of \(f\).
+But \(f(x(t))\) increases for large enough \(t\), so \(x(t)\) approaches the boundary of that sublevel set, i.e. a level set.
+Geodesics near each level set enter or leave soon, a contradiction.
 \end{answer}
 
 \section{Abstract surfaces}
