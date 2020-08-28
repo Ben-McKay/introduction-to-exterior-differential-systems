@@ -260,11 +260,11 @@ while the mean curvature is
 H=-\frac{1}{2}\pr{\dot\varphi+ \frac{\sin \phi}{r}}.
 \]
 \begin{example}
-Take a function \(\ot{H}(s)\) and try to construct a curve \(\ot{x}(s)\) in the plane, so that the associated surface of revolution has mean curvature \(H(s,\theta)=\ot{H}(s)\).
+Take a function \(H(s)\) and try to construct a curve \(\ot{x}(s)\) in the plane, so that the associated surface of revolution has mean curvature \(H(s)\).
 To do this, we have to solve the equations
 \begin{align*}
 \dot{r}(s) &= \cos \varphi(s), \\
-\dot\varphi(s) &= -2\ot{H}(s)-\frac{\sin \varphi(s)}{r(s)}
+\dot\varphi(s) &= -2H(s)-\frac{\sin \varphi(s)}{r(s)}
 \end{align*}
 with \(r > 0\).
 Each initial value \(r=r_0>0\) and \(\varphi=\varphi_0\) at some \(s=s_0\) determines a unique local solution, by the existence and uniqueness theorem for ordinary differential equations.
@@ -329,10 +329,7 @@ s&=
 The surfaces of revolution of constant positive mean curvature are obtained by solving implicitly for \(r=r(s)\).
 \end{answer}
 \begin{example}
-Similarly, we can prescribe Gauss curvature \(K=\ot{K}(s)\) arbitrarily by solving the equation
-\[
-\ddot{r}+\ot{K} r = 0.
-\]
+Similarly, we can prescribe Gauss curvature \(K(s)\) arbitrarily by solving the equation \(\ddot{r}+Kr = 0\).
 For example, the surfaces of revolution with zero Gauss curvature are the circular cones given by rotating a line segment.
 More generally, for constant Gauss curvature \(K=K_0\), the solutions are (with \(k_0\defeq\sqrt{\left|K_0\right|}\))
 \[
@@ -397,7 +394,7 @@ Prove that, on any surface, oriented or not, the shape operator admits a unique 
 \[
 \frac{q}{2} \omega^2 + \frac{H}{2} (\omega \bar\omega + \bar\omega\omega) + \frac{\bar{q}}{2} \bar\omega^2.
 \]
-for some complex-valued \(q \colon \frameBundle{S} \to \C\) and real-value \(H \colon \frameBundle{S} \to \R\).
+for functions \(q \colon \frameBundle{S} \to \C\),  \(H \colon \frameBundle{S} \to \R\).
 How are the \(a_{ij}\) related to \(q,H\)?
 \end{problem}
 \begin{answer}{moving.frame:Hopfy}
@@ -647,7 +644,7 @@ Recall that principal curvatures of a surface are the eigenvalues of its shape o
 Suppose that they are distinct \(k_1\ne k_2\), i.e. there are no umbilic points.
 A \emph{Darboux frame}\define{Darboux frame}\define{frame!Darboux} is one in which \(e_1,e_2\) are eigenvectors of the shape operator with eigenvalues \(k_1<k_2\).
 The set of Darboux frames of the surface is a surface, as each Darboux frame is uniquely determined up to signs.
-On that surface, \(\gamma_{i3}=k_i\omega_i\), for \(i,j=1,2\).
+On that surface \(\gamma_{i3}=k_i\omega_i\), for \(i=1,2\).
 \prob{moving.frame:not.umb}%
 {Differentiate the equations of a Darboux frame to see that
 \[
@@ -731,11 +728,11 @@ Expanding this out gives
 \]
 
 \begin{lemma}\label{lemma:max.min.k}
-If a surface bears a point at which one principal curvature is maximal and the other minimal, then either the point is umbilic or the Gauss curvature is not positive at that point.
+If a surface bears a point at which the larger principal curvature is maximal and the smaller minimal, then either the point is umbilic or the Gauss curvature is not positive at that point.
 \end{lemma}
 \begin{proof}
 We can assume that \(k_2>k_1\) near that point, and then adapt frames as above.
-At a maximum of \(k_2\) and minimum of \(k_1\), \(0=dk_1=dk_2\), so \(k_{ij}=0\) and so \(\gamma_{12}=0\), so \(Dk_{ij}=dk_{ij}=k_{ijk}\omega_k\).
+At a critical point of \(k_2\) and \(k_1\), \(0=dk_1=dk_2\), so \(k_{ij}=0\) and so \(\gamma_{12}=0\), so \(Dk_{ij}=dk_{ij}=k_{ijk}\omega_k\).
 Since \(k_2\) is maximal, along the flow of \(e_1\), \(k_{211}\le 0\).
 Since \(k_1\) is minimal, along the flow of \(e_2\), \(k_{122}\ge 0\).
 Plug in above to get \(K=k_1k_2\le 0\).
@@ -751,7 +748,7 @@ At any point at which the principal curvatures are as far apart from one another
 Apply lemma~\vref{lemma:max.min.k} to find a point of nonpositive Gauss curvature where the Gauss curvature is critical.
 \end{proof}
 \prob{moving.frame:distinct.lambda}{Suppose that \(S\) is a connected surface in \(\E[3]\) and that one principal curvature is a nonzero constant, and always distinct from the other.
-Prove that \(S\) is a union of circles of constant radius, with centres on a curve.}
+Prove that \(S\) is a union of circular arcs of constant radius, with centres on a curve.}
 \begin{answer}{moving.frame:distinct.lambda}
 Arrange \(e_1,e_2\) to diagonalize the shape operator, so 
 \begin{align*}
@@ -763,7 +760,7 @@ Differentiate to find that \(\gamma_{12}\) is a multiple of \(\omega_2\).
 So then along the flow of \(e_1\), \(\gamma_{12}=0\) and \(\gamma_{23}=0\) i.e. \(e_2\) is constant, so \(e_1,e_3\) rotate in the plane, with \(\gamma_{13}=k_1\), so at a constant rate, i.e. on a circle.
 \end{answer}
 
-We will define completeness in appendix~\ref{chapter:geodesics}; for the moment, we just need to know that on a complete surface,\SubIndex{complete!surface}\SubIndex{surface!complete} every bounded vector field is complete.\SubIndex{complete!vector field}\SubIndex{vector field!complete} 
+We define completeness in appendix~\ref{chapter:geodesics}; for the moment, we only need know that on a complete surface,\SubIndex{complete!surface}\SubIndex{surface!complete} every bounded vector field is complete.\SubIndex{complete!vector field}\SubIndex{vector field!complete} 
 \begin{theorem}[Hilbert]\define{theorem!Hilbert}\define{Hilbert!surface theorem}
 No complete surface in \(\E[3]\) has constant negative Gauss curvature.
 \end{theorem}

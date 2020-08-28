@@ -72,7 +72,7 @@ d\theta=-%
 \begin{pmatrix}
 \freeDeriv{\pi^1} & 
 \freeDeriv{\pi^2} & 
-\dots
+\dots &
 \freeDeriv{\pi^n}
 \end{pmatrix} 
 \wedge
@@ -98,7 +98,7 @@ On an even dimensional manifold, a \emph{complex coframing} is a collection of c
 It is \emph{complex linear} for an almost complex structure if each \(\omega^{\mu}\) is a complex linear map on each tangent space, i.e. \(\omega^{\mu}\circ J = \sqrt{-1}\omega^{\mu}\) for every \(\mu\).
 \prob{almost.complex:coframe.it}{Prove that every almost complex structure has, near each point, some complex linear complex coframing.}
 \prob{almost.complex:coframe.ti}{Prove that every complex coframing is complex linear for a unique almost complex structure.}
-Complex coframings are a useful way to exhibit complex structures.
+Complex coframings are a useful way to exhibit almost complex structures.
 \begin{example}
 The complex coframing
 \begin{align*}
@@ -121,48 +121,61 @@ t^{\mu}_{\bar\nu\sigma}\omega^{\bar\nu}\wedge\omega^{\sigma}+
 t^{\mu}_{\bar\nu\bar\sigma}\omega^{\bar\nu}\wedge\omega^{\bar\sigma},
 \]
 for unique complex valued functions \(t\), antisymmetric in lower indices.
-The exterior derivative of any \((p,q)\)-form is uniquely expressed as a sum of forms with degree of \(p\) raised by \(2,1,0\) or \(-1\).
+The exterior derivative of any \((p,q)\)-form is uniquely expressed as a sum of forms with \((p,q)\) raised by \((2,-1),(1,0),(0,1)\) or \((-1,2)\).
 We thus split up
 \[
-d=d_2+d_1+d_0+d_{-1}.
+d=\tau+\partial+\bar\partial+\bar\tau:
 \]
-(The reader is perhaps aware that \(d_1\) and \(d_0\) are usually denoted \(\partial\) and \(\bar\partial\).)
-Define functions \(t\) by
-\begin{align*} 
-d_2\omega^{\mu}&=0,\\
-d_1\omega^{\mu}&=t^{\mu}_{\nu\sigma}\omega^{\nu}\wedge\omega^{\sigma},\\
-d_0\omega^{\mu}&=t^{\mu}_{\nu\bar\sigma}\omega^{\nu}\wedge\omega^{\bar\sigma}+
-t^{\mu}_{\bar\sigma\nu}\omega^{\bar\sigma}\wedge\omega^{\nu},\\
-d_{-1}\omega^{\mu}&=t^{\mu}_{\bar\nu\bar\sigma}\omega^{\bar\nu}\wedge\omega^{\bar\sigma}.
-\end{align*}
+\begin{alignat*}{3} 
+\tau\omega^{\mu}
+&=0,
+\quad&&
+\partial\omega^{\mu}
+=t^{\mu}_{\nu\sigma}\omega^{\nu}\wedge\omega^{\sigma},\\
+\bar\tau\omega^{\mu}
+&=t^{\mu}_{\bar\nu\bar\sigma}\omega^{\bar\nu}\wedge\omega^{\bar\sigma},
+\quad&&
+\bar\partial\omega^{\mu}
+=t^{\mu}_{\nu\bar\sigma}\omega^{\nu}\wedge\omega^{\bar\sigma}+
+t^{\mu}_{\bar\sigma\nu}\omega^{\bar\sigma}\wedge\omega^{\nu}.
+\end{alignat*}
+Let \(\omega\defeq(\omega^{\mu})\).
+Expanding out in the coframing, we find that \(0=\tau=\bar\tau\) on all differential forms if and only if \(\bar\tau\omega=0\).
 Change coframing:  replace \(\omega\) by some \(g\omega\).
 \[
 d(g\omega)=dg\wedge\omega+gd\omega,
 \]
 expands out to
-\begin{align*} 
-d_2(g\omega)&=0,\\
-d_1(g\omega)&=(d_1 g)\wedge\omega+g \, d_1\omega,\\
-d_0(g\omega)&=(d_0 g)\wedge\omega+g \, d_0\omega,\\
-d_{-1}(g\omega)&=g\,d_{-1}\omega.
-\end{align*}
-Hence \(d_{-1}\omega=0\) just when \(d_{-1}(g\omega)=0\).
+\begin{alignat*} {4}
+\tau(g\omega)&=0,\qquad&&\partial(g\omega)&=(\partial g)\wedge\omega+g \, \partial\omega,\\
+\bar\tau(g\omega)&=g\,\bar\tau\omega,\qquad&&\bar\partial(g\omega)&=(\bar\partial g)\wedge\omega+g \, \bar\partial\omega.
+\end{alignat*}
+Hence \(\bar\tau\omega=0\) just when \(\bar\tau(g\omega)=0\).
+So vanishing of \(\bar\tau\) is a property of the almost complex structure.
+\begin{problem}{almost.complex:dual}
+Prove that \(\bar\tau=0\) just when \(\tau=0\).
+\end{problem}
+\begin{problem}{almost.complex:Nijenhuis}
+Construct a tensor whose vanishing is equivalent to \(\bar\tau=0\).
+\end{problem}
+\begin{answer}{almost.complex:Nijenhuis}
 If \(u_{\mu},v_{\mu}\) are the vector fields dual to the real and imaginary parts of the \(\omega^{\mu}\), the \emph{torsion tensor}\define{torsion!tensor}, or \emph{Nijenhuis tensor}\define{Nijenhuis tensor}
 \[
-\tau\defeq
-(u_{\mu}+iv_{\mu})d_{-1}\omega^{\mu}
+T\defeq
+(u_{\mu}+iv_{\mu})\tau\omega^{\mu}
 \]
 depends only on the almost complex structure, a section of \(\nForms{0,2}{M} \otimes TM \otimes \C\).
+\end{answer}
 \begin{example}
 The complex coframing
 \begin{align*}
 \omega^1&\defeq dz,\\
 \omega^2&\defeq dw-|w|^2 \, d\bar{z}
 \end{align*}
-has torsion
+has
 \begin{align*}
-d_{-1}\omega^1&=0,\\
-d_{-1}\omega^2&=-w\, d\bar{w} \wedge d\bar{z},\\
+\bar\tau\omega^1&=0,\\
+\bar\tau\omega^2&=-w\, d\bar{w} \wedge d\bar{z},\\
 &=w\,\omega^{\bar{1}}\wedge\omega^{\bar{2}},\\
 &\ne0.
 \end{align*}
@@ -170,7 +183,7 @@ Therefore the associated almost complex structure is not a complex structure.
 \end{example}
 A complex valued function \(f\colon M \to\C\) on an almost complex manifold is \emph{holomorphic} if \(df\) is complex linear.
 \begin{lemma}
-An almost complex manifold which admits holomorphic functions with arbitrary complex linear differentials at each point has vanishing torsion.
+An almost complex manifold which admits holomorphic functions with arbitrary complex linear differentials at each point has \(\bar\tau=0\).
 \end{lemma}
 \begin{proof}
 Denote by \(2n\) the dimension of \(M\) as a real manifold.
@@ -179,21 +192,20 @@ Take the manifold \(M'\defeq M \times \C_z \times \C[n]_{Z}\), and the exterior 
 \(
 dz-Z_{\mu}\omega^{\mu}.
 \)
-If we can produce an integral manifold on which \(\omega^{\mu}\) are complex-linearly independent, it will be locally the graph of a holomorphic function.
+Any integral manifold on which \(\omega^{\mu}\) are complex-linearly independent is locally the graph of a holomorphic function, and vice versa.
 The tableau
 \begin{align*}
 d(dz-Z\omega)
 &=-dZ\wedge\omega-Z\,d\omega,
 \\
 &=
--DZ\wedge\omega-Z\, d_{-1}\omega,
+-DZ\wedge\omega-Z\, \bar\tau\omega,
 \end{align*}
 where
 \[
 DZ_{\mu}\defeq dZ_{\mu}+Z_{\sigma}(t^{\sigma}_{\nu\mu}\omega^{\nu}+2t^{\sigma}_{\bar{\nu}\mu}\omega^{\bar{\nu}}).
 \]
-The torsion, where \(Z\ne0\), consists of the expression \(Z\,d_{-1}\omega=Z_{\mu}d_{-1}\omega^{\mu}\).
-So \(\tau \hook dz=0\) for any holomorphic function.
+The torsion, where \(Z\ne0\), consists of the expression \(Z\,\bar\tau\omega=Z_{\mu}\bar\tau\omega^{\mu}\).
 \end{proof}
 \begin{problem}{almost.complex:hol.fn}
 Find all holomorphic functions for the almost complex structure of the complex coframing
@@ -228,13 +240,13 @@ If \(\pi\wedge\omega\) occurs in a tableau, at some grade,  it contributes \(2\)
 \]
 Count with a complex tableau as if it were real linear, but double the characters.
 \begin{theorem}\label{theorem:analytic.NN}
-An analytic almost complex structure has zero torsion just when it arises from a complex structure.
+An analytic almost complex structure has \(\bar\tau=0\) just when it arises from a complex structure.
 \end{theorem}
 This theorem remains true with milder assumptions than analyticity \cite{Hill/Taylor:2003}.
 \begin{proof}
-On a complex manifold with holomorphic coordinates \(z^a\), the \(1\)-forms \(\omega^a=dz^a\) are complex linear for the standard almost complex structure, and have \(d\omega^a=0\), so no torsion.
+On a complex manifold with holomorphic coordinates \(z^{\mu}\), the \(1\)-forms \(\omega^{\mu}=dz^{\mu}\) are complex linear for the standard almost complex structure, and have \(d\omega^{\mu}=0\), so no torsion.
 
-Take a torsion-free almost complex structure \(J\) on a manifold \(M\).
+Take an almost complex structure \(J\) which has \(\bar\tau=0\).
 Our problem is to construct local holomorphic coordinate functions locally identifying \(J\) with the standard complex structure on complex Euclidean space.
 Again take the exterior differential system generated by \(\theta\defeq dz-Z\omega\):
 \[
@@ -248,7 +260,7 @@ d\theta=-%
 \omega^n
 \end{pmatrix}.
 \]
-Integral elements are \(DZ_a=p_{ab}\omega^b\), \(p_{ab}=p_{ba}\), \(n(n+1)/2\) complex constants, so \(n(n+1)\) real constants, involution.
+Integral elements are \(DZ_{\mu}=p_{\mu\nu}\omega^{\nu}\), \(p_{\mu\nu}=p_{\nu\mu}\), \(n(n+1)/2\) complex constants, so \(n(n+1)\) real constants, involution.
 So there are holomorphic functions with arbitrary differentials at a point, i.e. local holomorphic coordinates.
 \end{proof}
 \begin{example}
@@ -260,9 +272,9 @@ The complex coframing
 determines a complex structure.
 \end{example}
 \begin{example}
-The torsion \(d_{-1}\omega^{\mu}=t^{\mu}_{\bar\nu\bar\sigma}\omega^{\bar{\nu}}\wedge\omega^{\bar{\sigma}}\) is antisymmetric in \(\bar\nu,\bar\sigma\).
-It vanishes if \(M\) has complex dimension \(1\), i.e. real dimension \(2\).
-Every almost complex manifold of real dimension \(2\) is a Riemann surface.
+The expression \(\bar\tau\omega^{\mu}=t^{\mu}_{\bar\nu\bar\sigma}\omega^{\bar{\nu}}\wedge\omega^{\bar{\sigma}}\) is antisymmetric in \(\bar\nu,\bar\sigma\).
+It vanishes if \(M\) has complex dimension \(1\), i.e. real dimension \(2\):
+every almost complex manifold of real dimension \(2\) is a Riemann surface.
 \end{example}
 \begin{example}
 In this example, we assume familiarity with matrix groups \cite{Stillwell:2008}.
@@ -340,13 +352,14 @@ Consider the coframing
 \end{answer}
 \optionalSection{Almost complex submanifolds}%
 An \emph{almost complex submanifold} of an almost complex manifold \(M\) is a submanifold whose tangent planes are \(J\)-invariant.
-Suppose that \(M\) has real dimension \(2(p+q)\), and we look for almost complex submanifolds of dimension \(2p\).
+Suppose that \(M\) has real dimension \(2(p+q)\).
+Let's look for almost complex submanifolds of dimension \(2p\).
 Take a complex linear coframing \(\omega^1,\dots,\omega^p,\pi^1,\dots,\pi^q\).
 Take an almost complex manifold of real dimension \(2p\) on which \(\omega^1,\dots,\omega^p\) have linearly independent real and imaginary parts.
 Then on that submanifold, \(\pi=p\omega\) for a complex matrix \(p\).
 Our almost complex submanifold is an integral manifold of the exterior differential system \(\pi=p\omega\) on \(M\times\C[pq]\).
 We let \(\theta\defeq\pi-p\omega\).
-Then on any integral manifold \(0=d_{-1}\theta=d_{-1}\pi-p \, d_{-1}\omega\).
+Then on any integral manifold \(0=\bar\tau\theta=\bar\tau\pi-p \, \bar\tau\omega\).
 \begin{problem}{almost.complex:sub}
 Prove that, for any \(p>1\), if there is an almost complex submanifold of real dimension \(2p\) tangent to any complex linear subspace of complex dimension \(p\) in any tangent space, then \(M\) is a complex manifold.
 \end{problem}

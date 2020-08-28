@@ -10,6 +10,10 @@ But the Laplace operator is invariant under rotation, so it actually ``feels'' t
 \end{example}
 
 \section{The symbol of a linear operator}
+If you differentiate a high frequency wave in a direction in which it oscillates, it gets bigger.
+If you differentiate in a direction in which the wave is constant, it gets killed.
+We detect derivatives by plugging in waves.
+
 Take a large number \(\lambda\) and any function \(f(x)\) vanishing at the origin.
 Near the origin, the function \(e^{i\lambda f}\) looks like a high frequency wave: expand \(f\) in a Taylor series \(f(x)=\sum \xi_i x_i + \dots\),
 \[
@@ -32,7 +36,7 @@ Let \(P_m\) be the highest order terms, also called the \emph{symbol}:\define{sy
 \[
 P_m(x,\xi)=\sum_{|a|=m} c_a(x) \xi^a,
 \]
-frequently denoted \(\opsymbol[P]{\xi}\), for \(\xi=\xi_i dx^i \in T^* M\) a \(1\)-form.
+also denoted \(\opsymbol[P]{\xi}\), for \(\xi=\xi_i dx^i \in T^* M\) a \(1\)-form.
 To see ``how many derivatives'' \(P\) takes in some direction, expand:
 \[
 e^{-i\lambda f}P\left[e^{i \lambda f}u\right]
@@ -291,7 +295,8 @@ Since the symbol matrix is somewhere invertible, the characteristic variety \(\c
 \end{proof}
 \begin{theorem}\label{theorem:determined}
 Take a determined system of differential equations and noncharacteristic initial data along an embedded hypersurface, all analytic.
-There is an analytic solution to the differential equations agreeing with the initial data along the hypersurface, and any two such agree near the hypersurface and agree in any connected open set where both are defined.
+There is an analytic solution to the differential equations agreeing with the initial data along the hypersurface.
+Any two such agree near the hypersurface and agree in any connected open set where both are defined.
 \end{theorem}
 \begin{proof}
 If we can prove uniqueness of local solutions, then we can glue them together to get a unique global solution.
@@ -391,4 +396,12 @@ Suppose that \(0=F(x,u,u_x)\) is an analytic system of partial differential equa
 Prove that we can locally add \(k\) additional equations to make the system determined, and conclude that there are local solutions.
 What is the correct notion of noncharacteristic initial data?
 \end{problem}
+\section{Counterexamples}
 Linear analytic scalar equations which are not determined fail to have either existence or uniqueness of solutions, with analytic initial data \cite{Kitagawa:1990}. 
+For functions which are not analytic,  uniqueness can fail even for determined equations:
+\begin{enumerate}
+\item
+Some smooth linear determined equations have smooth solutions which agree on one side of a noncharacteristic hypersurface and disagree on the other \cite{Alinhac/Baouendi:1995}.
+\item
+Some analytic nonlinear determined equations have smooth solutions which agree on one side of a noncharacteristic hypersurface and disagree on the other \cite{Metivier:1993}.
+\end{enumerate}

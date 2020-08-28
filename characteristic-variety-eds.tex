@@ -4,7 +4,7 @@
 The reader unfamiliar with linearization of partial differential equations, or characteristics, might look at appendix~\ref{chapter:characteristics}.
 Take an exterior differential system \(\II\) on a manifold \(M\), and an integral manifold \(X\).
 Suppose that the flow of a vector field \(v\) on \(M\) moves \(X\) through a family of integral manifolds.
-So the tangent spaces of \(X\) are carried by the flow of \(v\) through integral elements of \(\II\).
+The tangent spaces of \(X\) are carried by the flow of \(v\) through integral elements of \(\II\).
 Equivalently, the flow pulls back each form in \(\II\) to vanish on \(X\).
 So \(0=\left.\LieDer_v \vartheta\right|_X\) for any \(\vartheta \in \II\).
 \prob{vector.fields}{Prove that all vector fields \(v\) tangent to \(X\) satisfy this equation.}
@@ -148,7 +148,8 @@ On the other hand, the linearization at a noninvolutive integral element may or 
 \section{The characteristic variety}
 An integral element is \emph{noncharacteristic}\define{characteristic} if it is a hyperplane in precisely one integral element.
 An integral manifold is \emph{noncharacteristic} (or \emph{characteristic}) if all of its tangent spaces are.
-A characteristic hypersurface in an integral manifold could perhaps lie in more than one integral manifold, a potential nontangential intersection of integral manifolds, or, gluing along such an intersection, create a ``crease'' along an integral manifold.
+A characteristic hypersurface in an integral manifold could perhaps lie in more than one integral manifold, a potential nontangential intersection of integral manifolds.
+Glue along such an intersection, to create a ``crease'' along an integral manifold.
 So we imagine that integral manifolds are more flexible along characteristic hypersurfaces, although there is no theorem to prove that.
 \prob{char.var:wave}{Find the characteristics of the wave equation as an exterior differential system. 
 Show creasing of solutions along characteristics, and not along noncharacteristic curves.}
@@ -297,6 +298,14 @@ v^3
 \end{align*}
 So \(\det\opsymbol[]{\xi}=\xi_1\xi_2\xi_3\): the characteristic variety \(\CV\) is the triple of lines \((\xi_1=0)\), \((\xi_2=0)\) and \((\xi_3=0)\).
 Any \(3\)-dimensional integral element coframed by \(\omega^1,\omega^2,\omega^3\) has characteristic hyperplanes \(0=\xi_1\omega^1+\xi_2\omega^2+\xi_3\omega^3\) for any one of the three coefficients vanishing, i.e. containing any one of the three axes.
+\begin{theorem}
+Take an embedded analytic surface \(S \subset \E[3]\).
+Pick orthonormal analytic vector fields \(e_1,e_2,e_3\) along \(S\), none tangent to \(S\).
+Then there is a triply orthogonal web near \(S\) in \(\E[3]\) with leaves perpendicular to \(e_1,e_2,e_3\) at each point of \(S\).
+Any two such agree near \(S\).
+\end{theorem}
+The reader familiar with Riemannian geometry may recognize that this proof works identically replacing \(\E[3]\) by any analytic Riemannian \(3\)-manifold.
+Any symmetry of \(S\) and \(e_1,e_2,e_3\) on \(S\) is shared by the triply orthogonal web, by uniqueness.
 \end{example}
 \begin{example}
 In proving Lie's third theorem,\SubIndex{Lie's third theorem}\SubIndex{theorem!Lie's third} we had tableau
@@ -323,81 +332,65 @@ We plug in \(\freeDeriv{\pi^i_j} = v^{\alpha}\xi\), to get
 Our linear expressions are \(v^i_j \xi_k - v^i_k \xi_j\).
 One particular solution \(v\) to these equations is \(v^i_j\defeq \xi_j\) for all \(i\).
 So every hyperplane in every \(p\)-dimensional integral element is characteristic.
+This is not surprising: any diffeomorphism takes every Maurer--Cartan form to a Maurer--Cartan form; we can pick a diffeomorphism which is very close to the identity except along a hypersurface ``bending'' every Maurer--Cartan form ``along'' that hypersurface.
 \end{example}
-\prob{proof.Cartan.Kaehler:nabla.char}{Find the characteristic variety of \(\nabla \times u = u - f\).}
-\begin{answer}{proof.Cartan.Kaehler:nabla.char}
+\prob{char.var:nabla.char}{Find the characteristic variety of \(\nabla \times u = u - f\).}
+\begin{answer}{char.var:nabla.char}
 In terms of the tableau we gave previously in solving problem~\vref{problem:proof.test:nabla}, the complex points in the projective plane satisfying the equations of the minors are
 \[
 [0,1,0], [i,1,0], [-i,1,0], [i,0,1], [-i,0,1], [1,1,\sqrt{2}i], [1,1,-\sqrt{2}i].
 \]
 The real ones for the characteristic variety as defined above, i.e. just \([0,1,0]\) corresponding to the hyperplane \(0=dx^2\).
 \end{answer}
+\begin{problem}{char.var:harmonic}
+Find the characteristic variety for the exterior differential system of harmonic functions in the plane.
+Show that it doesn't satisfy the conditions of the Cauchy--Kovalevskaya theorem as described in theorem~\vref{theorem:CKbaby}.
+(Harder: can you ``fix it''?)
+\end{problem}
+\begin{answer}{char.var:harmonic}
+For the harmonic function exterior differential system \(\II\),
+\[
+\II^2_{(x,y,u_x,u_y)}
+=
+\spn{\Theta,d\vartheta,\vartheta\wedge(dx,dy,du_x,du_y)}
+\]
+has dimension 6.
+The characters are \(s_0,s_1,s_2=1,2,0\), summing to \(3\), as we see from the tableau
+\[
+\Tablo{*du_y,!-du_x;*du_x,du_y}
+\wedge
+\begin{gradedIndependents}
+dx\+
+dy
+\end{gradedIndependents}
+\]
+So the symbol matrix is not square: \(s_0+s_1+s_2=3<6=\dim\II^2_{(x,y,u_x,u_y)}\).
 
-\section{Example: triply orthogonal webs, noncharacteristic data}
-\begin{theorem}
-Take an embedded analytic surface \(S \subset \E[3]\) and pick an orthonormal basis \(e_1,e_2,e_3\) of \(\E[3]\) at each point \(x \in S\), analytic in \(x\), so that none of \(e_1,e_2,e_3\) is tangent to \(S\).
-Then there is a triply orthogonal web on a neighborhood of \(S\) in \(\E[3]\) consisting of three foliations whose leaves are perpendicular to \(e_1,e_2,e_3\) respectively at each point of \(S\).
-Any two such webs agree near \(S\).
-\end{theorem}
-The reader familiar with Riemannian geometry may recognize that this proof works identically replacing \(\E[3]\) by any analytic Riemannian \(3\)-manifold.
-Any symmetry of \(S\) and \(e_1,e_2,e_3\) on \(S\) is shared by the triply orthogonal web, by uniqueness.
-\begin{proof}
-Recall that each integral element is uniquely determined by its equation
+Here is a way to ``fix'' this problem.
+Let \(\II'\) be the ideal generated by the \(2\)-forms \(\vartheta\wedge dx,\Theta,d\vartheta\).
+The tableau of \(\II'\) is
 \[
-\gamma=
-\begin{pmatrix}
-0 & p_{12} & p_{13} \\
-p_{21} & 0 & p_{23} \\
-p_{31} & p_{32} & 0 
-\end{pmatrix}
-\omega,
+\Tablo{
+*\vartheta,0;*du_y,!-du_x;*du_x,du_y}
+\wedge
+\begin{gradedIndependents}
+dx\+
+dy
+\end{gradedIndependents}
 \]
-where the numbers \(p_{ij}\) can be arbitrarily chosen.
-For example, if we take all of these \(p_{ij}\) in the first two columns to be zero, we find that the plane \((\omega_3=0)\) lies in all of those integral elements, so lies in the characteristic variety of all of those integral elements.
-More generally, two such sets of equations \(\gamma=p \omega\), \(\gamma=(p+q)\omega\) agree on a plane just when their difference vanishes on a plane, i.e. just when \(q=0\) on some plane, i.e. just when \(q\) has rank \(1\):
+with characters \(s_0',s_1',s_2'=0,3,0\).
+But now 
 \[
-q=
-\begin{pmatrix}
-0 & q_{12} & q_{13} \\
-q_{21} & 0 & q_{23} \\
-q_{31} & q_{32} & 0 
-\end{pmatrix}.
+{\II'}^2_{(x,y,u_x,u_y)}
+=
+\spn{\Theta,d\vartheta,\vartheta\wedge dx}
 \]
-\prob{rank.1}{Linear algebra: prove that \(q\) has rank \(1\) just when either \(q=0\) or \(q\) vanishes on a plane which contains one of the coordinate axes.}
-\begin{answer}{rank.1}%
-Suppose that \(q\) has rank \(1\):
-\[
-q=
-\begin{pmatrix}
-0 & q_{12} & q_{13} \\
-q_{21} & 0 & q_{23} \\
-q_{31} & q_{32} & 0 
-\end{pmatrix}.
-\]
-Every row is a multiple of any nonzero row, and the same for every column.
-At least one entry must nonzero; permute indices to get \(q_{12}\ne 0\).
-The zero in \(q_{11}\) ensures that column \(1\) is zero, and the zero in \(q_{22}\) ensures that row \(2\) is zero.
-By the same reasoning, if in addition \(q_{13}\ne 0\), then the zero in \(q_{33}\) ensures that row \(3\) is zero:
-\[
-q=
-\begin{pmatrix}
-0 & q_{12} & q_{13} \\
-0 & 0 & 0 \\
-0 & 0 & 0 
-\end{pmatrix}
-\]
-So \(q=0\) precisely on the plane \(0=q_{12}y+q_{13}z\), containing the \(x\)-axis.
-On the other hand, if \(q_{13}=0\),
-\[
-q=
-\begin{pmatrix}
-0 & q_{12} & 0 \\
-0 & 0 & 0 \\
-0 & q_{32} & 0 
-\end{pmatrix}.
-\]
-So \(q=0\) precisely on \(y=0\).
-Similarly if we permute indices.
+has dimension \(3\).
+Take an \(\II'\)-integral surface \(S\) coframed by \(dx,dy\) and containing an \(\II\)-integral curve \(C\) on which \(dx\ne 0\), say with \(y=y(x)\).
+On \(S\), \(\vartheta\wedge dx=0\) so \(\vartheta=f(x,y)\,dx\) locally.
+On \(C\), \(0=\vartheta=f(x,y(x))\,dx\).
+So \(f(x,y(x))=0\).
+On \(S\), \(0=d\vartheta=df\wedge dx\), so \(f=f(x)\) and \(f(x,y)=f(x)=f(x,y(x))=0\), hence \(\vartheta=0\) on \(S\).
+We conclude that any \(\II\)-integral curve \(C\) on which \(dx\ne 0\) lies in a locally unique integral surface \(S\).
+The problem with directly applying the Cauchy--Kovalevskaya theorem is that \(\II\)-integral curves are not arbitrary curves.
 \end{answer}
-So the characteristic variety consists of the hyperplanes \(0=\xi_1\omega_1+\xi_2\omega_3+\xi_3\omega_3\) which contain one of the coordinate axes, i.e. where \(\xi_1=0\) or \(\xi_2=0\) or \(\xi_3=0\), i.e. hyperplanes in which one of \(e_1,e_2,e_3\) are tangent to the initial data surface \(S\).
-\end{proof}
