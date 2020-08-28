@@ -1,7 +1,12 @@
 \chapter{The moving frame}\label{chapter:moving.frame}%
 \chapterSummary{%
 In most chapters of these notes, we study geometry that is invariant under diffeomorphisms.
-In this chapter, we study geometry that is invariant under rigid motions of \(3\)-dimensional Euclidean space.}
+In this chapter, we study geometry that is invariant under rigid motions of \(3\)-dimensional Euclidean space. 
+We want examples of exterior differential systems.
+For simplicity, we look to surface theory: differential equations governing surfaces in \(3\)-dimensional Euclidean space.
+We look for differential equations invariant under rigid motion.
+But there are no differential forms on Euclidean space invariant under rigid motion.
+We will instead find invariant differential forms on the \emph{frame bundle} of Euclidean space.}
 
 \section{Notation}
 \emph{Warning}: We use the notation \(\E[3]\) instead of \(\R[3]\) to mean Euclidean space, i.e. \(\R[3]\) with its usual metric.
@@ -9,7 +14,7 @@ In this chapter, we study geometry that is invariant under rigid motions of \(3\
 \medskip
 
 \par\noindent
-\emph{Warning}: In this chapter, \(e_1, e_2, e_3\) is \emph{not} necessarily the standard basis of \(\E[3]\); it is an arbitrary orthonormal basis.
+\emph{Warning}: In this chapter, \(e_1, e_2, e_3\) denotes an \emph{arbitrary} orthonormal basis  of \(\E[3]\), \emph{not} necessarily the standard basis.
 
 \section{Orthonormal frames}
 An \emph{orthonormal frame}\define{orthonormal frame}\define{frame!orthonormal} is a pair \((x,e)\) where \(x \in \E[3]\) and 
@@ -21,14 +26,14 @@ is an orthonormal basis of \(\E[3]\) arranged into the columns of a matrix.
 \begin{tikzpicture}
 \fill [gray] (0,0) circle (1pt) node[black,above right]{\(x\)};
 \draw[-latex,gray] (0,.07071) -- (0,.7071) node[black,below left]{\(e_1\)};
-\draw[-latex,gray] (-.1,-.1) -- (-.5,-.5) node[black,below left]{\(e_1\)};
-\draw[-latex,gray] (.1,-.1) -- (.5,-.5) node[black,below right]{\(e_2\)};
+\draw[-latex,gray] (-.1,-.1) -- (-.5,-.5) node[black,below left]{\(e_2\)};
+\draw[-latex,gray] (.1,-.1) -- (.5,-.5) node[black,below right]{\(e_3\)};
 \end{tikzpicture}
 \end{center}
 \begin{problem}{moving.frame:rigid}
-For any two frames \((x,e), \pr{x',e'}\), there is a unique rigid motion \(\phi\), i.e. a distance preserving transformation, taking one to the other: \(x'=\phi(x)\), \(e'_i=\phi_* e_i\).
+For any two frames \((x,e), \pr{x',e'}\), there is a unique rigid motion \(\varphi\), i.e. a distance preserving transformation, taking one to the other: \(x'=\varphi(x)\), \(e'_i=\varphi_* e_i\).
 \end{problem}
-Each rigid motion \(\phi\) has associated frame \((x,e)\) which is the frame that arises when we apply \(\phi\) to the standard basis frame at the origin.
+Each rigid motion \(\varphi\) has associated frame \((x,e)\) which is the frame that arises when we apply \(\varphi\) to the standard basis frame at the origin.
 Let \(\Orth{3}\) be the set of \(3 \times 3\) orthogonal matrices.
 To each orthonormal frame \((x,e)\in\frameBundleE{3}\), associate the matrix
 \[
@@ -43,8 +48,8 @@ giving a map
 h \colon (x,e) \in \frameBundleE{3}\mapsto h(x,e) \in \E[3] \ltimes \Orth{3}.
 \]
 \begin{problem}{moving.frame:isom}
-Prove that: associating to \(\phi\) this matrix \(h(x,e)\) above is an isomorphism of groups from the group of rigid motions of Euclidean space to the group \(\Orth{3} \ltimes \E[3]\) of such matrices.
-So \(h(x,e)\) ``is'' the rigid motion that takes the origin to \(x\) and the standard basis to \(e\).
+Prove that: associating to \(\varphi\) this matrix \(h(x,e)\) above is an isomorphism of groups from the group of rigid motions of Euclidean space to the group \(\Orth{3} \ltimes \E[3]\) of such matrices.
+So \(h(x,e)\) is a matrix description of the rigid motion that takes the origin to \(x\) and the standard basis to \(e\).
 Prove that
 \[
 h(x,eg)=h(x,e)
@@ -80,7 +85,7 @@ Any rigid motion preserving an immersed curve takes any frame adapted to the cur
 So we can guess that the group of rigid motions preserving an immersed curve is at most a \(2\)-dimensional submanifold of the \(6\)-dimensional group of rigid motions.
 
 \section{Frames on surfaces}
-Similarly, a frame is adapted to a surface if \(e_3\) is normal to the surface.
+Similarly, a frame is adapted to a surface if \(x\) is a point of the surface and \(e_3\) is normal to the surface.
 \begin{center}
 \input{genus-2-surface-with-frame}
 \end{center}
@@ -89,7 +94,7 @@ Hence the group of rigid motions preserving an immersed surface is at most a \(3
 
 \section{The frame bundle}
 The \emph{frame bundle}\define{frame bundle}\define{bundle!frame} \(\frameBundleE{3}\) of Euclidean space \(\E[3]\) is the set of all orthonormal frames. 
-Any rigid motion \(\phi\) of \(\E[3]\) takes \(e_1, e_2, e_3\) to \(\phi_* e_1, \phi_* e_2, \phi_* e_3\).
+Any rigid motion \(\varphi\) of \(\E[3]\) takes \(e_1, e_2, e_3\) to \(\varphi_* e_1, \varphi_* e_2, \varphi_* e_3\).
 If you pick an orthonormal frame \((x,e)\) and I pick another one, say \((x,e')\) at the same point \(x\), then yours and mine must agree up to a unique orthogonal matrix, because they are orthonormal bases of the same vector space \(\E[3]\).
 So \(e_j' = \sum_i g_{ij} e_i\) for a uniquely determined orthogonal \(3 \times 3\) matrix \(g=\pr{g_{ij}}\); denote this \(e'\) as \(eg\).
 An orthonormal frame \((x,e)\) with \(e=(e_1 \ e_2 \ e_3)\) has \(e \in \Orth{3}\) an orthogonal matrix,  so \(\frameBundleE{3}=\E[3] \times \Orth{3}\) and the expression \(eg\) is matrix multiplication.
@@ -440,14 +445,14 @@ The manifold \(\frameBundle{S}\) is a \(3\)-dimensional submanifold of \(\frameB
 \begin{problem}{moving-frame:sphere.frame.bundle}
 Explain why, if \(S=\mathbb{S}^2 \subset \E[3]\) is the unit sphere around the origin, then \(\frameBundle{S}\) is diffeomorphic to two disjoint copies of \(\Orth{3}\), given by the equation \(x=\pm e_3\).
 \end{problem}
-The subgroup \(\Orth{2} \times \pm 1 \subset \Orth{3}\) of orthogonal linear transformations of \(\E[2]\) and \(\E[1]\) acts on \(\frameBundle{S}\) as \((x,e)g=(x,eg)\) where 
+Each orthogonal \(3\times 3\) matrix \(g\) preserving the horizontal plane
 \[
  g=\begin{pmatrix}
     h & 0 \\
     0 & n
    \end{pmatrix}
 \]
-with \(h \in \Orth{2}\) and \(n\in\Orth{1}=\{\pm 1\}\).
+with \(h \in \Orth{2}\) and \(n\in\Orth{1}=\{\pm 1\}\), acts on \(\frameBundle{S}\) as \((x,e)g=(x,eg)\).
 
 \section{The soldering forms}
 If \(v\) is a tangent vector on the manifold \(\frameBundleE{3}\), we can write \(v\) as \(\pr{\dot{x},\dot{e}}\), an infinitesimal motion \(\dot{x}\) of the point \(x\), and an infinitesimal rotation \(\dot{e}\) of the frame \(e\).
@@ -618,21 +623,20 @@ so \(\gamma_{32}=t\omega_1\) for a unique function \(t\) on those \(4\) curves.
 We can see a general pattern emerging: write out the structure equations, get the geometry to impose some relation on the \(1\)-forms in the structure equations, and differentiate repeatedly, applying Cartan's lemma when possible, until the invariants pop out, and the structure equations reduce down to having only the linearly independent \(1\)-forms in them.
 
 \section{Surfaces and forms}
-The expression \(dx \cdot dx\) is the Euclidean inner product in Euclidean space, so is well defined on any curve or surface in Euclidean space.
+The expression \(dx \cdot dx\) is the Euclidean inner product in Euclidean space, so is well defined on tangent vectors to any curve or surface in Euclidean space.
 Take a surface \(S\) in \(\E[3]\).
 The unit normal \(e_3\) is defined up to sign at each point of \(S\).
-Hence \(de_3\) is also defined up to sign, as is \(de_3 \cdot dx\), and so \(e_3 (de_3 \cdot dx)\) is defined on \(S\).
+Hence \(de_3\) is also defined up to sign, as is \(de_3 \cdot dx\), and so \(e_3 (de_3 \cdot dx)\) is defined on \(S\), called the \emph{shape operator},\define{shape operator} or the \emph{second fundamental form}\define{second fundamental form}\define{fundamental!form!second}, denoted \(\shapeOp\).
 Let us find a different way to write this.
 
 As we move along  a curve in \(S\), take \(e_1\) to be tangent to that curve, and travel at unit speed; pick \(e_2,e_3\) to give an adapted frame along the curve.
-At some moment in time, rotate to get that adapted frame to equal the standard basis.
 The vector \(e_2\) moves in the direction of \(e_1\), i.e. the curve turns in the tangent plane to the surface, as the \(\omega_1\) component of \(e_1 \cdot de_2=\gamma_{12}\).
 So this component is the curvature of the curve in the surface.
-Recall that \(e_3\) is normal to the surface.
-The vector \(e_3\) moves down toward \(e_1\), i.e. the surface bends down as we move along the the curve, as the \(\omega_1\) component of \(e_1 \cdot de_3=\gamma_{13}\).
+Recall that \(e_3\) is normal to the surface; stand on the surface, with \(e_3\) pointing straight upward.
+The vector \(e_3\) moves down toward \(e_1\), i.e. the surface bends down as we move along the curve, as the \(\omega_1\) component of \(e_1 \cdot de_3=\gamma_{13}\).
 The vector \(e_3\) moves toward \(e_2\), i.e. the surface twists like a screw, as we move along the curve, as the \(\omega_1\) component of \(e_2 \cdot de_3=\gamma_{23}\).
 
-From here on, we adopt the notation that \(i,j,k,\ell=1,2\).
+From here on, adopt notation \(i,j,k,\ell=1,2\).
 At each point of \(\frameBundle{S}\), \(e_3\) is perpendicular to \(T_x S\), so \(\omega_3=0\) on \(\frameBundle{S}\).
 From the structure equations of Euclidean space,
 \[ 
@@ -641,6 +645,20 @@ From the structure equations of Euclidean space,
 Therefore \(\gamma_{3i}=-\sum_j a_{ij} \omega_j\) for unique smooth functions \(a_{ij}=a_{ji}\) on \(\frameBundle{S}\).
 So \(a_{ij}\) measures the tendency of \(e_i\) to move toward \(e_3\) as we move in direction of \(e_j\), i.e. we measure how the surface twists like a screw.
 This measurement is (not obviously) symmetric in \(i,j\): if the surface twists as we move in a certain direction, it twists just as much if we move in the orthogonal direction.
+These \(a_{ij}\) are the components of the shape operator:
+\begin{align*}
+\shapeOp&=
+e_3(de_3 \cdot dx),
+\\
+&=
+e_3((e_i \cdot de_3)(e_i \cdot dx)),
+\\
+&=
+e_3(\gamma_{i3} \omega_i),
+\\
+&=
+e_3(a_{ij}\omega_j\omega_i).
+\end{align*}
 
 We can move any adapted frame \((x,e)\) of \(S\) with \(x\) moving along \(S\) and the \(e_i\) rotating among frames of the tangent space.
 The \(1\)-forms measuring those motions \(\omega_1, \omega_2, \gamma_{12}\) are all linearly independent, together forming a \emph{coframing} on \(\frameBundle{S}\), i.e. a collection of linearly independent \(1\)-forms spanning the \(1\)-forms at each point.
@@ -656,7 +674,7 @@ From the structure equations of Euclidean space,
 \(d\alpha=d\gamma_{12} = -\gamma_{13}\wedge\gamma_{32}\), so 
 \(K=a_{11}a_{22}-a_{12}^2\).
 
-\section{The shape operator}
+\optionalSection{Rotate the frame}
 Recall that we write each orthogonal \(3\times 3\) matrix \(g\) preserving the horizontal plane as
 \[
  g=\begin{pmatrix}
@@ -707,31 +725,43 @@ r_{e^{i\theta}}^*\alpha &= \alpha,\\
 r_C^*\alpha &= -\alpha,\\
 r_n^*\alpha &= \alpha.
 \end{align*}
-\begin{problem}{moving.frame:mean.curvature}
+
+\section{Mean curvature}
 The \emph{mean curvature}\define{mean curvature} is \(H=\frac{1}{2}\pr{a_{11}+a_{22}}\).
 The \emph{mean curvature vector}\define{mean curvature vector} is \(He_3\).
+\begin{problem}{moving.frame:mean.curvature}
 Prove that the mean curvature vector is defined on the surface, a vector field pointing normal to the surface.
 Why might the mean curvature not be defined as a function on the surface?
 \end{problem}
 \begin{example} 
 The sphere \(\E[3]\) of radius \(r_0\) has frame bundle consisting of the \((x,e) \in \frameBundleE{3}\) so that \(x=\pm r_0 e_3\).
 Therefore \(\gamma_{i3} = e_i \cdot de_3=\pm e_i \cdot dx/r_0 = \pm \omega_i/r_0\), so \(a=\pm I/r_0\) depending on orientation.
-Mean curvature is \(H=\pm 1/r_0\), depending on orientation.
 Gauss curvature is \(1/r_0^2\).
+Mean curvature is \(H=\pm 1/r_0\), depending on orientation.
+The mean curvature vector is \(2x/r_0\), independent of orientation.
 \end{example}
 \begin{example}
 For a flat plane, \(e_3\) lies perpendicular to the plane, while \(x, e_1, e_2\) are tangent to it, so \(0=e_3 \cdot dx = e_3 \cdot de_1 = e_3 \cdot de_2\), i.e. \(0=\omega_3=\gamma_{31} = \gamma_{32}\), so \(a=0\).
 \end{example}
-For any tangent vectors \(u,v \in T_x S\) let 
+\begin{problem}{moving.frame:cylind}
+Compute the shape operator and mean and Gauss curvature of a cylinder of radius \(r_0\).
+\end{problem}
+\begin{problem}{moving.frame:shape.inv}
+We know that \(\shapeOp\) is defined on tangent vectors to \(S\), independent of frame; check this again using the rules above for how \(a_{ij}\) change when we change frame.
+\end{problem}
+\begin{answer}{moving.frame:shape.inv}
+For any tangent vectors \(u,v \in T_x S\),
 \[
 \shapeOp(u,v)=\shapeOp(v,u)=\sum_{ij} a_{ij} u_i v_j e_3,
 \]
-the \emph{shape operator}\define{shape operator}, also called the \emph{second fundamental form}\define{second fundamental form}\define{fundamental!form!second}.
 We can write \(\shapeOp\) as \(\shapeOp(u,v)=\sum a_{ij} \omega_i(u) \omega_j(v)e_3\), i.e. \(\shapeOp=\transpose{\omega} a \omega e_3\), so 
 \[
 r_g^* \shapeOp = r_g^* \transpose{\omega} a \omega e_3 = \transpose{(\transpose{h}\omega)}(n \transpose{h} a h) (\transpose{h} \omega) (ne_3) = \transpose{\omega} a\omega e_3 = \shapeOp,
 \]
 i.e. \(r_g^* \shapeOp = \shapeOp\) so \(\shapeOp\) is invariant.
+\end{answer}
+
+\section{Principal curvatures}
 The shape operator of a surface is a symmetric bilinear form on the tangent place \(T_x S\) valued in the normal line to the tangent plane, so orthogonally diagonalizable.
 Its eigenvalues are the \emph{principal curvatures}\define{surface!principal curvatures}\define{principal!curvatures}\define{curvature!principal}.
 If it has only one principal curvature, i.e. \(a\) is a multiple of the identity matrix, the point \(x\) is an \emph{umbilic}\define{umbilic} of the surface.
@@ -757,7 +787,7 @@ The \emph{third fundamental form}\define{third fundamental form} is
 
 \section{Local picture of a surface}
 Take a point \(x_0\) of a surface \(S\) and let \(n\) be a unit normal vector to \(S\) at \(x_0\), say \(n=-e_3\) at \(x_0\).
-Take the linear function \(f(x) \defeq \ip{n}{x}\).
+Fixing that constant value of \(n\), take the linear function \(f(x) \defeq n\cdot x\).
 The differential of \(f\) is
 \[
 e_i \hook df = e_i \hook d\pr{n \cdot x} = n \cdot e_i,

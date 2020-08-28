@@ -276,11 +276,11 @@
 {%%
 \end{matrix} \ \right)
 }%%
-\NewDocumentCommand\freeDeriv{m}%
+\NewDocumentCommand\freeDeriv{om}%
 {%
-	\settowidth{\tableauEntryLength}{\({#1}\)}%
+	\settowidth{\tableauEntryLength}{\({#2}\)}%
 	\addtolength{\tableauEntryLength}{\tableauEntryPadding}%
-	\begin{tikzpicture}[baseline=-.5em]%
+	\begin{tikzpicture}[baseline=\IfValueTF{#1}{#1}{-.5em}]%
 	\matrix (m) [%
 		matrix of math nodes,%
 			nodes={%
@@ -292,7 +292,7 @@
 				outer sep=0pt,%
 			},%
 		inner sep=0pt]%
-		{|[free]|#1\\};%
+		{|[free]|#2\\};%
 	\end{tikzpicture}%
 }%
 
@@ -417,7 +417,7 @@
     \IfValueTF{#3}{#3}{}%
 }%
 
-\NewDocumentCommand\mapsfrom{}{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+%\NewDocumentCommand\mapsfrom{}{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
 
 \DeclareMathOperator{\codim}{codim}
 % little o
