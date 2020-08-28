@@ -4,7 +4,7 @@ Geodesics are locally shortest paths on a surface.
 We prove that they exist and that they are smooth.}
 
 \section{Geodesic flow}
-Each point \(\pr{x^o,e^o} \in \frameBundleE{3}\) moves along a path \(x(t)=x^o + t e_1, e(t)=e^o\).
+Each point \(\pr{x^o,e^o} \in \frameBundleE{3}\) moves along a path \(x(t)=x^o + t e^o_1, e(t)=e^o\).
 In other words, don't rotate the frame, but slide the base point \(x\) along the direction of the first leg of the frame.
 \begin{center}
 \begin{tikzpicture}
@@ -19,7 +19,7 @@ In other words, don't rotate the frame, but slide the base point \(x\) along the
 \end{tikzpicture}
 \end{center}
 \par\noindent{}%
-We can define a vector field \(\geodesicVectorField(x,e)\defeq\pr{e_1,0}\) on \(\frameBundleE{3}\) with these paths as its flow.
+Define a vector field \(\geodesicVectorField(x,e)\defeq\pr{e_1,0}\) on \(\frameBundleE{3}\);  these paths are its flow lines.
 
 Imitate this vector field on the frame bundle of a surface \(S\) in \(\E[3]\).
 Write points of \(\frameBundle{S} \times \E[2]\) as \(\pr{x,e,y}\) for \(y \in \E[2]\).
@@ -31,7 +31,7 @@ This expression does \emph{not} involve \(\gamma_{13}\) or \(\gamma_{23}\), sinc
 The flow of \(\geodesicVectorField\) is the \emph{geodesic flow}.%
 \define{flow, geodesic}\define{geodesic!flow}
 The vector field \(\geodesicVectorField\) moves every frame \(\pr{x,e}\), moving \(x\) in the direction of \(\sum y_i e_i\), and ``not rotating'' the frame \(e\), since \(\geodesicVectorField \hook \gamma_{12}=0\).
-Intuitively, \(\geodesicVectorField\) moves frames with as little twisting as possible, given that the frames have to twist somewhat (in the \(\gamma_{13}, \gamma_{23}\) directions) to keep \(e_1,e_2\) tangent to the surface \(S\).
+Intuitively, \(\geodesicVectorField\) twists frames only in the normal directions (in the \(\gamma_{13}, \gamma_{23}\) directions), not tangentially (the \(\alpha=\gamma_{12}\) direction), while keeping \(e_1,e_2\) tangent to the surface \(S\).
 Map \(\pr{x,e} \in \frameBundle{S} \to \pr{x,e,1} \in \frameBundle{S} \times \E[2]\), so that \(\frameBundle{S}\) is identified with a submanifold of \(\frameBundle{S} \times \E[2]\), making \(\frameBundle{S}\) invariant under the geodesic flow.
 Write \(\transpose{a}\) for the transpose of a matrix \(a\).
 Let \(g \in \Orth{2} \times \pm 1\) act on \(\frameBundle{S} \times \R[p]\) by
@@ -646,9 +646,9 @@ d\omega=i \, (\otalpha+d\theta) \wedge \omega.
 The real-valued \(1\)-form  \(\otalpha\) on \(U\) is uniquely determined by \(0=d\qf-i\otalpha\wedge\qf\).
 So the real-valued \(1\)-form \(\alpha\defeq\otalpha+d\theta\) is as well, giving \(0=d\omega-i\alpha\wedge\omega\) for a unique real-valued \emph{Levi-Civita connection \(1\)-form} \(\alpha\).
 Take exterior derivative of that equation to see that
-\[
+\(
 d\alpha=K\omega_1\wedge\omega_2,
-\]
+\)
 for a unique function \(K\) on the tangent frame bundle.
 But on \(\frameBundle{U}\), \(d\alpha=d(\otalpha+d\theta)=d\otalpha\) is the same for any choice of framing, i.e. \(K\) is a function well defined on the surface \(S\).
 \begin{problem}{upstairs:unorien}
@@ -695,13 +695,13 @@ The pullback metric is complete:
 \[
 \omega_1^2+\omega_2^2=dr^2+h^2d\theta^2\ge dr^2+r^2d\theta^2.
 \]
-Preimages of disks on the surface locally sit in Euclidean disks of smaller radius.
-Take a closed geodesic disk on the surface, say of radius \(r\).
+Take a closed disk on the surface, say of radius \(r\).
 Its preimage is a union of disks in the pullback metric, closed by completeness.
-If,  no matter how small we make \(r\), some of them overlap, then there are points of arbitrarily small Euclidean distance mapping to the same point of the surface.
-Taking a convergent sequence of these gives a contradiction.
-So the exponential map covers each small enough embedded closed geodesic disk on the surface with disjoint embedded closed geodesic disks in this complete metric, and so is a covering map.
+Each sits in a Euclidean disk of smaller radius.
+If,  no matter how small we make \(r\), some of these disks overlap, then there are points of arbitrarily small Euclidean distance mapping to the same point of the surface.
+Take a convergent sequence of these, a contradiction.
+So the exponential map covers each small enough embedded closed disk on the surface with disjoint embedded closed disks, and so is a covering map.
 \end{proof}
 
-Smoothness of isometries and the Gauss--Bonnet theorem follow, with the same proof,\SubIndex{Gauss--Bonnet theorem}\SubIndex{theorem!Gauss--Bonnet} for any oriented surface with Riemannian metric, even with corners.
+Smoothness of isometries and the Gauss--Bonnet theorem follow, with the same proof,\SubIndex{Gauss--Bonnet theorem}\SubIndex{theorem!Gauss--Bonnet} for any oriented surface with Riemannian metric.
 

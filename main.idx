@@ -60,8 +60,6 @@
 \indexentry{Cauchy--Riemann equations|FancyIndexEntry}{25}
 \indexentry{Cauchy--Riemann equations|FancyIndexEntry}{25}
 \indexentry{almost complex structure|FancyIndexEntry}{26}
-\indexentry{torsion!tensor|FancyIndexEntry}{28}
-\indexentry{Nijenhuis tensor|FancyIndexEntry}{28}
 \indexentry{Maurer--Cartan form|FancyIndexEntry}{30}
 \indexentry{holomorphic curve|FancyIndexEntry}{31}
 \indexentry{adapted!frame bundle|FancyIndexEntry}{34}
@@ -87,8 +85,8 @@
 \indexentry{Frobenius theorem|hyperpage}{49}
 \indexentry{theorem!Frobenius|hyperpage}{49}
 \indexentry{determined!integral element|FancyIndexEntry}{49}
-\indexentry{Lie's third theorem|hyperpage}{50}
-\indexentry{theorem!Lie's third|hyperpage}{50}
+\indexentry{Lie's third theorem|hyperpage}{51}
+\indexentry{theorem!Lie's third|hyperpage}{51}
 \indexentry{restraining manifold|hyperpage}{53}
 \indexentry{manifold!restraining|hyperpage}{53}
 \indexentry{Cartan--K\"ahler theorem|FancyIndexEntry}{54}
@@ -156,126 +154,128 @@
 \indexentry{Euler--Tricomi equation|FancyIndexEntry}{94}
 \indexentry{Laplace!equation|FancyIndexEntry}{94}
 \indexentry{Laplace!operator|FancyIndexEntry}{94}
-\indexentry{analytic convergence|FancyIndexEntry}{95}
-\indexentry{convergence!analytic|FancyIndexEntry}{95}
-\indexentry{graded!ring|FancyIndexEntry}{95}
-\indexentry{elementary!graded ring|FancyIndexEntry}{95}
-\indexentry{graded ring!elementary|FancyIndexEntry}{95}
-\indexentry{graded!module|FancyIndexEntry}{95}
-\indexentry{asymptotically simple|FancyIndexEntry}{95}
-\indexentry{graded!module!asymptotically simple|FancyIndexEntry}{95}
-\indexentry{graded!module!elementary|FancyIndexEntry}{95}
-\indexentry{lemma!Phat Nguyen|FancyIndexEntry}{95}
-\indexentry{Phat Nguyen lemma|FancyIndexEntry}{95}
-\indexentry{Noetherian|FancyIndexEntry}{96}
-\indexentry{Krull intersection theorem|FancyIndexEntry}{96}
-\indexentry{theorem!Krull intersection|FancyIndexEntry}{96}
-\indexentry{germ|FancyIndexEntry}{96}
-\indexentry{germ!convergence|FancyIndexEntry}{96}
-\indexentry{convergence!germ|FancyIndexEntry}{96}
-\indexentry{Hilbert basis theorem|FancyIndexEntry}{96}
-\indexentry{theorem!Hilbert basis|FancyIndexEntry}{96}
-\indexentry{Cartan!Henri|hyperpage}{96}
-\indexentry{orthonormal frame|FancyIndexEntry}{99}
-\indexentry{frame!orthonormal|FancyIndexEntry}{99}
-\indexentry{frame bundle|FancyIndexEntry}{101}
-\indexentry{bundle!frame|FancyIndexEntry}{101}
-\indexentry{curvature vector|FancyIndexEntry}{101}
-\indexentry{torsion!of a curve|FancyIndexEntry}{102}
-\indexentry{Serret--Frenet frame|FancyIndexEntry}{102}
-\indexentry{helix|hyperpage}{103}
-\indexentry{frame|FancyIndexEntry}{104}
-\indexentry{frame!bundle|FancyIndexEntry}{104}
-\indexentry{form!soldering|FancyIndexEntry}{105}
-\indexentry{soldering forms|FancyIndexEntry}{105}
-\indexentry{connection forms!Levi-Civita|FancyIndexEntry}{105}
-\indexentry{Levi-Civita connection!forms|FancyIndexEntry}{105}
-\indexentry{structure equations!of Euclidean space|FancyIndexEntry}{106}
-\indexentry{structure equations|FancyIndexEntry}{107}
-\indexentry{structure equations|FancyIndexEntry}{108}
-\indexentry{Gauss curvature|FancyIndexEntry}{108}
-\indexentry{curvature!Gauss|FancyIndexEntry}{108}
-\indexentry{mean curvature|FancyIndexEntry}{109}
-\indexentry{mean curvature vector|FancyIndexEntry}{109}
-\indexentry{shape operator|FancyIndexEntry}{109}
-\indexentry{second fundamental form|FancyIndexEntry}{109}
-\indexentry{fundamental!form!second|FancyIndexEntry}{109}
-\indexentry{surface!principal curvatures|FancyIndexEntry}{109}
-\indexentry{principal!curvatures|FancyIndexEntry}{109}
-\indexentry{curvature!principal|FancyIndexEntry}{109}
-\indexentry{umbilic|FancyIndexEntry}{109}
-\indexentry{principal!directions|FancyIndexEntry}{109}
-\indexentry{surface!principal directions|FancyIndexEntry}{109}
-\indexentry{third fundamental form|FancyIndexEntry}{110}
-\indexentry{surface!of revolution|FancyIndexEntry}{111}
-\indexentry{area form|FancyIndexEntry}{113}
-\indexentry{Hopf differential|FancyIndexEntry}{113}
-\indexentry{Gauss map|FancyIndexEntry}{113}
-\indexentry{theorem!Bonnet|FancyIndexEntry}{114}
-\indexentry{Bonnet!theorem|FancyIndexEntry}{114}
-\indexentry{parallel surfaces|hyperpage}{114}
-\indexentry{complex differential|FancyIndexEntry}{116}
-\indexentry{holomorphic differential|FancyIndexEntry}{116}
-\indexentry{theorem!Korn--Lichtenstein|hyperpage}{116}
-\indexentry{Korn--Lichtenstein theorem|hyperpage}{116}
-\indexentry{Darboux frame|FancyIndexEntry}{117}
-\indexentry{frame!Darboux|FancyIndexEntry}{117}
-\indexentry{Liebmann, H.|hyperpage}{117}
-\indexentry{complete!surface|hyperpage}{118}
-\indexentry{surface!complete|hyperpage}{118}
-\indexentry{complete!vector field|hyperpage}{118}
-\indexentry{vector field!complete|hyperpage}{118}
-\indexentry{theorem!Hilbert|FancyIndexEntry}{118}
-\indexentry{Hilbert!surface theorem|FancyIndexEntry}{118}
-\indexentry{sine--Gordon equation|hyperpage}{118}
-\indexentry{frame!adapted|FancyIndexEntry}{121}
-\indexentry{curvature!geodesic|FancyIndexEntry}{121}
-\indexentry{geodesic!curvature|FancyIndexEntry}{121}
-\indexentry{index!of vector field|FancyIndexEntry}{124}
-\indexentry{Euler characteristic|FancyIndexEntry}{124}
-\indexentry{Euler characteristic|FancyIndexEntry}{125}
-\indexentry{theorem!Gauss--Bonnet|FancyIndexEntry}{125}
-\indexentry{Gauss--Bonnet theorem|FancyIndexEntry}{125}
-\indexentry{sign!of map between manifolds of equal dimension|FancyIndexEntry}{126}
-\indexentry{degree|FancyIndexEntry}{126}
-\indexentry{Gauss map|FancyIndexEntry}{126}
-\indexentry{Sard's theorem|hyperpage}{126}
-\indexentry{theorem!Sard|hyperpage}{126}
-\indexentry{Sard's theorem|hyperpage}{127}
-\indexentry{theorem!Sard|hyperpage}{127}
-\indexentry{geodesic!spray|FancyIndexEntry}{129}
-\indexentry{spray!geodesic|FancyIndexEntry}{129}
-\indexentry{flow, geodesic|FancyIndexEntry}{129}
-\indexentry{geodesic!flow|FancyIndexEntry}{129}
-\indexentry{geodesic|FancyIndexEntry}{130}
-\indexentry{adapted!frame|FancyIndexEntry}{131}
-\indexentry{exponential map|FancyIndexEntry}{132}
-\indexentry{injectivity radius|FancyIndexEntry}{133}
-\indexentry{radius!injectivity|FancyIndexEntry}{133}
-\indexentry{complete!surface|hyperpage}{136}
-\indexentry{surface!complete|hyperpage}{136}
-\indexentry{length space|FancyIndexEntry}{137}
-\indexentry{minimal geodesic|FancyIndexEntry}{137}
-\indexentry{geodesic!minimal|FancyIndexEntry}{137}
-\indexentry{geodesic|FancyIndexEntry}{137}
-\indexentry{Hopf--Rinow theorem|hyperpage}{137}
-\indexentry{theorem!Hopf--Rinow|hyperpage}{137}
-\indexentry{circle|FancyIndexEntry}{137}
-\indexentry{theorema egregium|hyperpage}{138}
-\indexentry{Riemannian metric|FancyIndexEntry}{139}
-\indexentry{frame!orthonormal|FancyIndexEntry}{140}
-\indexentry{orthonormal frame|FancyIndexEntry}{140}
-\indexentry{theorema egregium|hyperpage}{141}
-\indexentry{Gauss--Bonnet theorem|hyperpage}{142}
-\indexentry{theorem!Gauss--Bonnet|hyperpage}{142}
-\indexentry{Cauchy!Augustin Louis|hyperpage}{143}
-\indexentry{Kovalevskaya!Sofia Vasilyevna|hyperpage}{143}
-\indexentry{Cartan!Elie@\'Elie|hyperpage}{143}
-\indexentry{Kaehler@K\"ahler!Eric|hyperpage}{143}
-\indexentry{Chern!Shiing-Shen|hyperpage}{144}
-\indexentry{Bryant!Robert|hyperpage}{144}
-\indexentry{Kuranishi!Masatsugu|hyperpage}{144}
-\indexentry{Griffiths!Phillip|hyperpage}{145}
-\indexentry{vector bundle|hyperpage}{148}
-\indexentry{Frobenius theorem|hyperpage}{163}
-\indexentry{theorem!Frobenius|hyperpage}{163}
+\indexentry{analytic convergence|FancyIndexEntry}{97}
+\indexentry{convergence!analytic|FancyIndexEntry}{97}
+\indexentry{graded!ring|FancyIndexEntry}{97}
+\indexentry{elementary!graded ring|FancyIndexEntry}{97}
+\indexentry{graded ring!elementary|FancyIndexEntry}{97}
+\indexentry{graded!module|FancyIndexEntry}{97}
+\indexentry{asymptotically simple|FancyIndexEntry}{97}
+\indexentry{graded!module!asymptotically simple|FancyIndexEntry}{97}
+\indexentry{graded!module!elementary|FancyIndexEntry}{97}
+\indexentry{lemma!Phat Nguyen|FancyIndexEntry}{97}
+\indexentry{Phat Nguyen lemma|FancyIndexEntry}{97}
+\indexentry{Noetherian|FancyIndexEntry}{98}
+\indexentry{Krull intersection theorem|FancyIndexEntry}{98}
+\indexentry{theorem!Krull intersection|FancyIndexEntry}{98}
+\indexentry{germ|FancyIndexEntry}{98}
+\indexentry{germ!convergence|FancyIndexEntry}{98}
+\indexentry{convergence!germ|FancyIndexEntry}{98}
+\indexentry{Hilbert basis theorem|FancyIndexEntry}{98}
+\indexentry{theorem!Hilbert basis|FancyIndexEntry}{98}
+\indexentry{Cartan!Henri|hyperpage}{98}
+\indexentry{orthonormal frame|FancyIndexEntry}{101}
+\indexentry{frame!orthonormal|FancyIndexEntry}{101}
+\indexentry{frame bundle|FancyIndexEntry}{103}
+\indexentry{bundle!frame|FancyIndexEntry}{103}
+\indexentry{curvature vector|FancyIndexEntry}{104}
+\indexentry{torsion!of a curve|FancyIndexEntry}{104}
+\indexentry{Serret--Frenet frame|FancyIndexEntry}{105}
+\indexentry{helix|hyperpage}{105}
+\indexentry{frame|FancyIndexEntry}{106}
+\indexentry{frame!bundle|FancyIndexEntry}{107}
+\indexentry{form!soldering|FancyIndexEntry}{107}
+\indexentry{soldering forms|FancyIndexEntry}{107}
+\indexentry{connection forms!Levi-Civita|FancyIndexEntry}{108}
+\indexentry{Levi-Civita connection!forms|FancyIndexEntry}{108}
+\indexentry{structure equations!of Euclidean space|FancyIndexEntry}{108}
+\indexentry{structure equations|FancyIndexEntry}{109}
+\indexentry{shape operator|FancyIndexEntry}{110}
+\indexentry{second fundamental form|FancyIndexEntry}{110}
+\indexentry{fundamental!form!second|FancyIndexEntry}{110}
+\indexentry{structure equations|FancyIndexEntry}{111}
+\indexentry{Gauss curvature|FancyIndexEntry}{111}
+\indexentry{curvature!Gauss|FancyIndexEntry}{111}
+\indexentry{mean curvature|FancyIndexEntry}{111}
+\indexentry{mean curvature vector|FancyIndexEntry}{111}
+\indexentry{surface!principal curvatures|FancyIndexEntry}{112}
+\indexentry{principal!curvatures|FancyIndexEntry}{112}
+\indexentry{curvature!principal|FancyIndexEntry}{112}
+\indexentry{umbilic|FancyIndexEntry}{112}
+\indexentry{principal!directions|FancyIndexEntry}{112}
+\indexentry{surface!principal directions|FancyIndexEntry}{112}
+\indexentry{third fundamental form|FancyIndexEntry}{112}
+\indexentry{surface!of revolution|FancyIndexEntry}{115}
+\indexentry{area form|FancyIndexEntry}{117}
+\indexentry{Hopf differential|FancyIndexEntry}{117}
+\indexentry{Gauss map|FancyIndexEntry}{117}
+\indexentry{theorem!Bonnet|FancyIndexEntry}{117}
+\indexentry{Bonnet!theorem|FancyIndexEntry}{117}
+\indexentry{parallel surfaces|hyperpage}{118}
+\indexentry{complex differential|FancyIndexEntry}{119}
+\indexentry{holomorphic differential|FancyIndexEntry}{120}
+\indexentry{theorem!Korn--Lichtenstein|hyperpage}{120}
+\indexentry{Korn--Lichtenstein theorem|hyperpage}{120}
+\indexentry{Darboux frame|FancyIndexEntry}{120}
+\indexentry{frame!Darboux|FancyIndexEntry}{120}
+\indexentry{Liebmann, H.|hyperpage}{121}
+\indexentry{complete!surface|hyperpage}{122}
+\indexentry{surface!complete|hyperpage}{122}
+\indexentry{complete!vector field|hyperpage}{122}
+\indexentry{vector field!complete|hyperpage}{122}
+\indexentry{theorem!Hilbert|FancyIndexEntry}{122}
+\indexentry{Hilbert!surface theorem|FancyIndexEntry}{122}
+\indexentry{sine--Gordon equation|hyperpage}{122}
+\indexentry{frame!adapted|FancyIndexEntry}{125}
+\indexentry{curvature!geodesic|FancyIndexEntry}{125}
+\indexentry{geodesic!curvature|FancyIndexEntry}{125}
+\indexentry{index!of vector field|FancyIndexEntry}{128}
+\indexentry{Euler characteristic|FancyIndexEntry}{128}
+\indexentry{Euler characteristic|FancyIndexEntry}{129}
+\indexentry{theorem!Gauss--Bonnet|FancyIndexEntry}{129}
+\indexentry{Gauss--Bonnet theorem|FancyIndexEntry}{129}
+\indexentry{sign!of map between manifolds of equal dimension|FancyIndexEntry}{130}
+\indexentry{degree|FancyIndexEntry}{130}
+\indexentry{Gauss map|FancyIndexEntry}{130}
+\indexentry{Sard's theorem|hyperpage}{130}
+\indexentry{theorem!Sard|hyperpage}{130}
+\indexentry{Sard's theorem|hyperpage}{131}
+\indexentry{theorem!Sard|hyperpage}{131}
+\indexentry{geodesic!spray|FancyIndexEntry}{133}
+\indexentry{spray!geodesic|FancyIndexEntry}{133}
+\indexentry{flow, geodesic|FancyIndexEntry}{133}
+\indexentry{geodesic!flow|FancyIndexEntry}{133}
+\indexentry{geodesic|FancyIndexEntry}{134}
+\indexentry{adapted!frame|FancyIndexEntry}{135}
+\indexentry{exponential map|FancyIndexEntry}{136}
+\indexentry{injectivity radius|FancyIndexEntry}{137}
+\indexentry{radius!injectivity|FancyIndexEntry}{137}
+\indexentry{complete!surface|hyperpage}{140}
+\indexentry{surface!complete|hyperpage}{140}
+\indexentry{length space|FancyIndexEntry}{141}
+\indexentry{minimal geodesic|FancyIndexEntry}{141}
+\indexentry{geodesic!minimal|FancyIndexEntry}{141}
+\indexentry{geodesic|FancyIndexEntry}{141}
+\indexentry{Hopf--Rinow theorem|hyperpage}{141}
+\indexentry{theorem!Hopf--Rinow|hyperpage}{141}
+\indexentry{circle|FancyIndexEntry}{141}
+\indexentry{theorema egregium|hyperpage}{142}
+\indexentry{Riemannian metric|FancyIndexEntry}{143}
+\indexentry{frame!orthonormal|FancyIndexEntry}{144}
+\indexentry{orthonormal frame|FancyIndexEntry}{144}
+\indexentry{theorema egregium|hyperpage}{145}
+\indexentry{Gauss--Bonnet theorem|hyperpage}{145}
+\indexentry{theorem!Gauss--Bonnet|hyperpage}{145}
+\indexentry{Cauchy!Augustin Louis|hyperpage}{146}
+\indexentry{Kovalevskaya!Sofia Vasilyevna|hyperpage}{146}
+\indexentry{Cartan!Elie@\'Elie|hyperpage}{146}
+\indexentry{Kaehler@K\"ahler!Eric|hyperpage}{146}
+\indexentry{Chern!Shiing-Shen|hyperpage}{147}
+\indexentry{Bryant!Robert|hyperpage}{147}
+\indexentry{Kuranishi!Masatsugu|hyperpage}{147}
+\indexentry{Griffiths!Phillip|hyperpage}{148}
+\indexentry{vector bundle|hyperpage}{150}
+\indexentry{torsion!tensor|FancyIndexEntry}{156}
+\indexentry{Nijenhuis tensor|FancyIndexEntry}{156}
+\indexentry{Frobenius theorem|hyperpage}{166}
+\indexentry{theorem!Frobenius|hyperpage}{166}
