@@ -4,11 +4,11 @@
   \item adapted
     \subitem frame, \FancyIndexEntry{135}
     \subitem frame bundle, \FancyIndexEntry{34}
-  \item adapted tableau, \FancyIndexEntry{16}
+    \subitem tableau, \FancyIndexEntry{16}
   \item almost complex structure, \FancyIndexEntry{26}
   \item analytic, \hyperpage{1}
-  \item analytic convergence, \FancyIndexEntry{97}
-  \item analytic function, \FancyIndexEntry{78}
+    \subitem convergence, \FancyIndexEntry{97}
+    \subitem function, \FancyIndexEntry{78}
   \item area form, \FancyIndexEntry{117}
   \item asymptotic curve, \FancyIndexEntry{67}
   \item asymptotically simple, \FancyIndexEntry{97}
@@ -29,15 +29,14 @@
   \item Cartan
     \subitem \'Elie, \hyperpage{146}
     \subitem Henri, \hyperpage{98}
-  \item Cartan's lemma, \FancyIndexEntry{6}
-  \item Cartan's test, \FancyIndexEntry{40}
+    \subitem lemma, \FancyIndexEntry{6}
+    \subitem test, \FancyIndexEntry{40}
   \item Cartan--K\"ahler theorem, \FancyIndexEntry{4}, 
 		\FancyIndexEntry{54}
   \item Cauchy
     \subitem Augustin Louis, \hyperpage{146}
-    \subitem characteristic, \FancyIndexEntry{62}
-    \subitem characteristic vector, \FancyIndexEntry{62}
-  \item Cauchy characteristic, \FancyIndexEntry{63}
+    \subitem characteristic, \FancyIndexEntry{62, 63}
+      \subsubitem vector, \FancyIndexEntry{62}
   \item Cauchy--Kovalevskaya theorem, \FancyIndexEntry{80}, 
 		\hyperpage{87}, \hyperpage{92}
   \item Cauchy--Riemann equations, \FancyIndexEntry{25}
@@ -46,8 +45,8 @@
     \subitem Cauchy, \FancyIndexEntry{63}
     \subitem variety, \FancyIndexEntry{48}, \FancyIndexEntry{89}
       \subsubitem nonlinear differential equation, \FancyIndexEntry{92}
-  \item characteristic vector
-    \subitem Cauchy, \FancyIndexEntry{62}
+    \subitem vector
+      \subsubitem Cauchy, \FancyIndexEntry{62}
   \item Chern
     \subitem Shiing-Shen, \hyperpage{147}
   \item circle, \FancyIndexEntry{141}
@@ -73,7 +72,7 @@
     \subitem Gauss, \FancyIndexEntry{111}
     \subitem geodesic, \FancyIndexEntry{125}
     \subitem principal, \FancyIndexEntry{112}
-  \item curvature vector, \FancyIndexEntry{104}
+    \subitem vector, \FancyIndexEntry{104}
 
   \indexspace
 
@@ -125,7 +124,6 @@
   \item Gauss map, \FancyIndexEntry{117}, \FancyIndexEntry{130}
   \item Gauss--Bonnet theorem, \FancyIndexEntry{129}, \hyperpage{145}
   \item generic, \FancyIndexEntry{39}
-    \subitem integral flag, \FancyIndexEntry{3}
   \item geodesic, \FancyIndexEntry{134}, \FancyIndexEntry{141}
     \subitem curvature, \FancyIndexEntry{125}
     \subitem flow, \FancyIndexEntry{133}
@@ -139,8 +137,7 @@
       \subsubitem asymptotically simple, \FancyIndexEntry{97}
       \subsubitem elementary, \FancyIndexEntry{97}
     \subitem ring, \FancyIndexEntry{97}
-  \item graded ring
-    \subitem elementary, \FancyIndexEntry{97}
+      \subsubitem elementary, \FancyIndexEntry{97}
   \item Grassmann bundle, \FancyIndexEntry{3}
   \item Griffiths
     \subitem Phillip, \hyperpage{148}
@@ -149,10 +146,10 @@
 
   \item helix, \hyperpage{105}
   \item Hilbert
+    \subitem basis theorem, \FancyIndexEntry{98}
     \subitem surface theorem, \FancyIndexEntry{122}
-  \item Hilbert basis theorem, \FancyIndexEntry{98}
   \item holomorphic, \FancyIndexEntry{25}
-  \item holomorphic curve, \FancyIndexEntry{31}
+    \subitem curve, \FancyIndexEntry{31}
   \item holomorphic differential, \FancyIndexEntry{120}
   \item Hopf differential, \FancyIndexEntry{117}
   \item Hopf--Rinow theorem, \hyperpage{141}
@@ -169,7 +166,6 @@
       \subsubitem ordinary, \FancyIndexEntry{39}
       \subsubitem regular, \FancyIndexEntry{39}
     \subitem flag, \FancyIndexEntry{3}
-      \subsubitem generic, \FancyIndexEntry{3}
     \subitem line, \FancyIndexEntry{2}
     \subitem manifold, \FancyIndexEntry{1}
     \subitem plane, \FancyIndexEntry{2}
@@ -204,9 +200,11 @@
   \item length space, \FancyIndexEntry{141}
   \item Levi-Civita connection, \FancyIndexEntry{9}
     \subitem forms, \FancyIndexEntry{108}
-  \item Lie bracket, \hyperpage{7}
-  \item Lie group, \hyperpage{21}
-  \item Lie's third theorem, \FancyIndexEntry{21}, \hyperpage{51}
+  \item Lie
+    \subitem bracket, \hyperpage{7}
+    \subitem group, \hyperpage{21}
+    \subitem third theorem, \FancyIndexEntry{21}
+  \item Lie's third theorem, \hyperpage{51}
   \item Liebmann, H., \hyperpage{121}
   \item line
     \subitem integral, \FancyIndexEntry{2}
@@ -223,7 +221,7 @@
     \subitem restraining, \hyperpage{53, 54}
   \item Maurer--Cartan form, \FancyIndexEntry{21}, \FancyIndexEntry{30}
   \item mean curvature, \FancyIndexEntry{111}
-  \item mean curvature vector, \FancyIndexEntry{111}
+    \subitem vector, \FancyIndexEntry{111}
   \item minimal geodesic, \FancyIndexEntry{141}
   \item minimal surface
     \subitem equation, \FancyIndexEntry{94}

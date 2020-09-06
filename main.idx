@@ -14,8 +14,6 @@
 \indexentry{polar equation|FancyIndexEntry}{2}
 \indexentry{integral!flag|FancyIndexEntry}{3}
 \indexentry{character|FancyIndexEntry}{3}
-\indexentry{integral!flag!generic|FancyIndexEntry}{3}
-\indexentry{generic!integral flag|FancyIndexEntry}{3}
 \indexentry{Grassmann bundle|FancyIndexEntry}{3}
 \indexentry{predicted dimension|FancyIndexEntry}{3}
 \indexentry{involutive|FancyIndexEntry}{3}
@@ -24,14 +22,14 @@
 \indexentry{special Lagrangian submanifold|hyperpage}{4}
 \indexentry{submanifold!special Lagrangian|hyperpage}{4}
 \indexentry{Lagrangian submanifold!special|hyperpage}{4}
-\indexentry{Cartan's lemma|FancyIndexEntry}{6}
+\indexentry{Cartan!lemma|FancyIndexEntry}{6}
 \indexentry{lemma!Cartan's|FancyIndexEntry}{6}
 \indexentry{pullback|FancyIndexEntry}{6}
 \indexentry{locally generated|FancyIndexEntry}{6}
 \indexentry{Frobenius theorem|hyperpage}{6}
 \indexentry{theorem!Frobenius|hyperpage}{6}
 \indexentry{Frobenius|FancyIndexEntry}{6}
-\indexentry{Lie bracket|hyperpage}{7}
+\indexentry{Lie!bracket|hyperpage}{7}
 \indexentry{Frobenius theorem|hyperpage}{7}
 \indexentry{theorem!Frobenius|hyperpage}{7}
 \indexentry{compatibility|hyperpage}{7}
@@ -47,12 +45,12 @@
 \indexentry{polar|FancyIndexEntry}{14}
 \indexentry{character|FancyIndexEntry}{14}
 \indexentry{Lagrangian submanifold|hyperpage}{15}
-\indexentry{adapted tableau|FancyIndexEntry}{16}
+\indexentry{adapted!tableau|FancyIndexEntry}{16}
 \indexentry{absorbing torsion|FancyIndexEntry}{17}
 \indexentry{torsion!absorbing|FancyIndexEntry}{17}
 \indexentry{borrow polars|FancyIndexEntry}{18}
-\indexentry{Lie group|hyperpage}{21}
-\indexentry{Lie's third theorem|FancyIndexEntry}{21}
+\indexentry{Lie!group|hyperpage}{21}
+\indexentry{Lie!third theorem|FancyIndexEntry}{21}
 \indexentry{theorem!Lie's third|FancyIndexEntry}{21}
 \indexentry{Maurer--Cartan form|FancyIndexEntry}{21}
 \indexentry{Jacobi identity|hyperpage}{22}
@@ -61,7 +59,7 @@
 \indexentry{Cauchy--Riemann equations|FancyIndexEntry}{25}
 \indexentry{almost complex structure|FancyIndexEntry}{26}
 \indexentry{Maurer--Cartan form|FancyIndexEntry}{30}
-\indexentry{holomorphic curve|FancyIndexEntry}{31}
+\indexentry{holomorphic!curve|FancyIndexEntry}{31}
 \indexentry{adapted!frame bundle|FancyIndexEntry}{34}
 \indexentry{frame bundle!adapted|FancyIndexEntry}{34}
 \indexentry{prolongation|FancyIndexEntry}{35}
@@ -74,7 +72,7 @@
 \indexentry{ordinary!integral element|FancyIndexEntry}{39}
 \indexentry{integral!element!ordinary|FancyIndexEntry}{39}
 \indexentry{test!Cartan's|FancyIndexEntry}{40}
-\indexentry{Cartan's test|FancyIndexEntry}{40}
+\indexentry{Cartan!test|FancyIndexEntry}{40}
 \indexentry{grade|FancyIndexEntry}{41}
 \indexentry{semipositive|FancyIndexEntry}{41}
 \indexentry{local deformation|FancyIndexEntry}{44}
@@ -108,11 +106,11 @@
 \indexentry{bundled|FancyIndexEntry}{61}
 \indexentry{vector bundle|hyperpage}{62}
 \indexentry{Cauchy!characteristic|FancyIndexEntry}{62}
-\indexentry{Cauchy!characteristic vector|FancyIndexEntry}{62}
-\indexentry{characteristic vector!Cauchy|FancyIndexEntry}{62}
+\indexentry{Cauchy!characteristic!vector|FancyIndexEntry}{62}
+\indexentry{characteristic!vector!Cauchy|FancyIndexEntry}{62}
 \indexentry{vector bundle|hyperpage}{62}
 \indexentry{retracting space|FancyIndexEntry}{63}
-\indexentry{Cauchy characteristic|FancyIndexEntry}{63}
+\indexentry{Cauchy!characteristic|FancyIndexEntry}{63}
 \indexentry{characteristic!Cauchy|FancyIndexEntry}{63}
 \indexentry{pullback!exterior differential system|FancyIndexEntry}{63}
 \indexentry{exterior differential system!pullback|FancyIndexEntry}{63}
@@ -135,7 +133,7 @@
 \indexentry{Taylor series!formal|FancyIndexEntry}{77}
 \indexentry{formal!Taylor series|FancyIndexEntry}{77}
 \indexentry{majorize|FancyIndexEntry}{77}
-\indexentry{analytic function|FancyIndexEntry}{78}
+\indexentry{analytic!function|FancyIndexEntry}{78}
 \indexentry{formal!solution|FancyIndexEntry}{79}
 \indexentry{solution!formal|FancyIndexEntry}{79}
 \indexentry{theorem!Cauchy--Kovalevskaya|FancyIndexEntry}{80}
@@ -154,11 +152,11 @@
 \indexentry{Euler--Tricomi equation|FancyIndexEntry}{94}
 \indexentry{Laplace!equation|FancyIndexEntry}{94}
 \indexentry{Laplace!operator|FancyIndexEntry}{94}
-\indexentry{analytic convergence|FancyIndexEntry}{97}
+\indexentry{analytic!convergence|FancyIndexEntry}{97}
 \indexentry{convergence!analytic|FancyIndexEntry}{97}
 \indexentry{graded!ring|FancyIndexEntry}{97}
 \indexentry{elementary!graded ring|FancyIndexEntry}{97}
-\indexentry{graded ring!elementary|FancyIndexEntry}{97}
+\indexentry{graded!ring!elementary|FancyIndexEntry}{97}
 \indexentry{graded!module|FancyIndexEntry}{97}
 \indexentry{asymptotically simple|FancyIndexEntry}{97}
 \indexentry{graded!module!asymptotically simple|FancyIndexEntry}{97}
@@ -171,14 +169,14 @@
 \indexentry{germ|FancyIndexEntry}{98}
 \indexentry{germ!convergence|FancyIndexEntry}{98}
 \indexentry{convergence!germ|FancyIndexEntry}{98}
-\indexentry{Hilbert basis theorem|FancyIndexEntry}{98}
+\indexentry{Hilbert!basis theorem|FancyIndexEntry}{98}
 \indexentry{theorem!Hilbert basis|FancyIndexEntry}{98}
 \indexentry{Cartan!Henri|hyperpage}{98}
 \indexentry{orthonormal frame|FancyIndexEntry}{101}
 \indexentry{frame!orthonormal|FancyIndexEntry}{101}
 \indexentry{frame bundle|FancyIndexEntry}{103}
 \indexentry{bundle!frame|FancyIndexEntry}{103}
-\indexentry{curvature vector|FancyIndexEntry}{104}
+\indexentry{curvature!vector|FancyIndexEntry}{104}
 \indexentry{torsion!of a curve|FancyIndexEntry}{104}
 \indexentry{Serret--Frenet frame|FancyIndexEntry}{105}
 \indexentry{helix|hyperpage}{105}
@@ -197,7 +195,7 @@
 \indexentry{Gauss curvature|FancyIndexEntry}{111}
 \indexentry{curvature!Gauss|FancyIndexEntry}{111}
 \indexentry{mean curvature|FancyIndexEntry}{111}
-\indexentry{mean curvature vector|FancyIndexEntry}{111}
+\indexentry{mean curvature!vector|FancyIndexEntry}{111}
 \indexentry{surface!principal curvatures|FancyIndexEntry}{112}
 \indexentry{principal!curvatures|FancyIndexEntry}{112}
 \indexentry{curvature!principal|FancyIndexEntry}{112}
