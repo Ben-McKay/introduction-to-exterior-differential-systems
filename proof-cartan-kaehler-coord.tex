@@ -134,19 +134,21 @@ A submanifold \(R\) of \(M\) \emph{restrains}\SubIndex{restraining manifold}\Sub
 \begin{corollary}\label{corollary:CK.II}
 If an analytic manifold restrains an analytic integral manifold of an analytic exterior differential system, then the integral manifold is a hypersurface in a locally unique analytic integral submanifold of the restraining manifold.
 \end{corollary}
+Take an integral element \(E\subset T_x M\) of an exterior differential system.
+A linear subspace \(V\subset T_x M\) \emph{restrains} \(E\) if \(E\subseteq V\)  and
+\begin{enumerate}
+\item
+all nonzero polar equations of \(E\), being linear functions on \(T_x M\), pull back to nonzero linear functions on \(V\) and
+\item
+the vectors in \(V\) on which those polar equations vanish form a subspace containing \(E\) as a hyperplane.
+\end{enumerate} 
 \begin{theorem}%
 [Cartan--K\"ahler \Romanbar{2}]%
 \define{Cartan--K\"ahler theorem}%
 \define{theorem!Cartan--K\"ahler}%
 \label{theorem:CK.II}
-Take an analytic exterior differential system \(\II\) on a manifold \(M\) and an analytic integral manifold \(X\) with locally maximal rank polar equations.
-Take an analytic submanifold \(R\) containing \(X\) so that, for each \(x \in X\), 
-\begin{enumerate}
-\item
-all nonzero polar equations of \(T_x X\) pull back to nonzero linear functions on \(T_x R\) and
-\item
-the vectors in \(T_x R\) on which those polar equations vanish form a subspace containing \(T_x X\) as a hyperplane.
-\end{enumerate}
+Take an exterior differential system \(\II\) on a manifold \(M\) and an integral manifold \(X\) with locally maximal rank polar equations.
+Take a submanifold \(R\) containing \(X\) so that, for each \(x \in X\), \(T_x R\) restrains \(T_x X\).
 Then \(R\) restrains \(X\), corollary~\ref{corollary:CK.II} applies.
 \end{theorem}
 \begin{proof}
