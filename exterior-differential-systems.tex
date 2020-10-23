@@ -2,7 +2,7 @@
 \chapterSummary{We define exterior differential systems, and state the Cartan--K\"ahler theorem.}
 
 \section{Background material from differential geometry}
-By the expression \emph{analytic},\SubIndex{analytic} we mean \emph{real analytic}; see appendix~\ref{chapter:Cauchy.Kovalevskaya}.
+By the expression \emph{analytic},\SubIndex{analytic} we mean \emph{real analytic}.
 We assume that all of our manifolds, maps vector fields and differential forms are analytic.
 (In a few exercises, we describe some such thing as \emph{smooth}, i.e. \(C^{\infty}\), not necessarily analytic.)
 A \emph{submanifold}\define{submanifold} is an immersion of manifolds, defined up to diffeomorphism of the domain.
@@ -20,7 +20,7 @@ It is easy to generalize this to any number of variables and any number of equat
 
 \section{Exterior differential systems}
 An \emph{integral manifold}\define{integral!manifold}\define{manifold!integral} of a collection of differential forms is a submanifold on which the forms vanish.
-An \emph{exterior differential system} is an ideal \(\II \subset \Omega^*\) of differential forms on a manifold \(M\), closed under exterior derivative, which splits into a direct sum
+An \emph{exterior differential system} on a manifold \(M\) is an ideal \(\II \subset \Omega^*\) of differential forms, closed under exterior derivative, splitting into a direct sum
 \[
 \II=\II^1 \oplus \dots \oplus \II^{\dim M}
 \]
@@ -56,7 +56,7 @@ If we wish some functions to vanish, we can replace our manifold \(M\) by the ze
 
 \section{Integral elements}
 An \emph{integral element}\define{integral!element}\define{element!integral} of an exterior differential system \(\II\) is a linear subspace of a tangent space, on which all forms in \(\II\) vanish.
-Every tangent space of an integral manifold is an integral element, but some integral elements of some exterior differential systems don't arise as tangent spaces of integral manifolds.
+Every tangent space of any integral manifold is an integral element, but some integral elements of some exterior differential systems don't arise as tangent spaces of integral manifolds.
 A \(1\)-dimensional integral element is an \emph{integral line}\define{integral!line}\define{line!integral}. 
 A \(2\)-dimensional integral element is an \emph{integral plane}.\define{integral!plane}\define{plane!integral}
 \prob{trivial.integral.elements}{What are the integral elements of our trivial examples?}%
@@ -91,7 +91,7 @@ An \emph{integral flag}\define{integral!flag} of an exterior differential system
 \]
 with dimensions \(0,1,2,\dots,p\).
 \emph{Danger:} most authors require that a flag have subspaces of all dimensions; we \emph{don't}: we only require that the subspaces have all dimensions \(0,1,2,\dots,p\) up to some dimension \(p\).
-Each subspace \(E_0,E_1,\dots,E_p\) has successively larger space of polar equations.
+Successive subspaces have successively larger space of polar equations.
 The \emph{characters}\define{character} \(s_0,s_1,\dots,s_p\) of the flag are the increments in rank of polar equations: \(E_k\) has polar equations of rank \(s_0+s_1+\dots+s_k\).
 
 Consider all flags inside a given \(E_p\).
@@ -120,7 +120,7 @@ It predicts \emph{correctly} if the nearby integral elements form a submanifold 
 (We will see that they always sit in a submanifold of the predicted dimension.)
 An integral element which correctly predicts dimension is \emph{involutive}\define{involutive}.
 An exterior differential system on a manifold \(M\) is \emph{involutive} if each component of \(M\) contains an involutive maximal integral element.
-(We will see that involutivity of an exterior differential system implies involutivity of a dense open set of maximal integral elements.)
+(We will see that involutivity of an exterior differential system implies that involutive integral elements occur at a dense open subset of points of \(M\).)
 \begin{theorem}[Cartan--K\"ahler]\label{theorem:CK}\define{Cartan--K\"ahler theorem}\define{theorem!Cartan--K\"ahler}
 Every involutive integral element of any analytic exterior differential system is tangent to an analytic integral manifold.
 \end{theorem}
