@@ -4,7 +4,7 @@ In most chapters of these notes, we study geometry that is invariant under diffe
 In this chapter, we study geometry that is invariant under rigid motions of \(3\)-dimensional Euclidean space. 
 We want examples of exterior differential systems.
 For simplicity, we look to surface theory: differential equations governing surfaces in \(3\)-dimensional Euclidean space.
-We look for differential equations invariant under rigid motion.
+Naturally, we demand that our differential equations be invariant under rigid motion.
 But there are no differential forms on Euclidean space invariant under rigid motion.
 We will instead find invariant differential forms on the \emph{frame bundle} of Euclidean space.}
 
@@ -48,8 +48,10 @@ giving a map
 h \colon (x,e) \in \frameBundleE{3}\mapsto h(x,e) \in \E[3] \ltimes \Orth{3}.
 \]
 \begin{problem}{moving.frame:isom}
-Prove that: associating to \(\varphi\) this matrix \(h(x,e)\) above is an isomorphism of groups from the group of rigid motions of Euclidean space to the group \(\Orth{3} \ltimes \E[3]\) of such matrices.
-So \(h(x,e)\) is a matrix description of the rigid motion that takes the origin to \(x\) and the standard basis to \(e\).
+Let \(x_0\) be the origin and \(e_0\) the standard frame, consisting of the standard basis vectors.
+Associate to each rigid motion \(\varphi\) this matrix \(h(x,e)=h \varphi(x_0,e_0)\) as above.
+Prove that this association is an isomorphism of groups from the group of rigid motions of Euclidean space to the group \(\Orth{3} \ltimes \E[3]\) of such matrices.
+We see a matrix description of the rigid motion that takes the origin to \(x\) and the standard basis to \(e\).
 Prove that
 \[
 h(x,eg)=h(x,e)
@@ -77,12 +79,14 @@ If the curve is immersed, a frame \((x,e)\) is \emph{adapted} if \(e_1\) is tang
 \input{curve-with-tangent-frame}
 \end{center}
 At each point \(x\) of the curve, any two adapted frames agree up to changing the direction of \(e_1\), and rotating or reflecting \(e_2,e_3\) in the plane normal to the tangent line; the set of all such frames is a surface inside that \(4\)-dimensional manifold.
-This surface of adapted frames is built by attaching to each point of \(C\) four circles, representing rotating \(e_2,e_3\)  and reflecting \(e_1\) or the plane or \(e_2,e_3\).
-We will carry out computations directly inside that surface.
-On a connected curve, that surface has \(4\) components.
+This surface of adapted frames is built by attaching to each point of \(C\) four circles: take any one adapted frame, and then rotate \(e_2,e_3\) to form one circle, then reflect the plane of \(e_2,e_3\) to form another, and then reflect \(e_1\) to carry those into two more.
+We will carry out computations directly inside this surface.
+For a connected curve, this surface has \(4\) components.
+
 Every rigid motion is determined by where it moves any chosen frame.
 Any rigid motion preserving an immersed curve takes any frame adapted to the curve to another frame adapted to the curve.
 So we can guess that the group of rigid motions preserving an immersed curve is at most a \(2\)-dimensional submanifold of the \(6\)-dimensional group of rigid motions.
+If the curve is a straight line, we can slide a frame along the line, and rotate around the line, so we see a \(2\)-dimensional group of rigid motions.
 
 \section{Frames on surfaces}
 Similarly, a frame is adapted to a surface if \(x\) is a point of the surface and \(e_3\) is normal to the surface.
@@ -113,7 +117,9 @@ h\in\Orth{2}.
 \]
 The \emph{curvature vector}%
 \define{curvature!vector}  of \(C\) at a point is the acceleration as we move along \(C\) at unit speed.
-If we change the choice of unit speed parameterization (also known as \emph{arclength parameterization}, adding a constant or changing the direction of motion, i.e. the sign, this changes the sign of velocity, but we hit two sign changes when we take two derivatives, so the curvature vector is independent of the choice of unit speed parameterization.
+The choice of unit speed parameterization is known as an \emph{arclength parameterization}.
+The arclength parameterization is unique up to adding a constant or changing the direction of motion, i.e. the sign.
+Changing direction changes the sign of velocity, but we hit two sign changes when we take two derivatives, so the curvature vector is independent of the choice of arclength parameterization.
 In particular, the curvature vector is defined without selecting any orientation of the curve \(C\).
 
 Write the (perhaps local) inverse of an arclength parameterization as a function \(s\) on an open subset of \(C\), uniquely determined up to sign and adding a constant.
@@ -168,7 +174,8 @@ for some \(t\).
 \end{answer}
 The frame \(e_1, e_2, e_3\) of an oriented curve of nonzero curvature is the \emph{Serret--Frenet frame}\define{Serret--Frenet frame}.
 Note that we can change sign of \(e_1\), i.e. change orientation, and independently change sign of \(e_3\).
-So the frame bundle of \(C\) contains four Serret--Frenet frames above each point of \(C\), i.e. four curves in the frame bundle.
+So the frame bundle of \(C\) contains four Serret--Frenet frames above each point of \(C\).
+As we move along \(C\), these four points trace out four curves in the frame bundle.
 The torsion changes sign if we change the sign of \(e_3\), so it is not really a function on the curve \(C\).
 We can pick out one choice of Serret--Frenet curve by orienting both \(C\) and \(\E[3]\).
 We can guess that the isometries of \(\E[3]\) which preserve a nonlinear curve are at most \(1\)-dimensional.
@@ -353,11 +360,12 @@ The choice of initial conditions at a single point determines the curve and the 
 If we translate \(x\) or rotate \(x,e_1,e_2,e_3\) by a constant rotation, check that this takes us to another solution.
 Since \(e_1(s)\) is continuously differentiable and \(dx/ds=e_1\), \(x\) is twice continuously differentiable. 
 \end{proof}
-\begin{example} Any curve of constant positive curvature and constant nonzero torsion is a helix, by existence (from the problem above) and uniqueness.
+\begin{example} 
+Any curve of constant positive curvature and constant nonzero torsion is a helix, by existence (from the problem above) and uniqueness.
 Similarly, any curve of constant positive curvature and zero torsion is a circle, and any curve of zero curvature is a line.
 \end{example}
 \begin{problem}{moving.frame:Bertrand}
-For a given curve in \(3\)-dimensional Euclidean space, with nowhere vanishing curvature vector, find every other curve so that, parameterized by arc length, points with the same arclength parameter have the same direction of curvature vector.
+For a given curve in \(3\)-dimensional Euclidean space, with nowhere vanishing curvature vector, find every other curve so that, parameterized by arc length, points on the two curves which have the same arclength parameter also have the same direction of curvature vector.
 \end{problem}
 \begin{answer}{moving.frame:Bertrand}
 If \(\ot{e}_2=e_2\), then \(e_1,e_3\) and \(\ot{e}_1,\ot{e}_3\) are orthonormal bases of the same plane \(e_2^{\perp}\).
@@ -436,7 +444,7 @@ tangent and
  \end{pmatrix}
 \]
 normal.
-We can choose \(e_3\) to point outward from \(S\) in either direction, and choose \(e_1, e_2\) to have either orientation.
+Alternatively, we could instead have taken \(e_3\) to be the negative or this, and we could also have taken \(e_1\) and \(e_2\) to be any rotation or reflection of these in the tangent plane.
 \end{example}
 The \emph{frame bundle}%
 \define{frame!bundle}

@@ -9,15 +9,15 @@ Prove that there is a reparameterization \(y(t)=x(\tau(t))\) for some function \
 Prove that \(\tau(t)\) is uniquely determined up to adding a constant.
 Prove that the length of \(y(t)\) for \(a \le t \le b\) is equal to the length of \(x(t)\) for \(\tau(a) \le t \le \tau(b)\).
 \end{problem}
-Take an oriented curve \(C\), in other words an oriented \(1\)-dimensional manifold, and a smooth immersion \(f \colon C \to S\) to a surface \(S\).
+Take an oriented curve \(C\), in other words an oriented \(1\)-dimensional manifold, smoothly immersed in a surface \(S\).
 An \emph{adapted frame}%
 \define{frame!adapted}
-for \(C\) at a point \(c \in C\) is a frame \((x,e)\) for \(S\), where \(x=f(c)\), so that \(e_1\) is a positively oriented basis of the tangent line to \(C\) at \(m\).
-Let \(\adaptedFrameBundle{C}{S}\) be the set of all pairs \(\pr{c,e}\) so that \(c \in C\) and \(e\) is an adapted frame for \(C\) at \(c\).
+for \(C\) at a point \(c \in C\) is a pair \((c,e)\) for \(S\), where \((x,e)\in\frameBundle{S}\) and \(x\) is the point of \(S\) at which the point \(c\in C\) lies, and \(e_1\) is a positively oriented basis of the tangent line to \(C\) at \(m\).
+Let \(\adaptedFrameBundle{C}{S}\) be the set of all adapted frames for \(C\).
 \begin{problem}{geodesics:curve.adapt}
 Prove that the set \(\adaptedFrameBundle{C}{S}\) is a curve in \(C \times \frameBundle{S}\).
 \end{problem}
-Map \(\pr{c,e} \in \adaptedFrameBundle{C}{S} \mapsto \pr{f(c),e} \in \frameBundle{S}\).
+Map \(\pr{c,e} \in \adaptedFrameBundle{C}{S} \mapsto \pr{x,e} \in \frameBundle{S}\).
 Using this map to pullback \(\omega_1, \omega_2\) and \(\alpha=\gamma_{12}\).
 If we parameterize \(C\), say as \(x(t)\), then \(e_1(t)\) is the unit vector in the direction of \(x'(t)\), so that \(\omega_1=e_1(t) \cdot dx=e_1(t) \cdot \frac{dx}{dt} \, dt=\norm{\dot{x}(s)} \, dt\).
 So \(\omega_1\) is a well defined \(1\)-form on the curve \(C\) and \(\int_C \omega_1\) is the length of the curve \(C\).
@@ -69,12 +69,14 @@ a circle.
 Take a curve \(C\) on a surface \(S\) in \(\E[3]\).
 Suppose that \(C\) has curvature vector as a space curve nowhere perpendicular to \(S\).
 Take \(\theta\) to be the angle between that curvature vector and its projection to the surface \(S\).
-Its surface invariants (geodesic curvature \(\kappa\) and shape operator \(a\)) are related to its invariants as a space curve (the curvature \(k\) and torsion \(t\) of \(C\)) by
-\begin{align*}
-\kappa &= k\cos \theta,\\
-a(\dot{x},\dot{x}) &= k\sin \theta,\\
-a(\dot{x},\dot{x}^{\perp})&=\dot\theta+t
-\end{align*}
+Its surface invariants (geodesic curvature vector \(\kappa\) and shape operator \(a\)) are related to its invariants as a space curve (the curvature \(k\) and torsion \(t\) of \(C\)) by
+\[
+\begin{array}{r@{\,=\,}l@{~}>{$\upshape}l<{$}}
+\kappa&k\cos \theta \, e_2&geodesic curvature\\
+a(\dot{x},\dot{x})&k\sin \theta \, e_3&normal curvature\\
+a(\dot{x},\dot{x}^{\perp})&(\dot\theta+t)\,e_3&geodesic torsion
+\end{array}
+\]
 where \(\dot{x}\) is its unit speed velocity in either orientation, and \(\dot{x}^{\perp}\) is the unit tangent vector to \(S\) normal to \(C\) which is closest to the curvature vector. 
 \end{lemma}
 \begin{proof}
@@ -280,26 +282,26 @@ so that
 \end{proof}
 
 \section{Degree}
-Suppose that \(f \colon P \to Q\) is a continuously differentiable map between two oriented manifolds of equal dimension, perhaps with corners.  
+Suppose that \(\varphi\colon P \to Q\) is a continuously differentiable map between two oriented manifolds of equal dimension, perhaps with corners.  
 The \emph{sign}\define{sign!of map between manifolds of equal dimension}
-of \(f\) at a regular point \(p \in P\) is \(1\) if \(f\) is orientation preserving near \(p\), and \(-1\) is \(f\) is orientation reversing near \(p\).
-Suppose that \(q_0 \in Q\) is a regular value and that there are only finitely points \(p \in P\) mapped to \(q_0\) by \(f\).
-The \emph{degree}\define{degree} of \(f\) above \(q_0\) is the sum of signs at these points \(p\):
+of \(\varphi\) at a regular point \(p \in P\) is \(1\) if \(\varphi\) is orientation preserving near \(p\), and \(-1\) is \(\varphi\) is orientation reversing near \(p\).
+Suppose that \(q_0 \in Q\) is a regular value and that there are only finitely points \(p \in P\) mapped to \(q_0\) by \(\varphi\).
+The \emph{degree}\define{degree} of \(\varphi\) above \(q_0\) is the sum of signs at these points \(p\):
 \[
-\deg_{q_0} f = \sum_{f(p)=q_0} \left(\text{sign of \(f\) at \(p\)}\right).
+\deg_{q_0} \varphi = \sum_{\varphi(p)=q_0} \left(\text{sign of \(\varphi\) at \(p\)}\right).
 \]
 The following two theorems are proven in \cite{McKay:2018}.
 \begin{theorem}
-Consider a proper continuously differentiable map \(f \colon P \to Q\) between oriented manifolds (perhaps with corners). 
+Consider a proper continuously differentiable map \(\varphi\colon P \to Q\) between oriented manifolds (perhaps with corners). 
 Suppose that \(Q\) is connected. 
-The degree of \(f\) is the same at all regular values.
+The degree of \(\varphi\) is the same at all regular values.
 \end{theorem}
 \begin{theorem}
-Suppose that \(f \colon P \to Q\) is a proper continuously differentiable map 
+Suppose that \(\varphi\colon P \to Q\) is a proper continuously differentiable map 
 between two oriented manifolds (perhaps with corners) of the same dimension, say \(n\), and that \(Q\) is connected. 
 For any \(n\)-form \(\omega\) on \(Q\), which vanishes outside some compact set,
 \[
-\int_P f^* \omega = \deg f \, \int_Q \omega.
+\int_P \varphi^* \omega = \deg\varphi\,\int_Q \omega.
 \]
 \end{theorem}
 

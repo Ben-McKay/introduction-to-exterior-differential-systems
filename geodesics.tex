@@ -32,9 +32,9 @@ The flow of \(\geodesicVectorField\) is the \emph{geodesic flow}.%
 \define{flow, geodesic}\define{geodesic!flow}
 The vector field \(\geodesicVectorField\) moves every frame \(\pr{x,e}\), moving \(x\) in the direction of \(\sum y_i e_i\), and ``not rotating'' the frame \(e\), since \(\geodesicVectorField \hook \gamma_{12}=0\).
 Intuitively, \(\geodesicVectorField\) twists frames only in the normal directions (in the \(\gamma_{13}, \gamma_{23}\) directions), not tangentially (the \(\alpha=\gamma_{12}\) direction), while keeping \(e_1,e_2\) tangent to the surface \(S\).
-Map \(\pr{x,e} \in \frameBundle{S} \to \pr{x,e,1} \in \frameBundle{S} \times \E[2]\), so that \(\frameBundle{S}\) is identified with a submanifold of \(\frameBundle{S} \times \E[2]\), making \(\frameBundle{S}\) invariant under the geodesic flow.
+Map \(\pr{x,e} \in \frameBundle{S} \to \pr{x,e,(1,0)} \in \frameBundle{S} \times \E[2]\), so that \(\frameBundle{S}\) is identified with a submanifold of \(\frameBundle{S} \times \E[2]\), making \(\frameBundle{S}\) invariant under the geodesic flow.
 Write \(\transpose{a}\) for the transpose of a matrix \(a\).
-Let \(g \in \Orth{2} \times \pm 1\) act on \(\frameBundle{S} \times \R[p]\) by
+Let \(g \in \Orth{2} \times \pm 1\) act on \(\frameBundle{S}\times\E[2]\) by
 \[
 (x,e,y)g=(x,eg,\transpose{a} y).
 \]
@@ -398,16 +398,17 @@ Prove that if the length metric distance between points goes to zero, then the d
 \end{problem}
 
 \begin{corollary}\label{corollary:isometry.smooth}
-Every invertible map \(f \colon P \to Q\) of surfaces \(P, Q\) in \(\E[3]\) which preserves lengths of curves is a diffeomorphism.  
+Every invertible map \(\varphi\colon P \to Q\) of surfaces \(P, Q\) in \(\E[3]\) which preserves lengths of curves is a diffeomorphism.  
 \end{corollary}
 \begin{proof}
 The map takes geodesics to geodesics, since they are precisely the locally shortest paths.
 The map identifies each point \(p_0 \in P\) with a point \(q_0 \in Q\), and the circle around \(p_0\) of a given radius with the corresponding circle around \(q_0\) of the same radius.
 The lengths of geodesic segments are preserved, so if a point moves at unit rate along a geodesic on \(P\) then its image in \(Q\) does the same.
 Indeed, the same is true for a point moving along any curve (for example, along a circle), because the path is approximated by piecewise geodesic paths.
-Therefore at every point near \(p_0\), except at \(p_0\) itself, \(f_* e_1=e_1\) and \(f_* e_2=e_2\).
-Therefore \(f\) is continuously differentiable at all those points.
-By lemma~\vref{lemma:bound.inj.radius}, every point \(p \in P\) is near enough but not equal to some such point \(p_0\) to use this argument to prove that \(f\) is continuously differentiable at \(p\).
+Therefore at every point near \(p_0\), except at \(p_0\) itself, \(\varphi_* e_1=e_1\) and \(\varphi_* e_2=e_2\).
+Therefore \(\varphi\) is continuously differentiable at all those points.
+By lemma~\vref{lemma:bound.inj.radius}, every point \(p \in P\) is near enough but not equal to some such point \(p_0\) to use this argument to prove that \(\varphi\) is continuously differentiable at \(p\).
+The same applies to \(\varphi^{-1}\).
 \end{proof}
 
 \begin{corollary}
