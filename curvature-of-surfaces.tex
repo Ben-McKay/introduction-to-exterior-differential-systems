@@ -1,4 +1,4 @@
-\chapter{Curvature of surfaces}
+\chapter{Curvature of surfaces}\label{chapter:curvature}
 \section{Example: surfaces of revolution}
 Take a curve \(C\) in the plane, and rotate it around a line in that plane (the \emph{axis of revolution}) to create a \emph{surface of revolution}\define{surface!of revolution} \(S\).
 Suppose for simplicity that the curve doesn't touch the axis of revolution.
@@ -431,7 +431,7 @@ Prove that the Gauss map of an oriented surface is the composition of the map \(
 If two connected oriented surfaces in \(3\)-dimensional Euclidean space are identified by  a diffeomorphism preserving orientation and the inner product and shape operator on every tangent space, then the diffeomorphism is induced by an orientation preserving rigid motion of \(3\)-dimensional Euclidean space.
 \end{theorem}
 \begin{proof}
-Use the orientations of the surfaces to define ``identifying'' the shape operators: we have a well defined normal vector on each surface, so we treat the shape operator as a symmetric bilinear form on tangent spaces.
+Note that we use the orientations of the surfaces in identifying the shape operators: we have a well defined normal vector on each surface, so we treat the shape operator as a symmetric bilinear form on tangent spaces.
 Such a diffeomorphism \(S \to \ot{S}\), clearly identifies positively oriented orthonormal frames \(e_1,e_2\) of tangent spaces of \(S\) with those of \(\ot{S}\).
 Taking the usual orientation of \(\E[3]\), these extend uniquely into positive oriented orthonormal frames \(e_1,e_2,e_3=e_1\times e_2\), a diffeomorphism of the adapted frames, clearly identifying the soldering \(1\)-forms \(\omega_1,\omega_2\) and \(\omega_3=0\).
 Differentiate to find that the Levi--Civita connection \(1\)-form \(\gamma_{12}\) matches.
@@ -765,15 +765,23 @@ We define completeness in appendix~\ref{chapter:geodesics}; for the moment, we o
 No complete surface in \(\E[3]\) has constant negative Gauss curvature.
 \end{theorem}
 \begin{proof}
-Take a surface of constant negative Gauss curvature, say equal to \(-1\).
-We can assume it is connected, and replace it by its universal covering space if needed, so assume it is simply connected.
+Take a surface of constant negative Gauss curvature; rescale to make the Gauss curvature equal to \(-1\).
+We can assume the surface is connected, and replace it by its universal covering space if needed, so assume it is simply connected.
 Let \(u\) be half the angle between the asymptotic curves, so \(0<u<\pi/2\).
-Check that the principal curvatures are \(-\cot u,\tan u\).
+\begin{center}
+\input{sine-gordon-asymptotes}
+\end{center}
 A surface of negative Gauss curvature has no umbilics.
+Check that the principal curvatures are \(-\cot u,\tan u\).
 Differentiate the equations 
 \begin{align*}
 \gamma_{13}&=-\cot u \, \omega_1,\\
 \gamma_{23}&=\tan u \, \omega_2.
+\end{align*}
+Differentiate both of these equations, using the structure equations, to find
+\begin{align*}
+\gamma_{12}\wedge\omega_1&=-\tan u \, du \wedge \omega_2,\\
+\gamma_{12}\wedge\omega_2&=-\cot u \, du \wedge \omega_1.
 \end{align*}
 Check that \(\omega_1/\sin u\) and \(\omega_2/\cos u\) are closed \(1\)-forms; noting that \(0 < u < \pi/2\), so the denominators don't vanish.
 Because the surface is connected and simply connected, there are functions \(s_1,s_2\) so that 
@@ -791,16 +799,15 @@ So the map \((s_1,s_2)\) from our surface to the plane is onto, and a local diff
 The vector fields \(\p{s_1}=\sin u \, e_1\), \(\p{s_2}=\cos u \, e_2\) are complete and commuting.
 Flows of these for times \(s_1,s_2\) invert our previous map, hence a diffeomorphism.
 
-Let \(x\defeq(s_1-s_2)/2\), \(y\defeq(s_1+s_2)/2\).
+Let \(x\defeq(s_2-s_1)/2\), \(y\defeq(s_1+s_2)/2\).
 The level sets of \(x\) and \(y\) are precisely the asymptotic curves.
 Check that \(\gamma_{12}=-u_xdx+u_ydy\), and that the relation \(d\gamma_{12}=K\omega_1\wedge\omega_2\) becomes the \emph{sine--Gordon equation}\SubIndex{sine--Gordon equation} for the angle \(\theta=2u\):
 \[
 \theta_{xy}=\sin\theta.
 \]
 Note also that \(0<\theta<\pi\), so \(\sin\theta>0\).
-The area form is \(\omega_1\wedge\omega_2=2\sin \theta dx \wedge dy\).
 
-Apply Stokes's theorem to a rectangle \(R\) in the \(xy\)-plane
+Apply Stokes's theorem to a rectangle \(R\) in the \(xy\)-plane, using the \(xy\)-coordinate orientation on \(R\):
 \[
 \int_{\partial R}\gamma_{12}=\int_R d\gamma_{12},
 \]
@@ -808,11 +815,29 @@ to find
 \[
 \theta(x,y)-\theta(0,y)=\theta(x,0)-\theta(0,0)+\int \sin \theta \, dx \, dy.
 \]
-The difference in values of \(\theta\) along the top of any rectangle is at least as large as the difference along the bottom.
+Two observations from this equation:
+\begin{itemize}
+\item
+The difference in values of \(\theta\) along the top of any rectangle is at least as large as the difference along the bottom since \(\sin\theta>0\).
+\item
+The area of \(R\) is the integral of \(\omega_1\wedge\omega_2\), in the orientation of the surface.
+In the \(xy\)-plane orientation, it is
+\begin{align*}
+-\int_R \omega_1\wedge\omega_2
+&=
+\int_R d\gamma_{12},
+\\
+&=\int \sin \theta \, dx \, dy,
+\\
+&=\theta(x,y)-\theta(0,y)-\theta(x,0)+\theta(0,0).
+\end{align*}
+Since \(0<\theta<\pi\), the area of the rectangle, in the geometry of our surface, is less than \(2\pi\).
+\end{itemize}
 
-Since \(0<\theta<\pi\), the area of the rectangle, in the geometry of our surface, is never more than \(4\pi\).
-Our coordinates are global, so any measureable subset of the surface has area no more than \(4\pi\).
-Each set of infinite Euclidean area thus contains sets of large measure where \(\sin \theta\) gets small, so \(\theta\) gets close to \(0\) or \(\pi\).
+Our coordinates are global, so any measureable subset of the surface has area no more than \(2\pi\).
+Let us compare to the area as measured in the Euclidean metric of the \(xy\)-plane.
+Each set of infinite Euclidean area has only at most \(2\pi\) area in the surface geometry, i.e. at most \(2\pi\) integral of \(\sin\theta\).
+So that set contains sets of large Euclidean area where \(\sin \theta\) gets small, so \(\theta\) gets close to \(0\) or \(\pi\).
 
 Suppose that \(\theta\) is not constant on some horizontal line.
 Change the sign of \(x\) and \(y\) if needed, to arrange that \(\theta\) increases along a horizontal line segment.
@@ -835,8 +860,39 @@ Draw the half strips above the line segments.
 So \(\theta\) increases by at least \(\varepsilon_L\) across each parallel line segment across the left half strip.
 But \(\theta>0\) everywhere, so in the middle strip, \(\theta>\varepsilon_L\).
 Similarly, in the middle strip, \(\theta<\pi-\varepsilon_R\).
-So \(\sin \theta\) is bounded away from zero in the middle strip, a contradiction.
+So \(\sin \theta\) is bounded away from zero in the middle strip, a contradiction to the infinite Euclidean area of the strip.
 
 Hence \(\theta\) is constant on every horizontal line, i.e. \(0=\theta_x\), so \(0=\theta_{xy}=\sin \theta\), a contradiction.
 \end{proof}
 
+\begin{problem}{curvature:sine.Gordon.to.surface}
+Use the Frobenius theorem to construct a surface of constant negative Gauss curvature out of any smooth solution of the sine--Gordon equation, reversing the story in Hilbert's theorem.
+\end{problem}
+\begin{answer}{curvature:sine.Gordon.to.surface}
+Suppose that \(\theta(x,y)\) is a smooth solution of the sine--Gordon equation 
+\[
+\theta_{xy}=\sin \theta,
+\]
+on an open subset \(U\subset\R[2]\) of the \(x,y\) plane.
+Take the exterior differential system generated by
+\begin{align*}
+&\omega_1-\sin(\theta/2)d(y-x),\\
+&\omega_2-\cos(\theta/2)d(x+y),\\
+&\omega_3,\\
+&2\gamma_{12}+\theta_x\,dx-\theta_y\,dy,\\
+&\gamma_{13}+\cos(\theta/2)d(y-x),\\
+&\gamma_{23}-\sin(\theta/2)d(x+y)
+\end{align*}
+on \(U\times\frameBundleE{3}\).
+We want to prove that this system is Frobenius.
+It is invariant under rigid motion, so its integral surfaces are permuted by rigid motion.
+We want to prove that its maximal integral surfaces are immersed into \(\R[3]\) by the obvious projection.
+Hence it determines a unique surface in Euclidean \(3\)-space, up to rigid motion, with constant negative Gauss curvature equal to \(-1\).
+
+To prove that the system is Frobenius, take exterior derivatives, modulo the \(1\)-forms written above, and plug in that our given \(\theta\) satisfies the sine--Gordon equation.
+So the \(8\)-dimensional manifold \(U\times\frameBundleE{3}\) is foliated by integral surfaces of these \(6\) linearly independent \(1\)-forms, leaves of a foliation.
+Each integral surface has \(dx,dy\) linearly independent, and so has \(\omega_1,\omega_2\) linearly independent.
+So it projects by immersion to \(3\)-dimensional Euclidean space.
+Proceed as in the solution of problem~\vref{problem:prolongation:int.mfld.to.surf}.
+Careful: on a multiply connected domain \(U\subset\R{2}\), it is possible that a solution \(\theta(x,y)\) of sine--Gordon might give rise to a surface which is a nontrivial covering of \(U\).
+\end{answer}

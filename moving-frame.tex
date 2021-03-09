@@ -837,3 +837,50 @@ At a point \(x_0\) where the surface acheives maximal distance from some point \
 Translate \(x_0\) to the origin, and rescale and rotate to get \(p_0\) a unit vector above the origin.
 Apply our local picture of surfaces to see that \(S\) being inside the unit sphere around \(p_0\) forces \(S\) to be locally the graph of a function with critical zero at the origin, and eigenvalues of the second derivative both at least \(1\).
 \end{answer}
+
+Take a smooth function \(f\) defined in an open subset of \(\E[3]\).
+Let \(M\subset\E[3]\) be a level set \(M\defeq(f=c_0)\) of \(f\) on which \(df\ne 0\).
+\begin{problem}{compute.level.set.two}
+Compute that on the frame bundle of \(M\),
+\[
+\gamma_{i3}=\frac{e_i\hook D^2 f}{|df|}.
+\]
+\end{problem}
+\begin{answer}{compute.level.set.two}
+Let 
+\[
+f_i\defeq \pderiv{f}{x_i}, f_{ij}\defeq \pderiv[2]{f}{x_i x_j}.
+\]
+Note that
+\[
+e_3=\frac{f_j \partial_{x_j}}{\sqrt{\sum f_k^2}}.
+\]
+So
+\begin{align*}
+de_3
+&=
+d\left(\frac{f_j }{\sqrt{\sum f_k^2}}\right)\partial_{x_j},
+\\
+&=
+-f_j \frac{1}{2}\left(\sum f_k^2\right)^{-3/2} 2 f_k f_{k\ell} dx_{\ell} \partial_{x_j}
++
+\frac{f_{jk}dx_k}{\sqrt{\sum f_k^2}}\partial_{x_j},
+\\
+&=
+-\left(e_3 \hook \frac{D^2 f}{|df|}\right)e_3
++
+\frac{f_{jk}dx_k}{|df|}\partial_{x_j}.
+\end{align*}
+Note that \(e_i\cdot e_3=0\) for \(i=1,2\), so  
+\[
+\gamma_{i3}=e_i \cdot de_3=\frac{e_i\hook D^2f}{|df|}.
+\]
+\end{answer}
+So the shape operator of each level set \(M=(f=c_0)\) of \(f\), at each point \(x\in M\) where \(df\ne 0\), is
+\[
+\shapeOp=\gamma_{i3}\omega_i=\frac{\left.D^2 f\right|_{T_x M}}{|df|}.
+\]
+\begin{example}
+If \(f\) is a polynomial function of degree at most two, then \(D^2 f\) on each tangent plane \(T_m M\) of \(M=(f=c_0)\) is just the quadratic terms in \(f\).
+The nonzero level sets of a positive definite quadratic function have positive mean and Gauss curvature.
+\end{example}

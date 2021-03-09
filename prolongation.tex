@@ -1,6 +1,7 @@
 \chapter{Prolongation}\label{chapter:prolongation}
 \chapterSummary{In our next example, we will see what to do when the Cartan--K\"ahler theorem does not apply to an exterior differential system.}%
 \section{Notation}In this chapter, for convenience of notation, we drop our convention of writing \(\omega^{12}\) to mean \(\omega^1\wedge\omega^2\) etc.
+We use freely the notation and terminology of appendix~\ref{chapter:moving.frame}. 
 \section{Example: isometric immersion, involution fails}
 Take a surface \(S\) with a Riemannian metric.
 Naturally we are curious if there is an isometric immersion \(\phi \colon S \to \E[3]\), i.e. a map preserving the lengths of all curves on \(S\).
@@ -62,34 +63,18 @@ the vectors \(e_1,e_2\in T_x S\) are an orthonormal basis of \(T_x S\).
 Since  \(\pf_1,\pf_2\) are linearly independent on \(X\), there are vectors tangent to \(X\) on which \(\pf_1,\pf_2\) take any given values.
 But \(\pf_1=e_1\cdot dx\) and \(\pf_2=e_2\cdot dx\) measure dot products of \(dx\) with \(e_1,e_2\).
 So there are tangent vectors to \(X\) for which the map \(x\colon X\to S\) has differential \(dx\) taking these vectors to have any given values of dot products with \(e_1,e_2\).
-Hence \(x\colon X\to S\) has rank \(2\), i.e. full rank.
-Moreover, \(\pf_1,\pf_2\) vanish just on the directions where \(dx=0\).
-
-By the implicit function theorem, after perhaps replacing \(X\) and \(S\) by open subsets of \(X\) and \(S\), for any local coordinates \(s_1,s_2\) on \(S\), their pullbacks belong to a system of local coordinates \(s_1,s_2,t\) on \(X\), so that the map \(x\) is expressed in these coordinates as \(x(s_1,s_2,t)=(s_1,s_2)\).
-Replace \(S\) and \(X\) by open subsets  of \(S\) and \(X\) on which \(s_1,s_2\) and \(s_1,s_2,t\) are global coordinates.
-Replace \(X\) by an open subset to ensure that the fibers of \(X\to S\) are connected, i.e. \(t\) is defined on a connected interval, for any given values of \(s_1,s_2\).
-
-The \(1\)-forms \(\pf_1,\pf_2\) vanish precisely where \(dx\) vanishes, i.e. precisely in the \(t\) direction, i.e. precisely along the fibers of the map \(x\).
-
-Since \(s_1,s_2,t\) are coordinates on \(X\), 
-each entry of
-\[
-\pr{x,e_1,e_2,\ot{x},\ot{e}_1,\ot{e}_2,\ot{e}_3}
-\]
-is a function of \(s_1,s_2,t\) on \(X\), say \(\ot{x}=\ot{x}(s_1,s_2,t)\) and so on.
+Hence \(x\colon X\to S\) has rank \(2\), i.e. full rank, a submersion.
+We can replace \(X\) by an open subset of \(X\), and \(S\) by an open subset of \(S\), so that this submersion is a fiber bundle map with connected fibers.
+Moreover, \(\pf_1,\pf_2\) vanish just on the directions where \(dx=0\), i.e. the fibers.
 
 On \(X\), \(\qf_1=\pf_1\), \(\qf_2=\pf_2\) and \(\qf_3=0\).
-So \(d\ot{x}=0\) just on the tangent vectors to \(X\) on which \(0=\pf_1=\pf_2\), i.e. on which \(0=\pf_1=\pf_2\), i.e. on which \(dx=0\).
-So each fiber of \(\ot{x}\) is a fiber of \(x\) and vice versa.
-So \(\ot{x}=\ot{x}(s_1,s_2)\) is independent of \(t\).
-Write this map as \(\ot{x}=\varphi(x)\), \(\varphi\colon S\to\E[3]\).
-
-Since \(s_1,s_2\) are coordinates on \(S\), \(\ot{x}=\varphi(x)\) is computed by taking each point \(x\) of \(S\) (given by finding its coordinates \(s_1,s_2\)), taking any point of \(X\) mapping to that point of \(S\) (given by taking any defined value of \(t\) for the given values of \(s_1,s_2\)), and mapping to \(\ot{x}(x)\) (given by \(\ot{x}(s_1,s_2)\)).
-
-As maps on \(X\), \(\ot{x}=\varphi \circ x\), a commutative diagram of maps:
+So \(d\ot{x}=0\) just on the tangent vectors to \(X\) on which \(0=\qf_1=\qf_2\), i.e. on which \(0=\pf_1=\pf_2\), i.e. on which \(dx=0\), i.e. on the fibers of \(x\).
+So \(\ot{x}\) is constant on each fiber of \(x\).
+So \(\ot{x}\) is defined and smooth on the base \(S\) of the fiber bundle map \(x\colon X\to S\), i.e. \(\ot{x}\) factors through \(x\).
+Write this factorization as \(\ot{x}=\varphi(x)\), \(\varphi\colon S\to\E[3]\), a commutative diagram of maps:
 \[
 \begin{tikzcd}
-&X\ar["x"]{dl} \ar["\ot{x}"]{dr}&\\
+&X\ar["x"]{dl} \ar["\ot{x}"']{dr}&\\
 S\ar["\varphi"]{rr}&&\E[3].
 \end{tikzcd}
 \]
@@ -103,10 +88,7 @@ Compute
 \varphi_* \sum_i (e_i \cdot x_*) e_i,
 \\
 &=
-\sum_i \varphi_* (e_i\cdot dx) e_i,
-\\
-&=
-\sum_i \varphi_* \pf_i e_i,
+\sum_i \varphi_* e_i (e_i\cdot dx) ,
 \\
 &=
 \sum_i \varphi_* e_i \pf_i.

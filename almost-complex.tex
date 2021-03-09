@@ -281,9 +281,9 @@ In this example, we assume familiarity with matrix groups \cite{Stillwell:2008}.
 The manifold \(\SU{3}\) is the collection of all \(3\times3\) complex unitary matrices \(z=(z_{\mu\bar\nu})\) of determinant \(1\).
 Write \(z_{\bar\mu\nu}\) to mean \(\bar{z}_{\mu\bar\nu}\), so that \(z^*\) has entries \(z^*_{\mu\bar\nu}=z_{\bar\nu\mu}\).
 Unitarity is \(z_{\mu\bar\sigma}z_{\bar\nu\sigma}=\delta_{\mu\bar\nu}\).
-Note that \(\SU{3}\) is a real submanifold, \emph{not} a complex submanifold, of the \(3\times3\) matrices, as this unitarity equation is not complex analytic.
+Note that \(\SU{3}\) is a real submanifold, \emph{not} a complex submanifold, of the \(3\times3\) complex matrices, as this unitarity equation is not complex analytic.
 
-Since \(\SU{3}\) is a submanifold of matrices, each tangent vector \(v\) to \(\SU{3}\) is expressed as a matrix.
+Since \(\SU{3}\) is a submanifold of matrices, each tangent vector to \(\SU{3}\) is a matrix.
 The tangent space \(T_I \SU{3}\) at the identity matrix, denoted \(\LieSU_3\), is the set of all traceless skew adjoint \(3\times3\) complex matrices.
 
 It is traditional to write the identity function on any group as \(g\), so \(g(z)=z\).
@@ -330,12 +330,9 @@ Differentiating \(\omega=g^{-1}\,dg\), i.e. \(dg=g\omega\),
 dg\wedge\omega+g\,d\omega,
 \\
 &=
-g\omega\wedge\omega+g\,d\omega,
+g\omega\wedge\omega+g\,d\omega,\\
+d\omega&=-\omega\wedge\omega.
 \end{align*}
-we find 
-\[
-d\omega=-\omega\wedge\omega.
-\]
 \end{answer}
 In matrix entries,
 \(d\omega_{\mu\bar\nu}=-\omega_{\mu\bar\sigma}\wedge\omega_{\sigma\bar\nu}\).
@@ -358,8 +355,8 @@ Take a complex linear coframing \(\omega^1,\dots,\omega^p,\pi^1,\dots,\pi^q\).
 Take an almost complex submanifold of real dimension \(2p\) on which \(\omega^1,\dots,\omega^p\) have linearly independent real and imaginary parts.
 Then on that submanifold, \(\pi=p\omega\) for a complex matrix \(p\).
 Our almost complex submanifold is an integral manifold of the exterior differential system \(\pi=p\omega\) on \(M\times\C[pq]\).
-We let \(\theta\defeq\pi-p\omega\).
-Then on any integral manifold \(0=\bar\tau\theta=\bar\tau\pi-p \, \bar\tau\omega\).
+Let \(\theta\defeq\pi-p\omega\).
+On any integral manifold \(0=\bar\tau\theta=\bar\tau\pi-p \, \bar\tau\omega\).
 \begin{problem}{almost.complex:sub}
 Prove that, for any \(p>1\), if there is an almost complex submanifold of real dimension \(2p\) tangent to any complex linear subspace of complex dimension \(p\) in any tangent space, then \(M\) is a complex manifold.
 \end{problem}
