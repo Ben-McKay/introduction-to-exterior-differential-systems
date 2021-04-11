@@ -1,0 +1,22 @@
+\documentclass[tikz]{standalone}
+\begin{document}
+\begin{tikzpicture}
+\newcommand{\rrrr}{.1}
+\newcommand{\RRRR}{.75}
+\newcommand{\arw}[3]
+{
+    \draw[-latex] 
+    ({\rrrr*cos(#2)},{\rrrr*sin(#2)}) 
+    -- 
+    ({\RRRR*cos(#2)},{\RRRR*sin(#2)}) 
+    node[black,#3]{\(e_{#1}\)};
+}
+\fill [gray] (0,0) circle (1pt) node[black,above right]{\(x\)};
+\arw{1}{90}{above}
+\arw{2}{210}{below left}
+\arw{3}{-30}{below right}
+%\draw[-latex] (0,.07071) -- (0,.7071) node[black,above]{\(e_1\)};
+%\draw[-latex] (-.1,-.1) -- (-.5,-.5) node[black,below left]{\(e_2\)};
+%\draw[-latex] ({\rrrr*cos(-30)},{\rrrr*sin(-30)}) -- ({\RRRR*cos(-30)},{\RRRR*sin(-30)}) node[black,below right]{\(e_3\)};
+\end{tikzpicture}
+\end{document}

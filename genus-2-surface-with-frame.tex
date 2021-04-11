@@ -2,9 +2,9 @@
 \begin{document}
 \begin{tikzpicture}
 \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=.5\textwidth]{genus-2-surface-2.pdf}};
-\draw[gray,thick,-stealth] (1.5,2.3) -- ({1.5+cos(20)},{2.3+sin(20)});
-\draw[gray,thick,-stealth] (1.5,2.3) -- ({1.5+cos(-30)},{2.3+sin(-30)});
-\draw[gray,thick,-stealth] (1.5,2.3) -- ({1.5+cos(90)},{2.3+sin(90)});
-\fill[gray,thick] (1.5,2.3) circle (1pt);
+\draw[-latex] (1.5,2.3) -- ({1.5+.75*cos(20)},{2.3+.75*sin(20)});
+\draw[-latex] (1.5,2.3) -- ({1.5+.75*cos(-30)},{2.3+.75*sin(-30)});
+\draw[-latex] (1.5,2.3) -- ({1.5+.75*cos(90)},{2.3+.75*sin(90)});
+\fill[draw=gray!50] (1.5,2.3) circle (1.2pt);
 \end{tikzpicture}
 \end{document}

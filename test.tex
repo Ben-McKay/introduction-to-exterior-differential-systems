@@ -53,7 +53,7 @@ In coordinates, \(E_0=(du=0)\), \(E_t=(du=q(t) \, dx)\), let \(w_i(t)\defeq q^a_
 \begin{corollary}\label{corollary:same.int.elts}
 Take an involutive integral element \(E\) of any exterior differential system \(\II\).
 Take a subsystem \(\II'\subseteq\II\) and a flag in \(E\).
-If the \(\II'\)-characters of that flag are the \(\II\)-characters of \(E\), then \(\II\) and \(\II'\) have the same integral elements near \(E\), and so the same integral manifolds.
+If the \(\II'\)-characters of that flag are the \(\II\)-characters of \(E\), then \(\II\) and \(\II'\) have the same integral elements near \(E\), and so the same integral manifolds with tangent spaces near \(E\).
 \end{corollary}
 \begin{proof}
 The \(\II'\)-integral elements lie in a submanifold of the Grassmann bundle, with codimension equal to the number of linearly independent polar equations, by problem~\vref{problem:eds:polar.diff}.
@@ -88,6 +88,33 @@ Prove that the generic linear subspace \(E_k \subset E_p\) of dimension \(k\) of
 \begin{answer}{eds:lower.dim}
 Generic linear subspaces are regular, so ordinary, so involutive.
 The polar equations along a generic integral element are the same.
+\end{answer}
+\begin{problem}{test:characterize.int.elts}
+Take a subset \(\mathscr{E}\) of a Grassmann bundle of a manifold.
+Let \(\mathscr{E}^\perp\) be the set of all differential forms vanishing on all elements of \(\mathscr{E}\).
+Use the Cartan--K\"ahler to prove that \(\mathscr{E}\) is an open subset of the set of involutive integral elements of an exterior differential system if and only if \(\mathscr{E}^{\perp}\) is the unique maximal such system.
+\end{problem}
+\begin{answer}{test:characterize.int.elts}
+Clearly \(\mathscr{E}^{\perp}\) is an ideal of differential forms, and homogeneous (i.e. the direct sum of its intersections with forms each degree).
+But \(\mathscr{E}^{\perp}\) might not be \(d\)-closed.
+Take its \(d\)-closure \(\mathscr{E}^{\vee}\); it has the same integral manifolds as \(\mathscr{E}^{\perp}\).
+Suppose that there is an exterior differential system \(\II\) with \(\mathscr{E}\) among its integral elements: 
+\[
+\II\subset\mathscr{E}^{\perp}\subset\mathscr{E}^{\vee}.
+\]
+Every \(\II\)-integral manifold has tangent spaces from \(\mathscr{E}\), so an \(\mathscr{E}^{\perp}\)-integral manifold, so an \(\mathscr{E}^{\vee}\)-integral manifold.
+So \(\II,\mathscr{E}^{\perp},\mathscr{E}^{\vee}\) share the same integral manifolds.
+
+Suppose now that \(\mathscr{E}\) is an open subset in the set of involutive maximal dimensional \(\II\)-integral elements.
+Every element of \(\mathscr{E}\) arises as the tangent space of an \(\II\)-integral manifold, by the Cartan--K\"ahler theorem, so as the tangent space of a \(\mathscr{E}^{\vee}\)-integral manifold.
+So \(\mathscr{E}\) lies among the \(\mathscr{E}^{\vee}\)-integral elements, which lie among the \(\II\)-integral elements.
+The differential of any form vanishing on \(\mathscr{E}\) lies in \(\mathscr{E}^{\vee}\), so also vanishes on \(\mathscr{E}\).
+So \(\mathscr{E}^{\perp}=\mathscr{E}^{\vee}\).
+
+Consider an \(\mathscr{E}^{\vee}\)-integral element \(E\).
+Being an \(\II\)-integral element, if \(E\) lies close enough to a linear subspace \(E'\) of some element of \(\mathscr{E}\), then \(E\) lies in a maximal dimensional involutive \(\II\)-integral element, so an element of \(\mathscr{E}\), so in a maximal dimensional \(\mathscr{E}^{\vee}\)-integral element.
+So \(\mathscr{E}^{\vee}\) is involutive near \(\mathscr{E}\).
+But \(\mathscr{E}^{\vee}\)-integral elements near elements of \(\mathscr{E}\) are \(\II\)-integral elements, so elements of \(\mathscr{E}\).
 \end{answer}
 
 \section{View from a tableau}

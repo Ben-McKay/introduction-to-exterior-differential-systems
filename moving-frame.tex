@@ -23,12 +23,7 @@ An \emph{orthonormal frame}\define{orthonormal frame}\define{frame!orthonormal} 
 \]
 is an orthonormal basis of \(\E[3]\) arranged into the columns of a matrix.
 \begin{center}
-\begin{tikzpicture}
-\fill [gray] (0,0) circle (1pt) node[black,above right]{\(x\)};
-\draw[-latex,gray] (0,.07071) -- (0,.7071) node[black,below left]{\(e_1\)};
-\draw[-latex,gray] (-.1,-.1) -- (-.5,-.5) node[black,below left]{\(e_2\)};
-\draw[-latex,gray] (.1,-.1) -- (.5,-.5) node[black,below right]{\(e_3\)};
-\end{tikzpicture}
+\input{on-basis}
 \end{center}
 \begin{problem}{moving.frame:rigid}
 For any two frames \((x,e), \pr{x',e'}\), there is a unique rigid motion \(\varphi\), i.e. a distance preserving transformation, taking one to the other: \(x'=\varphi(x)\), \(e'_i=\varphi_* e_i\).
