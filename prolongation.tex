@@ -331,7 +331,7 @@ where \(a_1,a_2,b_1,b_2,c_1,c_2\) can be chosen as we like, as long as
 a_2 &= b_1, \\
 b_2 &= c_1.
 \end{align*}
-(It is convenient to leave the freedom to choose these later.)
+(We will take advantage of the freedom to choose the remaining \(a_1,b_1,c_1,c_2\) quantities later; see chapter~\ref{chapter:Cauchy.characteristics}.)
 The torsion\SubIndex{torsion} is
 \[
 t\defeq ac-b^2-K.
@@ -372,21 +372,12 @@ The reader familiar with Riemannian manifolds can easily generalize these comput
 \begin{theorem}
 Take any surface \(S\) with Riemannian metric and a point \(x_0 \in S\).
 Denote the Gauss curvature by \(K\).
-Take any \(3\)-dimensional manifold \(\ot{X}\) with Riemannian metric, a point \(\ot{x}_0\), and a linear isometric injection \(F \colon T_{x_0} S \to T_{\ot{x}_0} \ot{X}\).
-Let \(\ot{R}\) be the sectional curvature tensor of \(\ot{X}\) on the image of \(F\).
+Take any \(3\)-dimensional manifold \(\ot{X}\) with Riemannian metric, a point \(\ot{x}_0\), and a linear isometric injection \(\Phi \colon T_{x_0} S \to T_{\ot{x}_0} \ot{X}\).
+Let \(\ot{R}\) be the sectional curvature tensor of \(\ot{X}\) on the image of \(\Phi\).
 Pick a nonzero quadratic form \(q\) on the tangent plane \(T_{x_0} S\) so that \(\det q = K - \ot{R}\).
-Then there is an isometric immersion \(f\) of some neighborhood of \(x_0\) to \(\ot{X}\), so that \(f'\of{x_0}=F\) and so that \(f\) induces shape operator \(q\) at \(x_0\).
+Then there is an isometric immersion \(\varphi\) of some neighborhood of \(x_0\) to \(\ot{X}\), so that \(\varphi'\of{x_0}=\Phi\) and so that \(\varphi\) induces shape operator \(q\) at \(x_0\).
 \end{theorem}
 
-Write \(dK=K_1\omega_1+K_2\omega_2\).
-It is convenient to pick our \(a_1,a_2,b_1,b_2,c_1,c_2\) to satisfy not just
-\(a_2=b_1, b_2 = c_1\), as required above, but also to satisfy
-\begin{align*}
-K_1 &= 2bb_1-ac_1-ca_1, \\
-K_2 &= 2bb_2-ac_2-ca_2,
-\end{align*}
-so that \(0=c \, Da + a \, Dc - 2b \, Db\), a simple relation among the differential forms in the exterior differential system.
-We can always do this near any point of \(M_0'\), by choice of \(a_1,a_2,b_1,b_2,c_1,c_2\), using the fact that one of \(a,b,c\) is not zero.
 \begin{problem}{prolongation:not.rev}
 Prove that every sufficiently small spherical cap on the unit sphere admits an isometric embedding to \(\E[3]\) \emph{not} contained in a surface of revolution.
 \end{problem}
