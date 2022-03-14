@@ -12,7 +12,7 @@ But the Laplace operator is invariant under rotation, so it actually ``feels'' t
 \section{The symbol of a linear operator}
 If you differentiate a high frequency wave in a direction in which it oscillates, it gets bigger.
 If you differentiate in a direction in which the wave is constant, it gets killed.
-We detect derivatives by plugging in waves.
+We can detect the derivatives taken by a differential operator by plugging in waves.
 
 Take a large number \(\lambda\) and any function \(f(x)\) vanishing at the origin.
 Near the origin, the function \(e^{i\lambda f}\) looks like a high frequency wave: expand \(f\) in a Taylor series \(f(x)=\sum \xi_i x_i + \dots\),
@@ -57,6 +57,7 @@ Without taking coordinates,
 \opsymbol[P]{df}u=\lim_{\lambda \to \infty} \frac{e^{-i\lambda f} P \left[e^{i\lambda f}u\right]}{i^m\lambda^m}
 \]
 for any continuously differentiable function \(f\) vanishing at \(x\).
+The symbol vanishes on the momentum \(df\) of a high frequency wave \(e^{i\lambda f}u(x)\) at a point \(x=x_0\) just when that wave solves \(P=0\) to leading order in wave frequency \(\lambda\).
 \begin{example}
 The heat operator in the plane is
 \[

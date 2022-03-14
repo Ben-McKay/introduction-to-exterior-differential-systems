@@ -29,6 +29,75 @@ In each component of the space of integral elements, either none are involutive 
 \end{corollary}
 Ordinarity occurs precisely when the generic integral line sits in an integral plane, and so on:
 \prob{test:generic}{Prove that an integral plane \(E_2\) is ordinary just when, for any integral line \(E_1\subset E_2\), every integral line close enough to \(E_1\) sits in an integral plane.}
+\begin{problem}{test:eds:5.variable.3}
+Recall from problem~\vref{problem:eds:5.variable} the study of a coupled system of two \nth{2} order partial differential equations
+\begin{align*}
+u_{xx}&=f,\\
+u_{xy}&=g,
+\end{align*}
+where
+\begin{align*}
+f&=f(x,y,u,u_x,u_y,u_{yy}),\\
+g&=g(x,y,u,u_x,u_y,u_{yy}).
+\end{align*}
+Suppose that \(f_{u_{yy}}=g_{u_{yy}}^2\) and
+\[
+0=
+f_y
+-g_x
++f_u u_y
+-g_u u_x
++f_{u_x}g
+-g_{u_x}f
++f_{u_y}u_{yy}
+-g_{u_y}g
+-g_{u_{yy}}(g_y+g_u u_y + g_{u_x} g + g_{u_y} u_{yy}).
+\]
+Prove that there are infinitely many integral surfaces through every point.
+\end{problem}
+\begin{answer}{test:eds:5.variable.3}
+By problem~\vref{problem:test:generic}, to prove involution, we only have to show that the generic integral line lines in an integral plane.
+Recall from the solution of problem~\vref{problem:eds:5.variable}, the span of a nonzero vector \(v\) is an integral line just when
+\[
+v=
+\dot{x}\partial_x+
+\dot{y}\partial_y+
+(u_x\dot{x}+u_y\dot{y})\partial_u+
+(f\dot{x}+g\dot{y})\partial_{u_x}+
+(g\dot{x}+u_{yy}\dot{y})\partial_{u_y}+
+\dot{u}_{yy}\partial_{u_{yy}}
+\]
+where \(\dot{x},\dot{y},\dot{u}_{yy}\) are arbitrary except for not being all zero.
+
+Each integral plane coframed by \(dx,dy\) is the span of
+\begin{align*}
+X&=\partial_x+u_x\partial_u+f\partial_{u_x}+g\partial_{u_y}+a\partial_{u_{yy}},\\
+Y&=\partial_y+u_y\partial_u+g\partial_{u_x}+u_{yy}\partial_{u_y}+b\partial_{u_{yy}},
+\end{align*}
+where
+\[
+a=g_y+g_u u_y + g_{u_x} g + g_{u_y} u_{yy}+g_{u_{yy}}b
+\]
+and \(b\) is arbitrary; write this as \(a=a_0+g_{u_{yy}}b\).
+The space of integral elements at a point has positive dimension, so if the system is involutive, it has at least one Cartan character positive, and therefore has an infinite dimensional family of solutions through each point.
+
+So then once \(v\) is given, we are given \(\dot{x},\dot{y},\dot{u}_{yy}\), and we compute 
+\[
+v-\dot{x}X-\dot{y}Y
+=
+(\dot{u}_{yy}-\dot{x}a+\dot{y}b)\partial_{u_{yy}}.
+\]
+To be able to acheive an arbitrary value of \(\dot{u}_{yy}\), we need the linear function 
+\[
+b\mapsto \dot{x}a+\dot{y}b
+\]
+to acheive arbitrary values, i.e.
+\[
+\dot{x}a_0+(\dot{x}+g_{u_{yy}}\dot{y})b
+\]
+to have a nonzero coefficient of \(b\), i.e. \(\dot{x}+g_{u_{yy}}\dot{y}\ne 0\).
+Since we only need this for the generic integral line, we can arrange it by choice of \(\dot{x},\dot{y}\).
+\end{answer}
 \section{Differentiating on the Grassmann bundle}
 Each differential form \(\vartheta\) yields an equation \(0=\vartheta\), satisfied by the integral elements of the exterior differential system it generates.
 At any given point \(m_0 \in M\), integral elements are points of the Grassmannian \(\Gr{p}{T_{m_0} M}\).\prob{eds:polar.diff}{Identify the polar equations at an integral element with the differentials of those equations on the Grassmannian.}

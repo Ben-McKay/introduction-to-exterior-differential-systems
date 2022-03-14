@@ -215,7 +215,10 @@ E_j\defeq(0=\theta^a=\pi^{\alpha}=\omega^{j+1}=\dots=\omega^p).
 Any flag has many tableau adapted to it.
 \prob{tableaux:polar}{What are the polar equations of each \(E_j\)? Prove that the characters as defined above are the characters as defined in chapter~\ref{chapter:eds}, and the polars are a basis of the polar equations.}
 \begin{answer}{tableaux:polar}
-The polar equations of \(E_j\) are given by setting \(\omega^i=0\) for \(i>j\), and plugging in, with \(\pi^{\alpha}=0\) on \(E_j\), so all terms with 2 or more \(\pi\) vanish, i.e. the polars in grades \(0,1,2,\dots,j\).
+The polar equations of \(E_j\) are given by plugging into each \(k\)-form \(k-1\) vectors from among \(e_1,\dots,e_j\) dual to \(\omega^1,\dots,\omega^j\), and then seeing what \(1\)-form is left over: the polar equation.
+Since \(E_p\) is an integral element, the polar equation vanishes on \(E\), so is a linear combination of \(\pi^{\alpha}\) \(1\)-forms.
+All terms with 2 or more \(\pi\) vanish as do all terms with any \(\omega^i\) for \(i>j\).
+So set \(\omega^i=0\) for \(i>j\), and plugging in, with \(\pi^{\alpha}=0\) on \(E_j\), and kill all nonlinearity: we are left precisely with the polars in grades \(0,1,2,\dots,j\) as a basis of the polar equations of \(E_j\).
 Hence the characters of \(E_p\) are the numbers of polars in each grade.
 \end{answer}
 \begin{problem}{eds:torsion}
@@ -277,6 +280,74 @@ A tableau can only examine integral elements coframed by the \(\omega^i\).
 Torsion absorbs just when there is such an integral element.
 
 The exterior differential system \(\II\) is the true fundamental geometric object; the choice of tableau is like a choice of coordinate system: a magnifying glass with which to examine \(\II\).
+\begin{problem}{tableau:what.is.tableau}
+Take a vector space \(V\) and a linear subspace \(E\subset V\).
+Denote by \(\Lm{*}{V}^*\) the exterior algebra of \(V\), i.e. the constant coefficient differential forms on \(V\).
+Consider the ideal \(P\defeq(E^{\perp})\subset\Lm{*}{V}^*\).
+A \emph{tableau} at \(E\) is an ideal \(\tau\subseteq\Lm{\ge 2}{V}^*/P^2\) which is graded, i.e.
+\[
+\tau=\tau^2\oplus\dots\oplus\tau^{\dim V}.
+\]
+Explain how to associate to any integral element of any exterior differential system a tableau, its torsion, its characters, and how it relates to our definition above.
+\end{problem}
+\begin{answer}{tableau:what.is.tableau}
+The \emph{torsion} of a tableau \(\tau\) is \(\tau+P\subseteq\Lm{*}{V}^*/P\).
+Let \(\hat\tau\) be the preimage of \(\tau\) in \(\Lm{*}{V}^*\).
+To any
+\[
+\vartheta\otimes(e_1\wedge\dots\wedge e_k)\in \hat\tau^{k+1}\otimes \Lm{k}{E}^*
+\]
+associate the covector in \(E^{\perp}\) which maps
+\[
+w\in V\mapsto 
+\vartheta(e_1,\dots,e_k,w)
+\]
+a linear map
+\[
+\hat\tau^{*+1}\otimes \Lm{*}{E}^*
+\to
+E^{\perp}.
+\]
+The covector will be zero if \(\vartheta\in P^2\).
+Therefore we can replace \(\hat\tau\) by \(\tau=\hat\tau+P^2\).
+Pick a flag \(0=E_0\subset E_1\subset\dots\subset E_p=E\).
+Restrict our map
+\[
+\tau^{*+1}\otimes \Lm{*}{E_i}^*
+\to
+E^{\perp}.
+\]
+The \emph{characters} of this flag are the increments in dimensions of images of these maps.
+The \emph{characters} of the tableau are the characters for flags for which those dimensions are maximal.
+
+Pick a point \(m\in M\) in a manifold \(M\) with an exterior differential system \(\II\).
+On the linear subspace \(V\defeq(\II_m^1)^{\perp}\subseteq T_m M\), we have an ideal \(\JJ\defeq\II_m/(\II_m^1)\subseteq\Lm{\ge 2}{V}^*\).
+Pick a linear subspace \(E\subseteq V\), say of dimension \(p\).
+(We will picture that \(\omega^i\in V^*\) can be any covectors that restrict to \(E\) to give a basis for \(E^*\) and that \(\pi^{\alpha}\) can be any basis for \(E^{\perp}\subseteq V^*\), but we prefer not to pick any bases.)
+The torsion of \(E\) is clearly the pullback to the subspace \(E\subseteq V\):
+\[
+\JJ\mapsto \Lm{*}{E}^*,
+\]
+vanishing just when \(E\subseteq V\subseteq T_m M\) is an integral element; equivalently, the torsion is \(\JJ+P\).
+(In terms of differential forms, we are setting all \(\pi^{\alpha}\) to zero, i.e. pulling back to \(E\), and then asking if there are any nonzero forms left, i.e. terms left purely in \(\omega^i\).)
+The torsion vanishes just when \(\JJ\subseteq P\).
+The nonlinearity is \(\JJ\cap P^2\). 
+The tableau is
+\[
+\tau\defeq\JJ/(\JJ\cap P^2)\subseteq\Lm{*}{V}^*/P^2.
+\]
+The torsion vanishes just when
+\[
+\tau\subseteq P/P^2.
+\]
+Suppose that the torsion vanishes.
+The polar equations of any element of \(P^2\cap\II_m\) vanish (having two or more \(\pi^{\alpha}\) in them, each of which vanishes on \(E\)).
+(In terms of the forms, this plugs in vectors dual to the \(\omega^i\) on which the \(\pi^{\alpha}\) vanish, and splits out elements in the span of the \(\pi^{\alpha}\), giving those linear combinations of \(\varpi^{\alpha}\) which appear in the rows of the tableau.
+We don't really need any more of \(\tau\) than just any set of generators, since every \(\pi^{\alpha}\) which appears in any element will already have to appear somewhere in any generating set.
+The image of this map is the collection of linearly independent \(\varpi^{\alpha}\) that appear in columns \(1,2,\dots,i\) of the tableau.)
+The ranks of these linear maps are precisely the dimensions of polar equations, so their increments are precisely the characters of the flag.
+(In terms of differential forms, these ranks are precisely the numbers of linearly independent \(\varpi^{\alpha}\) in columns \(1,2,\dots,i\), when we pick our \(\omega^i\) to have \(E_i=(\omega^j=0)_{j>i}\).)
+\end{answer}
 
 \section{Borrowing}
 \begin{example}
